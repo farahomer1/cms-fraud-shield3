@@ -1,0 +1,42 @@
+[
+  {
+    "id": "c1000001-0000-4000-8000-000000000001",
+    "name": "Batch-2025-08-05-Medical",
+    "received_date": "2025-08-05",
+    "file_count": 12847,
+    "status": "completed",
+    "total_claims": 30,
+    "flagged_count": 8,
+    "approved_count": 18
+  },
+  {
+    "id": "c1000001-0000-4000-8000-000000000002",
+    "name": "Batch-2025-08-22-Mixed",
+    "received_date": "2025-08-22",
+    "file_count": 10523,
+    "status": "completed",
+    "total_claims": 25,
+    "flagged_count": 6,
+    "approved_count": 15
+  },
+  {
+    "id": "c1000001-0000-4000-8000-000000000003",
+    "name": "Batch-2025-09-10-Disability",
+    "received_date": "2025-09-10",
+    "file_count": 18291,
+    "status": "pending",
+    "total_claims": 200,
+    "flagged_count": 0,
+    "approved_count": 0
+  },
+  {
+    "id": "batch-demo-001",
+    "name": "Batch-2025-10-21-Mixed",
+    "received_date": "2025-10-21",
+    "file_count": 14062,
+    "status": "pending",
+    "total_claims": 10,
+    "flagged_count": 0,
+    "approved_count": 0
+  }
+]

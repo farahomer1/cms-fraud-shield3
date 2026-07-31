@@ -1,0 +1,63 @@
+================================================================================
+VA ELECTRONIC HEALTH RECORD EXTRACT
+================================================================================
+Patient: Morrison, Robert T.
+SSN: ***-**-4321  |  DOB: 03/15/1958  |  Sex: Male
+ICN: 1234567890V123456  |  Station: 652 (Richmond VAMC)
+================================================================================
+
+VITAL STATUS: DECEASED
+Date of Death: 10/01/2025
+Source: VA Master Veteran Index (MVI) / Death Master File (DMF)
+Cause: Complications of chronic obstructive pulmonary disease
+
+================================================================================
+SERVICE HISTORY
+================================================================================
+Branch: United States Army
+Service Dates: 06/15/1976 - 06/14/1996
+Discharge Type: Honorable
+Disability Rating: 70% Service-Connected
+  - COPD (30%)
+  - PTSD (30%)
+  - Hearing Loss, Bilateral (10%)
+
+================================================================================
+RECENT ENCOUNTERS (Last 6 months before death)
+================================================================================
+
+09/15/2025 - Pulmonology Clinic (Dr. Chen, David R.)
+  Chief Complaint: Worsening dyspnea, productive cough
+  Assessment: Acute exacerbation of COPD (J44.1)
+  Plan: Prednisone taper, albuterol nebulizer, follow-up 2 weeks
+  Vitals: BP 142/88, HR 98, SpO2 89%, Temp 99.1F
+
+09/01/2025 - Primary Care (Dr. Williams, Sarah K.)
+  Chief Complaint: Routine follow-up, medication refills
+  Assessment: COPD stable (J44.9), PTSD controlled (F43.10)
+  Plan: Continue current medications, pulmonology referral
+  Vitals: BP 136/82, HR 76, SpO2 93%, Temp 98.4F
+
+08/10/2025 - Mental Health (Dr. Patel, Anita S.)
+  Chief Complaint: Anxiety symptoms, sleep disturbance
+  Assessment: PTSD with anxiety features (F43.10)
+  Plan: Continue sertraline 100mg, add prazosin 2mg for nightmares
+
+================================================================================
+CURRENT MEDICATIONS
+================================================================================
+1. Albuterol 90mcg/actuation inhaler - 2 puffs Q4H PRN
+2. Tiotropium 18mcg capsule - 1 cap inhaled daily
+3. Sertraline 100mg tablet - 1 tab daily
+4. Prazosin 2mg capsule - 1 cap at bedtime
+5. Lisinopril 20mg tablet - 1 tab daily
+
+================================================================================
+ALERTS
+================================================================================
+[CRITICAL] Patient deceased as of 10/01/2025 - No further services authorized
+[WARNING] Post-mortem claim activity detected: CLM-9988776655 dated 10/20/2025
+
+================================================================================
+END OF EXTRACT
+================================================================================

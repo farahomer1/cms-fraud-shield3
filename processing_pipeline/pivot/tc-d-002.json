@@ -1,0 +1,23 @@
+{
+    "format": "X12 EDI",
+    "metadata": {
+        "sender": "SENDERID",
+        "receiver": "VA_RECEIVER"
+    },
+    "claim": {
+        "services": [
+            {
+                "proc_code": "AD:D0145",
+                "charge": "200.00",
+                "units": "1"
+            }
+        ],
+        "attachments": [],
+        "billing_provider": "VET DENTAL CENTER",
+        "patient_name": "JAMES DOE",
+        "patient_gender": "M",
+        "patient_age": 75,
+        "id": "TC-I-002",
+        "total_charge": "200"
+    }
+}

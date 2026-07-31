@@ -1,0 +1,27 @@
+{
+    "format": "X12 EDI",
+    "metadata": {
+        "sender": "HOSP_SENDER",
+        "receiver": "VA_RECEIVER"
+    },
+    "claim": {
+        "services": [
+            {
+                "proc_code": "0121",
+                "charge": "12000.00",
+                "units": "1"
+            }
+        ],
+        "attachments": [
+            {
+                "evidence_type": "Receipt/Invoice",
+                "transmission_method": "Electronic",
+                "control_number": "REC-HOSP-55"
+            }
+        ],
+        "billing_provider": "CITY HOSPITAL",
+        "patient_name": "MAX VETERAN",
+        "id": "TC-I-004",
+        "total_charge": "12000.00"
+    }
+}

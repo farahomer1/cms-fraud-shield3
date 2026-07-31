@@ -1,0 +1,15 @@
+{
+    "format": "NCPDP Pharmacy",
+    "claim": {
+        "id": "ID      20",
+        "billing_provider": "Pharmacy Provider",
+        "services": [
+            {
+                "proc_code": "BRAND",
+                "charge": "45000.00",
+                "units": "1"
+            }
+        ],
+        "total_charge": "45000.00"
+    }
+}

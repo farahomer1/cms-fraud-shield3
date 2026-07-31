@@ -1,0 +1,251 @@
+# ============================================================================
+# MCP Toolbox — CMS enrollment integrity
+# Three fragmented sources, one governed gateway:
+#   Cloud SQL Postgres (structured core) + Spanner (identity/LEIE) + BigQuery (aggregates)
+# Tools are RETRIEVAL ONLY. Resolution/detection/scoring happen in the agent's
+# deterministic engine over what these return.
+# ============================================================================
+
+# ---------- SOURCES ----------
+
+kind: source
+name: enrollment-db
+type: cloud-sql-postgres
+project: noel-sandbox-02
+region: us-central1
+instance: enrollment-pg2
+database: enrollment
+user: postgres
+password: ${DB_PASSWORD}
+
+---
+kind: source
+name: identity-db
+type: spanner
+project: noel-sandbox-02
+instance: enrollment-identity
+database: identity
+
+---
+kind: source
+name: network-warehouse
+type: bigquery
+project: noel-sandbox-02
+location: US
+
+# ---------- TOOLS: structured core (Cloud SQL Postgres) ----------
+
+---
+kind: tool
+name: get-entity
+type: postgres-sql
+source: enrollment-db
+description: >-
+  Retrieve one enrollment applicant/entity by id. Returns legal name, type,
+  formed date, status, address id, agent id, application and revoked dates.
+parameters:
+  - name: entity_id
+    type: string
+    description: The entity id, e.g. 'ENT-COASTAL'.
+statement: >-
+  SELECT entity_id, legal_name, entity_type, formed_date, status,
+         address_id, agent_id, application_date, revoked_date
+  FROM entities WHERE entity_id = $1;
+
+---
+kind: tool
+name: list-entities
+type: postgres-sql
+source: enrollment-db
+description: >-
+  List all entities with id, legal name, type and status. Use to discover
+  applicant ids to screen.
+statement: >-
+  SELECT entity_id, legal_name, entity_type, status
+  FROM entities ORDER BY entity_id;
+
+---
+kind: tool
+name: get-ownership-for-entity
+type: postgres-sql
+source: enrollment-db
+description: >-
+  Return all ownership records (current and historical) for an entity:
+  ownership id, individual id, percentage, role, start and end dates.
+  A NULL end_date means a current owner.
+parameters:
+  - name: entity_id
+    type: string
+    description: The entity id to fetch ownership for.
+statement: >-
+  SELECT own_id, entity_id, individual_id, pct, role, start_date, end_date
+  FROM ownerships WHERE entity_id = $1;
+
+---
+kind: tool
+name: get-address
+type: postgres-sql
+source: enrollment-db
+description: Retrieve an address by id, including whether it is a commercial mail drop.
+parameters:
+  - name: address_id
+    type: string
+    description: The address id, e.g. 'ADDR-4471-214'.
+statement: >-
+  SELECT address_id, line, city, state, zip, is_cmra
+  FROM addresses WHERE address_id = $1;
+
+---
+kind: tool
+name: get-agent
+type: postgres-sql
+source: enrollment-db
+description: Retrieve a registered agent by id.
+parameters:
+  - name: agent_id
+    type: string
+    description: The registered agent id, e.g. 'AGT-SENTINEL'.
+statement: SELECT agent_id, name FROM registered_agents WHERE agent_id = $1;
+
+---
+kind: tool
+name: entities-by-agent
+type: postgres-sql
+source: enrollment-db
+description: >-
+  Return all entities using a given registered agent, with their status.
+  Used to detect a shared agent tied to a revoked entity.
+parameters:
+  - name: agent_id
+    type: string
+    description: The registered agent id to look up entities for.
+statement: >-
+  SELECT entity_id, legal_name, status
+  FROM entities WHERE agent_id = $1;
+
+---
+kind: tool
+name: entities-by-owner
+type: postgres-sql
+source: enrollment-db
+description: >-
+  Return the entity ids and status of entities owned (currently or historically)
+  by an individual. Used to surface a resolved person's ties to revoked entities.
+parameters:
+  - name: individual_id
+    type: string
+    description: The individual id to find owned entities for.
+statement: >-
+  SELECT DISTINCT e.entity_id, e.legal_name, e.status
+  FROM ownerships o JOIN entities e ON e.entity_id = o.entity_id
+  WHERE o.individual_id = $1;
+
+---
+kind: tool
+name: get-source-document
+type: postgres-sql
+source: enrollment-db
+description: >-
+  Return the source filing documents (title, type, and GCS location) on record
+  for an entity — e.g. the ownership disclosure or articles of organization that
+  a finding's cited record was extracted from. Use to cite provenance.
+parameters:
+  - name: entity_id
+    type: string
+    description: The entity id to fetch source documents for, e.g. 'ENT-COASTAL'.
+statement: >-
+  SELECT doc_id, record_id, doc_type, title, gcs_uri
+  FROM source_documents WHERE entity_id = $1;
+
+# ---------- TOOLS: identity + exclusion (Spanner) ----------
+
+---
+kind: tool
+name: resolve-identity-by-key
+type: spanner-sql
+source: identity-db
+description: >-
+  Resolve a person across name variations by their identifier. Returns all
+  individual records sharing the given ssn4 + dob, and whether any is on the
+  LEIE exclusion list. This is the join that unmasks a renamed owner.
+parameters:
+  - name: ssn4
+    type: string
+    description: The last four identifier digits for the person.
+  - name: dob
+    type: string
+    description: Date of birth, YYYY-MM-DD.
+statement: >-
+  SELECT individual_id, name, ssn4, dob, on_leie, leie_reason, leie_date
+  FROM individuals
+  WHERE ssn4 = @ssn4 AND dob = @dob;
+
+---
+kind: tool
+name: get-individual
+type: spanner-sql
+source: identity-db
+description: >-
+  Retrieve one individual record by id (name, ssn4, dob, LEIE status).
+parameters:
+  - name: individual_id
+    type: string
+    description: The individual id, e.g. 'IND-MALEN-LEIE'.
+statement: >-
+  SELECT individual_id, name, ssn4, dob, on_leie, leie_reason, leie_date
+  FROM individuals WHERE individual_id = @individual_id;
+
+# ---------- TOOLS: population aggregates (BigQuery) ----------
+
+---
+kind: tool
+name: entities-in-building
+type: bigquery-sql
+source: network-warehouse
+description: >-
+  Return all entities at the same physical building (mail-drop cluster check),
+  keyed by building_key. Includes status, dates and CMRA flag.
+parameters:
+  - name: building_key
+    type: string
+    description: The building key, e.g. '4471 Peachtree Industrial Blvd|30096'.
+statement: >-
+  SELECT entity_id, legal_name, status, application_date, formed_date, is_cmra
+  FROM `noel-sandbox-02.enrollment.entities_denorm`
+  WHERE building_key = @building_key;
+
+---
+kind: tool
+name: get-entity-denorm
+type: bigquery-sql
+source: network-warehouse
+description: >-
+  Return the denormalized row for one entity, including its building_key and
+  CMRA flag (used to derive the building for a cluster lookup).
+parameters:
+  - name: entity_id
+    type: string
+    description: The entity id to fetch the denormalized row for.
+statement: >-
+  SELECT entity_id, address_id, agent_id, building_key, is_cmra
+  FROM `noel-sandbox-02.enrollment.entities_denorm`
+  WHERE entity_id = @entity_id;
+
+# ---------- TOOLSET ----------
+
+---
+kind: toolset
+name: enrollment-integrity
+tools:
+  - get-entity
+  - list-entities
+  - get-ownership-for-entity
+  - get-address
+  - get-agent
+  - entities-by-agent
+  - entities-by-owner
+  - get-source-document
+  - resolve-identity-by-key
+  - get-individual
+  - entities-in-building
+  - get-entity-denorm

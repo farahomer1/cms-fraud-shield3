@@ -1,0 +1,26 @@
+{
+    "format": "X12 EDI",
+    "metadata": {
+        "sender": "SENDERID",
+        "receiver": "VA_RECEIVER"
+    },
+    "claim": {
+        "services": [
+            {
+                "proc_code": "11400",
+                "charge": "450.00",
+                "units": "1"
+            },
+            {
+                "proc_code": "12001:59",
+                "charge": "150.00",
+                "units": "1"
+            }
+        ],
+        "attachments": [],
+        "billing_provider": "DERM CLINIC",
+        "patient_name": "JAMES DOE",
+        "id": "TC-P-003",
+        "total_charge": "600.00"
+    }
+}

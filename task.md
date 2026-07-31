@@ -1,0 +1,21 @@
+# Task Checklist: CMS Fraud Shield Transition
+
+- `[ ]` Phase 1: Global Re-Branding to CMS Fraud Shield
+    - `[ ]` Update all global header titles and metadata references to "CMS Fraud Shield"
+    - `[ ]` Re-brand login pages, landing layouts, and themes to represent a secure protective perimeter
+    - `[ ]` Re-align sidebar routes and register constants
+- `[ ]` Phase 2: Integrating Noel's ADK Enrollment Agent
+    - `[ ]` Setup path and page `/enrollment-integrity`
+    - `[ ]` Build interactive Entity Linkage Graph displaying ownership layers (ENT-COASTAL)
+    - `[ ]` Add interactive adversarial purple-team simulation panel and hardening report
+- `[ ]` Phase 3: DME Fraud Ring & Database Seeding
+    - `[ ]` Model DME (Durable Medical Equipment) orthotics/wheelchairs fraud scenario
+    - `[ ]` Integrate Stone's synthetic dataset schema elements inside `seed.py`
+    - `[ ]` Populate claims database with synthetic DME fraud ring transactions
+- `[ ]` Phase 4: Proactive Policy Alerts & DOJ (NFED) Referrals
+    - `[ ]` Build Proactive Policy Amendment Alerts suggesting claims-edit closures (Rule #714)
+    - `[ ]` Build automated DOJ (NFED) and FBI Investigative Referral Brief generator and workspace
+    - `[ ]` Integrate Slide 4 Trust Fund Protection ROI statistics inside the analytics view
+- `[ ]` Phase 5: Verification & Quality Assurance
+    - `[ ]` Run typescript compile safety checks (`npx tsc --noEmit`)
+    - `[ ]` Perform role-based manual walk-through verification (MCR, Supervisor, Auditor, Admin)

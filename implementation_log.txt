@@ -1,0 +1,40 @@
+PIVOT BRANDING REFACTOR LOG — DEPARTMENT OF VETERANS AFFAIRS -> CENTERS FOR MEDICARE & MEDICAID SERVICES
+
+Date: 2026-07-22
+Author: Antigravity AI
+Task: Cosmetic refactoring of "Department of Veterans Affairs" to "Centers for Medicare & Medicaid Services" across the GUI data files, aligning them with the CMS-themed login screens.
+
+================================================================================
+MODIFIED FILES SUMMARY
+================================================================================
+
+1. data/va-policy/financial-policy.txt
+   - Path: ./data/va-policy/financial-policy.txt (and nested duplicate)
+   - Line 5: Renamed "The Department of Veterans Affairs" to "The Centers for Medicare & Medicaid Services" to update general provision chapter excerpts rendered in UI.
+
+2. data/demo-documents/edi-837i-001.txt
+   - Path: ./data/demo-documents/edi-837i-001.txt (and nested duplicate)
+   - Line 19: Renamed "DEPARTMENT OF VETERANS AFFAIRS" to "CENTERS FOR MEDICARE & MEDICAID SERVICES" (uppercase segment) inside the mock X12 EDI Institutional claim document.
+
+3. data/demo-documents/edi-837p-001.txt
+   - Path: ./data/demo-documents/edi-837p-001.txt (and nested duplicate)
+   - Line 19: Renamed "DEPARTMENT OF VETERANS AFFAIRS" to "CENTERS FOR MEDICARE & MEDICAID SERVICES" (uppercase segment) inside the mock X12 EDI Professional claim document.
+
+4. data/demo-documents/edi-837p-002.txt
+   - Path: ./data/demo-documents/edi-837p-002.txt (and nested duplicate)
+   - Line 19: Renamed "DEPARTMENT OF VETERANS AFFAIRS" to "CENTERS FOR MEDICARE & MEDICAID SERVICES" (uppercase segment) inside the second mock X12 EDI Professional claim document.
+
+5. frontend/src/pages/GoogleAuthPage.tsx
+   - Path: ./frontend/src/pages/GoogleAuthPage.tsx (and nested duplicate)
+   - Previously updated locally in working tree; verified that footer contains the correct branding string "Centers for Medicare & Medicaid Services — Authorized Use Only".
+
+6. frontend/src/pages/LoginPage.tsx
+   - Path: ./frontend/src/pages/LoginPage.tsx (and nested duplicate)
+   - Previously updated locally in working tree; verified that footer contains the correct branding string "Centers for Medicare & Medicaid Services — Authorized Use Only".
+
+================================================================================
+GIT BRANCH & COMMIT DETAILS
+================================================================================
+- Branch Name: brand/cms-rebranding
+- Commit Message: "brand: align policy, EDI claims, and login pages with Centers for Medicare & Medicaid Services branding"
+================================================================================

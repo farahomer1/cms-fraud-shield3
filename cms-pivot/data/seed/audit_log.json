@@ -1,0 +1,2190 @@
+[
+  {
+    "id": "aa000001-0000-4000-8000-000000000143",
+    "timestamp": "2025-08-01T08:00:00",
+    "actor": "system",
+    "actor_type": "system",
+    "action_type": "system",
+    "claim_id": null,
+    "details": {
+      "event": "system_startup",
+      "version": "1.2.0",
+      "environment": "production"
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000001",
+    "timestamp": "2025-08-05T09:30:00",
+    "actor": "system",
+    "actor_type": "system",
+    "action_type": "batch_event",
+    "claim_id": null,
+    "details": {
+      "event": "batch_received",
+      "batch_id": "c1000001-0000-4000-8000-000000000001",
+      "batch_name": "Batch-2025-08-05-Medical",
+      "file_count": 15
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000002",
+    "timestamp": "2025-08-05T09:32:00",
+    "actor": "system",
+    "actor_type": "system",
+    "action_type": "batch_event",
+    "claim_id": null,
+    "details": {
+      "event": "batch_processing_started",
+      "batch_id": "c1000001-0000-4000-8000-000000000001",
+      "batch_name": "Batch-2025-08-05-Medical"
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000042",
+    "timestamp": "2025-08-05T10:38:00",
+    "actor": "DBQ Fraud Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000011",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000031",
+      "recommendation": "pass",
+      "fraud_type": "dbq_fabrication",
+      "evidence_summary_preview": "DBQ template usage appears standard. Medical evidence supports the claimed disability rating increase."
+    },
+    "confidence_score": 92
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000064",
+    "timestamp": "2025-08-05T10:39:00",
+    "actor": "Overlapping Claim Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000018",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000055",
+      "recommendation": "flag",
+      "fraud_type": "overlapping_claims",
+      "evidence_summary_preview": "Same procedure billed 3 times across different claim types (medical, disability) within a 7-day window for the same vete"
+    },
+    "confidence_score": 79
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000043",
+    "timestamp": "2025-08-05T10:43:00",
+    "actor": "Pension Poaching Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000008",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000023",
+      "recommendation": "pass",
+      "fraud_type": "pension_poaching",
+      "evidence_summary_preview": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating."
+    },
+    "confidence_score": 83
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000020",
+    "timestamp": "2025-08-05T10:55:00",
+    "actor": "Claim Data Discrepancy Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000021",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000061",
+      "recommendation": "pass",
+      "fraud_type": "data_discrepancy",
+      "evidence_summary_preview": "Service date logic is valid. Diagnosis-to-procedure mapping is clinically appropriate. No data inconsistencies found."
+    },
+    "confidence_score": 97
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000016",
+    "timestamp": "2025-08-05T10:57:00",
+    "actor": "Data Validation Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000025",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000075",
+      "recommendation": "flag",
+      "fraud_type": "data_integrity",
+      "evidence_summary_preview": "Veteran SSN last-4 does not match VA MPI records. Possible identity mismatch or data entry error."
+    },
+    "confidence_score": 88
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000003",
+    "timestamp": "2025-08-05T10:58:00",
+    "actor": "system",
+    "actor_type": "system",
+    "action_type": "batch_event",
+    "claim_id": null,
+    "details": {
+      "event": "document_parsing_complete",
+      "batch_id": "c1000001-0000-4000-8000-000000000001",
+      "documents_parsed": 15
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000050",
+    "timestamp": "2025-08-05T11:05:00",
+    "actor": "Pension Poaching Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000019",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000058",
+      "recommendation": "pass",
+      "fraud_type": "pension_poaching",
+      "evidence_summary_preview": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating."
+    },
+    "confidence_score": 99
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000040",
+    "timestamp": "2025-08-05T11:10:00",
+    "actor": "Pension Poaching Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000029",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000085",
+      "recommendation": "pass",
+      "fraud_type": "pension_poaching",
+      "evidence_summary_preview": "Claim filed through accredited representative. Asset levels consistent with reported pension eligibility."
+    },
+    "confidence_score": 92
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000035",
+    "timestamp": "2025-08-05T11:38:00",
+    "actor": "Claim Data Discrepancy Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000016",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000049",
+      "recommendation": "pass",
+      "fraud_type": "data_discrepancy",
+      "evidence_summary_preview": "ICD-10 diagnosis codes are compatible with reported CPT procedure codes. Billing amount is consistent with fee schedule."
+    },
+    "confidence_score": 83
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000051",
+    "timestamp": "2025-08-05T11:40:00",
+    "actor": "DBQ Fraud Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000016",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000050",
+      "recommendation": "pass",
+      "fraud_type": "dbq_fabrication",
+      "evidence_summary_preview": "Disability questionnaire responses are internally consistent. Clinical findings align with reported diagnosis codes."
+    },
+    "confidence_score": 97
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000061",
+    "timestamp": "2025-08-05T11:51:00",
+    "actor": "Rules Engine",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000007",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000020",
+      "recommendation": "pass",
+      "fraud_type": "policy_violation",
+      "evidence_summary_preview": "All policy checks passed. Billing amount $26738 aligns with VA fee schedule for the reported procedures."
+    },
+    "confidence_score": 89
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000028",
+    "timestamp": "2025-08-05T12:04:00",
+    "actor": "DBQ Fraud Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000024",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000072",
+      "recommendation": "flag",
+      "fraud_type": "dbq_fabrication",
+      "evidence_summary_preview": "DBQ examination date and medical record dates are inconsistent. Reported symptoms do not align with clinical standards f"
+    },
+    "confidence_score": 89
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000041",
+    "timestamp": "2025-08-05T12:13:00",
+    "actor": "Data Validation Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000028",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000083",
+      "recommendation": "pass",
+      "fraud_type": "data_integrity",
+      "evidence_summary_preview": "Cross-reference with Death Master File shows no match. Provider NPI is valid and active. All identity fields consistent."
+    },
+    "confidence_score": 99
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000039",
+    "timestamp": "2025-08-05T12:18:00",
+    "actor": "Overlapping Claim Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000016",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000047",
+      "recommendation": "pass",
+      "fraud_type": "overlapping_claims",
+      "evidence_summary_preview": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected."
+    },
+    "confidence_score": 96
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000049",
+    "timestamp": "2025-08-05T12:25:00",
+    "actor": "Claim Data Discrepancy Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000018",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000053",
+      "recommendation": "flag",
+      "fraud_type": "data_discrepancy",
+      "evidence_summary_preview": "CPT code combination is clinically implausible for the reported diagnosis. Modifier usage suggests unbundling of service"
+    },
+    "confidence_score": 81
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000054",
+    "timestamp": "2025-08-05T12:40:00",
+    "actor": "DBQ Fraud Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000017",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000052",
+      "recommendation": "pass",
+      "fraud_type": "dbq_fabrication",
+      "evidence_summary_preview": "Disability questionnaire responses are internally consistent. Clinical findings align with reported diagnosis codes."
+    },
+    "confidence_score": 84
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000052",
+    "timestamp": "2025-08-05T12:44:00",
+    "actor": "Pension Poaching Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000007",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000019",
+      "recommendation": "flag",
+      "fraud_type": "pension_poaching",
+      "evidence_summary_preview": "Unaccredited consultant charging $8656 for pension claim preparation. Fee exceeds reasonable range by 450%."
+    },
+    "confidence_score": 80
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000029",
+    "timestamp": "2025-08-05T12:50:00",
+    "actor": "Claim Data Discrepancy Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000004",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000008",
+      "recommendation": "flag",
+      "fraud_type": "data_discrepancy",
+      "evidence_summary_preview": "CPT code combination is clinically implausible for the reported diagnosis. Modifier usage suggests unbundling of service"
+    },
+    "confidence_score": 75
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000062",
+    "timestamp": "2025-08-05T12:50:00",
+    "actor": "Rules Engine",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000009",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000026",
+      "recommendation": "pass",
+      "fraud_type": "policy_violation",
+      "evidence_summary_preview": "Service date falls within acceptable window. Provider eligibility confirmed. Benefit code compliance verified."
+    },
+    "confidence_score": 95
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000021",
+    "timestamp": "2025-08-05T12:52:00",
+    "actor": "Claim Data Discrepancy Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000013",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000038",
+      "recommendation": "pass",
+      "fraud_type": "data_discrepancy",
+      "evidence_summary_preview": "All claim fields are internally consistent. Admission dates align with service dates. Billing within expected range."
+    },
+    "confidence_score": 94
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000026",
+    "timestamp": "2025-08-05T12:56:00",
+    "actor": "Rules Engine",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000001",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000001",
+      "recommendation": "pass",
+      "fraud_type": "policy_violation",
+      "evidence_summary_preview": "Billing amount of $7517 is within expected range for procedure codes. Service date is valid and provider is eligible."
+    },
+    "confidence_score": 89
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000053",
+    "timestamp": "2025-08-05T12:59:00",
+    "actor": "DBQ Fraud Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000008",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000021",
+      "recommendation": "pass",
+      "fraud_type": "dbq_fabrication",
+      "evidence_summary_preview": "DBQ template usage appears standard. Medical evidence supports the claimed disability rating increase."
+    },
+    "confidence_score": 89
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000032",
+    "timestamp": "2025-08-05T13:04:00",
+    "actor": "DBQ Fraud Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000015",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000045",
+      "recommendation": "pass",
+      "fraud_type": "dbq_fabrication",
+      "evidence_summary_preview": "Disability questionnaire responses are internally consistent. Clinical findings align with reported diagnosis codes."
+    },
+    "confidence_score": 99
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000046",
+    "timestamp": "2025-08-05T13:16:00",
+    "actor": "Claim Data Discrepancy Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000023",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000067",
+      "recommendation": "flag",
+      "fraud_type": "data_discrepancy",
+      "evidence_summary_preview": "Billing amount $11153 is 4.2x the expected amount for the reported procedures. Service date 2025-09-19 predates the diag"
+    },
+    "confidence_score": 94
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000004",
+    "timestamp": "2025-08-05T13:23:00",
+    "actor": "system",
+    "actor_type": "system",
+    "action_type": "batch_event",
+    "claim_id": null,
+    "details": {
+      "event": "agent_analysis_complete",
+      "batch_id": "c1000001-0000-4000-8000-000000000001",
+      "claims_analyzed": 30
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000005",
+    "timestamp": "2025-08-05T13:28:00",
+    "actor": "system",
+    "actor_type": "system",
+    "action_type": "batch_event",
+    "claim_id": null,
+    "details": {
+      "event": "batch_completed",
+      "batch_id": "c1000001-0000-4000-8000-000000000001",
+      "batch_name": "Batch-2025-08-05-Medical",
+      "total_claims": 30,
+      "flagged": 8
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000068",
+    "timestamp": "2025-08-05T15:33:00",
+    "actor": "Michael.Torres@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000003",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000003",
+      "decision_type": "approved",
+      "rationale_preview": "Agent analysis complete. No fraud indicators detected. Billing amount within expected range for procedures.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000071",
+    "timestamp": "2025-08-05T16:45:00",
+    "actor": "David.Reeves@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000006",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000006",
+      "decision_type": "approved",
+      "rationale_preview": "Claims data validated against veteran record and provider history. No anomalies detected.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000080",
+    "timestamp": "2025-08-05T18:33:00",
+    "actor": "Sarah.Jenkins@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000016",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000015",
+      "decision_type": "approved",
+      "rationale_preview": "Claims data validated against veteran record and provider history. No anomalies detected.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000070",
+    "timestamp": "2025-08-05T19:14:00",
+    "actor": "Sarah.Jenkins@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000005",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000005",
+      "decision_type": "approved",
+      "rationale_preview": "Claims data validated against veteran record and provider history. No anomalies detected.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000078",
+    "timestamp": "2025-08-06T02:40:00",
+    "actor": "David.Reeves@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000014",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000013",
+      "decision_type": "false_positive",
+      "rationale_preview": "Agent flagged billing amount as anomalous, but manual review confirms amount is justified by documented medical necessit",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000072",
+    "timestamp": "2025-08-06T03:12:00",
+    "actor": "David.Reeves@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000007",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000007",
+      "decision_type": "denied",
+      "rationale_preview": "Agent findings corroborated by external data sources. Claim denied. Savings: $21800.07.",
+      "savings_amount": 21800.07
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000086",
+    "timestamp": "2025-08-06T05:00:00",
+    "actor": "Sarah.Jenkins@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000025",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000021",
+      "decision_type": "approved",
+      "rationale_preview": "All agent findings returned pass. Claim data is consistent and within VA policy guidelines.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000075",
+    "timestamp": "2025-08-06T05:26:00",
+    "actor": "Sarah.Jenkins@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000011",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000010",
+      "decision_type": "approved",
+      "rationale_preview": "Reviewed agent findings and supporting documentation. Claim meets all VA payment criteria.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000076",
+    "timestamp": "2025-08-06T08:45:00",
+    "actor": "Sarah.Jenkins@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000012",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000011",
+      "decision_type": "denied",
+      "rationale_preview": "Claim data discrepancies confirmed upon manual review. Diagnosis-procedure mismatch verified. Savings: $34721.01.",
+      "savings_amount": 34721.01
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000079",
+    "timestamp": "2025-08-06T12:39:00",
+    "actor": "Jennifer.Walsh@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000015",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000014",
+      "decision_type": "approved",
+      "rationale_preview": "Agent analysis complete. No fraud indicators detected. Billing amount within expected range for procedures.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000090",
+    "timestamp": "2025-08-06T15:31:00",
+    "actor": "Amanda.Brooks@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000029",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000025",
+      "decision_type": "approved",
+      "rationale_preview": "Reviewed agent findings and supporting documentation. Claim meets all VA payment criteria.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000081",
+    "timestamp": "2025-08-06T21:12:00",
+    "actor": "Amanda.Brooks@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000017",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000016",
+      "decision_type": "approved",
+      "rationale_preview": "Automated review passed all 8 agent checks. Manual spot-check confirmed clean claim.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000077",
+    "timestamp": "2025-08-07T00:43:00",
+    "actor": "Jennifer.Walsh@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000013",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000012",
+      "decision_type": "approved",
+      "rationale_preview": "Automated review passed all 8 agent checks. Manual spot-check confirmed clean claim.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000089",
+    "timestamp": "2025-08-07T03:59:00",
+    "actor": "Michael.Torres@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000028",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000024",
+      "decision_type": "false_positive",
+      "rationale_preview": "Agent flagged billing amount as anomalous, but manual review confirms amount is justified by documented medical necessit",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000066",
+    "timestamp": "2025-08-07T13:29:00",
+    "actor": "David.Reeves@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000001",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000001",
+      "decision_type": "approved",
+      "rationale_preview": "Automated review passed all 8 agent checks. Manual spot-check confirmed clean claim.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000083",
+    "timestamp": "2025-08-07T16:06:00",
+    "actor": "Jennifer.Walsh@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000020",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000018",
+      "decision_type": "approved",
+      "rationale_preview": "All agent findings returned pass. Claim data is consistent and within VA policy guidelines.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000074",
+    "timestamp": "2025-08-07T17:00:00",
+    "actor": "Michael.Torres@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000009",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000009",
+      "decision_type": "approved",
+      "rationale_preview": "Automated review passed all 8 agent checks. Manual spot-check confirmed clean claim.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000087",
+    "timestamp": "2025-08-07T20:48:00",
+    "actor": "Michael.Torres@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000026",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000022",
+      "decision_type": "approved",
+      "rationale_preview": "All agent findings returned pass. Claim data is consistent and within VA policy guidelines.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000084",
+    "timestamp": "2025-08-07T21:01:00",
+    "actor": "David.Reeves@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000021",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000019",
+      "decision_type": "denied",
+      "rationale_preview": "Data Validation Agent and Rules Engine both flagged critical issues. Claim denied pending provider audit. Savings: $3651",
+      "savings_amount": 36513.58
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000067",
+    "timestamp": "2025-08-07T21:06:00",
+    "actor": "Amanda.Brooks@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000002",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000002",
+      "decision_type": "approved",
+      "rationale_preview": "Agent analysis complete. No fraud indicators detected. Billing amount within expected range for procedures.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000073",
+    "timestamp": "2025-08-08T02:37:00",
+    "actor": "Michael.Torres@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000008",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000008",
+      "decision_type": "approved",
+      "rationale_preview": "Agent analysis complete. No fraud indicators detected. Billing amount within expected range for procedures.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000069",
+    "timestamp": "2025-08-08T04:39:00",
+    "actor": "Amanda.Brooks@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000004",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000004",
+      "decision_type": "denied",
+      "rationale_preview": "Agent findings corroborated by external data sources. Claim denied. Savings: $12604.95.",
+      "savings_amount": 12604.95
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000091",
+    "timestamp": "2025-08-08T05:34:00",
+    "actor": "David.Reeves@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000030",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000026",
+      "decision_type": "approved",
+      "rationale_preview": "All agent findings returned pass. Claim data is consistent and within VA policy guidelines.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000085",
+    "timestamp": "2025-08-08T07:47:00",
+    "actor": "Michael.Torres@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000022",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000020",
+      "decision_type": "approved",
+      "rationale_preview": "Claims data validated against veteran record and provider history. No anomalies detected.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000082",
+    "timestamp": "2025-08-08T08:19:00",
+    "actor": "David.Reeves@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000019",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000017",
+      "decision_type": "approved",
+      "rationale_preview": "Claims data validated against veteran record and provider history. No anomalies detected.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000088",
+    "timestamp": "2025-08-08T12:47:00",
+    "actor": "David.Reeves@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000027",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000023",
+      "decision_type": "approved",
+      "rationale_preview": "Automated review passed all 8 agent checks. Manual spot-check confirmed clean claim.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000144",
+    "timestamp": "2025-08-13T10:00:00",
+    "actor": "system",
+    "actor_type": "system",
+    "action_type": "system",
+    "claim_id": null,
+    "details": {
+      "event": "model_refresh",
+      "model": "gemini-2.5-pro",
+      "agents_updated": 8
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000006",
+    "timestamp": "2025-08-22T10:15:00",
+    "actor": "system",
+    "actor_type": "system",
+    "action_type": "batch_event",
+    "claim_id": null,
+    "details": {
+      "event": "batch_received",
+      "batch_id": "c1000001-0000-4000-8000-000000000002",
+      "batch_name": "Batch-2025-08-22-Mixed",
+      "file_count": 12
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000007",
+    "timestamp": "2025-08-22T10:17:00",
+    "actor": "system",
+    "actor_type": "system",
+    "action_type": "batch_event",
+    "claim_id": null,
+    "details": {
+      "event": "batch_processing_started",
+      "batch_id": "c1000001-0000-4000-8000-000000000002",
+      "batch_name": "Batch-2025-08-22-Mixed"
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000047",
+    "timestamp": "2025-08-22T11:30:00",
+    "actor": "DBQ Fraud Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000047",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000137",
+      "recommendation": "pass",
+      "fraud_type": "dbq_fabrication",
+      "evidence_summary_preview": "Disability questionnaire responses are internally consistent. Clinical findings align with reported diagnosis codes."
+    },
+    "confidence_score": 87
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000044",
+    "timestamp": "2025-08-22T11:33:00",
+    "actor": "Claim Data Discrepancy Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000049",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000142",
+      "recommendation": "pass",
+      "fraud_type": "data_discrepancy",
+      "evidence_summary_preview": "All claim fields are internally consistent. Admission dates align with service dates. Billing within expected range."
+    },
+    "confidence_score": 84
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000008",
+    "timestamp": "2025-08-22T11:39:00",
+    "actor": "system",
+    "actor_type": "system",
+    "action_type": "batch_event",
+    "claim_id": null,
+    "details": {
+      "event": "document_parsing_complete",
+      "batch_id": "c1000001-0000-4000-8000-000000000002",
+      "documents_parsed": 12
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000017",
+    "timestamp": "2025-08-22T11:44:00",
+    "actor": "Claim Sharking Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000042",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000122",
+      "recommendation": "flag",
+      "fraud_type": "claim_sharking",
+      "evidence_summary_preview": "Veteran was solicited within 48 hours of discharge. Claim amount $23434 includes undisclosed consulting surcharge."
+    },
+    "confidence_score": 85
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000060",
+    "timestamp": "2025-08-22T11:57:00",
+    "actor": "Data Validation Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000047",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000138",
+      "recommendation": "pass",
+      "fraud_type": "data_integrity",
+      "evidence_summary_preview": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified."
+    },
+    "confidence_score": 99
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000036",
+    "timestamp": "2025-08-22T12:16:00",
+    "actor": "Claim Sharking Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000044",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000130",
+      "recommendation": "pass",
+      "fraud_type": "claim_sharking",
+      "evidence_summary_preview": "Claim amounts consistent with disability rating and service-connected conditions. No consulting scheme indicators."
+    },
+    "confidence_score": 83
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000023",
+    "timestamp": "2025-08-22T12:29:00",
+    "actor": "Data Validation Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000055",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000162",
+      "recommendation": "pass",
+      "fraud_type": "data_integrity",
+      "evidence_summary_preview": "Veteran vital status confirmed alive via MVI cross-reference. SSN last-4 validated. Provider NPI 5621463184 verified in "
+    },
+    "confidence_score": 83
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000048",
+    "timestamp": "2025-08-22T12:51:00",
+    "actor": "Medical Record Manipulation Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000041",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000121",
+      "recommendation": "pass",
+      "fraud_type": "record_manipulation",
+      "evidence_summary_preview": "Document metadata is consistent. Image analysis shows no evidence of alteration or deepfake indicators."
+    },
+    "confidence_score": 99
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000031",
+    "timestamp": "2025-08-22T13:03:00",
+    "actor": "Claim Data Discrepancy Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000044",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000128",
+      "recommendation": "pass",
+      "fraud_type": "data_discrepancy",
+      "evidence_summary_preview": "ICD-10 diagnosis codes are compatible with reported CPT procedure codes. Billing amount is consistent with fee schedule."
+    },
+    "confidence_score": 98
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000019",
+    "timestamp": "2025-08-22T13:18:00",
+    "actor": "Pension Poaching Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000053",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000157",
+      "recommendation": "pass",
+      "fraud_type": "pension_poaching",
+      "evidence_summary_preview": "Representative is accredited with VA OGC. No patterns of pension benefit exploitation identified."
+    },
+    "confidence_score": 96
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000038",
+    "timestamp": "2025-08-22T13:20:00",
+    "actor": "Medical Record Manipulation Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000034",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000100",
+      "recommendation": "pass",
+      "fraud_type": "record_manipulation",
+      "evidence_summary_preview": "Document metadata is consistent. Image analysis shows no evidence of alteration or deepfake indicators."
+    },
+    "confidence_score": 89
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000057",
+    "timestamp": "2025-08-22T13:20:00",
+    "actor": "Overlapping Claim Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000039",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000113",
+      "recommendation": "flag",
+      "fraud_type": "overlapping_claims",
+      "evidence_summary_preview": "Same procedure billed 3 times across different claim types (medical, disability) within a 7-day window for the same vete"
+    },
+    "confidence_score": 74
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000018",
+    "timestamp": "2025-08-22T13:47:00",
+    "actor": "Medical Record Manipulation Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000049",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000143",
+      "recommendation": "pass",
+      "fraud_type": "record_manipulation",
+      "evidence_summary_preview": "Medical records appear authentic. No signs of digital tampering or document fabrication detected."
+    },
+    "confidence_score": 96
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000009",
+    "timestamp": "2025-08-22T13:59:00",
+    "actor": "system",
+    "actor_type": "system",
+    "action_type": "batch_event",
+    "claim_id": null,
+    "details": {
+      "event": "agent_analysis_complete",
+      "batch_id": "c1000001-0000-4000-8000-000000000002",
+      "claims_analyzed": 25
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000025",
+    "timestamp": "2025-08-22T14:00:00",
+    "actor": "DBQ Fraud Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000044",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000129",
+      "recommendation": "pass",
+      "fraud_type": "dbq_fabrication",
+      "evidence_summary_preview": "DBQ template usage appears standard. Medical evidence supports the claimed disability rating increase."
+    },
+    "confidence_score": 82
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000010",
+    "timestamp": "2025-08-22T14:04:00",
+    "actor": "system",
+    "actor_type": "system",
+    "action_type": "batch_event",
+    "claim_id": null,
+    "details": {
+      "event": "batch_completed",
+      "batch_id": "c1000001-0000-4000-8000-000000000002",
+      "batch_name": "Batch-2025-08-22-Mixed",
+      "total_claims": 25,
+      "flagged": 6
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000056",
+    "timestamp": "2025-08-22T14:06:00",
+    "actor": "DBQ Fraud Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000049",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000144",
+      "recommendation": "flag",
+      "fraud_type": "dbq_fabrication",
+      "evidence_summary_preview": "DBQ examination date and medical record dates are inconsistent. Reported symptoms do not align with clinical standards f"
+    },
+    "confidence_score": 94
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000058",
+    "timestamp": "2025-08-22T14:07:00",
+    "actor": "Claim Sharking Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000051",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000153",
+      "recommendation": "pass",
+      "fraud_type": "claim_sharking",
+      "evidence_summary_preview": "No indicators of unaccredited consulting fees. Benefit claim amount aligns with standard VA compensation tables."
+    },
+    "confidence_score": 97
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000092",
+    "timestamp": "2025-08-22T20:16:00",
+    "actor": "Michael.Torres@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000031",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000027",
+      "decision_type": "approved",
+      "rationale_preview": "Reviewed agent findings and supporting documentation. Claim meets all VA payment criteria.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000097",
+    "timestamp": "2025-08-23T03:04:00",
+    "actor": "Sarah.Jenkins@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000037",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000032",
+      "decision_type": "approved",
+      "rationale_preview": "Automated review passed all 8 agent checks. Manual spot-check confirmed clean claim.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000094",
+    "timestamp": "2025-08-23T03:57:00",
+    "actor": "Jennifer.Walsh@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000033",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000029",
+      "decision_type": "denied",
+      "rationale_preview": "Agent findings corroborated by external data sources. Claim denied. Savings: $26962.85.",
+      "savings_amount": 26962.85
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000106",
+    "timestamp": "2025-08-23T04:09:00",
+    "actor": "Michael.Torres@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000047",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000041",
+      "decision_type": "approved",
+      "rationale_preview": "Reviewed agent findings and supporting documentation. Claim meets all VA payment criteria.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000095",
+    "timestamp": "2025-08-23T05:47:00",
+    "actor": "David.Reeves@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000034",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000030",
+      "decision_type": "approved",
+      "rationale_preview": "Claims data validated against veteran record and provider history. No anomalies detected.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000099",
+    "timestamp": "2025-08-23T05:57:00",
+    "actor": "Amanda.Brooks@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000039",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000034",
+      "decision_type": "denied",
+      "rationale_preview": "Data Validation Agent and Rules Engine both flagged critical issues. Claim denied pending provider audit. Savings: $4350",
+      "savings_amount": 43507.86
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000093",
+    "timestamp": "2025-08-23T10:15:00",
+    "actor": "David.Reeves@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000032",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000028",
+      "decision_type": "approved",
+      "rationale_preview": "Claims data validated against veteran record and provider history. No anomalies detected.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000109",
+    "timestamp": "2025-08-23T17:04:00",
+    "actor": "Jennifer.Walsh@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000050",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000044",
+      "decision_type": "false_positive",
+      "rationale_preview": "DBQ fraud flag triggered by template similarity, but provider confirmed using VA-standard DBQ forms. Expected similarity",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000096",
+    "timestamp": "2025-08-23T18:58:00",
+    "actor": "Jennifer.Walsh@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000035",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000031",
+      "decision_type": "approved",
+      "rationale_preview": "Agent analysis complete. No fraud indicators detected. Billing amount within expected range for procedures.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000105",
+    "timestamp": "2025-08-24T00:33:00",
+    "actor": "Sarah.Jenkins@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000046",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000040",
+      "decision_type": "approved",
+      "rationale_preview": "Reviewed agent findings and supporting documentation. Claim meets all VA payment criteria.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000110",
+    "timestamp": "2025-08-24T03:38:00",
+    "actor": "David.Reeves@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000051",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000045",
+      "decision_type": "approved",
+      "rationale_preview": "Automated review passed all 8 agent checks. Manual spot-check confirmed clean claim.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000108",
+    "timestamp": "2025-08-24T09:13:00",
+    "actor": "Sarah.Jenkins@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000049",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000043",
+      "decision_type": "denied",
+      "rationale_preview": "Claim data discrepancies confirmed upon manual review. Diagnosis-procedure mismatch verified. Savings: $6073.47.",
+      "savings_amount": 6073.47
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000100",
+    "timestamp": "2025-08-24T17:33:00",
+    "actor": "Sarah.Jenkins@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000040",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000035",
+      "decision_type": "approved",
+      "rationale_preview": "Automated review passed all 8 agent checks. Manual spot-check confirmed clean claim.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000103",
+    "timestamp": "2025-08-24T19:27:00",
+    "actor": "Amanda.Brooks@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000043",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000038",
+      "decision_type": "approved",
+      "rationale_preview": "Agent analysis complete. No fraud indicators detected. Billing amount within expected range for procedures.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000114",
+    "timestamp": "2025-08-24T20:10:00",
+    "actor": "David.Reeves@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000055",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000049",
+      "decision_type": "approved",
+      "rationale_preview": "Automated review passed all 8 agent checks. Manual spot-check confirmed clean claim.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000098",
+    "timestamp": "2025-08-24T22:25:00",
+    "actor": "Amanda.Brooks@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000038",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000033",
+      "decision_type": "approved",
+      "rationale_preview": "Agent analysis complete. No fraud indicators detected. Billing amount within expected range for procedures.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000104",
+    "timestamp": "2025-08-24T23:09:00",
+    "actor": "David.Reeves@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000044",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000039",
+      "decision_type": "approved",
+      "rationale_preview": "Reviewed agent findings and supporting documentation. Claim meets all VA payment criteria.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000101",
+    "timestamp": "2025-08-25T03:11:00",
+    "actor": "Sarah.Jenkins@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000041",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000036",
+      "decision_type": "approved",
+      "rationale_preview": "All agent findings returned pass. Claim data is consistent and within VA policy guidelines.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000111",
+    "timestamp": "2025-08-25T06:02:00",
+    "actor": "Jennifer.Walsh@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000052",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000046",
+      "decision_type": "approved",
+      "rationale_preview": "Automated review passed all 8 agent checks. Manual spot-check confirmed clean claim.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000102",
+    "timestamp": "2025-08-25T06:49:00",
+    "actor": "Michael.Torres@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000042",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000037",
+      "decision_type": "denied",
+      "rationale_preview": "Agent findings corroborated by external data sources. Claim denied. Savings: $14980.02.",
+      "savings_amount": 14980.02
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000145",
+    "timestamp": "2025-08-25T08:00:00",
+    "actor": "system",
+    "actor_type": "system",
+    "action_type": "system",
+    "claim_id": null,
+    "details": {
+      "event": "database_maintenance",
+      "action": "vacuum_analyze",
+      "tables": 9
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000113",
+    "timestamp": "2025-08-25T08:49:00",
+    "actor": "Jennifer.Walsh@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000054",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000048",
+      "decision_type": "denied",
+      "rationale_preview": "Multiple agent findings flagged this claim. Billing amount significantly exceeds fee schedule. Savings: $10964.8.",
+      "savings_amount": 10964.8
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000107",
+    "timestamp": "2025-08-25T11:35:00",
+    "actor": "Amanda.Brooks@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000048",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000042",
+      "decision_type": "approved",
+      "rationale_preview": "All agent findings returned pass. Claim data is consistent and within VA policy guidelines.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000112",
+    "timestamp": "2025-08-25T11:40:00",
+    "actor": "Sarah.Jenkins@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000053",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000047",
+      "decision_type": "approved",
+      "rationale_preview": "Claims data validated against veteran record and provider history. No anomalies detected.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000146",
+    "timestamp": "2025-09-06T11:00:00",
+    "actor": "system",
+    "actor_type": "system",
+    "action_type": "system",
+    "claim_id": null,
+    "details": {
+      "event": "agent_prompt_updated",
+      "agent": "Data Validation Agent",
+      "version": "2.1"
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000011",
+    "timestamp": "2025-09-10T08:45:00",
+    "actor": "system",
+    "actor_type": "system",
+    "action_type": "batch_event",
+    "claim_id": null,
+    "details": {
+      "event": "batch_received",
+      "batch_id": "c1000001-0000-4000-8000-000000000003",
+      "batch_name": "Batch-2025-09-10-Disability",
+      "file_count": 13
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000012",
+    "timestamp": "2025-09-10T08:47:00",
+    "actor": "system",
+    "actor_type": "system",
+    "action_type": "batch_event",
+    "claim_id": null,
+    "details": {
+      "event": "batch_processing_started",
+      "batch_id": "c1000001-0000-4000-8000-000000000003",
+      "batch_name": "Batch-2025-09-10-Disability"
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000030",
+    "timestamp": "2025-09-10T10:04:00",
+    "actor": "Overlapping Claim Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000073",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000214",
+      "recommendation": "pass",
+      "fraud_type": "overlapping_claims",
+      "evidence_summary_preview": "Cross-batch analysis shows no overlapping claims for the same service period or procedure."
+    },
+    "confidence_score": 97
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000055",
+    "timestamp": "2025-09-10T10:04:00",
+    "actor": "Pension Poaching Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000060",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000179",
+      "recommendation": "flag",
+      "fraud_type": "pension_poaching",
+      "evidence_summary_preview": "Pattern match: 4 veterans in same ZIP code filed identical pension claims through this unaccredited provider within 30 d"
+    },
+    "confidence_score": 73
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000013",
+    "timestamp": "2025-09-10T10:09:00",
+    "actor": "system",
+    "actor_type": "system",
+    "action_type": "batch_event",
+    "claim_id": null,
+    "details": {
+      "event": "document_parsing_complete",
+      "batch_id": "c1000001-0000-4000-8000-000000000003",
+      "documents_parsed": 13
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000063",
+    "timestamp": "2025-09-10T10:13:00",
+    "actor": "Rules Engine",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000061",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000182",
+      "recommendation": "pass",
+      "fraud_type": "policy_violation",
+      "evidence_summary_preview": "Service date falls within acceptable window. Provider eligibility confirmed. Benefit code compliance verified."
+    },
+    "confidence_score": 93
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000059",
+    "timestamp": "2025-09-10T10:14:00",
+    "actor": "DBQ Fraud Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000061",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000181",
+      "recommendation": "flag",
+      "fraud_type": "dbq_fabrication",
+      "evidence_summary_preview": "Disability questionnaire claims 100% disability for condition with median rating of 30%. Clinical findings section uses "
+    },
+    "confidence_score": 79
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000022",
+    "timestamp": "2025-09-10T10:17:00",
+    "actor": "Data Validation Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000079",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000234",
+      "recommendation": "flag",
+      "fraud_type": "data_integrity",
+      "evidence_summary_preview": "Provider NPI 1682781467 is not found in NPPES registry. Provider identity cannot be validated."
+    },
+    "confidence_score": 98
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000027",
+    "timestamp": "2025-09-10T10:21:00",
+    "actor": "DBQ Fraud Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000074",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000218",
+      "recommendation": "pass",
+      "fraud_type": "dbq_fabrication",
+      "evidence_summary_preview": "No fabrication indicators detected in disability evaluation. Examination findings are clinically plausible."
+    },
+    "confidence_score": 94
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000024",
+    "timestamp": "2025-09-10T11:43:00",
+    "actor": "Rules Engine",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000058",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000170",
+      "recommendation": "pass",
+      "fraud_type": "policy_violation",
+      "evidence_summary_preview": "All policy checks passed. Billing amount $19892 aligns with VA fee schedule for the reported procedures."
+    },
+    "confidence_score": 88
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000065",
+    "timestamp": "2025-09-10T11:54:00",
+    "actor": "DBQ Fraud Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000072",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000212",
+      "recommendation": "pass",
+      "fraud_type": "dbq_fabrication",
+      "evidence_summary_preview": "No fabrication indicators detected in disability evaluation. Examination findings are clinically plausible."
+    },
+    "confidence_score": 89
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000045",
+    "timestamp": "2025-09-10T11:56:00",
+    "actor": "Claim Data Discrepancy Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000068",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000200",
+      "recommendation": "flag",
+      "fraud_type": "data_discrepancy",
+      "evidence_summary_preview": "Billing amount $11736 is 4.2x the expected amount for the reported procedures. Service date 2025-09-25 predates the diag"
+    },
+    "confidence_score": 68
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000034",
+    "timestamp": "2025-09-10T12:05:00",
+    "actor": "Pension Poaching Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000071",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000209",
+      "recommendation": "pass",
+      "fraud_type": "pension_poaching",
+      "evidence_summary_preview": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating."
+    },
+    "confidence_score": 87
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000037",
+    "timestamp": "2025-09-10T12:16:00",
+    "actor": "DBQ Fraud Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000075",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000222",
+      "recommendation": "flag",
+      "fraud_type": "dbq_fabrication",
+      "evidence_summary_preview": "DBQ examination date and medical record dates are inconsistent. Reported symptoms do not align with clinical standards f"
+    },
+    "confidence_score": 93
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000014",
+    "timestamp": "2025-09-10T12:21:00",
+    "actor": "system",
+    "actor_type": "system",
+    "action_type": "batch_event",
+    "claim_id": null,
+    "details": {
+      "event": "agent_analysis_complete",
+      "batch_id": "c1000001-0000-4000-8000-000000000003",
+      "claims_analyzed": 25
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000033",
+    "timestamp": "2025-09-10T12:25:00",
+    "actor": "DBQ Fraud Agent",
+    "actor_type": "agent",
+    "action_type": "finding",
+    "claim_id": "d1000001-0000-4000-8000-000000000069",
+    "details": {
+      "finding_id": "e1000001-0000-4000-8000-000000000203",
+      "recommendation": "flag",
+      "fraud_type": "dbq_fabrication",
+      "evidence_summary_preview": "Disability questionnaire claims 100% disability for condition with median rating of 30%. Clinical findings section uses "
+    },
+    "confidence_score": 77
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000015",
+    "timestamp": "2025-09-10T12:26:00",
+    "actor": "system",
+    "actor_type": "system",
+    "action_type": "batch_event",
+    "claim_id": null,
+    "details": {
+      "event": "batch_completed",
+      "batch_id": "c1000001-0000-4000-8000-000000000003",
+      "batch_name": "Batch-2025-09-10-Disability",
+      "total_claims": 25,
+      "flagged": 7
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000133",
+    "timestamp": "2025-09-10T14:48:00",
+    "actor": "David.Reeves@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000076",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000068",
+      "decision_type": "denied",
+      "rationale_preview": "Overlapping claim detected with existing approved claim. Duplicate billing confirmed. Savings: $21539.67.",
+      "savings_amount": 21539.67
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000124",
+    "timestamp": "2025-09-10T17:39:00",
+    "actor": "David.Reeves@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000066",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000059",
+      "decision_type": "approved",
+      "rationale_preview": "Reviewed agent findings and supporting documentation. Claim meets all VA payment criteria.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000139",
+    "timestamp": "2025-09-10T17:52:00",
+    "actor": "Michael.Torres@va.gov",
+    "actor_type": "human",
+    "action_type": "ticket",
+    "claim_id": "d1000001-0000-4000-8000-000000000028",
+    "details": {
+      "ticket_type": "false_positive_feedback",
+      "decision_id": "f1000001-0000-4000-8000-000000000024",
+      "feedback": "Agent flagged billing amount as anomalous, but manual review confirms amount is justified by documented medical necessity and complexity."
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000140",
+    "timestamp": "2025-09-10T20:09:00",
+    "actor": "Jennifer.Walsh@va.gov",
+    "actor_type": "human",
+    "action_type": "ticket",
+    "claim_id": "d1000001-0000-4000-8000-000000000050",
+    "details": {
+      "ticket_type": "false_positive_feedback",
+      "decision_id": "f1000001-0000-4000-8000-000000000044",
+      "feedback": "DBQ fraud flag triggered by template similarity, but provider confirmed using VA-standard DBQ forms. Expected similarity pattern."
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000121",
+    "timestamp": "2025-09-10T20:58:00",
+    "actor": "Jennifer.Walsh@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000062",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000056",
+      "decision_type": "approved",
+      "rationale_preview": "Reviewed agent findings and supporting documentation. Claim meets all VA payment criteria.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000138",
+    "timestamp": "2025-09-10T22:12:00",
+    "actor": "David.Reeves@va.gov",
+    "actor_type": "human",
+    "action_type": "ticket",
+    "claim_id": "d1000001-0000-4000-8000-000000000014",
+    "details": {
+      "ticket_type": "false_positive_feedback",
+      "decision_id": "f1000001-0000-4000-8000-000000000013",
+      "feedback": "Agent flagged billing amount as anomalous, but manual review confirms amount is justified by documented medical necessity and complexity."
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000123",
+    "timestamp": "2025-09-10T22:18:00",
+    "actor": "David.Reeves@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000065",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000058",
+      "decision_type": "approved",
+      "rationale_preview": "Reviewed agent findings and supporting documentation. Claim meets all VA payment criteria.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000118",
+    "timestamp": "2025-09-11T01:02:00",
+    "actor": "Jennifer.Walsh@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000059",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000053",
+      "decision_type": "approved",
+      "rationale_preview": "Automated review passed all 8 agent checks. Manual spot-check confirmed clean claim.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000141",
+    "timestamp": "2025-09-11T01:47:00",
+    "actor": "Michael.Torres@va.gov",
+    "actor_type": "human",
+    "action_type": "ticket",
+    "claim_id": "d1000001-0000-4000-8000-000000000058",
+    "details": {
+      "ticket_type": "false_positive_feedback",
+      "decision_id": "f1000001-0000-4000-8000-000000000052",
+      "feedback": "Initial flag was due to provider risk score, but individual claim review shows proper documentation and coding. Marked as false positive for model training."
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000119",
+    "timestamp": "2025-09-11T03:54:00",
+    "actor": "Jennifer.Walsh@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000060",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000054",
+      "decision_type": "denied",
+      "rationale_preview": "Agent findings corroborated by external data sources. Claim denied. Savings: $18174.0.",
+      "savings_amount": 18174.0
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000125",
+    "timestamp": "2025-09-11T06:25:00",
+    "actor": "Michael.Torres@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000067",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000060",
+      "decision_type": "denied",
+      "rationale_preview": "Claim data discrepancies confirmed upon manual review. Diagnosis-procedure mismatch verified. Savings: $9454.56.",
+      "savings_amount": 9454.56
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000126",
+    "timestamp": "2025-09-11T07:02:00",
+    "actor": "David.Reeves@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000068",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000061",
+      "decision_type": "approved",
+      "rationale_preview": "Reviewed agent findings and supporting documentation. Claim meets all VA payment criteria.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000120",
+    "timestamp": "2025-09-11T08:08:00",
+    "actor": "Amanda.Brooks@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000061",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000055",
+      "decision_type": "approved",
+      "rationale_preview": "All agent findings returned pass. Claim data is consistent and within VA policy guidelines.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000135",
+    "timestamp": "2025-09-11T10:16:00",
+    "actor": "Michael.Torres@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000078",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000070",
+      "decision_type": "denied",
+      "rationale_preview": "Agent findings corroborated by external data sources. Claim denied. Savings: $6631.51.",
+      "savings_amount": 6631.51
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000127",
+    "timestamp": "2025-09-11T11:26:00",
+    "actor": "Amanda.Brooks@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000069",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000062",
+      "decision_type": "approved",
+      "rationale_preview": "Claims data validated against veteran record and provider history. No anomalies detected.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000115",
+    "timestamp": "2025-09-11T23:09:00",
+    "actor": "Jennifer.Walsh@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000056",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000050",
+      "decision_type": "approved",
+      "rationale_preview": "Agent analysis complete. No fraud indicators detected. Billing amount within expected range for procedures.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000131",
+    "timestamp": "2025-09-12T04:50:00",
+    "actor": "David.Reeves@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000073",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000066",
+      "decision_type": "approved",
+      "rationale_preview": "Reviewed agent findings and supporting documentation. Claim meets all VA payment criteria.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000117",
+    "timestamp": "2025-09-12T06:44:00",
+    "actor": "Michael.Torres@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000058",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000052",
+      "decision_type": "false_positive",
+      "rationale_preview": "Initial flag was due to provider risk score, but individual claim review shows proper documentation and coding. Marked a",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000128",
+    "timestamp": "2025-09-12T09:48:00",
+    "actor": "Michael.Torres@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000070",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000063",
+      "decision_type": "approved",
+      "rationale_preview": "Automated review passed all 8 agent checks. Manual spot-check confirmed clean claim.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000142",
+    "timestamp": "2025-09-12T10:36:00",
+    "actor": "Amanda.Brooks@va.gov",
+    "actor_type": "human",
+    "action_type": "ticket",
+    "claim_id": "d1000001-0000-4000-8000-000000000080",
+    "details": {
+      "ticket_type": "false_positive_feedback",
+      "decision_id": "f1000001-0000-4000-8000-000000000072",
+      "feedback": "DBQ fraud flag triggered by template similarity, but provider confirmed using VA-standard DBQ forms. Expected similarity pattern."
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000132",
+    "timestamp": "2025-09-12T13:14:00",
+    "actor": "David.Reeves@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000075",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000067",
+      "decision_type": "approved",
+      "rationale_preview": "Agent analysis complete. No fraud indicators detected. Billing amount within expected range for procedures.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000130",
+    "timestamp": "2025-09-12T14:50:00",
+    "actor": "Michael.Torres@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000072",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000065",
+      "decision_type": "approved",
+      "rationale_preview": "Agent analysis complete. No fraud indicators detected. Billing amount within expected range for procedures.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000136",
+    "timestamp": "2025-09-12T18:35:00",
+    "actor": "Michael.Torres@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000079",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000071",
+      "decision_type": "denied",
+      "rationale_preview": "Provider risk score exceeds threshold. Combined agent confidence score warrants denial. Savings: $10656.68.",
+      "savings_amount": 10656.68
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000134",
+    "timestamp": "2025-09-13T00:32:00",
+    "actor": "Sarah.Jenkins@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000077",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000069",
+      "decision_type": "approved",
+      "rationale_preview": "All agent findings returned pass. Claim data is consistent and within VA policy guidelines.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000129",
+    "timestamp": "2025-09-13T09:31:00",
+    "actor": "Jennifer.Walsh@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000071",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000064",
+      "decision_type": "denied",
+      "rationale_preview": "Agent findings corroborated by external data sources. Claim denied. Savings: $4689.4.",
+      "savings_amount": 4689.4
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000137",
+    "timestamp": "2025-09-13T11:39:00",
+    "actor": "Amanda.Brooks@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000080",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000072",
+      "decision_type": "false_positive",
+      "rationale_preview": "DBQ fraud flag triggered by template similarity, but provider confirmed using VA-standard DBQ forms. Expected similarity",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000122",
+    "timestamp": "2025-09-13T14:23:00",
+    "actor": "Michael.Torres@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000064",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000057",
+      "decision_type": "approved",
+      "rationale_preview": "Claims data validated against veteran record and provider history. No anomalies detected.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000116",
+    "timestamp": "2025-09-13T14:38:00",
+    "actor": "Jennifer.Walsh@va.gov",
+    "actor_type": "human",
+    "action_type": "decision",
+    "claim_id": "d1000001-0000-4000-8000-000000000057",
+    "details": {
+      "decision_id": "f1000001-0000-4000-8000-000000000051",
+      "decision_type": "approved",
+      "rationale_preview": "Agent analysis complete. No fraud indicators detected. Billing amount within expected range for procedures.",
+      "savings_amount": null
+    },
+    "confidence_score": null
+  },
+  {
+    "id": "aa000001-0000-4000-8000-000000000147",
+    "timestamp": "2025-09-18T07:00:00",
+    "actor": "system",
+    "actor_type": "system",
+    "action_type": "system",
+    "claim_id": null,
+    "details": {
+      "event": "security_scan_complete",
+      "vulnerabilities_found": 0
+    },
+    "confidence_score": null
+  }
+]

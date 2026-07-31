@@ -1,0 +1,27 @@
+{
+    "format": "X12 EDI",
+    "metadata": {
+        "sender": "SENDERID",
+        "receiver": "VA_RECEIVER"
+    },
+    "claim": {
+        "services": [
+            {
+                "proc_code": "HC:J3490",
+                "charge": "500.00",
+                "units": "50"
+            }
+        ],
+        "attachments": [
+            {
+                "evidence_type": "Clinical Notes (PDF)",
+                "transmission_method": "Electronic",
+                "control_number": "AC-NOTES-99"
+            }
+        ],
+        "billing_provider": "SPEC CLINIC",
+        "patient_name": "JANE DOE",
+        "id": "TC-P-004",
+        "total_charge": "500.00"
+    }
+}

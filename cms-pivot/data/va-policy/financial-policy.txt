@@ -1,0 +1,51 @@
+VA FINANCIAL POLICY — Key Excerpts for PIVOT Payment Integrity
+
+=== CHAPTER 1: GENERAL PROVISIONS ===
+
+1.01 The Centers for Medicare & Medicaid Services is authorized to provide healthcare, disability compensation, pension, education, and other benefits to eligible veterans and their dependents.
+
+1.02 All claims submitted for VA benefits must comply with applicable federal regulations (38 CFR), VA directives, and this Financial Policy.
+
+1.03 Payment integrity is a mission-critical function. The VA processes approximately 82 million claims annually with an obligation to prevent improper payments under the Improper Payments Elimination and Recovery Act (IPERA).
+
+=== CHAPTER 4: PROVIDER ELIGIBILITY ===
+
+4.01 All healthcare providers billing the VA must maintain a valid National Provider Identifier (NPI) registered with CMS.
+
+4.02 Representatives filing claims on behalf of veterans must be accredited by VA under 38 CFR 14.629. Unaccredited individuals charging fees for VA claim assistance are in violation of 38 USC 5904.
+
+4.03 Providers with suspended or revoked accreditation are prohibited from submitting VA claims.
+
+=== CHAPTER 7: SERVICE DATE REQUIREMENTS ===
+
+7.01 Service dates must fall within the veteran's active coverage period.
+
+7.02 Claims for services rendered after a veteran's recorded Date of Death (per VA Master Veteran Index or Social Security Death Master File) are per se invalid and must be denied.
+
+7.03 Post-mortem billing constitutes potential fraud under 18 USC 1347 (Healthcare Fraud) and must be referred to the VA Office of Inspector General (OIG).
+
+=== CHAPTER 9: BILLING STANDARDS ===
+
+9.01 Billing amounts must be reasonable and customary for the procedures performed, consistent with the VA Fee Schedule.
+
+9.02 Individual service line items exceeding $10,000 require supporting documentation.
+
+9.03 Total claim amounts exceeding $25,000 are subject to enhanced review.
+
+9.04 Duplicate billing for the same service on the same date is prohibited.
+
+=== CHAPTER 12: DISABILITY BENEFITS QUESTIONNAIRE (DBQ) ===
+
+12.01 DBQ forms must be completed by qualified medical examiners.
+
+12.02 Clinical findings must be consistent with the claimed disability and supported by medical evidence.
+
+12.03 DBQ fabrication or material misrepresentation constitutes fraud under 18 USC 1001.
+
+=== CHAPTER 15: AUDIT AND COMPLIANCE ===
+
+15.01 All payment decisions must be documented in the audit trail.
+
+15.02 False positive identifications must be recorded as feedback for continuous improvement.
+
+15.03 The Continuous Improvement Flywheel process ensures AI agent accuracy improves over time through human feedback loops.

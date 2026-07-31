@@ -1,0 +1,29 @@
+# Secrets / environment
+.env
+.env.*
+!.env.example
+*-credentials.json
+service-account*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Node / frontend
+node_modules/
+frontend/dist/
+frontend/tsconfig.tsbuildinfo
+
+# Firebase deploy cache
+.firebase/
+
+# OS / editor
+.DS_Store
+
+# Claude Code
+CLAUDE.md

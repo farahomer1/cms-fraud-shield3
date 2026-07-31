@@ -1,0 +1,294 @@
+address_id,line,city,state,zip,is_cmra
+ADDR-4471-200,4471 Peachtree Industrial Blvd Ste 200,Duluth,GA,30096,True
+ADDR-4471-214,4471 Peachtree Industrial Blvd Ste 214,Duluth,GA,30096,True
+ADDR-4471-231,4471 Peachtree Industrial Blvd Ste 231,Duluth,GA,30096,True
+ADDR-4471-245,4471 Peachtree Industrial Blvd Ste 245,Duluth,GA,30096,True
+ADDR-4471-260,4471 Peachtree Industrial Blvd Ste 260,Duluth,GA,30096,True
+ADDR-C0000,1578 Main St,Marietta,GA,30060,False
+ADDR-C0001,3248 Peachtree St,Augusta,GA,30901,False
+ADDR-C0002,3334 Riverside Dr,Marietta,GA,30060,False
+ADDR-C0003,9130 Baxter St,Athens,GA,30601,False
+ADDR-C0004,7350 Whitlock Ave,Decatur,GA,30030,False
+ADDR-C0005,3699 Whitlock Ave,Macon,GA,31201,False
+ADDR-C0006,3132 Oak Ave,Macon,GA,31201,False
+ADDR-C0007,5237 Elm St,Roswell,GA,30075,False
+ADDR-C0008,427 Whitlock Ave,Decatur,GA,30030,False
+ADDR-C0009,5526 Ponce De Leon Ave,Atlanta,GA,30309,False
+ADDR-C0010,6793 Elm St,Columbus,GA,31901,False
+ADDR-C0011,4353 Oak Ave,Roswell,GA,30075,False
+ADDR-C0012,9135 Riverside Dr,Columbus,GA,31901,False
+ADDR-C0013,8702 Clairmont Rd,Decatur,GA,30030,False
+ADDR-C0014,1438 Elm St,Atlanta,GA,30309,False
+ADDR-C0015,206 Ponce De Leon Ave,Duluth,GA,30096,False
+ADDR-C0016,2159 Riverside Dr,Atlanta,GA,30309,False
+ADDR-C0017,9572 Whitlock Ave,Marietta,GA,30060,False
+ADDR-C0018,695 Oak Ave,Decatur,GA,30030,False
+ADDR-C0019,2739 Sycamore Ln,Columbus,GA,31901,False
+ADDR-C0020,4314 Peachtree St,Columbus,GA,31901,False
+ADDR-C0021,4312 Whitlock Ave,Macon,GA,31201,False
+ADDR-C0022,7475 Clairmont Rd,Athens,GA,30601,False
+ADDR-C0023,5259 Ponce De Leon Ave,Atlanta,GA,30309,False
+ADDR-C0024,1185 Highland Ave,Columbus,GA,31901,False
+ADDR-C0025,9175 Sycamore Ln,Duluth,GA,30096,False
+ADDR-C0026,9434 Oak Ave,Duluth,GA,30096,False
+ADDR-C0027,7600 Peachtree St,Duluth,GA,30096,False
+ADDR-C0028,6705 Sycamore Ln,Columbus,GA,31901,False
+ADDR-C0029,6488 Oak Ave,Savannah,GA,31401,False
+ADDR-C0030,5222 Elm St,Decatur,GA,30030,False
+ADDR-C0031,7203 Clairmont Rd,Marietta,GA,30060,False
+ADDR-C0032,8320 Baxter St,Marietta,GA,30060,False
+ADDR-C0033,9068 Ponce De Leon Ave,Marietta,GA,30060,False
+ADDR-C0034,7578 Ponce De Leon Ave,Decatur,GA,30030,False
+ADDR-C0035,5148 Main St,Atlanta,GA,30309,False
+ADDR-C0036,9478 Lakeview Dr,Macon,GA,31201,False
+ADDR-C0037,2649 Clairmont Rd,Duluth,GA,30096,False
+ADDR-C0038,5796 Peachtree St,Columbus,GA,31901,False
+ADDR-C0039,7245 Highland Ave,Columbus,GA,31901,False
+ADDR-C0040,1360 Lakeview Dr,Marietta,GA,30060,False
+ADDR-C0041,1019 Whitlock Ave,Roswell,GA,30075,False
+ADDR-C0042,9532 Oak Ave,Roswell,GA,30075,False
+ADDR-C0043,9061 Whitlock Ave,Duluth,GA,30096,False
+ADDR-C0044,1778 Clairmont Rd,Savannah,GA,31401,False
+ADDR-C0045,6486 Riverside Dr,Roswell,GA,30075,False
+ADDR-C0046,1449 Clairmont Rd,Macon,GA,31201,False
+ADDR-C0047,5909 Clairmont Rd,Roswell,GA,30075,False
+ADDR-C0048,1620 Highland Ave,Decatur,GA,30030,False
+ADDR-C0049,29 Baxter St,Roswell,GA,30075,False
+ADDR-C0050,7457 Highland Ave,Decatur,GA,30030,False
+ADDR-C0051,9973 Highland Ave,Duluth,GA,30096,False
+ADDR-C0052,8630 Clairmont Rd,Augusta,GA,30901,False
+ADDR-C0053,9675 Elm St,Marietta,GA,30060,False
+ADDR-C0054,8955 Main St,Duluth,GA,30096,False
+ADDR-C0055,5397 Oak Ave,Duluth,GA,30096,False
+ADDR-C0056,5069 Clairmont Rd,Athens,GA,30601,False
+ADDR-C0057,667 Ponce De Leon Ave,Savannah,GA,31401,False
+ADDR-C0058,2458 Clairmont Rd,Macon,GA,31201,False
+ADDR-C0059,97 Whitlock Ave,Augusta,GA,30901,False
+ADDR-C0060,1037 Whitlock Ave,Atlanta,GA,30309,False
+ADDR-C0061,1117 Main St,Columbus,GA,31901,False
+ADDR-C0062,6121 Clairmont Rd,Roswell,GA,30075,False
+ADDR-C0063,1858 Clairmont Rd,Atlanta,GA,30309,False
+ADDR-C0064,5703 Elm St,Columbus,GA,31901,False
+ADDR-C0065,7194 Lakeview Dr,Marietta,GA,30060,False
+ADDR-C0066,550 Ponce De Leon Ave,Savannah,GA,31401,False
+ADDR-C0067,8541 Highland Ave,Columbus,GA,31901,False
+ADDR-C0068,5142 Lakeview Dr,Marietta,GA,30060,False
+ADDR-C0069,3460 Main St,Savannah,GA,31401,False
+ADDR-C0070,6067 Ponce De Leon Ave,Athens,GA,30601,False
+ADDR-C0071,4894 Ponce De Leon Ave,Savannah,GA,31401,False
+ADDR-C0072,5529 Sycamore Ln,Columbus,GA,31901,False
+ADDR-C0073,6755 Baxter St,Decatur,GA,30030,False
+ADDR-C0074,2661 Baxter St,Columbus,GA,31901,False
+ADDR-C0075,5960 Elm St,Augusta,GA,30901,False
+ADDR-C0076,2056 Highland Ave,Duluth,GA,30096,False
+ADDR-C0077,4683 Baxter St,Savannah,GA,31401,False
+ADDR-C0078,7965 Highland Ave,Atlanta,GA,30309,False
+ADDR-C0079,5909 Riverside Dr,Macon,GA,31201,False
+ADDR-C0080,795 Highland Ave,Savannah,GA,31401,False
+ADDR-C0081,6487 Main St,Atlanta,GA,30309,False
+ADDR-C0082,4323 Baxter St,Columbus,GA,31901,False
+ADDR-C0083,1352 Peachtree St,Roswell,GA,30075,False
+ADDR-C0084,6591 Whitlock Ave,Macon,GA,31201,False
+ADDR-C0085,4829 Riverside Dr,Columbus,GA,31901,False
+ADDR-C0086,63 Lakeview Dr,Savannah,GA,31401,False
+ADDR-C0087,1683 Ponce De Leon Ave,Athens,GA,30601,False
+ADDR-C0088,6592 Highland Ave,Atlanta,GA,30309,False
+ADDR-C0089,6694 Clairmont Rd,Savannah,GA,31401,False
+ADDR-C0090,3710 Ponce De Leon Ave,Macon,GA,31201,False
+ADDR-C0091,9499 Main St,Augusta,GA,30901,False
+ADDR-C0092,8975 Elm St,Athens,GA,30601,False
+ADDR-C0093,2486 Main St,Athens,GA,30601,False
+ADDR-C0094,5454 Oak Ave,Roswell,GA,30075,False
+ADDR-C0095,5297 Main St,Savannah,GA,31401,False
+ADDR-C0096,8988 Whitlock Ave,Roswell,GA,30075,False
+ADDR-C0097,3900 Whitlock Ave,Athens,GA,30601,False
+ADDR-C0098,1045 Main St,Savannah,GA,31401,False
+ADDR-C0099,4892 Clairmont Rd,Marietta,GA,30060,False
+ADDR-C0100,5521 Oak Ave,Savannah,GA,31401,False
+ADDR-C0101,4251 Highland Ave,Duluth,GA,30096,False
+ADDR-C0102,9196 Highland Ave,Columbus,GA,31901,False
+ADDR-C0103,9251 Lakeview Dr,Marietta,GA,30060,False
+ADDR-C0104,9032 Lakeview Dr,Savannah,GA,31401,False
+ADDR-C0105,1477 Lakeview Dr,Decatur,GA,30030,False
+ADDR-C0106,8397 Lakeview Dr,Macon,GA,31201,False
+ADDR-C0107,8274 Ponce De Leon Ave,Athens,GA,30601,False
+ADDR-C0108,3673 Highland Ave,Columbus,GA,31901,False
+ADDR-C0109,475 Riverside Dr,Duluth,GA,30096,False
+ADDR-C0110,1350 Clairmont Rd,Decatur,GA,30030,False
+ADDR-C0111,8116 Whitlock Ave,Savannah,GA,31401,False
+ADDR-C0112,9369 Baxter St,Atlanta,GA,30309,False
+ADDR-C0113,5312 Lakeview Dr,Marietta,GA,30060,False
+ADDR-C0114,6376 Peachtree St,Roswell,GA,30075,False
+ADDR-C0115,2199 Clairmont Rd,Atlanta,GA,30309,False
+ADDR-C0116,316 Sycamore Ln,Roswell,GA,30075,False
+ADDR-C0117,350 Peachtree St,Columbus,GA,31901,False
+ADDR-C0118,4446 Elm St,Columbus,GA,31901,False
+ADDR-C0119,2186 Riverside Dr,Augusta,GA,30901,False
+ADDR-C0120,671 Main St,Duluth,GA,30096,False
+ADDR-C0121,4939 Elm St,Roswell,GA,30075,False
+ADDR-C0122,1626 Peachtree St,Athens,GA,30601,False
+ADDR-C0123,8657 Baxter St,Duluth,GA,30096,False
+ADDR-C0124,9404 Ponce De Leon Ave,Macon,GA,31201,False
+ADDR-C0125,6470 Clairmont Rd,Marietta,GA,30060,False
+ADDR-C0126,2391 Main St,Macon,GA,31201,False
+ADDR-C0127,9890 Whitlock Ave,Savannah,GA,31401,False
+ADDR-C0128,8391 Baxter St,Athens,GA,30601,False
+ADDR-C0129,4814 Highland Ave,Athens,GA,30601,False
+ADDR-C0130,2821 Sycamore Ln,Athens,GA,30601,False
+ADDR-C0131,2342 Whitlock Ave,Augusta,GA,30901,False
+ADDR-C0132,7652 Highland Ave,Roswell,GA,30075,False
+ADDR-C0133,2615 Whitlock Ave,Augusta,GA,30901,False
+ADDR-C0134,1621 Highland Ave,Macon,GA,31201,False
+ADDR-C0135,2177 Elm St,Decatur,GA,30030,False
+ADDR-C0136,6135 Main St,Decatur,GA,30030,False
+ADDR-C0137,5824 Ponce De Leon Ave,Augusta,GA,30901,False
+ADDR-C0138,1484 Ponce De Leon Ave,Columbus,GA,31901,False
+ADDR-C0139,6910 Baxter St,Duluth,GA,30096,False
+ADDR-C0140,8536 Elm St,Columbus,GA,31901,False
+ADDR-C0141,9567 Main St,Columbus,GA,31901,False
+ADDR-C0142,3327 Highland Ave,Columbus,GA,31901,False
+ADDR-C0143,5588 Main St,Decatur,GA,30030,False
+ADDR-C0144,7021 Oak Ave,Roswell,GA,30075,False
+ADDR-C0145,9699 Riverside Dr,Marietta,GA,30060,False
+ADDR-C0146,3321 Elm St,Columbus,GA,31901,False
+ADDR-C0147,1718 Lakeview Dr,Savannah,GA,31401,False
+ADDR-C0148,9668 Oak Ave,Decatur,GA,30030,False
+ADDR-C0149,4839 Peachtree St,Decatur,GA,30030,False
+ADDR-C0150,769 Lakeview Dr,Macon,GA,31201,False
+ADDR-C0151,6100 Peachtree St,Marietta,GA,30060,False
+ADDR-C0152,3272 Oak Ave,Decatur,GA,30030,False
+ADDR-C0153,6644 Clairmont Rd,Marietta,GA,30060,False
+ADDR-C0154,87 Whitlock Ave,Macon,GA,31201,False
+ADDR-C0155,8542 Main St,Columbus,GA,31901,False
+ADDR-C0156,1106 Highland Ave,Atlanta,GA,30309,False
+ADDR-C0157,1602 Baxter St,Atlanta,GA,30309,False
+ADDR-C0158,7943 Highland Ave,Atlanta,GA,30309,False
+ADDR-C0159,7743 Elm St,Augusta,GA,30901,False
+ADDR-C0160,8703 Sycamore Ln,Roswell,GA,30075,False
+ADDR-C0161,3039 Highland Ave,Duluth,GA,30096,False
+ADDR-C0162,4281 Baxter St,Roswell,GA,30075,False
+ADDR-C0163,3119 Ponce De Leon Ave,Savannah,GA,31401,False
+ADDR-C0164,5253 Main St,Augusta,GA,30901,False
+ADDR-C0165,6364 Lakeview Dr,Savannah,GA,31401,False
+ADDR-C0166,5019 Lakeview Dr,Columbus,GA,31901,False
+ADDR-C0167,4080 Whitlock Ave,Duluth,GA,30096,False
+ADDR-C0168,9101 Whitlock Ave,Marietta,GA,30060,False
+ADDR-C0169,6394 Main St,Macon,GA,31201,False
+ADDR-C0170,5235 Whitlock Ave,Athens,GA,30601,False
+ADDR-C0171,5085 Lakeview Dr,Duluth,GA,30096,False
+ADDR-C0172,4486 Riverside Dr,Marietta,GA,30060,False
+ADDR-C0173,7951 Sycamore Ln,Atlanta,GA,30309,False
+ADDR-C0174,5556 Peachtree St,Augusta,GA,30901,False
+ADDR-C0175,1612 Elm St,Roswell,GA,30075,False
+ADDR-C0176,9462 Whitlock Ave,Athens,GA,30601,False
+ADDR-C0177,7477 Main St,Decatur,GA,30030,False
+ADDR-C0178,9170 Highland Ave,Duluth,GA,30096,False
+ADDR-C0179,3949 Clairmont Rd,Savannah,GA,31401,False
+ADDR-C0180,8399 Elm St,Athens,GA,30601,False
+ADDR-C0181,7909 Whitlock Ave,Augusta,GA,30901,False
+ADDR-C0182,935 Sycamore Ln,Atlanta,GA,30309,False
+ADDR-C0183,3905 Peachtree St,Decatur,GA,30030,False
+ADDR-C0184,2540 Main St,Athens,GA,30601,False
+ADDR-C0185,5331 Clairmont Rd,Macon,GA,31201,False
+ADDR-C0186,8089 Peachtree St,Athens,GA,30601,False
+ADDR-C0187,6727 Elm St,Athens,GA,30601,False
+ADDR-C0188,5774 Peachtree St,Duluth,GA,30096,False
+ADDR-C0189,3162 Peachtree St,Roswell,GA,30075,False
+ADDR-C0190,5377 Highland Ave,Roswell,GA,30075,False
+ADDR-C0191,4024 Baxter St,Marietta,GA,30060,False
+ADDR-C0192,6951 Ponce De Leon Ave,Macon,GA,31201,False
+ADDR-C0193,6269 Clairmont Rd,Duluth,GA,30096,False
+ADDR-C0194,8949 Lakeview Dr,Marietta,GA,30060,False
+ADDR-C0195,6335 Lakeview Dr,Decatur,GA,30030,False
+ADDR-C0196,501 Clairmont Rd,Macon,GA,31201,False
+ADDR-C0197,1850 Highland Ave,Athens,GA,30601,False
+ADDR-C0198,540 Sycamore Ln,Augusta,GA,30901,False
+ADDR-C0199,7198 Highland Ave,Marietta,GA,30060,False
+ADDR-C0200,3226 Whitlock Ave,Marietta,GA,30060,False
+ADDR-C0201,7885 Riverside Dr,Decatur,GA,30030,False
+ADDR-C0202,1492 Oak Ave,Duluth,GA,30096,False
+ADDR-C0203,7649 Main St,Savannah,GA,31401,False
+ADDR-C0204,6133 Baxter St,Atlanta,GA,30309,False
+ADDR-C0205,2062 Main St,Decatur,GA,30030,False
+ADDR-C0206,9158 Baxter St,Decatur,GA,30030,False
+ADDR-C0207,2834 Riverside Dr,Macon,GA,31201,False
+ADDR-C0208,5024 Peachtree St,Atlanta,GA,30309,False
+ADDR-C0209,2342 Elm St,Athens,GA,30601,False
+ADDR-C0210,5217 Elm St,Duluth,GA,30096,False
+ADDR-C0211,2898 Riverside Dr,Roswell,GA,30075,False
+ADDR-C0212,2633 Elm St,Macon,GA,31201,False
+ADDR-C0213,6773 Clairmont Rd,Athens,GA,30601,False
+ADDR-C0214,6698 Oak Ave,Macon,GA,31201,False
+ADDR-C0215,7830 Oak Ave,Columbus,GA,31901,False
+ADDR-C0216,1136 Oak Ave,Roswell,GA,30075,False
+ADDR-C0217,2007 Highland Ave,Columbus,GA,31901,False
+ADDR-C0218,2276 Whitlock Ave,Decatur,GA,30030,False
+ADDR-C0219,2373 Ponce De Leon Ave,Atlanta,GA,30309,False
+ADDR-C0220,4441 Oak Ave,Columbus,GA,31901,False
+ADDR-C0221,1957 Baxter St,Duluth,GA,30096,False
+ADDR-C0222,6770 Whitlock Ave,Duluth,GA,30096,False
+ADDR-C0223,873 Sycamore Ln,Duluth,GA,30096,False
+ADDR-C0224,7798 Lakeview Dr,Marietta,GA,30060,False
+ADDR-C0225,4663 Highland Ave,Augusta,GA,30901,False
+ADDR-C0226,8709 Main St,Columbus,GA,31901,False
+ADDR-C0227,5578 Highland Ave,Macon,GA,31201,False
+ADDR-C0228,7064 Ponce De Leon Ave,Marietta,GA,30060,False
+ADDR-C0229,9111 Baxter St,Athens,GA,30601,False
+ADDR-C0230,1421 Highland Ave,Atlanta,GA,30309,False
+ADDR-C0231,2466 Sycamore Ln,Savannah,GA,31401,False
+ADDR-C0232,6095 Main St,Columbus,GA,31901,False
+ADDR-C0233,7918 Elm St,Macon,GA,31201,False
+ADDR-C0234,659 Lakeview Dr,Augusta,GA,30901,False
+ADDR-C0235,4643 Highland Ave,Roswell,GA,30075,False
+ADDR-C0236,6239 Clairmont Rd,Savannah,GA,31401,False
+ADDR-C0237,4754 Peachtree St,Atlanta,GA,30309,False
+ADDR-C0238,3925 Ponce De Leon Ave,Duluth,GA,30096,False
+ADDR-C0239,2245 Ponce De Leon Ave,Athens,GA,30601,False
+ADDR-C0240,6740 Riverside Dr,Roswell,GA,30075,False
+ADDR-C0241,303 Baxter St,Marietta,GA,30060,False
+ADDR-C0242,8397 Lakeview Dr,Roswell,GA,30075,False
+ADDR-C0243,2028 Main St,Athens,GA,30601,False
+ADDR-C0244,7690 Main St,Roswell,GA,30075,False
+ADDR-C0245,2183 Sycamore Ln,Savannah,GA,31401,False
+ADDR-C0246,4679 Highland Ave,Decatur,GA,30030,False
+ADDR-C0247,4945 Sycamore Ln,Decatur,GA,30030,False
+ADDR-C0248,3974 Sycamore Ln,Roswell,GA,30075,False
+ADDR-C0249,7571 Sycamore Ln,Columbus,GA,31901,False
+ADDR-C0250,9893 Clairmont Rd,Savannah,GA,31401,False
+ADDR-C0251,8741 Baxter St,Macon,GA,31201,False
+ADDR-C0252,9471 Highland Ave,Columbus,GA,31901,False
+ADDR-C0253,2293 Sycamore Ln,Duluth,GA,30096,False
+ADDR-C0254,935 Main St,Columbus,GA,31901,False
+ADDR-C0255,6800 Clairmont Rd,Marietta,GA,30060,False
+ADDR-C0256,1985 Lakeview Dr,Athens,GA,30601,False
+ADDR-C0257,4579 Whitlock Ave,Roswell,GA,30075,False
+ADDR-C0258,9333 Oak Ave,Atlanta,GA,30309,False
+ADDR-C0259,9018 Whitlock Ave,Athens,GA,30601,False
+ADDR-C0260,7525 Clairmont Rd,Athens,GA,30601,False
+ADDR-C0261,2448 Baxter St,Columbus,GA,31901,False
+ADDR-C0262,7967 Baxter St,Macon,GA,31201,False
+ADDR-C0263,3283 Sycamore Ln,Columbus,GA,31901,False
+ADDR-C0264,8568 Baxter St,Columbus,GA,31901,False
+ADDR-C0265,1305 Highland Ave,Duluth,GA,30096,False
+ADDR-C0266,7232 Riverside Dr,Macon,GA,31201,False
+ADDR-C0267,3580 Baxter St,Columbus,GA,31901,False
+ADDR-C0268,687 Oak Ave,Augusta,GA,30901,False
+ADDR-C0269,9166 Whitlock Ave,Decatur,GA,30030,False
+ADDR-C0270,9078 Sycamore Ln,Roswell,GA,30075,False
+ADDR-C0271,4467 Highland Ave,Athens,GA,30601,False
+ADDR-C0272,1945 Oak Ave,Roswell,GA,30075,False
+ADDR-C0273,2866 Ponce De Leon Ave,Savannah,GA,31401,False
+ADDR-C0274,7667 Baxter St,Augusta,GA,30901,False
+ADDR-C0275,2544 Whitlock Ave,Atlanta,GA,30309,False
+ADDR-C0276,9794 Main St,Columbus,GA,31901,False
+ADDR-C0277,1269 Main St,Marietta,GA,30060,False
+ADDR-C0278,576 Main St,Macon,GA,31201,False
+ADDR-C0279,6140 Lakeview Dr,Duluth,GA,30096,False
+ADDR-REDOAK,4537 Clairmont Rd,Savannah,GA,31401,False
+ADDR-BEACON,9914 Sycamore Ln,Atlanta,GA,30309,False
+ADDR-CLEARPATH,3905 Clairmont Rd,Macon,GA,31201,False
+ADDR-NORTHSTAR,8813 Lakeview Dr,Atlanta,GA,30309,False
+ADDR-4471-270,4471 Peachtree Industrial Blvd Ste 270,Duluth,GA,30096,True
+ADDR-4471-280,4471 Peachtree Industrial Blvd Ste 280,Duluth,GA,30096,True
+ADDR-4471-290,4471 Peachtree Industrial Blvd Ste 290,Duluth,GA,30096,True
+ADDR-PROBE-V4,3804 Oak Ave,Savannah,GA,31401,False

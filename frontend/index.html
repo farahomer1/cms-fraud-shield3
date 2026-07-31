@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/cms-logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <title>CMS Fraud Shield — Adversarial Modeling &amp; Red-Teaming Platform</title>
+    <style>
+      /* Section 508: High-contrast mode overrides */
+      html.high-contrast,
+      html.high-contrast body,
+      html.high-contrast #root,
+      html.high-contrast main,
+      html.high-contrast [role="main"],
+      html.high-contrast .MuiBox-root {
+        background-color: #000000 !important;
+        color: #FFFFFF !important;
+      }
+      html.high-contrast .MuiPaper-root,
+      html.high-contrast .MuiCard-root,
+      html.high-contrast .MuiTableContainer-root {
+        background-color: #1a1a1a !important;
+        color: #FFFFFF !important;
+        border: 1px solid #FFFFFF !important;
+      }
+      html.high-contrast .MuiAppBar-root {
+        background-color: #000000 !important;
+        border-bottom: 2px solid #FFD700 !important;
+      }
+      html.high-contrast .MuiDrawer-paper {
+        background-color: #000000 !important;
+        border-right: 2px solid #FFD700 !important;
+      }
+      html.high-contrast .MuiTypography-root {
+        color: #FFFFFF !important;
+      }
+      html.high-contrast .MuiButton-root {
+        border: 1px solid #FFFFFF !important;
+        color: #FFFFFF !important;
+      }
+      html.high-contrast .MuiButton-contained {
+        background-color: #003F72 !important;
+        border: 2px solid #FFD700 !important;
+      }
+      html.high-contrast .MuiChip-root {
+        border: 1px solid #FFFFFF !important;
+      }
+      html.high-contrast .MuiTableCell-root {
+        color: #FFFFFF !important;
+        border-color: #666666 !important;
+      }
+      html.high-contrast .MuiInputBase-root {
+        color: #FFFFFF !important;
+        border: 1px solid #FFFFFF !important;
+      }
+      html.high-contrast .MuiInputLabel-root {
+        color: #FFD700 !important;
+      }
+      html.high-contrast .MuiListItemButton-root:hover,
+      html.high-contrast .MuiListItemButton-root.Mui-selected {
+        background-color: #333333 !important;
+      }
+      html.high-contrast a {
+        color: #FFD700 !important;
+      }
+      html.high-contrast .MuiTab-root {
+        color: #FFFFFF !important;
+      }
+      html.high-contrast .MuiTab-root.Mui-selected {
+        color: #FFD700 !important;
+        border-bottom: 2px solid #FFD700 !important;
+      }
+      html.high-contrast .MuiAlert-root {
+        border: 1px solid #FFFFFF !important;
+      }
+      html.high-contrast .MuiSwitch-track {
+        border: 1px solid #FFFFFF !important;
+      }
+      html.high-contrast .MuiSelect-select {
+        color: #FFFFFF !important;
+      }
+      html.high-contrast .MuiSvgIcon-root {
+        color: #FFFFFF !important;
+      }
+      html.high-contrast .MuiDialog-paper,
+      html.high-contrast .MuiPopover-paper,
+      html.high-contrast .MuiMenu-paper,
+      html.high-contrast .MuiAutocomplete-paper {
+        background-color: #1a1a1a !important;
+        color: #FFFFFF !important;
+        border: 1px solid #FFFFFF !important;
+      }
+      html.high-contrast .MuiDialogTitle-root,
+      html.high-contrast .MuiDialogContent-root,
+      html.high-contrast .MuiDialogActions-root {
+        background-color: #1a1a1a !important;
+        color: #FFFFFF !important;
+      }
+      html.high-contrast .MuiMenuItem-root {
+        color: #FFFFFF !important;
+      }
+      html.high-contrast .MuiMenuItem-root:hover {
+        background-color: #333333 !important;
+      }
+      html.high-contrast footer {
+        background-color: #000000 !important;
+      }
+
+      /* Section 508: Ensure focus outlines are never removed */
+      *:focus-visible {
+        outline: 2px solid #FFD700 !important;
+        outline-offset: 2px;
+      }
+
+      /* Respect user's reduced motion preference */
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+{
+    "format": "X12 EDI",
+    "metadata": {
+        "sender": "HOSP_SENDER",
+        "receiver": "VA_RECEIVER"
+    },
+    "claim": {
+        "services": [
+            {
+                "proc_code": "0121",
+                "charge": "4500.00",
+                "units": "3"
+            }
+        ],
+        "attachments": [],
+        "billing_provider": "CITY HOSPITAL",
+        "id": "TC-I-001",
+        "total_charge": "4500.00"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "format": "X12 EDI",
+    "metadata": {
+        "sender": "SENDERID",
+        "receiver": "VA_RECEIVER"
+    },
+    "claim": {
+        "services": [],
+        "attachments": [],
+        "billing_provider": "VA MEDICAL CENTER",
+        "patient_name": "JANE DOE",
+        "patient_gender": "F",
+        "patient_age": 46,
+        "id": "TC-I-002",
+        "total_charge": "800.00"
+    }
+}

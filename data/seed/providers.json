@@ -1,0 +1,310 @@
+[
+  {
+    "id": "b1000001-0000-4000-8000-000000000001",
+    "name": "Central VA Medical Center",
+    "npi": "1234567890",
+    "provider_type": "organization",
+    "specialty": "General Medicine",
+    "address": {
+      "street": "500 Foothill Drive",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "zip": "84148"
+    },
+    "risk_score": 12,
+    "accreditation_status": "accredited",
+    "claim_history": {
+      "total_claims": 1450,
+      "flagged_claims": 18,
+      "denied_claims": 5,
+      "avg_billing": 3200.0,
+      "last_audit_date": "2025-06-15"
+    }
+  },
+  {
+    "id": "b1000001-0000-4000-8000-000000000002",
+    "name": "Dr. Marcus T. Bradley",
+    "npi": "2345678901",
+    "provider_type": "individual",
+    "specialty": "Orthopedic Surgery",
+    "address": {
+      "street": "1200 Wilshire Blvd, Suite 400",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zip": "90017"
+    },
+    "risk_score": 25,
+    "accreditation_status": "accredited",
+    "claim_history": {
+      "total_claims": 620,
+      "flagged_claims": 8,
+      "denied_claims": 2,
+      "avg_billing": 8750.0,
+      "last_audit_date": "2025-04-22"
+    }
+  },
+  {
+    "id": "b1000001-0000-4000-8000-000000000003",
+    "name": "Patriot Health Services LLC",
+    "npi": "3456789012",
+    "provider_type": "organization",
+    "specialty": "Mental Health",
+    "address": {
+      "street": "789 Veterans Way",
+      "city": "Tampa",
+      "state": "FL",
+      "zip": "33612"
+    },
+    "risk_score": 78,
+    "accreditation_status": "accredited",
+    "claim_history": {
+      "total_claims": 890,
+      "flagged_claims": 95,
+      "denied_claims": 42,
+      "avg_billing": 6100.0,
+      "last_audit_date": "2025-09-01"
+    }
+  },
+  {
+    "id": "b1000001-0000-4000-8000-000000000004",
+    "name": "Dr. Linda S. Chen",
+    "npi": "4567890123",
+    "provider_type": "individual",
+    "specialty": "Internal Medicine",
+    "address": {
+      "street": "3400 Spruce Street",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zip": "19104"
+    },
+    "risk_score": 8,
+    "accreditation_status": "accredited",
+    "claim_history": {
+      "total_claims": 340,
+      "flagged_claims": 3,
+      "denied_claims": 1,
+      "avg_billing": 2100.0,
+      "last_audit_date": "2025-05-10"
+    }
+  },
+  {
+    "id": "b1000001-0000-4000-8000-000000000005",
+    "name": "Freedom Medical Group",
+    "npi": "5678901234",
+    "provider_type": "organization",
+    "specialty": "Primary Care",
+    "address": {
+      "street": "1600 Clifton Road NE",
+      "city": "Atlanta",
+      "state": "GA",
+      "zip": "30329"
+    },
+    "risk_score": 82,
+    "accreditation_status": "accredited",
+    "claim_history": {
+      "total_claims": 1120,
+      "flagged_claims": 134,
+      "denied_claims": 67,
+      "avg_billing": 7800.0,
+      "last_audit_date": "2025-08-20"
+    }
+  },
+  {
+    "id": "b1000001-0000-4000-8000-000000000006",
+    "name": "Dr. Raymond K. Okafor",
+    "npi": "6789012345",
+    "provider_type": "individual",
+    "specialty": "Psychiatry",
+    "address": {
+      "street": "2200 Pennsylvania Ave NW",
+      "city": "Washington",
+      "state": "DC",
+      "zip": "20037"
+    },
+    "risk_score": 15,
+    "accreditation_status": "accredited",
+    "claim_history": {
+      "total_claims": 510,
+      "flagged_claims": 6,
+      "denied_claims": 2,
+      "avg_billing": 1800.0,
+      "last_audit_date": "2025-07-14"
+    }
+  },
+  {
+    "id": "b1000001-0000-4000-8000-000000000007",
+    "name": "Sunrise Rehabilitation Center",
+    "npi": "7890123456",
+    "provider_type": "organization",
+    "specialty": "Physical Therapy",
+    "address": {
+      "street": "4500 Memorial Drive",
+      "city": "Houston",
+      "state": "TX",
+      "zip": "77007"
+    },
+    "risk_score": 35,
+    "accreditation_status": "accredited",
+    "claim_history": {
+      "total_claims": 780,
+      "flagged_claims": 22,
+      "denied_claims": 9,
+      "avg_billing": 4500.0,
+      "last_audit_date": "2025-03-28"
+    }
+  },
+  {
+    "id": "b1000001-0000-4000-8000-000000000008",
+    "name": "Eagle Benefits Consulting",
+    "npi": "8901234567",
+    "provider_type": "organization",
+    "specialty": "Benefits Consulting",
+    "address": {
+      "street": "100 N Main Street, Suite 12",
+      "city": "Dayton",
+      "state": "OH",
+      "zip": "45402"
+    },
+    "risk_score": 91,
+    "accreditation_status": "unaccredited",
+    "claim_history": {
+      "total_claims": 245,
+      "flagged_claims": 89,
+      "denied_claims": 61,
+      "avg_billing": 12500.0,
+      "last_audit_date": "2025-09-15"
+    }
+  },
+  {
+    "id": "b1000001-0000-4000-8000-000000000009",
+    "name": "Dr. Sarah J. Whitfield",
+    "npi": "9012345678",
+    "provider_type": "individual",
+    "specialty": "Cardiology",
+    "address": {
+      "street": "800 Rose Street",
+      "city": "Lexington",
+      "state": "KY",
+      "zip": "40536"
+    },
+    "risk_score": 5,
+    "accreditation_status": "accredited",
+    "claim_history": {
+      "total_claims": 420,
+      "flagged_claims": 2,
+      "denied_claims": 0,
+      "avg_billing": 5600.0,
+      "last_audit_date": "2025-06-30"
+    }
+  },
+  {
+    "id": "b1000001-0000-4000-8000-000000000010",
+    "name": "Valley Radiology Associates",
+    "npi": "1023456789",
+    "provider_type": "organization",
+    "specialty": "Radiology",
+    "address": {
+      "street": "2100 Valley View Lane",
+      "city": "Dallas",
+      "state": "TX",
+      "zip": "75234"
+    },
+    "risk_score": 20,
+    "accreditation_status": "accredited",
+    "claim_history": {
+      "total_claims": 950,
+      "flagged_claims": 14,
+      "denied_claims": 4,
+      "avg_billing": 3800.0,
+      "last_audit_date": "2025-05-25"
+    }
+  },
+  {
+    "id": "b1000001-0000-4000-8000-000000000011",
+    "name": "Dr. Patricia M. Hawkins",
+    "npi": "1134567890",
+    "provider_type": "individual",
+    "specialty": "Neurology",
+    "address": {
+      "street": "550 First Avenue",
+      "city": "New York",
+      "state": "NY",
+      "zip": "10016"
+    },
+    "risk_score": 10,
+    "accreditation_status": "accredited",
+    "claim_history": {
+      "total_claims": 280,
+      "flagged_claims": 4,
+      "denied_claims": 1,
+      "avg_billing": 4200.0,
+      "last_audit_date": "2025-07-01"
+    }
+  },
+  {
+    "id": "b1000001-0000-4000-8000-000000000012",
+    "name": "Heritage Dental Clinic",
+    "npi": "1245678901",
+    "provider_type": "organization",
+    "specialty": "Dental",
+    "address": {
+      "street": "720 Harrison Street",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94107"
+    },
+    "risk_score": 18,
+    "accreditation_status": "accredited",
+    "claim_history": {
+      "total_claims": 560,
+      "flagged_claims": 7,
+      "denied_claims": 3,
+      "avg_billing": 1950.0,
+      "last_audit_date": "2025-04-18"
+    }
+  },
+  {
+    "id": "b1000001-0000-4000-8000-000000000999",
+    "name": "Apex Durable Medical Supplies Inc.",
+    "npi": "9876543210",
+    "provider_type": "organization",
+    "specialty": "Durable Medical Equipment (DME)",
+    "address": {
+      "street": "1428 Elm Street",
+      "city": "Miami",
+      "state": "FL",
+      "zip": "33101"
+    },
+    "risk_score": 95,
+    "accreditation_status": "suspended",
+    "claim_history": {
+      "total_claims": 312,
+      "flagged_claims": 245,
+      "denied_claims": 182,
+      "avg_billing": 1466.0,
+      "last_audit_date": "2026-01-10"
+    }
+  },
+  {
+    "id": "b1000001-0000-4000-8000-000000000998",
+    "name": "Horizon Oxygen & Orthotics LLC",
+    "npi": "8765432109",
+    "provider_type": "organization",
+    "specialty": "Durable Medical Equipment (DME)",
+    "address": {
+      "street": "77 Beacon Street",
+      "city": "Boston",
+      "state": "MA",
+      "zip": "02108"
+    },
+    "risk_score": 92,
+    "accreditation_status": "under_review",
+    "claim_history": {
+      "total_claims": 184,
+      "flagged_claims": 140,
+      "denied_claims": 95,
+      "avg_billing": 1399.0,
+      "last_audit_date": "2026-02-15"
+    }
+  }
+]

@@ -1,0 +1,37 @@
+VA FRAUD TYPE DEFINITIONS
+
+1. DECEASED VETERAN BILLING
+   Definition: Submitting claims for services allegedly provided to a veteran after their recorded date of death.
+   Statute: 18 USC 1347 (Healthcare Fraud), 18 USC 1001 (False Statements)
+   Severity: CRITICAL — Potential criminal prosecution
+   OIG Referral: Mandatory
+
+2. PENSION POACHING
+   Definition: Predatory practices by unaccredited individuals or organizations that target vulnerable veterans for pension benefit claims, often involving asset manipulation and excessive fees.
+   Statute: 38 USC 5904, 38 CFR 14.629
+   Severity: HIGH — Civil and criminal penalties
+
+3. CLAIM SHARKING
+   Definition: Exploitation of veterans by unaccredited consultants who charge fees for filing VA disability claims, often inflating claim amounts to increase their percentage-based fees.
+   Statute: 38 USC 5904, 18 USC 1001
+   Severity: HIGH — Civil penalties and potential criminal charges
+
+4. DBQ FABRICATION
+   Definition: Submission of fabricated or materially misrepresented Disability Benefits Questionnaire forms to obtain disability ratings not supported by medical evidence.
+   Statute: 18 USC 1001 (False Statements), 18 USC 287 (False Claims)
+   Severity: HIGH — Criminal prosecution
+
+5. DUPLICATE/OVERLAPPING BILLING
+   Definition: Submitting multiple claims for the same service on the same date, or billing for overlapping service periods.
+   Statute: 31 USC 3729 (False Claims Act)
+   Severity: MEDIUM-HIGH — Civil monetary penalties
+
+6. MEDICAL RECORD MANIPULATION
+   Definition: Altering, fabricating, or destroying medical records to support fraudulent claims or hide evidence of improper care.
+   Statute: 18 USC 1519 (Destruction/Alteration of Records), 18 USC 1001
+   Severity: HIGH — Criminal prosecution
+
+7. CLAIM DATA DISCREPANCY
+   Definition: Internal inconsistencies within claim data suggesting errors or deliberate manipulation of codes, dates, or amounts.
+   Statute: Varies based on nature of discrepancy
+   Severity: MEDIUM — Administrative review and potential referral

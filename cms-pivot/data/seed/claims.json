@@ -1,0 +1,6626 @@
+[
+  {
+    "id": "d1000001-0000-4000-8000-000000000001",
+    "claim_number": "CLM-1001000001",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000001",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 1250.0,
+    "service_date": "2025-07-28",
+    "diagnosis_codes": [
+      "J06.9",
+      "R05.9"
+    ],
+    "procedure_codes": [
+      "99213",
+      "94010"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000002",
+    "claim_number": "CLM-1001000002",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000002",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 8750.0,
+    "service_date": "2025-07-30",
+    "diagnosis_codes": [
+      "M17.11"
+    ],
+    "procedure_codes": [
+      "27447"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000003",
+    "claim_number": "CLM-1001000003",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000004",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 950.0,
+    "service_date": "2025-08-01",
+    "diagnosis_codes": [
+      "I10"
+    ],
+    "procedure_codes": [
+      "99214",
+      "93000"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000004",
+    "claim_number": "CLM-1001000004",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000005",
+    "provider_id": "b1000001-0000-4000-8000-000000000003",
+    "claim_type": "medical",
+    "status": "flagged",
+    "risk_level": "high",
+    "billing_amount": 14200.0,
+    "service_date": "2025-07-25",
+    "diagnosis_codes": [
+      "F43.10",
+      "F32.1"
+    ],
+    "procedure_codes": [
+      "90837",
+      "90847",
+      "96127"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000005",
+    "claim_number": "CLM-1001000005",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000007",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 2100.0,
+    "service_date": "2025-08-02",
+    "diagnosis_codes": [
+      "M54.5"
+    ],
+    "procedure_codes": [
+      "99213",
+      "97110"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000006",
+    "claim_number": "CLM-1001000006",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000008",
+    "provider_id": "b1000001-0000-4000-8000-000000000006",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 1800.0,
+    "service_date": "2025-07-29",
+    "diagnosis_codes": [
+      "F41.1"
+    ],
+    "procedure_codes": [
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000007",
+    "claim_number": "CLM-1001000007",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000009",
+    "provider_id": "b1000001-0000-4000-8000-000000000005",
+    "claim_type": "medical",
+    "status": "flagged",
+    "risk_level": "high",
+    "billing_amount": 22500.0,
+    "service_date": "2025-08-03",
+    "diagnosis_codes": [
+      "S72.001A"
+    ],
+    "procedure_codes": [
+      "27236",
+      "20680"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000008",
+    "claim_number": "CLM-1001000008",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000010",
+    "provider_id": "b1000001-0000-4000-8000-000000000009",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 5600.0,
+    "service_date": "2025-07-31",
+    "diagnosis_codes": [
+      "I25.10"
+    ],
+    "procedure_codes": [
+      "93306",
+      "93017"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000009",
+    "claim_number": "CLM-1001000009",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000011",
+    "provider_id": "b1000001-0000-4000-8000-000000000010",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 3200.0,
+    "service_date": "2025-08-01",
+    "diagnosis_codes": [
+      "M79.3"
+    ],
+    "procedure_codes": [
+      "73721"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000010",
+    "claim_number": "CLM-1001000010",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000012",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "medical",
+    "status": "flagged",
+    "risk_level": "medium",
+    "billing_amount": 4500.0,
+    "service_date": "2025-07-27",
+    "diagnosis_codes": [
+      "M62.81"
+    ],
+    "procedure_codes": [
+      "97110",
+      "97140",
+      "97530"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000011",
+    "claim_number": "CLM-1001000011",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000013",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 1100.0,
+    "service_date": "2025-08-04",
+    "diagnosis_codes": [
+      "J45.20"
+    ],
+    "procedure_codes": [
+      "99213",
+      "94060"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000012",
+    "claim_number": "CLM-1001000012",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000014",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 35000.0,
+    "service_date": "2025-07-26",
+    "diagnosis_codes": [
+      "M75.110"
+    ],
+    "procedure_codes": [
+      "29827",
+      "29826"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000013",
+    "claim_number": "CLM-1001000013",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000016",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 780.0,
+    "service_date": "2025-08-02",
+    "diagnosis_codes": [
+      "R10.9"
+    ],
+    "procedure_codes": [
+      "99213"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000014",
+    "claim_number": "CLM-1001000014",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000017",
+    "provider_id": "b1000001-0000-4000-8000-000000000005",
+    "claim_type": "medical",
+    "status": "flagged",
+    "risk_level": "high",
+    "billing_amount": 18900.0,
+    "service_date": "2025-07-28",
+    "diagnosis_codes": [
+      "G89.4",
+      "M54.16"
+    ],
+    "procedure_codes": [
+      "62322",
+      "77003",
+      "64483"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000015",
+    "claim_number": "CLM-1001000015",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000018",
+    "provider_id": "b1000001-0000-4000-8000-000000000006",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 1650.0,
+    "service_date": "2025-08-01",
+    "diagnosis_codes": [
+      "F31.30"
+    ],
+    "procedure_codes": [
+      "90837"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000016",
+    "claim_number": "CLM-1001000016",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000019",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 4200.0,
+    "service_date": "2025-07-30",
+    "diagnosis_codes": [
+      "G43.909"
+    ],
+    "procedure_codes": [
+      "99215",
+      "95819"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000017",
+    "claim_number": "CLM-1001000017",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000020",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "dental",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 650.0,
+    "service_date": "2025-08-03",
+    "diagnosis_codes": [
+      "K02.9"
+    ],
+    "procedure_codes": [
+      "D2391",
+      "D0120"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000018",
+    "claim_number": "CLM-1001000018",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000021",
+    "provider_id": "b1000001-0000-4000-8000-000000000003",
+    "claim_type": "medical",
+    "status": "flagged",
+    "risk_level": "medium",
+    "billing_amount": 7200.0,
+    "service_date": "2025-07-29",
+    "diagnosis_codes": [
+      "F43.12",
+      "F33.1"
+    ],
+    "procedure_codes": [
+      "90837",
+      "90847",
+      "90853"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000019",
+    "claim_number": "CLM-1001000019",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000022",
+    "provider_id": "b1000001-0000-4000-8000-000000000009",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 3400.0,
+    "service_date": "2025-08-02",
+    "diagnosis_codes": [
+      "I48.91"
+    ],
+    "procedure_codes": [
+      "93000",
+      "93306"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000020",
+    "claim_number": "CLM-1001000020",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000023",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 2800.0,
+    "service_date": "2025-07-31",
+    "diagnosis_codes": [
+      "M25.511"
+    ],
+    "procedure_codes": [
+      "97110",
+      "97140"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000021",
+    "claim_number": "CLM-1001000021",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000024",
+    "provider_id": "b1000001-0000-4000-8000-000000000010",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 42000.0,
+    "service_date": "2025-07-27",
+    "diagnosis_codes": [
+      "C34.90"
+    ],
+    "procedure_codes": [
+      "71260",
+      "32405"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000022",
+    "claim_number": "CLM-1001000022",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000025",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 1400.0,
+    "service_date": "2025-08-04",
+    "diagnosis_codes": [
+      "E11.9"
+    ],
+    "procedure_codes": [
+      "99214",
+      "83036"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000023",
+    "claim_number": "CLM-1001000023",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000006",
+    "provider_id": "b1000001-0000-4000-8000-000000000005",
+    "claim_type": "medical",
+    "status": "flagged",
+    "risk_level": "high",
+    "billing_amount": 9800.0,
+    "service_date": "2025-07-15",
+    "diagnosis_codes": [
+      "M54.5",
+      "G89.29"
+    ],
+    "procedure_codes": [
+      "62322",
+      "77003"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000024",
+    "claim_number": "CLM-1001000024",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000015",
+    "provider_id": "b1000001-0000-4000-8000-000000000003",
+    "claim_type": "medical",
+    "status": "flagged",
+    "risk_level": "high",
+    "billing_amount": 6100.0,
+    "service_date": "2025-08-12",
+    "diagnosis_codes": [
+      "F43.10"
+    ],
+    "procedure_codes": [
+      "90837",
+      "90847"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000025",
+    "claim_number": "CLM-1001000025",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000001",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "dental",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 1950.0,
+    "service_date": "2025-08-01",
+    "diagnosis_codes": [
+      "K08.109"
+    ],
+    "procedure_codes": [
+      "D7140",
+      "D0220"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000026",
+    "claim_number": "CLM-1001000026",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000004",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 3100.0,
+    "service_date": "2025-08-03",
+    "diagnosis_codes": [
+      "G47.33"
+    ],
+    "procedure_codes": [
+      "95810"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000027",
+    "claim_number": "CLM-1001000027",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000007",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 7500.0,
+    "service_date": "2025-07-30",
+    "diagnosis_codes": [
+      "M23.611"
+    ],
+    "procedure_codes": [
+      "29881"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000028",
+    "claim_number": "CLM-1001000028",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000010",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "medical",
+    "status": "flagged",
+    "risk_level": "medium",
+    "billing_amount": 2400.0,
+    "service_date": "2025-08-01",
+    "diagnosis_codes": [
+      "I50.9"
+    ],
+    "procedure_codes": [
+      "99215",
+      "93306"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000029",
+    "claim_number": "CLM-1001000029",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000013",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 500.0,
+    "service_date": "2025-08-04",
+    "diagnosis_codes": [
+      "Z23"
+    ],
+    "procedure_codes": [
+      "90715"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000030",
+    "claim_number": "CLM-1001000030",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000016",
+    "provider_id": "b1000001-0000-4000-8000-000000000006",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 1350.0,
+    "service_date": "2025-08-02",
+    "diagnosis_codes": [
+      "F90.0"
+    ],
+    "procedure_codes": [
+      "90834",
+      "96127"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000031",
+    "claim_number": "CLM-1001000031",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000001",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 1800.0,
+    "service_date": "2025-08-18",
+    "diagnosis_codes": [
+      "J20.9"
+    ],
+    "procedure_codes": [
+      "99214",
+      "71046"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000032",
+    "claim_number": "CLM-1001000032",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000005",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 9200.0,
+    "service_date": "2025-08-15",
+    "diagnosis_codes": [
+      "M19.011"
+    ],
+    "procedure_codes": [
+      "27130"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000033",
+    "claim_number": "CLM-1001000033",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000008",
+    "provider_id": "b1000001-0000-4000-8000-000000000005",
+    "claim_type": "medical",
+    "status": "flagged",
+    "risk_level": "high",
+    "billing_amount": 28500.0,
+    "service_date": "2025-08-12",
+    "diagnosis_codes": [
+      "S42.001A",
+      "S32.001A"
+    ],
+    "procedure_codes": [
+      "23615",
+      "22325",
+      "20680"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000034",
+    "claim_number": "CLM-1001000034",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000009",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 1200.0,
+    "service_date": "2025-08-20",
+    "diagnosis_codes": [
+      "K21.0"
+    ],
+    "procedure_codes": [
+      "99213",
+      "43239"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000035",
+    "claim_number": "CLM-1001000035",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000011",
+    "provider_id": "b1000001-0000-4000-8000-000000000006",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 1500.0,
+    "service_date": "2025-08-19",
+    "diagnosis_codes": [
+      "F41.9"
+    ],
+    "procedure_codes": [
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000036",
+    "claim_number": "CLM-1001000036",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000014",
+    "provider_id": "b1000001-0000-4000-8000-000000000003",
+    "claim_type": "medical",
+    "status": "flagged",
+    "risk_level": "high",
+    "billing_amount": 11200.0,
+    "service_date": "2025-08-14",
+    "diagnosis_codes": [
+      "F43.10",
+      "F33.2"
+    ],
+    "procedure_codes": [
+      "90837",
+      "90847",
+      "90853",
+      "96127"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000037",
+    "claim_number": "CLM-1001000037",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000017",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 3800.0,
+    "service_date": "2025-08-18",
+    "diagnosis_codes": [
+      "M62.81"
+    ],
+    "procedure_codes": [
+      "97110",
+      "97530"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000038",
+    "claim_number": "CLM-1001000038",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000019",
+    "provider_id": "b1000001-0000-4000-8000-000000000009",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 5100.0,
+    "service_date": "2025-08-16",
+    "diagnosis_codes": [
+      "I25.10",
+      "I48.0"
+    ],
+    "procedure_codes": [
+      "93306",
+      "93000"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000039",
+    "claim_number": "CLM-1001000039",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000020",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 45000.0,
+    "service_date": "2025-08-10",
+    "diagnosis_codes": [
+      "M47.816"
+    ],
+    "procedure_codes": [
+      "22551",
+      "22552",
+      "22845"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000040",
+    "claim_number": "CLM-1001000040",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000022",
+    "provider_id": "b1000001-0000-4000-8000-000000000010",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 2900.0,
+    "service_date": "2025-08-20",
+    "diagnosis_codes": [
+      "S83.511A"
+    ],
+    "procedure_codes": [
+      "73721"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000041",
+    "claim_number": "CLM-1001000041",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000023",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "dental",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 1200.0,
+    "service_date": "2025-08-17",
+    "diagnosis_codes": [
+      "K05.10"
+    ],
+    "procedure_codes": [
+      "D4341",
+      "D0274"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000042",
+    "claim_number": "CLM-1001000042",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000024",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "pension",
+    "status": "flagged",
+    "risk_level": "high",
+    "billing_amount": 15000.0,
+    "service_date": "2025-08-13",
+    "diagnosis_codes": [
+      "F33.1"
+    ],
+    "procedure_codes": [
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000043",
+    "claim_number": "CLM-1001000043",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000025",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 2200.0,
+    "service_date": "2025-08-21",
+    "diagnosis_codes": [
+      "E11.65"
+    ],
+    "procedure_codes": [
+      "99214",
+      "83036",
+      "80053"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000044",
+    "claim_number": "CLM-1001000044",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000002",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 980.0,
+    "service_date": "2025-08-19",
+    "diagnosis_codes": [
+      "N39.0"
+    ],
+    "procedure_codes": [
+      "99213",
+      "81001"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000045",
+    "claim_number": "CLM-1001000045",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000007",
+    "provider_id": "b1000001-0000-4000-8000-000000000005",
+    "claim_type": "medical",
+    "status": "flagged",
+    "risk_level": "medium",
+    "billing_amount": 8900.0,
+    "service_date": "2025-08-15",
+    "diagnosis_codes": [
+      "S72.001A"
+    ],
+    "procedure_codes": [
+      "27245"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000046",
+    "claim_number": "CLM-1001000046",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000012",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 1650.0,
+    "service_date": "2025-08-20",
+    "diagnosis_codes": [
+      "J44.1"
+    ],
+    "procedure_codes": [
+      "99214",
+      "94010"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000047",
+    "claim_number": "CLM-1001000047",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000018",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 3600.0,
+    "service_date": "2025-08-17",
+    "diagnosis_codes": [
+      "G40.909"
+    ],
+    "procedure_codes": [
+      "95819",
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000048",
+    "claim_number": "CLM-1001000048",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000021",
+    "provider_id": "b1000001-0000-4000-8000-000000000006",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 1300.0,
+    "service_date": "2025-08-21",
+    "diagnosis_codes": [
+      "F32.0"
+    ],
+    "procedure_codes": [
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000049",
+    "claim_number": "CLM-1001000049",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000010",
+    "provider_id": "b1000001-0000-4000-8000-000000000009",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 6800.0,
+    "service_date": "2025-08-14",
+    "diagnosis_codes": [
+      "I25.10"
+    ],
+    "procedure_codes": [
+      "93458",
+      "93306"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000050",
+    "claim_number": "CLM-1001000050",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000015",
+    "provider_id": "b1000001-0000-4000-8000-000000000003",
+    "claim_type": "medical",
+    "status": "flagged",
+    "risk_level": "high",
+    "billing_amount": 7400.0,
+    "service_date": "2025-08-18",
+    "diagnosis_codes": [
+      "F43.10"
+    ],
+    "procedure_codes": [
+      "90837",
+      "90847"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000051",
+    "claim_number": "CLM-1001000051",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000004",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 3200.0,
+    "service_date": "2025-08-19",
+    "diagnosis_codes": [
+      "M54.5"
+    ],
+    "procedure_codes": [
+      "97110",
+      "97140"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000052",
+    "claim_number": "CLM-1001000052",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000016",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 750.0,
+    "service_date": "2025-08-22",
+    "diagnosis_codes": [
+      "Z00.00"
+    ],
+    "procedure_codes": [
+      "99395"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000053",
+    "claim_number": "CLM-1001000053",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000013",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 6500.0,
+    "service_date": "2025-08-16",
+    "diagnosis_codes": [
+      "M75.110"
+    ],
+    "procedure_codes": [
+      "29827"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000054",
+    "claim_number": "CLM-1001000054",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000006",
+    "provider_id": "b1000001-0000-4000-8000-000000000005",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 12500.0,
+    "service_date": "2025-08-08",
+    "diagnosis_codes": [
+      "M54.16",
+      "G89.4"
+    ],
+    "procedure_codes": [
+      "62322",
+      "64483"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000055",
+    "claim_number": "CLM-1001000055",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000017",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "medical",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 1050.0,
+    "service_date": "2025-08-21",
+    "diagnosis_codes": [
+      "J06.9"
+    ],
+    "procedure_codes": [
+      "99213"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000056",
+    "claim_number": "CLM-1001000056",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000001",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "disability",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 3500.0,
+    "service_date": "2025-09-05",
+    "diagnosis_codes": [
+      "M54.5",
+      "M79.3"
+    ],
+    "procedure_codes": [
+      "99215",
+      "72148"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000057",
+    "claim_number": "CLM-1001000057",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000002",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "disability",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 4800.0,
+    "service_date": "2025-09-03",
+    "diagnosis_codes": [
+      "M17.11",
+      "M25.561"
+    ],
+    "procedure_codes": [
+      "99215",
+      "73560"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000058",
+    "claim_number": "CLM-1001000058",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000005",
+    "provider_id": "b1000001-0000-4000-8000-000000000003",
+    "claim_type": "disability",
+    "status": "flagged",
+    "risk_level": "high",
+    "billing_amount": 8200.0,
+    "service_date": "2025-09-02",
+    "diagnosis_codes": [
+      "F43.10",
+      "F32.2"
+    ],
+    "procedure_codes": [
+      "90837",
+      "96136"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000059",
+    "claim_number": "CLM-1001000059",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000007",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "disability",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 2100.0,
+    "service_date": "2025-09-08",
+    "diagnosis_codes": [
+      "M54.5"
+    ],
+    "procedure_codes": [
+      "99214"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000060",
+    "claim_number": "CLM-1001000060",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000008",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "pension",
+    "status": "flagged",
+    "risk_level": "high",
+    "billing_amount": 18500.0,
+    "service_date": "2025-09-01",
+    "diagnosis_codes": [
+      "F33.2"
+    ],
+    "procedure_codes": [
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000061",
+    "claim_number": "CLM-1001000061",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000010",
+    "provider_id": "b1000001-0000-4000-8000-000000000009",
+    "claim_type": "disability",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 4500.0,
+    "service_date": "2025-09-06",
+    "diagnosis_codes": [
+      "I25.10",
+      "I50.9"
+    ],
+    "procedure_codes": [
+      "99215",
+      "93306"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000062",
+    "claim_number": "CLM-1001000062",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000012",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "disability",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 3100.0,
+    "service_date": "2025-09-07",
+    "diagnosis_codes": [
+      "M62.81",
+      "M79.3"
+    ],
+    "procedure_codes": [
+      "97110",
+      "97140"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000063",
+    "claim_number": "CLM-1001000063",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000014",
+    "provider_id": "b1000001-0000-4000-8000-000000000005",
+    "claim_type": "disability",
+    "status": "flagged",
+    "risk_level": "high",
+    "billing_amount": 24000.0,
+    "service_date": "2025-09-03",
+    "diagnosis_codes": [
+      "M75.110",
+      "M75.120"
+    ],
+    "procedure_codes": [
+      "29827",
+      "29826",
+      "29824"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000064",
+    "claim_number": "CLM-1001000064",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000017",
+    "provider_id": "b1000001-0000-4000-8000-000000000006",
+    "claim_type": "disability",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 1800.0,
+    "service_date": "2025-09-09",
+    "diagnosis_codes": [
+      "F43.10"
+    ],
+    "procedure_codes": [
+      "90837"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000065",
+    "claim_number": "CLM-1001000065",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000019",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "disability",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 2600.0,
+    "service_date": "2025-09-05",
+    "diagnosis_codes": [
+      "M79.3",
+      "G89.29"
+    ],
+    "procedure_codes": [
+      "99215",
+      "72148"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000066",
+    "claim_number": "CLM-1001000066",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000020",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "dental",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 850.0,
+    "service_date": "2025-09-08",
+    "diagnosis_codes": [
+      "K02.9"
+    ],
+    "procedure_codes": [
+      "D2391",
+      "D0220"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000067",
+    "claim_number": "CLM-1001000067",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000021",
+    "provider_id": "b1000001-0000-4000-8000-000000000003",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 9500.0,
+    "service_date": "2025-09-02",
+    "diagnosis_codes": [
+      "F33.2",
+      "F43.12"
+    ],
+    "procedure_codes": [
+      "90837",
+      "90847",
+      "96136"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000068",
+    "claim_number": "CLM-1001000068",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000023",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "disability",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 7200.0,
+    "service_date": "2025-09-04",
+    "diagnosis_codes": [
+      "M23.611"
+    ],
+    "procedure_codes": [
+      "29881",
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000069",
+    "claim_number": "CLM-1001000069",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000024",
+    "provider_id": "b1000001-0000-4000-8000-000000000010",
+    "claim_type": "disability",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 3800.0,
+    "service_date": "2025-09-07",
+    "diagnosis_codes": [
+      "S83.511A"
+    ],
+    "procedure_codes": [
+      "73721",
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000070",
+    "claim_number": "CLM-1001000070",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000025",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "disability",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 2400.0,
+    "service_date": "2025-09-09",
+    "diagnosis_codes": [
+      "E11.65",
+      "E11.40"
+    ],
+    "procedure_codes": [
+      "99215",
+      "83036"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000071",
+    "claim_number": "CLM-1001000071",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000004",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "disability",
+    "status": "flagged",
+    "risk_level": "medium",
+    "billing_amount": 5200.0,
+    "service_date": "2025-09-04",
+    "diagnosis_codes": [
+      "G47.33",
+      "G43.909"
+    ],
+    "procedure_codes": [
+      "95810",
+      "95819"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000072",
+    "claim_number": "CLM-1001000072",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000009",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "disability",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 1600.0,
+    "service_date": "2025-09-08",
+    "diagnosis_codes": [
+      "M54.5"
+    ],
+    "procedure_codes": [
+      "99214"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000073",
+    "claim_number": "CLM-1001000073",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000011",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "disability",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 1900.0,
+    "service_date": "2025-09-06",
+    "diagnosis_codes": [
+      "J45.20"
+    ],
+    "procedure_codes": [
+      "99214",
+      "94060"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000074",
+    "claim_number": "CLM-1001000074",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000013",
+    "provider_id": "b1000001-0000-4000-8000-000000000005",
+    "claim_type": "disability",
+    "status": "flagged",
+    "risk_level": "high",
+    "billing_amount": 16800.0,
+    "service_date": "2025-09-02",
+    "diagnosis_codes": [
+      "S72.001A",
+      "S42.001A"
+    ],
+    "procedure_codes": [
+      "27236",
+      "23615"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000075",
+    "claim_number": "CLM-1001000075",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000016",
+    "provider_id": "b1000001-0000-4000-8000-000000000006",
+    "claim_type": "disability",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 1400.0,
+    "service_date": "2025-09-09",
+    "diagnosis_codes": [
+      "F90.0"
+    ],
+    "procedure_codes": [
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000076",
+    "claim_number": "CLM-1001000076",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000018",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "pension",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 22000.0,
+    "service_date": "2025-09-01",
+    "diagnosis_codes": [
+      "F33.1"
+    ],
+    "procedure_codes": [
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000077",
+    "claim_number": "CLM-1001000077",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000022",
+    "provider_id": "b1000001-0000-4000-8000-000000000009",
+    "claim_type": "disability",
+    "status": "approved",
+    "risk_level": "low",
+    "billing_amount": 3900.0,
+    "service_date": "2025-09-06",
+    "diagnosis_codes": [
+      "I48.91"
+    ],
+    "procedure_codes": [
+      "93306",
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000078",
+    "claim_number": "CLM-1001000078",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000015",
+    "provider_id": "b1000001-0000-4000-8000-000000000003",
+    "claim_type": "disability",
+    "status": "flagged",
+    "risk_level": "high",
+    "billing_amount": 7800.0,
+    "service_date": "2025-09-03",
+    "diagnosis_codes": [
+      "F43.10",
+      "F33.2"
+    ],
+    "procedure_codes": [
+      "90837",
+      "90847",
+      "96127"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000079",
+    "claim_number": "CLM-1001000079",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000006",
+    "provider_id": "b1000001-0000-4000-8000-000000000005",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 11500.0,
+    "service_date": "2025-09-01",
+    "diagnosis_codes": [
+      "G89.4",
+      "M54.16"
+    ],
+    "procedure_codes": [
+      "62322",
+      "64483"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000080",
+    "claim_number": "CLM-1001000080",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000003",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "disability",
+    "status": "flagged",
+    "risk_level": "high",
+    "billing_amount": 5600.0,
+    "service_date": "2025-09-12",
+    "diagnosis_codes": [
+      "M54.5",
+      "G89.29"
+    ],
+    "procedure_codes": [
+      "99215",
+      "72148"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000081",
+    "claim_number": "CLM-9988776655",
+    "batch_id": "batch-demo-001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000003",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "medical",
+    "status": "pending",
+    "risk_level": null,
+    "billing_amount": 4250.0,
+    "service_date": "2025-10-20",
+    "diagnosis_codes": [
+      "I25.10",
+      "I50.9"
+    ],
+    "procedure_codes": [
+      "99215",
+      "93306",
+      "93000"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000082",
+    "claim_number": "CLM-9988776656",
+    "batch_id": "batch-demo-001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000018",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "pension",
+    "status": "pending",
+    "risk_level": null,
+    "billing_amount": 14500.0,
+    "service_date": "2025-10-18",
+    "diagnosis_codes": [
+      "F33.1"
+    ],
+    "procedure_codes": [
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000083",
+    "claim_number": "CLM-9988776657",
+    "batch_id": "batch-demo-001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000012",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "disability",
+    "status": "pending",
+    "risk_level": null,
+    "billing_amount": 11200.0,
+    "service_date": "2025-10-15",
+    "diagnosis_codes": [
+      "F33.2",
+      "F41.1"
+    ],
+    "procedure_codes": [
+      "99215",
+      "96127"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000084",
+    "claim_number": "CLM-9988776658",
+    "batch_id": "batch-demo-001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000005",
+    "provider_id": "b1000001-0000-4000-8000-000000000003",
+    "claim_type": "disability",
+    "status": "pending",
+    "risk_level": null,
+    "billing_amount": 8900.0,
+    "service_date": "2025-10-16",
+    "diagnosis_codes": [
+      "F43.10",
+      "F32.2"
+    ],
+    "procedure_codes": [
+      "90837",
+      "96136",
+      "96127"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000085",
+    "claim_number": "CLM-9988776659",
+    "batch_id": "batch-demo-001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000007",
+    "provider_id": "b1000001-0000-4000-8000-000000000005",
+    "claim_type": "medical",
+    "status": "pending",
+    "risk_level": null,
+    "billing_amount": 22800.0,
+    "service_date": "2025-10-17",
+    "diagnosis_codes": [
+      "S72.001A"
+    ],
+    "procedure_codes": [
+      "27236",
+      "20680"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000086",
+    "claim_number": "CLM-9988776660",
+    "batch_id": "batch-demo-001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000014",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "medical",
+    "status": "pending",
+    "risk_level": null,
+    "billing_amount": 6500.0,
+    "service_date": "2025-10-19",
+    "diagnosis_codes": [
+      "M75.110"
+    ],
+    "procedure_codes": [
+      "29827",
+      "29826"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000087",
+    "claim_number": "CLM-9988776661",
+    "batch_id": "batch-demo-001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000019",
+    "provider_id": "b1000001-0000-4000-8000-000000000009",
+    "claim_type": "medical",
+    "status": "pending",
+    "risk_level": null,
+    "billing_amount": 5400.0,
+    "service_date": "2025-10-18",
+    "diagnosis_codes": [
+      "I25.10"
+    ],
+    "procedure_codes": [
+      "93458",
+      "93306"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000088",
+    "claim_number": "CLM-9988776662",
+    "batch_id": "batch-demo-001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000010",
+    "provider_id": "b1000001-0000-4000-8000-000000000005",
+    "claim_type": "medical",
+    "status": "pending",
+    "risk_level": null,
+    "billing_amount": 38500.0,
+    "service_date": "2025-10-16",
+    "diagnosis_codes": [
+      "J06.9",
+      "R05.9"
+    ],
+    "procedure_codes": [
+      "27447",
+      "20680",
+      "27236"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000089",
+    "claim_number": "CLM-9988776663",
+    "batch_id": "batch-demo-001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000022",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "medical",
+    "status": "pending",
+    "risk_level": null,
+    "billing_amount": 1800.0,
+    "service_date": "2025-10-20",
+    "diagnosis_codes": [
+      "I10",
+      "E11.9"
+    ],
+    "procedure_codes": [
+      "99214",
+      "93000",
+      "83036"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000090",
+    "claim_number": "CLM-9988776664",
+    "batch_id": "batch-demo-001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000020",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "dental",
+    "status": "pending",
+    "risk_level": null,
+    "billing_amount": 2100.0,
+    "service_date": "2025-10-19",
+    "diagnosis_codes": [
+      "K02.9",
+      "K05.10"
+    ],
+    "procedure_codes": [
+      "D2391",
+      "D4341",
+      "D0120"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000106",
+    "claim_number": "CLM-2000010016",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000024",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 13781.38,
+    "service_date": "2025-11-09",
+    "diagnosis_codes": [
+      "I48.91"
+    ],
+    "procedure_codes": [
+      "29827",
+      "29826"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000107",
+    "claim_number": "CLM-2000010017",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000008",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 24652.77,
+    "service_date": "2025-04-29",
+    "diagnosis_codes": [
+      "M23.611"
+    ],
+    "procedure_codes": [
+      "90837",
+      "90847"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000108",
+    "claim_number": "CLM-2000010018",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000011",
+    "provider_id": "b1000001-0000-4000-8000-000000000003",
+    "claim_type": "dental",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 13915.53,
+    "service_date": "2025-11-16",
+    "diagnosis_codes": [
+      "G47.33",
+      "G43.909"
+    ],
+    "procedure_codes": [
+      "95810",
+      "95819"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000109",
+    "claim_number": "CLM-2000010019",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000024",
+    "provider_id": "b1000001-0000-4000-8000-000000000010",
+    "claim_type": "pension",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 22484.85,
+    "service_date": "2025-11-22",
+    "diagnosis_codes": [
+      "G47.33",
+      "G43.909"
+    ],
+    "procedure_codes": [
+      "22551",
+      "22552"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000110",
+    "claim_number": "CLM-2000010020",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000022",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "dental",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 11556.8,
+    "service_date": "2025-05-09",
+    "diagnosis_codes": [
+      "M62.81"
+    ],
+    "procedure_codes": [
+      "95810",
+      "95819"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000111",
+    "claim_number": "CLM-2000010021",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000007",
+    "provider_id": "b1000001-0000-4000-8000-000000000003",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 32432.27,
+    "service_date": "2025-10-30",
+    "diagnosis_codes": [
+      "C34.90"
+    ],
+    "procedure_codes": [
+      "99215",
+      "96127"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000112",
+    "claim_number": "CLM-2000010022",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000021",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 33281.24,
+    "service_date": "2025-08-02",
+    "diagnosis_codes": [
+      "F90.0"
+    ],
+    "procedure_codes": [
+      "29881",
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000113",
+    "claim_number": "CLM-2000010023",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000007",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "pension",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 31736.71,
+    "service_date": "2025-11-10",
+    "diagnosis_codes": [
+      "C34.90"
+    ],
+    "procedure_codes": [
+      "29881",
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000114",
+    "claim_number": "CLM-2000010024",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000019",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 19651.7,
+    "service_date": "2025-04-20",
+    "diagnosis_codes": [
+      "I25.10",
+      "I50.9"
+    ],
+    "procedure_codes": [
+      "99215",
+      "96127"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000115",
+    "claim_number": "CLM-2000010025",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000013",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 18812.43,
+    "service_date": "2025-08-29",
+    "diagnosis_codes": [
+      "M23.611"
+    ],
+    "procedure_codes": [
+      "99214",
+      "94010"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000116",
+    "claim_number": "CLM-2000010026",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000006",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 22215.76,
+    "service_date": "2025-11-25",
+    "diagnosis_codes": [
+      "G89.4",
+      "M54.16"
+    ],
+    "procedure_codes": [
+      "99214",
+      "83036"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000117",
+    "claim_number": "CLM-2000010027",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000005",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "pension",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 18448.73,
+    "service_date": "2025-11-11",
+    "diagnosis_codes": [
+      "F43.10",
+      "F32.1"
+    ],
+    "procedure_codes": [
+      "62322",
+      "64483"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000118",
+    "claim_number": "CLM-2000010028",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000002",
+    "provider_id": "b1000001-0000-4000-8000-000000000006",
+    "claim_type": "dental",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 12169.14,
+    "service_date": "2025-05-28",
+    "diagnosis_codes": [
+      "I25.10",
+      "I50.9"
+    ],
+    "procedure_codes": [
+      "99215",
+      "93306"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000119",
+    "claim_number": "CLM-2000010029",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000009",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 25706.2,
+    "service_date": "2025-05-03",
+    "diagnosis_codes": [
+      "F90.0"
+    ],
+    "procedure_codes": [
+      "95810",
+      "95819"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000120",
+    "claim_number": "CLM-2000010030",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000004",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 12501.14,
+    "service_date": "2025-03-14",
+    "diagnosis_codes": [
+      "S72.001A"
+    ],
+    "procedure_codes": [
+      "29827",
+      "29826"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000121",
+    "claim_number": "CLM-2000010031",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000011",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 4144.47,
+    "service_date": "2025-09-04",
+    "diagnosis_codes": [
+      "K02.9"
+    ],
+    "procedure_codes": [
+      "71260",
+      "32405"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000122",
+    "claim_number": "CLM-2000010032",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000004",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 5375.13,
+    "service_date": "2025-07-13",
+    "diagnosis_codes": [
+      "M75.110"
+    ],
+    "procedure_codes": [
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000123",
+    "claim_number": "CLM-2000010033",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000008",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "pension",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 9843.05,
+    "service_date": "2025-04-29",
+    "diagnosis_codes": [
+      "C34.90"
+    ],
+    "procedure_codes": [
+      "27236",
+      "20680"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000124",
+    "claim_number": "CLM-2000010034",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000002",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "dental",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 31581.24,
+    "service_date": "2025-04-21",
+    "diagnosis_codes": [
+      "K02.9"
+    ],
+    "procedure_codes": [
+      "22551",
+      "22552"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000125",
+    "claim_number": "CLM-2000010035",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000013",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "dental",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 901.73,
+    "service_date": "2025-11-13",
+    "diagnosis_codes": [
+      "K02.9"
+    ],
+    "procedure_codes": [
+      "99215",
+      "93306"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000126",
+    "claim_number": "CLM-2000010036",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000002",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 28137.31,
+    "service_date": "2025-10-16",
+    "diagnosis_codes": [
+      "K02.9"
+    ],
+    "procedure_codes": [
+      "99215",
+      "96127"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000127",
+    "claim_number": "CLM-2000010037",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000006",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 4034.21,
+    "service_date": "2025-11-03",
+    "diagnosis_codes": [
+      "M75.110"
+    ],
+    "procedure_codes": [
+      "27236",
+      "20680"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000128",
+    "claim_number": "CLM-2000010038",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000009",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "pension",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 10441.03,
+    "service_date": "2025-05-29",
+    "diagnosis_codes": [
+      "J44.1"
+    ],
+    "procedure_codes": [
+      "27236",
+      "20680"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000129",
+    "claim_number": "CLM-2000010039",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000003",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 26176.34,
+    "service_date": "2025-05-07",
+    "diagnosis_codes": [
+      "E11.65"
+    ],
+    "procedure_codes": [
+      "99215",
+      "96127"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000130",
+    "claim_number": "CLM-2000010040",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000020",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 47237.88,
+    "service_date": "2025-07-22",
+    "diagnosis_codes": [
+      "M23.611"
+    ],
+    "procedure_codes": [
+      "62322",
+      "64483"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000131",
+    "claim_number": "CLM-2000010041",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000009",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "dental",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 14098.9,
+    "service_date": "2025-07-11",
+    "diagnosis_codes": [
+      "M75.110"
+    ],
+    "procedure_codes": [
+      "27236",
+      "20680"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000132",
+    "claim_number": "CLM-2000010042",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000002",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "dental",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 967.36,
+    "service_date": "2025-09-25",
+    "diagnosis_codes": [
+      "I48.91"
+    ],
+    "procedure_codes": [
+      "90837",
+      "90847"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000133",
+    "claim_number": "CLM-2000010043",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000018",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 2500.53,
+    "service_date": "2025-09-18",
+    "diagnosis_codes": [
+      "E11.65"
+    ],
+    "procedure_codes": [
+      "95810",
+      "95819"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000134",
+    "claim_number": "CLM-2000010044",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000022",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 12577.8,
+    "service_date": "2025-09-23",
+    "diagnosis_codes": [
+      "F33.2",
+      "F41.1"
+    ],
+    "procedure_codes": [
+      "99215",
+      "96127"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000135",
+    "claim_number": "CLM-2000010045",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000024",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 44435.8,
+    "service_date": "2025-07-31",
+    "diagnosis_codes": [
+      "F90.0"
+    ],
+    "procedure_codes": [
+      "29827",
+      "29826"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000136",
+    "claim_number": "CLM-2000010046",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000015",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 17303.88,
+    "service_date": "2025-11-28",
+    "diagnosis_codes": [
+      "F90.0"
+    ],
+    "procedure_codes": [
+      "99214",
+      "94010"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000137",
+    "claim_number": "CLM-2000010047",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000012",
+    "provider_id": "b1000001-0000-4000-8000-000000000005",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 31077.94,
+    "service_date": "2025-10-12",
+    "diagnosis_codes": [
+      "M23.611"
+    ],
+    "procedure_codes": [
+      "99215",
+      "96127"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000138",
+    "claim_number": "CLM-2000010048",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000004",
+    "provider_id": "b1000001-0000-4000-8000-000000000010",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 28958.16,
+    "service_date": "2025-10-26",
+    "diagnosis_codes": [
+      "M47.816"
+    ],
+    "procedure_codes": [
+      "29881",
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000139",
+    "claim_number": "CLM-2000010049",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000001",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "dental",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 25340.24,
+    "service_date": "2025-10-15",
+    "diagnosis_codes": [
+      "J44.1"
+    ],
+    "procedure_codes": [
+      "99214",
+      "94010"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000140",
+    "claim_number": "CLM-2000010050",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000017",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 15398.24,
+    "service_date": "2025-07-23",
+    "diagnosis_codes": [
+      "I48.91"
+    ],
+    "procedure_codes": [
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000141",
+    "claim_number": "CLM-2000010051",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000020",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 27661.77,
+    "service_date": "2025-11-09",
+    "diagnosis_codes": [
+      "J44.1"
+    ],
+    "procedure_codes": [
+      "97110",
+      "97140"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000142",
+    "claim_number": "CLM-2000010052",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000017",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 23134.39,
+    "service_date": "2025-11-16",
+    "diagnosis_codes": [
+      "J44.1"
+    ],
+    "procedure_codes": [
+      "27236",
+      "20680"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000143",
+    "claim_number": "CLM-2000010053",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000008",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 38869.77,
+    "service_date": "2025-03-30",
+    "diagnosis_codes": [
+      "I48.91"
+    ],
+    "procedure_codes": [
+      "22551",
+      "22552"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000144",
+    "claim_number": "CLM-2000010054",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000016",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 19663.62,
+    "service_date": "2025-10-28",
+    "diagnosis_codes": [
+      "M62.81"
+    ],
+    "procedure_codes": [
+      "29827",
+      "29826"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000145",
+    "claim_number": "CLM-2000010055",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000015",
+    "provider_id": "b1000001-0000-4000-8000-000000000009",
+    "claim_type": "pension",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 7093.61,
+    "service_date": "2025-07-21",
+    "diagnosis_codes": [
+      "I48.91"
+    ],
+    "procedure_codes": [
+      "97110",
+      "97140"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000146",
+    "claim_number": "CLM-2000010056",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000015",
+    "provider_id": "b1000001-0000-4000-8000-000000000003",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 13033.84,
+    "service_date": "2025-08-23",
+    "diagnosis_codes": [
+      "M62.81"
+    ],
+    "procedure_codes": [
+      "27236",
+      "20680"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000147",
+    "claim_number": "CLM-2000010057",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000009",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 16652.0,
+    "service_date": "2025-05-21",
+    "diagnosis_codes": [
+      "I25.10",
+      "I50.9"
+    ],
+    "procedure_codes": [
+      "22551",
+      "22552"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000148",
+    "claim_number": "CLM-2000010058",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000011",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 26411.25,
+    "service_date": "2025-05-17",
+    "diagnosis_codes": [
+      "F90.0"
+    ],
+    "procedure_codes": [
+      "D2391",
+      "D0120"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000149",
+    "claim_number": "CLM-2000010059",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000025",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 19207.37,
+    "service_date": "2025-10-25",
+    "diagnosis_codes": [
+      "C34.90"
+    ],
+    "procedure_codes": [
+      "29881",
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000150",
+    "claim_number": "CLM-2000010060",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000013",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 16665.31,
+    "service_date": "2025-08-08",
+    "diagnosis_codes": [
+      "F43.10",
+      "F32.1"
+    ],
+    "procedure_codes": [
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000151",
+    "claim_number": "CLM-2000010061",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000003",
+    "provider_id": "b1000001-0000-4000-8000-000000000010",
+    "claim_type": "dental",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 31137.78,
+    "service_date": "2025-09-07",
+    "diagnosis_codes": [
+      "M47.816"
+    ],
+    "procedure_codes": [
+      "97110",
+      "97140"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000152",
+    "claim_number": "CLM-2000010062",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000009",
+    "provider_id": "b1000001-0000-4000-8000-000000000006",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 36294.86,
+    "service_date": "2025-07-11",
+    "diagnosis_codes": [
+      "M75.110"
+    ],
+    "procedure_codes": [
+      "95810",
+      "95819"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000153",
+    "claim_number": "CLM-2000010063",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000025",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 45983.88,
+    "service_date": "2025-04-24",
+    "diagnosis_codes": [
+      "I25.10",
+      "I50.9"
+    ],
+    "procedure_codes": [
+      "71260",
+      "32405"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000154",
+    "claim_number": "CLM-2000010064",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000019",
+    "provider_id": "b1000001-0000-4000-8000-000000000003",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 45534.13,
+    "service_date": "2025-06-05",
+    "diagnosis_codes": [
+      "E11.65"
+    ],
+    "procedure_codes": [
+      "62322",
+      "64483"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000155",
+    "claim_number": "CLM-2000010065",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000019",
+    "provider_id": "b1000001-0000-4000-8000-000000000010",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 32770.79,
+    "service_date": "2025-08-02",
+    "diagnosis_codes": [
+      "E11.65"
+    ],
+    "procedure_codes": [
+      "62322",
+      "64483"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000156",
+    "claim_number": "CLM-2000010066",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000018",
+    "provider_id": "b1000001-0000-4000-8000-000000000010",
+    "claim_type": "dental",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 21019.44,
+    "service_date": "2025-08-12",
+    "diagnosis_codes": [
+      "G89.4",
+      "M54.16"
+    ],
+    "procedure_codes": [
+      "93306",
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000157",
+    "claim_number": "CLM-2000010067",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000023",
+    "provider_id": "b1000001-0000-4000-8000-000000000006",
+    "claim_type": "dental",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 8021.18,
+    "service_date": "2025-08-25",
+    "diagnosis_codes": [
+      "I48.91"
+    ],
+    "procedure_codes": [
+      "29881",
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000158",
+    "claim_number": "CLM-2000010068",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000009",
+    "provider_id": "b1000001-0000-4000-8000-000000000006",
+    "claim_type": "dental",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 42412.99,
+    "service_date": "2025-07-03",
+    "diagnosis_codes": [
+      "F43.10",
+      "F32.1"
+    ],
+    "procedure_codes": [
+      "D2391",
+      "D0120"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000159",
+    "claim_number": "CLM-2000010069",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000007",
+    "provider_id": "b1000001-0000-4000-8000-000000000006",
+    "claim_type": "pension",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 17547.74,
+    "service_date": "2025-05-13",
+    "diagnosis_codes": [
+      "F43.10",
+      "F32.1"
+    ],
+    "procedure_codes": [
+      "22551",
+      "22552"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000160",
+    "claim_number": "CLM-2000010070",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000016",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 27004.32,
+    "service_date": "2025-07-16",
+    "diagnosis_codes": [
+      "E11.65"
+    ],
+    "procedure_codes": [
+      "71260",
+      "32405"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000161",
+    "claim_number": "CLM-2000010071",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000010",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "pension",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 32138.91,
+    "service_date": "2025-08-23",
+    "diagnosis_codes": [
+      "M62.81"
+    ],
+    "procedure_codes": [
+      "29881",
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000162",
+    "claim_number": "CLM-2000010072",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000004",
+    "provider_id": "b1000001-0000-4000-8000-000000000005",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 34844.62,
+    "service_date": "2025-09-17",
+    "diagnosis_codes": [
+      "M47.816"
+    ],
+    "procedure_codes": [
+      "D2391",
+      "D0120"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000163",
+    "claim_number": "CLM-2000010073",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000004",
+    "provider_id": "b1000001-0000-4000-8000-000000000005",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 40100.06,
+    "service_date": "2025-07-11",
+    "diagnosis_codes": [
+      "M75.110"
+    ],
+    "procedure_codes": [
+      "29827",
+      "29826"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000164",
+    "claim_number": "CLM-2000010074",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000021",
+    "provider_id": "b1000001-0000-4000-8000-000000000009",
+    "claim_type": "pension",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 41791.37,
+    "service_date": "2025-12-26",
+    "diagnosis_codes": [
+      "K02.9"
+    ],
+    "procedure_codes": [
+      "97110",
+      "97140"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000165",
+    "claim_number": "CLM-2000010075",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000009",
+    "provider_id": "b1000001-0000-4000-8000-000000000006",
+    "claim_type": "dental",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 45218.2,
+    "service_date": "2025-12-06",
+    "diagnosis_codes": [
+      "M75.110"
+    ],
+    "procedure_codes": [
+      "99215",
+      "93306"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000166",
+    "claim_number": "CLM-2000010076",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000003",
+    "provider_id": "b1000001-0000-4000-8000-000000000003",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 47712.94,
+    "service_date": "2025-09-14",
+    "diagnosis_codes": [
+      "F90.0"
+    ],
+    "procedure_codes": [
+      "97110",
+      "97140"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000167",
+    "claim_number": "CLM-2000010077",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000010",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 27639.31,
+    "service_date": "2025-11-11",
+    "diagnosis_codes": [
+      "S72.001A"
+    ],
+    "procedure_codes": [
+      "99215",
+      "96127"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000168",
+    "claim_number": "CLM-2000010078",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000006",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 926.29,
+    "service_date": "2025-08-18",
+    "diagnosis_codes": [
+      "E11.65"
+    ],
+    "procedure_codes": [
+      "99214",
+      "83036"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000169",
+    "claim_number": "CLM-2000010079",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000022",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 11817.6,
+    "service_date": "2025-09-22",
+    "diagnosis_codes": [
+      "G89.4",
+      "M54.16"
+    ],
+    "procedure_codes": [
+      "71260",
+      "32405"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000170",
+    "claim_number": "CLM-2000010080",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000005",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "pension",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 4170.54,
+    "service_date": "2025-05-20",
+    "diagnosis_codes": [
+      "G89.4",
+      "M54.16"
+    ],
+    "procedure_codes": [
+      "97110",
+      "97140"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000171",
+    "claim_number": "CLM-2000010081",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000009",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "dental",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 24422.29,
+    "service_date": "2025-03-23",
+    "diagnosis_codes": [
+      "M23.611"
+    ],
+    "procedure_codes": [
+      "90837",
+      "90847"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000172",
+    "claim_number": "CLM-2000010082",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000025",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "dental",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 32531.69,
+    "service_date": "2025-05-06",
+    "diagnosis_codes": [
+      "F33.2",
+      "F41.1"
+    ],
+    "procedure_codes": [
+      "93306",
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000173",
+    "claim_number": "CLM-2000010083",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000016",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "dental",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 17223.76,
+    "service_date": "2025-10-16",
+    "diagnosis_codes": [
+      "E11.65"
+    ],
+    "procedure_codes": [
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000174",
+    "claim_number": "CLM-2000010084",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000003",
+    "provider_id": "b1000001-0000-4000-8000-000000000009",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 15645.21,
+    "service_date": "2025-10-11",
+    "diagnosis_codes": [
+      "M62.81"
+    ],
+    "procedure_codes": [
+      "93306",
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000175",
+    "claim_number": "CLM-2000010085",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000020",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "pension",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 36504.12,
+    "service_date": "2025-11-22",
+    "diagnosis_codes": [
+      "I25.10",
+      "I50.9"
+    ],
+    "procedure_codes": [
+      "99214",
+      "83036"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000176",
+    "claim_number": "CLM-2000010086",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000004",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 2162.64,
+    "service_date": "2025-11-18",
+    "diagnosis_codes": [
+      "I48.91"
+    ],
+    "procedure_codes": [
+      "27236",
+      "20680"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000177",
+    "claim_number": "CLM-2000010087",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000004",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "pension",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 31371.9,
+    "service_date": "2025-12-05",
+    "diagnosis_codes": [
+      "K02.9"
+    ],
+    "procedure_codes": [
+      "D2391",
+      "D0120"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000178",
+    "claim_number": "CLM-2000010088",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000013",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "pension",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 9796.81,
+    "service_date": "2025-11-08",
+    "diagnosis_codes": [
+      "J44.1"
+    ],
+    "procedure_codes": [
+      "29881",
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000179",
+    "claim_number": "CLM-2000010089",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000019",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "dental",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 28172.38,
+    "service_date": "2025-12-06",
+    "diagnosis_codes": [
+      "J44.1"
+    ],
+    "procedure_codes": [
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000180",
+    "claim_number": "CLM-2000010090",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000023",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "pension",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 12071.62,
+    "service_date": "2025-11-01",
+    "diagnosis_codes": [
+      "F90.0"
+    ],
+    "procedure_codes": [
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000181",
+    "claim_number": "CLM-2000010091",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000016",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 46339.71,
+    "service_date": "2025-10-04",
+    "diagnosis_codes": [
+      "M62.81"
+    ],
+    "procedure_codes": [
+      "90837",
+      "90847"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000182",
+    "claim_number": "CLM-2000010092",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000021",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "dental",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 46581.96,
+    "service_date": "2025-11-01",
+    "diagnosis_codes": [
+      "J44.1"
+    ],
+    "procedure_codes": [
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000183",
+    "claim_number": "CLM-2000010093",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000018",
+    "provider_id": "b1000001-0000-4000-8000-000000000006",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 2494.44,
+    "service_date": "2025-09-20",
+    "diagnosis_codes": [
+      "G89.4",
+      "M54.16"
+    ],
+    "procedure_codes": [
+      "62322",
+      "64483"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000184",
+    "claim_number": "CLM-2000010094",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000001",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "dental",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 2970.77,
+    "service_date": "2025-06-17",
+    "diagnosis_codes": [
+      "C34.90"
+    ],
+    "procedure_codes": [
+      "93306",
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000185",
+    "claim_number": "CLM-2000010095",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000006",
+    "provider_id": "b1000001-0000-4000-8000-000000000010",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 9063.27,
+    "service_date": "2025-07-24",
+    "diagnosis_codes": [
+      "M62.81"
+    ],
+    "procedure_codes": [
+      "29881",
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000186",
+    "claim_number": "CLM-2000010096",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000015",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "pension",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 43337.08,
+    "service_date": "2025-06-18",
+    "diagnosis_codes": [
+      "E11.65"
+    ],
+    "procedure_codes": [
+      "93306",
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000187",
+    "claim_number": "CLM-2000010097",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000010",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "dental",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 10203.04,
+    "service_date": "2025-09-05",
+    "diagnosis_codes": [
+      "G47.33",
+      "G43.909"
+    ],
+    "procedure_codes": [
+      "99214",
+      "83036"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000188",
+    "claim_number": "CLM-2000010098",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000022",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "dental",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 19482.03,
+    "service_date": "2025-12-19",
+    "diagnosis_codes": [
+      "C34.90"
+    ],
+    "procedure_codes": [
+      "95810",
+      "95819"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000189",
+    "claim_number": "CLM-2000010099",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000020",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 12629.58,
+    "service_date": "2025-11-13",
+    "diagnosis_codes": [
+      "E11.65"
+    ],
+    "procedure_codes": [
+      "97110",
+      "97140"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000190",
+    "claim_number": "CLM-2000010100",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000024",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 7002.64,
+    "service_date": "2025-06-17",
+    "diagnosis_codes": [
+      "G47.33",
+      "G43.909"
+    ],
+    "procedure_codes": [
+      "29881",
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000191",
+    "claim_number": "CLM-2000010101",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000010",
+    "provider_id": "b1000001-0000-4000-8000-000000000003",
+    "claim_type": "disability",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 36037.6,
+    "service_date": "2025-04-18",
+    "diagnosis_codes": [
+      "F90.0"
+    ],
+    "procedure_codes": [
+      "95810",
+      "95819"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000192",
+    "claim_number": "CLM-2000010102",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000009",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "dental",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 26126.21,
+    "service_date": "2025-10-04",
+    "diagnosis_codes": [
+      "G89.4",
+      "M54.16"
+    ],
+    "procedure_codes": [
+      "71260",
+      "32405"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000193",
+    "claim_number": "CLM-2000010103",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000020",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "pension",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 11248.53,
+    "service_date": "2025-10-16",
+    "diagnosis_codes": [
+      "G89.4",
+      "M54.16"
+    ],
+    "procedure_codes": [
+      "99215",
+      "93306"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000194",
+    "claim_number": "CLM-2000010104",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000016",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "dental",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 6280.89,
+    "service_date": "2025-09-15",
+    "diagnosis_codes": [
+      "I48.91"
+    ],
+    "procedure_codes": [
+      "99215",
+      "93306"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000195",
+    "claim_number": "CLM-2000010105",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000016",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "dental",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 29858.78,
+    "service_date": "2025-06-11",
+    "diagnosis_codes": [
+      "C34.90"
+    ],
+    "procedure_codes": [
+      "95810",
+      "95819"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000196",
+    "claim_number": "CLM-2000010106",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000018",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 43360.06,
+    "service_date": "2025-04-28",
+    "diagnosis_codes": [
+      "S72.001A"
+    ],
+    "procedure_codes": [
+      "22551",
+      "22552"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000197",
+    "claim_number": "CLM-2000010107",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000002",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "medical",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 37936.7,
+    "service_date": "2025-04-08",
+    "diagnosis_codes": [
+      "M47.816"
+    ],
+    "procedure_codes": [
+      "22551",
+      "22552"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000198",
+    "claim_number": "CLM-2000010108",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000020",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "pension",
+    "status": "denied",
+    "risk_level": "high",
+    "billing_amount": 933.84,
+    "service_date": "2025-06-08",
+    "diagnosis_codes": [
+      "G89.4",
+      "M54.16"
+    ],
+    "procedure_codes": [
+      "90837",
+      "90847"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000199",
+    "claim_number": "CLM-2000010109",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000008",
+    "provider_id": "b1000001-0000-4000-8000-000000000003",
+    "claim_type": "dental",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 28593.86,
+    "service_date": "2025-07-18",
+    "diagnosis_codes": [
+      "G89.4",
+      "M54.16"
+    ],
+    "procedure_codes": [
+      "27236",
+      "20680"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000200",
+    "claim_number": "CLM-2000010110",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000017",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "pension",
+    "status": "denied",
+    "risk_level": "medium",
+    "billing_amount": 28821.04,
+    "service_date": "2025-07-08",
+    "diagnosis_codes": [
+      "F43.10",
+      "F32.1"
+    ],
+    "procedure_codes": [
+      "29827",
+      "29826"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000186",
+    "claim_number": "CLM-3001000",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000021",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 1362.87,
+    "service_date": "2025-08-25",
+    "diagnosis_codes": [
+      "J45.20"
+    ],
+    "procedure_codes": [
+      "97530"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000187",
+    "claim_number": "CLM-3001001",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000005",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 4036.08,
+    "service_date": "2025-09-10",
+    "diagnosis_codes": [
+      "J44.1"
+    ],
+    "procedure_codes": [
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000188",
+    "claim_number": "CLM-3001002",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000019",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 1596.5,
+    "service_date": "2025-08-18",
+    "diagnosis_codes": [
+      "F41.1"
+    ],
+    "procedure_codes": [
+      "97530"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000189",
+    "claim_number": "CLM-3001003",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000017",
+    "provider_id": "b1000001-0000-4000-8000-000000000010",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 1415.49,
+    "service_date": "2025-08-22",
+    "diagnosis_codes": [
+      "J44.1"
+    ],
+    "procedure_codes": [
+      "27447"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000190",
+    "claim_number": "CLM-3001004",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000008",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 20829.67,
+    "service_date": "2025-08-15",
+    "diagnosis_codes": [
+      "M79.3"
+    ],
+    "procedure_codes": [
+      "27447"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000191",
+    "claim_number": "CLM-3001005",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000011",
+    "provider_id": "b1000001-0000-4000-8000-000000000005",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 5864.04,
+    "service_date": "2025-08-27",
+    "diagnosis_codes": [
+      "M25.511"
+    ],
+    "procedure_codes": [
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000192",
+    "claim_number": "CLM-3001006",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000013",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 12884.79,
+    "service_date": "2025-08-27",
+    "diagnosis_codes": [
+      "N39.0"
+    ],
+    "procedure_codes": [
+      "90837"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000193",
+    "claim_number": "CLM-3001007",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000002",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 16350.16,
+    "service_date": "2025-08-18",
+    "diagnosis_codes": [
+      "M50.20"
+    ],
+    "procedure_codes": [
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000194",
+    "claim_number": "CLM-3001008",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000018",
+    "provider_id": "b1000001-0000-4000-8000-000000000005",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 29114.46,
+    "service_date": "2025-09-05",
+    "diagnosis_codes": [
+      "F43.10"
+    ],
+    "procedure_codes": [
+      "97140"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000195",
+    "claim_number": "CLM-3001009",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000023",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 2080.94,
+    "service_date": "2025-08-22",
+    "diagnosis_codes": [
+      "M17.11"
+    ],
+    "procedure_codes": [
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000196",
+    "claim_number": "CLM-3001010",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000008",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 13614.35,
+    "service_date": "2025-09-01",
+    "diagnosis_codes": [
+      "F43.10"
+    ],
+    "procedure_codes": [
+      "97110"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000197",
+    "claim_number": "CLM-3001011",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000012",
+    "provider_id": "b1000001-0000-4000-8000-000000000006",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 7727.99,
+    "service_date": "2025-08-25",
+    "diagnosis_codes": [
+      "F32.1"
+    ],
+    "procedure_codes": [
+      "97110"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000198",
+    "claim_number": "CLM-3001012",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000018",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 8945.98,
+    "service_date": "2025-09-01",
+    "diagnosis_codes": [
+      "M50.20"
+    ],
+    "procedure_codes": [
+      "90837"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000199",
+    "claim_number": "CLM-3001013",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000021",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 19714.77,
+    "service_date": "2025-09-08",
+    "diagnosis_codes": [
+      "S72.001A"
+    ],
+    "procedure_codes": [
+      "99214"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000200",
+    "claim_number": "CLM-3001014",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000008",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 28274.08,
+    "service_date": "2025-08-29",
+    "diagnosis_codes": [
+      "E11.9"
+    ],
+    "procedure_codes": [
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000201",
+    "claim_number": "CLM-3001015",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000007",
+    "provider_id": "b1000001-0000-4000-8000-000000000010",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 30734.68,
+    "service_date": "2025-08-27",
+    "diagnosis_codes": [
+      "F41.1"
+    ],
+    "procedure_codes": [
+      "99213",
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000202",
+    "claim_number": "CLM-3001016",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000013",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 16330.39,
+    "service_date": "2025-08-25",
+    "diagnosis_codes": [
+      "G47.33"
+    ],
+    "procedure_codes": [
+      "97530"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000203",
+    "claim_number": "CLM-3001017",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000024",
+    "provider_id": "b1000001-0000-4000-8000-000000000009",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 19094.72,
+    "service_date": "2025-09-10",
+    "diagnosis_codes": [
+      "E78.5"
+    ],
+    "procedure_codes": [
+      "27447"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000204",
+    "claim_number": "CLM-3001018",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000019",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 12988.88,
+    "service_date": "2025-08-20",
+    "diagnosis_codes": [
+      "K21.0"
+    ],
+    "procedure_codes": [
+      "99213",
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000205",
+    "claim_number": "CLM-3001019",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000003",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 30208.05,
+    "service_date": "2025-08-20",
+    "diagnosis_codes": [
+      "M79.3"
+    ],
+    "procedure_codes": [
+      "27447"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000206",
+    "claim_number": "CLM-3001020",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000020",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 13774.47,
+    "service_date": "2025-09-05",
+    "diagnosis_codes": [
+      "L40.0"
+    ],
+    "procedure_codes": [
+      "90837"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000207",
+    "claim_number": "CLM-3001021",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000018",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 23969.78,
+    "service_date": "2025-08-18",
+    "diagnosis_codes": [
+      "J44.1"
+    ],
+    "procedure_codes": [
+      "90837"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000208",
+    "claim_number": "CLM-3001022",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000025",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 12236.05,
+    "service_date": "2025-08-25",
+    "diagnosis_codes": [
+      "G89.29"
+    ],
+    "procedure_codes": [
+      "97110"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000209",
+    "claim_number": "CLM-3001023",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000015",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 33406.65,
+    "service_date": "2025-09-10",
+    "diagnosis_codes": [
+      "E11.9"
+    ],
+    "procedure_codes": [
+      "97110"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000210",
+    "claim_number": "CLM-3001024",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000017",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 30532.89,
+    "service_date": "2025-08-25",
+    "diagnosis_codes": [
+      "K21.0"
+    ],
+    "procedure_codes": [
+      "97140"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000211",
+    "claim_number": "CLM-3001025",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000005",
+    "provider_id": "b1000001-0000-4000-8000-000000000006",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 26806.62,
+    "service_date": "2025-09-03",
+    "diagnosis_codes": [
+      "K21.0"
+    ],
+    "procedure_codes": [
+      "99213"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000212",
+    "claim_number": "CLM-3001026",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000020",
+    "provider_id": "b1000001-0000-4000-8000-000000000006",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 17356.9,
+    "service_date": "2025-08-18",
+    "diagnosis_codes": [
+      "F43.10"
+    ],
+    "procedure_codes": [
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000213",
+    "claim_number": "CLM-3001027",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000008",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 8810.07,
+    "service_date": "2025-09-05",
+    "diagnosis_codes": [
+      "F32.1"
+    ],
+    "procedure_codes": [
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000214",
+    "claim_number": "CLM-3001028",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000024",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 28652.8,
+    "service_date": "2025-09-03",
+    "diagnosis_codes": [
+      "G47.33"
+    ],
+    "procedure_codes": [
+      "99204"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000215",
+    "claim_number": "CLM-3001029",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000022",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 33166.28,
+    "service_date": "2025-08-20",
+    "diagnosis_codes": [
+      "E11.9"
+    ],
+    "procedure_codes": [
+      "27447"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000216",
+    "claim_number": "CLM-3001030",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000007",
+    "provider_id": "b1000001-0000-4000-8000-000000000009",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 26556.65,
+    "service_date": "2025-09-10",
+    "diagnosis_codes": [
+      "F41.1"
+    ],
+    "procedure_codes": [
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000217",
+    "claim_number": "CLM-3001031",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000013",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 22920.79,
+    "service_date": "2025-09-01",
+    "diagnosis_codes": [
+      "K21.0"
+    ],
+    "procedure_codes": [
+      "99215",
+      "97530"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000218",
+    "claim_number": "CLM-3001032",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000004",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 8252.06,
+    "service_date": "2025-08-27",
+    "diagnosis_codes": [
+      "M54.5"
+    ],
+    "procedure_codes": [
+      "97530"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000219",
+    "claim_number": "CLM-3001033",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000019",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 748.08,
+    "service_date": "2025-09-10",
+    "diagnosis_codes": [
+      "G43.909"
+    ],
+    "procedure_codes": [
+      "97530"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000220",
+    "claim_number": "CLM-3001034",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000003",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 30157.42,
+    "service_date": "2025-08-18",
+    "diagnosis_codes": [
+      "K21.0"
+    ],
+    "procedure_codes": [
+      "97530"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000221",
+    "claim_number": "CLM-3001035",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000009",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 17246.8,
+    "service_date": "2025-09-03",
+    "diagnosis_codes": [
+      "G47.33"
+    ],
+    "procedure_codes": [
+      "99213",
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000222",
+    "claim_number": "CLM-3001036",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000008",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 28358.65,
+    "service_date": "2025-08-22",
+    "diagnosis_codes": [
+      "M25.511"
+    ],
+    "procedure_codes": [
+      "99203"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000223",
+    "claim_number": "CLM-3001037",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000022",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 12723.27,
+    "service_date": "2025-08-29",
+    "diagnosis_codes": [
+      "L40.0"
+    ],
+    "procedure_codes": [
+      "99214"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000224",
+    "claim_number": "CLM-3001038",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000022",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 34453.7,
+    "service_date": "2025-08-18",
+    "diagnosis_codes": [
+      "G43.909"
+    ],
+    "procedure_codes": [
+      "99214",
+      "90837"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000225",
+    "claim_number": "CLM-3001039",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000024",
+    "provider_id": "b1000001-0000-4000-8000-000000000006",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 28120.44,
+    "service_date": "2025-08-18",
+    "diagnosis_codes": [
+      "J45.20"
+    ],
+    "procedure_codes": [
+      "97140"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000226",
+    "claim_number": "CLM-3001040",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000007",
+    "provider_id": "b1000001-0000-4000-8000-000000000009",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 15977.17,
+    "service_date": "2025-08-29",
+    "diagnosis_codes": [
+      "M79.3"
+    ],
+    "procedure_codes": [
+      "90837"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000227",
+    "claim_number": "CLM-3001041",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000015",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 30669.77,
+    "service_date": "2025-08-18",
+    "diagnosis_codes": [
+      "L40.0"
+    ],
+    "procedure_codes": [
+      "99203"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000228",
+    "claim_number": "CLM-3001042",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000002",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 34975.25,
+    "service_date": "2025-08-15",
+    "diagnosis_codes": [
+      "F32.1"
+    ],
+    "procedure_codes": [
+      "97530"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000229",
+    "claim_number": "CLM-3001043",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000006",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 17254.62,
+    "service_date": "2025-08-22",
+    "diagnosis_codes": [
+      "M50.20"
+    ],
+    "procedure_codes": [
+      "99214"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000230",
+    "claim_number": "CLM-3001044",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000006",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 574.36,
+    "service_date": "2025-08-29",
+    "diagnosis_codes": [
+      "E11.9"
+    ],
+    "procedure_codes": [
+      "99215",
+      "97530"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000231",
+    "claim_number": "CLM-3001045",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000010",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 24532.41,
+    "service_date": "2025-09-10",
+    "diagnosis_codes": [
+      "J44.1"
+    ],
+    "procedure_codes": [
+      "99213",
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000232",
+    "claim_number": "CLM-3001046",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000005",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 10736.42,
+    "service_date": "2025-08-15",
+    "diagnosis_codes": [
+      "E78.5"
+    ],
+    "procedure_codes": [
+      "99214"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000233",
+    "claim_number": "CLM-3001047",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000024",
+    "provider_id": "b1000001-0000-4000-8000-000000000006",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 2472.2,
+    "service_date": "2025-09-05",
+    "diagnosis_codes": [
+      "I10"
+    ],
+    "procedure_codes": [
+      "97110"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000234",
+    "claim_number": "CLM-3001048",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000002",
+    "provider_id": "b1000001-0000-4000-8000-000000000009",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 3263.85,
+    "service_date": "2025-08-20",
+    "diagnosis_codes": [
+      "F32.1"
+    ],
+    "procedure_codes": [
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000235",
+    "claim_number": "CLM-3001049",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000022",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 14430.26,
+    "service_date": "2025-09-05",
+    "diagnosis_codes": [
+      "J45.20"
+    ],
+    "procedure_codes": [
+      "99214"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000236",
+    "claim_number": "CLM-3001050",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000020",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 14963.26,
+    "service_date": "2025-09-05",
+    "diagnosis_codes": [
+      "E78.5"
+    ],
+    "procedure_codes": [
+      "99201",
+      "97110"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000237",
+    "claim_number": "CLM-3001051",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000009",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 23605.55,
+    "service_date": "2025-08-27",
+    "diagnosis_codes": [
+      "J45.20"
+    ],
+    "procedure_codes": [
+      "90837"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000238",
+    "claim_number": "CLM-3001052",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000013",
+    "provider_id": "b1000001-0000-4000-8000-000000000003",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 23673.31,
+    "service_date": "2025-08-25",
+    "diagnosis_codes": [
+      "L40.0"
+    ],
+    "procedure_codes": [
+      "99201",
+      "97110"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000239",
+    "claim_number": "CLM-3001053",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000025",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 821.38,
+    "service_date": "2025-09-05",
+    "diagnosis_codes": [
+      "E78.5"
+    ],
+    "procedure_codes": [
+      "99203"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000240",
+    "claim_number": "CLM-3001054",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000003",
+    "provider_id": "b1000001-0000-4000-8000-000000000009",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 7853.82,
+    "service_date": "2025-08-25",
+    "diagnosis_codes": [
+      "G47.33"
+    ],
+    "procedure_codes": [
+      "99213",
+      "97140"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000241",
+    "claim_number": "CLM-3001055",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000003",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 13248.68,
+    "service_date": "2025-08-20",
+    "diagnosis_codes": [
+      "L40.0"
+    ],
+    "procedure_codes": [
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000242",
+    "claim_number": "CLM-3001056",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000020",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 18748.45,
+    "service_date": "2025-09-08",
+    "diagnosis_codes": [
+      "J44.1"
+    ],
+    "procedure_codes": [
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000243",
+    "claim_number": "CLM-3001057",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000022",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 32893.09,
+    "service_date": "2025-08-20",
+    "diagnosis_codes": [
+      "E11.9"
+    ],
+    "procedure_codes": [
+      "99203"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000244",
+    "claim_number": "CLM-3001058",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000004",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 19586.22,
+    "service_date": "2025-08-25",
+    "diagnosis_codes": [
+      "M17.11"
+    ],
+    "procedure_codes": [
+      "97140"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000245",
+    "claim_number": "CLM-3001059",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000023",
+    "provider_id": "b1000001-0000-4000-8000-000000000006",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 7524.11,
+    "service_date": "2025-09-08",
+    "diagnosis_codes": [
+      "E11.9"
+    ],
+    "procedure_codes": [
+      "99213",
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000246",
+    "claim_number": "CLM-3001060",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000009",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 3684.3,
+    "service_date": "2025-08-29",
+    "diagnosis_codes": [
+      "E11.9"
+    ],
+    "procedure_codes": [
+      "99214"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000247",
+    "claim_number": "CLM-3001061",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000001",
+    "provider_id": "b1000001-0000-4000-8000-000000000006",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 27103.61,
+    "service_date": "2025-09-08",
+    "diagnosis_codes": [
+      "E11.9"
+    ],
+    "procedure_codes": [
+      "97110"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000248",
+    "claim_number": "CLM-3001062",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000024",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 19532.97,
+    "service_date": "2025-08-29",
+    "diagnosis_codes": [
+      "J44.1"
+    ],
+    "procedure_codes": [
+      "99213"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000249",
+    "claim_number": "CLM-3001063",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000004",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 33104.26,
+    "service_date": "2025-09-10",
+    "diagnosis_codes": [
+      "G47.33"
+    ],
+    "procedure_codes": [
+      "99214"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000250",
+    "claim_number": "CLM-3001064",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000012",
+    "provider_id": "b1000001-0000-4000-8000-000000000010",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 19562.12,
+    "service_date": "2025-08-29",
+    "diagnosis_codes": [
+      "G47.33"
+    ],
+    "procedure_codes": [
+      "99214"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000251",
+    "claim_number": "CLM-3001065",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000010",
+    "provider_id": "b1000001-0000-4000-8000-000000000006",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 31514.86,
+    "service_date": "2025-08-15",
+    "diagnosis_codes": [
+      "F43.10"
+    ],
+    "procedure_codes": [
+      "97140"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000252",
+    "claim_number": "CLM-3001066",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000022",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 23509.2,
+    "service_date": "2025-08-27",
+    "diagnosis_codes": [
+      "J44.1"
+    ],
+    "procedure_codes": [
+      "27447"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000253",
+    "claim_number": "CLM-3001067",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000020",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 5832.09,
+    "service_date": "2025-08-22",
+    "diagnosis_codes": [
+      "M79.3"
+    ],
+    "procedure_codes": [
+      "97110"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000254",
+    "claim_number": "CLM-3001068",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000014",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 6687.94,
+    "service_date": "2025-08-27",
+    "diagnosis_codes": [
+      "G89.29"
+    ],
+    "procedure_codes": [
+      "97530"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000255",
+    "claim_number": "CLM-3001069",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000009",
+    "provider_id": "b1000001-0000-4000-8000-000000000003",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 27664.42,
+    "service_date": "2025-08-18",
+    "diagnosis_codes": [
+      "M50.20"
+    ],
+    "procedure_codes": [
+      "99214"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000256",
+    "claim_number": "CLM-3001070",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000016",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 7385.26,
+    "service_date": "2025-09-01",
+    "diagnosis_codes": [
+      "F43.10"
+    ],
+    "procedure_codes": [
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000257",
+    "claim_number": "CLM-3001071",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000008",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 1316.42,
+    "service_date": "2025-08-22",
+    "diagnosis_codes": [
+      "M50.20"
+    ],
+    "procedure_codes": [
+      "99201",
+      "97110"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000258",
+    "claim_number": "CLM-3001072",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000009",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 33857.67,
+    "service_date": "2025-08-25",
+    "diagnosis_codes": [
+      "F43.10"
+    ],
+    "procedure_codes": [
+      "99214",
+      "90837"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000259",
+    "claim_number": "CLM-3001073",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000022",
+    "provider_id": "b1000001-0000-4000-8000-000000000009",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 11924.67,
+    "service_date": "2025-08-15",
+    "diagnosis_codes": [
+      "M25.511"
+    ],
+    "procedure_codes": [
+      "90837"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000260",
+    "claim_number": "CLM-3001074",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000006",
+    "provider_id": "b1000001-0000-4000-8000-000000000010",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 33707.43,
+    "service_date": "2025-08-25",
+    "diagnosis_codes": [
+      "G43.909"
+    ],
+    "procedure_codes": [
+      "99203"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000261",
+    "claim_number": "CLM-3001075",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000020",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 12426.21,
+    "service_date": "2025-08-27",
+    "diagnosis_codes": [
+      "G89.29"
+    ],
+    "procedure_codes": [
+      "99203"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000262",
+    "claim_number": "CLM-3001076",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000013",
+    "provider_id": "b1000001-0000-4000-8000-000000000010",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 7057.72,
+    "service_date": "2025-08-15",
+    "diagnosis_codes": [
+      "G89.29"
+    ],
+    "procedure_codes": [
+      "99213"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000263",
+    "claim_number": "CLM-3001077",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000017",
+    "provider_id": "b1000001-0000-4000-8000-000000000009",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 24196.57,
+    "service_date": "2025-09-10",
+    "diagnosis_codes": [
+      "F41.1"
+    ],
+    "procedure_codes": [
+      "99213",
+      "97140"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000264",
+    "claim_number": "CLM-3001078",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000014",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 33236.17,
+    "service_date": "2025-08-27",
+    "diagnosis_codes": [
+      "N39.0"
+    ],
+    "procedure_codes": [
+      "99201",
+      "97110"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000265",
+    "claim_number": "CLM-3001079",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000022",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 25331.52,
+    "service_date": "2025-08-25",
+    "diagnosis_codes": [
+      "K21.0"
+    ],
+    "procedure_codes": [
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000266",
+    "claim_number": "CLM-3001080",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000022",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 11753.31,
+    "service_date": "2025-09-10",
+    "diagnosis_codes": [
+      "M17.11"
+    ],
+    "procedure_codes": [
+      "99204"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000267",
+    "claim_number": "CLM-3001081",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000007",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 23440.07,
+    "service_date": "2025-08-29",
+    "diagnosis_codes": [
+      "M79.3"
+    ],
+    "procedure_codes": [
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000268",
+    "claim_number": "CLM-3001082",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000013",
+    "provider_id": "b1000001-0000-4000-8000-000000000009",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 29263.52,
+    "service_date": "2025-08-25",
+    "diagnosis_codes": [
+      "M17.11"
+    ],
+    "procedure_codes": [
+      "97140"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000269",
+    "claim_number": "CLM-3001083",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000014",
+    "provider_id": "b1000001-0000-4000-8000-000000000010",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 21429.82,
+    "service_date": "2025-08-27",
+    "diagnosis_codes": [
+      "L40.0"
+    ],
+    "procedure_codes": [
+      "99215",
+      "97530"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000270",
+    "claim_number": "CLM-3001084",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000015",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 7872.7,
+    "service_date": "2025-09-01",
+    "diagnosis_codes": [
+      "M79.3"
+    ],
+    "procedure_codes": [
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000271",
+    "claim_number": "CLM-3001085",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000010",
+    "provider_id": "b1000001-0000-4000-8000-000000000009",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 23402.96,
+    "service_date": "2025-09-05",
+    "diagnosis_codes": [
+      "S72.001A"
+    ],
+    "procedure_codes": [
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000272",
+    "claim_number": "CLM-3001086",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000025",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 23711.45,
+    "service_date": "2025-08-22",
+    "diagnosis_codes": [
+      "F41.1"
+    ],
+    "procedure_codes": [
+      "99204"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000273",
+    "claim_number": "CLM-3001087",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000001",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 8947.07,
+    "service_date": "2025-09-01",
+    "diagnosis_codes": [
+      "N39.0"
+    ],
+    "procedure_codes": [
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000274",
+    "claim_number": "CLM-3001088",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000015",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 31071.72,
+    "service_date": "2025-09-05",
+    "diagnosis_codes": [
+      "F41.1"
+    ],
+    "procedure_codes": [
+      "99214",
+      "90837"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000275",
+    "claim_number": "CLM-3001089",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000016",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 8917.46,
+    "service_date": "2025-09-08",
+    "diagnosis_codes": [
+      "M54.5"
+    ],
+    "procedure_codes": [
+      "99203"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000276",
+    "claim_number": "CLM-3001090",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000025",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 8050.02,
+    "service_date": "2025-09-10",
+    "diagnosis_codes": [
+      "K21.0"
+    ],
+    "procedure_codes": [
+      "99215",
+      "97530"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000277",
+    "claim_number": "CLM-3001091",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000002",
+    "provider_id": "b1000001-0000-4000-8000-000000000009",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 9097.34,
+    "service_date": "2025-08-18",
+    "diagnosis_codes": [
+      "L40.0"
+    ],
+    "procedure_codes": [
+      "99204"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000278",
+    "claim_number": "CLM-3001092",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000015",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 18824.05,
+    "service_date": "2025-09-03",
+    "diagnosis_codes": [
+      "N39.0"
+    ],
+    "procedure_codes": [
+      "99201",
+      "97110"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000279",
+    "claim_number": "CLM-3001093",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000025",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 21636.51,
+    "service_date": "2025-09-10",
+    "diagnosis_codes": [
+      "K21.0"
+    ],
+    "procedure_codes": [
+      "27447"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000280",
+    "claim_number": "CLM-3001094",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000018",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 31453.68,
+    "service_date": "2025-09-10",
+    "diagnosis_codes": [
+      "I10"
+    ],
+    "procedure_codes": [
+      "99215",
+      "97530"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000281",
+    "claim_number": "CLM-3001095",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000009",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 29475.27,
+    "service_date": "2025-08-25",
+    "diagnosis_codes": [
+      "K21.0"
+    ],
+    "procedure_codes": [
+      "99213",
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000282",
+    "claim_number": "CLM-3001096",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000021",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 9973.61,
+    "service_date": "2025-08-18",
+    "diagnosis_codes": [
+      "M17.11"
+    ],
+    "procedure_codes": [
+      "97530"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000283",
+    "claim_number": "CLM-3001097",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000009",
+    "provider_id": "b1000001-0000-4000-8000-000000000006",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 11529.98,
+    "service_date": "2025-09-03",
+    "diagnosis_codes": [
+      "F32.1"
+    ],
+    "procedure_codes": [
+      "99204"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000284",
+    "claim_number": "CLM-3001098",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000005",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 13714.72,
+    "service_date": "2025-08-20",
+    "diagnosis_codes": [
+      "F41.1"
+    ],
+    "procedure_codes": [
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000285",
+    "claim_number": "CLM-3001099",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000014",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 11915.41,
+    "service_date": "2025-09-01",
+    "diagnosis_codes": [
+      "G89.29"
+    ],
+    "procedure_codes": [
+      "99214"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000286",
+    "claim_number": "CLM-3001100",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000007",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 13936.95,
+    "service_date": "2025-09-05",
+    "diagnosis_codes": [
+      "M54.5"
+    ],
+    "procedure_codes": [
+      "99214",
+      "90837"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000287",
+    "claim_number": "CLM-3001101",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000016",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 33024.59,
+    "service_date": "2025-08-25",
+    "diagnosis_codes": [
+      "M50.20"
+    ],
+    "procedure_codes": [
+      "27447"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000288",
+    "claim_number": "CLM-3001102",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000018",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 25844.88,
+    "service_date": "2025-09-05",
+    "diagnosis_codes": [
+      "J45.20"
+    ],
+    "procedure_codes": [
+      "99213",
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000289",
+    "claim_number": "CLM-3001103",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000008",
+    "provider_id": "b1000001-0000-4000-8000-000000000005",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 15536.34,
+    "service_date": "2025-08-15",
+    "diagnosis_codes": [
+      "M50.20"
+    ],
+    "procedure_codes": [
+      "99201",
+      "97110"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000290",
+    "claim_number": "CLM-3001104",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000022",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 28035.91,
+    "service_date": "2025-09-10",
+    "diagnosis_codes": [
+      "M79.3"
+    ],
+    "procedure_codes": [
+      "99215",
+      "97530"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000291",
+    "claim_number": "CLM-3001105",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000005",
+    "provider_id": "b1000001-0000-4000-8000-000000000010",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 18927.27,
+    "service_date": "2025-08-29",
+    "diagnosis_codes": [
+      "E78.5"
+    ],
+    "procedure_codes": [
+      "99213"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000292",
+    "claim_number": "CLM-3001106",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000003",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 15287.14,
+    "service_date": "2025-09-01",
+    "diagnosis_codes": [
+      "M79.3"
+    ],
+    "procedure_codes": [
+      "99214"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000293",
+    "claim_number": "CLM-3001107",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000009",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 11793.67,
+    "service_date": "2025-09-01",
+    "diagnosis_codes": [
+      "S72.001A"
+    ],
+    "procedure_codes": [
+      "99201",
+      "97110"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000294",
+    "claim_number": "CLM-3001108",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000025",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 10099.85,
+    "service_date": "2025-08-29",
+    "diagnosis_codes": [
+      "E11.9"
+    ],
+    "procedure_codes": [
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000295",
+    "claim_number": "CLM-3001109",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000016",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 26341.34,
+    "service_date": "2025-08-15",
+    "diagnosis_codes": [
+      "F43.10"
+    ],
+    "procedure_codes": [
+      "97530"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000296",
+    "claim_number": "CLM-3001110",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000021",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 27452.54,
+    "service_date": "2025-09-08",
+    "diagnosis_codes": [
+      "G43.909"
+    ],
+    "procedure_codes": [
+      "99213"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000297",
+    "claim_number": "CLM-3001111",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000008",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 29453.4,
+    "service_date": "2025-09-05",
+    "diagnosis_codes": [
+      "G47.33"
+    ],
+    "procedure_codes": [
+      "97530"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000298",
+    "claim_number": "CLM-3001112",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000005",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 23596.33,
+    "service_date": "2025-09-05",
+    "diagnosis_codes": [
+      "F41.1"
+    ],
+    "procedure_codes": [
+      "99215",
+      "97530"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000299",
+    "claim_number": "CLM-3001113",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000023",
+    "provider_id": "b1000001-0000-4000-8000-000000000005",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 26957.98,
+    "service_date": "2025-08-20",
+    "diagnosis_codes": [
+      "N39.0"
+    ],
+    "procedure_codes": [
+      "99203"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000300",
+    "claim_number": "CLM-3001114",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000025",
+    "provider_id": "b1000001-0000-4000-8000-000000000003",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 33782.87,
+    "service_date": "2025-08-18",
+    "diagnosis_codes": [
+      "E78.5"
+    ],
+    "procedure_codes": [
+      "99213"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000301",
+    "claim_number": "CLM-3001115",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000010",
+    "provider_id": "b1000001-0000-4000-8000-000000000010",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 23868.48,
+    "service_date": "2025-08-29",
+    "diagnosis_codes": [
+      "M50.20"
+    ],
+    "procedure_codes": [
+      "97140"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000302",
+    "claim_number": "CLM-3001116",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000003",
+    "provider_id": "b1000001-0000-4000-8000-000000000010",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 24326.2,
+    "service_date": "2025-09-08",
+    "diagnosis_codes": [
+      "J45.20"
+    ],
+    "procedure_codes": [
+      "99203"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000303",
+    "claim_number": "CLM-3001117",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000023",
+    "provider_id": "b1000001-0000-4000-8000-000000000005",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 29835.12,
+    "service_date": "2025-09-05",
+    "diagnosis_codes": [
+      "M25.511"
+    ],
+    "procedure_codes": [
+      "99214"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000304",
+    "claim_number": "CLM-3001118",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000012",
+    "provider_id": "b1000001-0000-4000-8000-000000000009",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 15279.04,
+    "service_date": "2025-08-27",
+    "diagnosis_codes": [
+      "F32.1"
+    ],
+    "procedure_codes": [
+      "99201",
+      "97110"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000305",
+    "claim_number": "CLM-3001119",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000001",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 28870.42,
+    "service_date": "2025-08-18",
+    "diagnosis_codes": [
+      "G89.29"
+    ],
+    "procedure_codes": [
+      "99213",
+      "97140"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000306",
+    "claim_number": "CLM-3001120",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000021",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 24902.15,
+    "service_date": "2025-08-29",
+    "diagnosis_codes": [
+      "M79.3"
+    ],
+    "procedure_codes": [
+      "90837"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000307",
+    "claim_number": "CLM-3001121",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000020",
+    "provider_id": "b1000001-0000-4000-8000-000000000009",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 27225.13,
+    "service_date": "2025-09-01",
+    "diagnosis_codes": [
+      "G89.29"
+    ],
+    "procedure_codes": [
+      "90837"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000308",
+    "claim_number": "CLM-3001122",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000011",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 29160.22,
+    "service_date": "2025-08-18",
+    "diagnosis_codes": [
+      "E11.9"
+    ],
+    "procedure_codes": [
+      "99215",
+      "97530"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000309",
+    "claim_number": "CLM-3001123",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000008",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 20159.81,
+    "service_date": "2025-09-08",
+    "diagnosis_codes": [
+      "M50.20"
+    ],
+    "procedure_codes": [
+      "99201",
+      "97110"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000310",
+    "claim_number": "CLM-3001124",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000001",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 29857.87,
+    "service_date": "2025-08-20",
+    "diagnosis_codes": [
+      "I10"
+    ],
+    "procedure_codes": [
+      "97140"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000311",
+    "claim_number": "CLM-3001125",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000012",
+    "provider_id": "b1000001-0000-4000-8000-000000000005",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 12241.69,
+    "service_date": "2025-09-05",
+    "diagnosis_codes": [
+      "E11.9"
+    ],
+    "procedure_codes": [
+      "99213"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000312",
+    "claim_number": "CLM-3001126",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000017",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 3453.65,
+    "service_date": "2025-09-10",
+    "diagnosis_codes": [
+      "G89.29"
+    ],
+    "procedure_codes": [
+      "99213",
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000313",
+    "claim_number": "CLM-3001127",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000018",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 24326.02,
+    "service_date": "2025-09-08",
+    "diagnosis_codes": [
+      "I10"
+    ],
+    "procedure_codes": [
+      "99215",
+      "97530"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000314",
+    "claim_number": "CLM-3001128",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000001",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 10651.13,
+    "service_date": "2025-08-29",
+    "diagnosis_codes": [
+      "J45.20"
+    ],
+    "procedure_codes": [
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000315",
+    "claim_number": "CLM-3001129",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000022",
+    "provider_id": "b1000001-0000-4000-8000-000000000010",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 13231.21,
+    "service_date": "2025-09-03",
+    "diagnosis_codes": [
+      "K21.0"
+    ],
+    "procedure_codes": [
+      "99213",
+      "97140"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000316",
+    "claim_number": "CLM-3001130",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000014",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 19488.4,
+    "service_date": "2025-08-27",
+    "diagnosis_codes": [
+      "L40.0"
+    ],
+    "procedure_codes": [
+      "90837"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000317",
+    "claim_number": "CLM-3001131",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000010",
+    "provider_id": "b1000001-0000-4000-8000-000000000005",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 8453.56,
+    "service_date": "2025-09-10",
+    "diagnosis_codes": [
+      "F41.1"
+    ],
+    "procedure_codes": [
+      "99201",
+      "97110"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000318",
+    "claim_number": "CLM-3001132",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000004",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 18987.31,
+    "service_date": "2025-09-10",
+    "diagnosis_codes": [
+      "M79.3"
+    ],
+    "procedure_codes": [
+      "97140"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000319",
+    "claim_number": "CLM-3001133",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000007",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 17204.85,
+    "service_date": "2025-09-10",
+    "diagnosis_codes": [
+      "E78.5"
+    ],
+    "procedure_codes": [
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000320",
+    "claim_number": "CLM-3001134",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000004",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 10720.5,
+    "service_date": "2025-08-27",
+    "diagnosis_codes": [
+      "M79.3"
+    ],
+    "procedure_codes": [
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000321",
+    "claim_number": "CLM-3001135",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000001",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 18927.66,
+    "service_date": "2025-08-25",
+    "diagnosis_codes": [
+      "G43.909"
+    ],
+    "procedure_codes": [
+      "99214"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000322",
+    "claim_number": "CLM-3001136",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000018",
+    "provider_id": "b1000001-0000-4000-8000-000000000005",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 24560.9,
+    "service_date": "2025-08-20",
+    "diagnosis_codes": [
+      "I10"
+    ],
+    "procedure_codes": [
+      "99203"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000323",
+    "claim_number": "CLM-3001137",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000001",
+    "provider_id": "b1000001-0000-4000-8000-000000000010",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 10309.71,
+    "service_date": "2025-09-01",
+    "diagnosis_codes": [
+      "L40.0"
+    ],
+    "procedure_codes": [
+      "99201",
+      "97110"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000324",
+    "claim_number": "CLM-3001138",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000006",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 9210.5,
+    "service_date": "2025-09-01",
+    "diagnosis_codes": [
+      "M25.511"
+    ],
+    "procedure_codes": [
+      "99215"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000325",
+    "claim_number": "CLM-3001139",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000013",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 3055.83,
+    "service_date": "2025-09-08",
+    "diagnosis_codes": [
+      "G43.909"
+    ],
+    "procedure_codes": [
+      "99204"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000326",
+    "claim_number": "CLM-3001140",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000005",
+    "provider_id": "b1000001-0000-4000-8000-000000000010",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 33244.83,
+    "service_date": "2025-08-18",
+    "diagnosis_codes": [
+      "J45.20"
+    ],
+    "procedure_codes": [
+      "99203"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000327",
+    "claim_number": "CLM-3001141",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000018",
+    "provider_id": "b1000001-0000-4000-8000-000000000007",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 21417.96,
+    "service_date": "2025-09-05",
+    "diagnosis_codes": [
+      "J45.20"
+    ],
+    "procedure_codes": [
+      "99214",
+      "90837"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000328",
+    "claim_number": "CLM-3001142",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000015",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 10758.68,
+    "service_date": "2025-09-05",
+    "diagnosis_codes": [
+      "G89.29"
+    ],
+    "procedure_codes": [
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000329",
+    "claim_number": "CLM-3001143",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000019",
+    "provider_id": "b1000001-0000-4000-8000-000000000010",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 2577.95,
+    "service_date": "2025-09-10",
+    "diagnosis_codes": [
+      "M25.511"
+    ],
+    "procedure_codes": [
+      "97140"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000330",
+    "claim_number": "CLM-3001144",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000021",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 9630.29,
+    "service_date": "2025-08-18",
+    "diagnosis_codes": [
+      "M79.3"
+    ],
+    "procedure_codes": [
+      "97530"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000331",
+    "claim_number": "CLM-3001145",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000006",
+    "provider_id": "b1000001-0000-4000-8000-000000000009",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 3089.74,
+    "service_date": "2025-08-15",
+    "diagnosis_codes": [
+      "G89.29"
+    ],
+    "procedure_codes": [
+      "99215",
+      "97530"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000332",
+    "claim_number": "CLM-3001146",
+    "batch_id": "c1000001-0000-4000-8000-000000000003",
+    "veteran_id": "a1000001-0000-4000-8000-000000000023",
+    "provider_id": "b1000001-0000-4000-8000-000000000010",
+    "claim_type": "disability",
+    "status": "parsed",
+    "risk_level": null,
+    "billing_amount": 16711.98,
+    "service_date": "2025-08-15",
+    "diagnosis_codes": [
+      "J45.20"
+    ],
+    "procedure_codes": [
+      "90834"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000100",
+    "claim_number": "CLM-9988776665",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000004",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "medical",
+    "status": "flagged",
+    "risk_level": "medium",
+    "billing_amount": 19743.99,
+    "service_date": "2025-07-03",
+    "diagnosis_codes": [
+      "K21.0"
+    ],
+    "procedure_codes": [
+      "99213",
+      "36415"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000101",
+    "claim_number": "CLM-9988776666",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000004",
+    "provider_id": "b1000001-0000-4000-8000-000000000006",
+    "claim_type": "pension",
+    "status": "flagged",
+    "risk_level": "medium",
+    "billing_amount": 13684.05,
+    "service_date": "2025-07-24",
+    "diagnosis_codes": [
+      "M47.812"
+    ],
+    "procedure_codes": [
+      "99214",
+      "76700"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000102",
+    "claim_number": "CLM-9988776667",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000015",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "pension",
+    "status": "flagged",
+    "risk_level": "high",
+    "billing_amount": 17751.97,
+    "service_date": "2025-08-22",
+    "diagnosis_codes": [
+      "J44.1"
+    ],
+    "procedure_codes": [
+      "99213",
+      "93000",
+      "93005"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000103",
+    "claim_number": "CLM-9988776668",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000007",
+    "provider_id": "b1000001-0000-4000-8000-000000000011",
+    "claim_type": "dental",
+    "status": "flagged",
+    "risk_level": "medium",
+    "billing_amount": 37560.3,
+    "service_date": "2025-10-05",
+    "diagnosis_codes": [
+      "J44.1"
+    ],
+    "procedure_codes": [
+      "99215",
+      "97110"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000104",
+    "claim_number": "CLM-9988776669",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000020",
+    "provider_id": "b1000001-0000-4000-8000-000000000008",
+    "claim_type": "pension",
+    "status": "flagged",
+    "risk_level": "medium",
+    "billing_amount": 36640.02,
+    "service_date": "2025-07-22",
+    "diagnosis_codes": [
+      "K50.10"
+    ],
+    "procedure_codes": [
+      "90837",
+      "90847"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000105",
+    "claim_number": "CLM-9988776670",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000001",
+    "provider_id": "b1000001-0000-4000-8000-000000000010",
+    "claim_type": "pension",
+    "status": "flagged",
+    "risk_level": "medium",
+    "billing_amount": 4249.85,
+    "service_date": "2025-09-27",
+    "diagnosis_codes": [
+      "L40.0"
+    ],
+    "procedure_codes": [
+      "99215",
+      "93306"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000106",
+    "claim_number": "CLM-9988776671",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000014",
+    "provider_id": "b1000001-0000-4000-8000-000000000004",
+    "claim_type": "disability",
+    "status": "flagged",
+    "risk_level": "high",
+    "billing_amount": 18861.2,
+    "service_date": "2025-09-15",
+    "diagnosis_codes": [
+      "E78.5"
+    ],
+    "procedure_codes": [
+      "99214",
+      "20610"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000107",
+    "claim_number": "CLM-9988776672",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000003",
+    "provider_id": "b1000001-0000-4000-8000-000000000009",
+    "claim_type": "disability",
+    "status": "flagged",
+    "risk_level": "high",
+    "billing_amount": 29255.64,
+    "service_date": "2025-08-18",
+    "diagnosis_codes": [
+      "F43.10",
+      "F32.1"
+    ],
+    "procedure_codes": [
+      "99215",
+      "27446",
+      "97140"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000108",
+    "claim_number": "CLM-9988776673",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000024",
+    "provider_id": "b1000001-0000-4000-8000-000000000006",
+    "claim_type": "medical",
+    "status": "flagged",
+    "risk_level": "high",
+    "billing_amount": 10876.22,
+    "service_date": "2025-10-05",
+    "diagnosis_codes": [
+      "F10.20"
+    ],
+    "procedure_codes": [
+      "99203",
+      "71046"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000109",
+    "claim_number": "CLM-9988776674",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000002",
+    "provider_id": "b1000001-0000-4000-8000-000000000003",
+    "claim_type": "dental",
+    "status": "flagged",
+    "risk_level": "high",
+    "billing_amount": 41434.39,
+    "service_date": "2025-09-26",
+    "diagnosis_codes": [
+      "L40.0"
+    ],
+    "procedure_codes": [
+      "99214",
+      "20610"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000110",
+    "claim_number": "CLM-9988776675",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000003",
+    "provider_id": "b1000001-0000-4000-8000-000000000003",
+    "claim_type": "medical",
+    "status": "flagged",
+    "risk_level": "medium",
+    "billing_amount": 6116.49,
+    "service_date": "2025-08-13",
+    "diagnosis_codes": [
+      "J06.9",
+      "R05.9"
+    ],
+    "procedure_codes": [
+      "99213",
+      "92551"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000111",
+    "claim_number": "CLM-9988776676",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000025",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "medical",
+    "status": "flagged",
+    "risk_level": "medium",
+    "billing_amount": 27414.63,
+    "service_date": "2025-07-03",
+    "diagnosis_codes": [
+      "N18.3"
+    ],
+    "procedure_codes": [
+      "99214",
+      "12011"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000112",
+    "claim_number": "CLM-9988776677",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000004",
+    "provider_id": "b1000001-0000-4000-8000-000000000003",
+    "claim_type": "pension",
+    "status": "flagged",
+    "risk_level": "high",
+    "billing_amount": 37753.94,
+    "service_date": "2025-08-09",
+    "diagnosis_codes": [
+      "F41.1"
+    ],
+    "procedure_codes": [
+      "90834",
+      "90785"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000113",
+    "claim_number": "CLM-9988776678",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000018",
+    "provider_id": "b1000001-0000-4000-8000-000000000012",
+    "claim_type": "dental",
+    "status": "flagged",
+    "risk_level": "medium",
+    "billing_amount": 3872.28,
+    "service_date": "2025-07-23",
+    "diagnosis_codes": [
+      "F43.10",
+      "F32.1"
+    ],
+    "procedure_codes": [
+      "99214",
+      "76700"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000114",
+    "claim_number": "CLM-9988776679",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000006",
+    "provider_id": "b1000001-0000-4000-8000-000000000003",
+    "claim_type": "dental",
+    "status": "flagged",
+    "risk_level": "high",
+    "billing_amount": 10405.39,
+    "service_date": "2025-09-26",
+    "diagnosis_codes": [
+      "F10.20"
+    ],
+    "procedure_codes": [
+      "99214",
+      "72148"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000115",
+    "claim_number": "CLM-9988776680",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000011",
+    "provider_id": "b1000001-0000-4000-8000-000000000005",
+    "claim_type": "medical",
+    "status": "flagged",
+    "risk_level": "high",
+    "billing_amount": 17019.13,
+    "service_date": "2025-10-22",
+    "diagnosis_codes": [
+      "M06.09"
+    ],
+    "procedure_codes": [
+      "99214",
+      "76700"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000116",
+    "claim_number": "CLM-9988776681",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000007",
+    "provider_id": "b1000001-0000-4000-8000-000000000005",
+    "claim_type": "medical",
+    "status": "flagged",
+    "risk_level": "medium",
+    "billing_amount": 3565.11,
+    "service_date": "2025-08-12",
+    "diagnosis_codes": [
+      "F10.20"
+    ],
+    "procedure_codes": [
+      "99214",
+      "93000"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000117",
+    "claim_number": "CLM-9988776682",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000018",
+    "provider_id": "b1000001-0000-4000-8000-000000000001",
+    "claim_type": "pension",
+    "status": "flagged",
+    "risk_level": "high",
+    "billing_amount": 11592.03,
+    "service_date": "2025-09-15",
+    "diagnosis_codes": [
+      "M47.812"
+    ],
+    "procedure_codes": [
+      "99214",
+      "20610"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000118",
+    "claim_number": "CLM-9988776683",
+    "batch_id": "c1000001-0000-4000-8000-000000000002",
+    "veteran_id": "a1000001-0000-4000-8000-000000000020",
+    "provider_id": "b1000001-0000-4000-8000-000000000002",
+    "claim_type": "dental",
+    "status": "flagged",
+    "risk_level": "medium",
+    "billing_amount": 37616.27,
+    "service_date": "2025-08-23",
+    "diagnosis_codes": [
+      "F31.9"
+    ],
+    "procedure_codes": [
+      "99215",
+      "43239"
+    ]
+  },
+  {
+    "id": "d1000001-0000-4000-8000-000000000119",
+    "claim_number": "CLM-9988776684",
+    "batch_id": "c1000001-0000-4000-8000-000000000001",
+    "veteran_id": "a1000001-0000-4000-8000-000000000022",
+    "provider_id": "b1000001-0000-4000-8000-000000000009",
+    "claim_type": "pension",
+    "status": "flagged",
+    "risk_level": "medium",
+    "billing_amount": 27087.11,
+    "service_date": "2025-10-27",
+    "diagnosis_codes": [
+      "N18.3"
+    ],
+    "procedure_codes": [
+      "99214",
+      "20610"
+    ]
+  }
+]

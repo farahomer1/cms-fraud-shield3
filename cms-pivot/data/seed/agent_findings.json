@@ -1,0 +1,4980 @@
+[
+  {
+    "id": "e1000001-0000-4000-8000-000000000001",
+    "claim_id": "d1000001-0000-4000-8000-000000000001",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 89,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amount of $7517 is within expected range for procedure codes. Service date is valid and provider is eligible.",
+    "finding_details": {},
+    "processing_time_ms": 1264
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000002",
+    "claim_id": "d1000001-0000-4000-8000-000000000001",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 99,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "finding_details": {},
+    "processing_time_ms": 868
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000003",
+    "claim_id": "d1000001-0000-4000-8000-000000000002",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 93,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 2983
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000004",
+    "claim_id": "d1000001-0000-4000-8000-000000000002",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 93,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service date falls within acceptable window. Provider eligibility confirmed. Benefit code compliance verified.",
+    "finding_details": {},
+    "processing_time_ms": 1588
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000005",
+    "claim_id": "d1000001-0000-4000-8000-000000000003",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 90,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Cross-batch analysis shows no overlapping claims for the same service period or procedure.",
+    "finding_details": {},
+    "processing_time_ms": 1778
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000006",
+    "claim_id": "d1000001-0000-4000-8000-000000000003",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 83,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Veteran vital status confirmed alive via MVI cross-reference. SSN last-4 validated. Provider NPI 8752612686 verified in NPPES registry.",
+    "finding_details": {},
+    "processing_time_ms": 3134
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000007",
+    "claim_id": "d1000001-0000-4000-8000-000000000003",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 96,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "finding_details": {},
+    "processing_time_ms": 1016
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000008",
+    "claim_id": "d1000001-0000-4000-8000-000000000004",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 75,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "procedure_codes"
+    ],
+    "evidence_summary": "CPT code combination is clinically implausible for the reported diagnosis. Modifier usage suggests unbundling of services.",
+    "finding_details": {},
+    "processing_time_ms": 919
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000009",
+    "claim_id": "d1000001-0000-4000-8000-000000000004",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 99,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "All policy checks passed. Billing amount $23093 aligns with VA fee schedule for the reported procedures.",
+    "finding_details": {},
+    "processing_time_ms": 885
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000010",
+    "claim_id": "d1000001-0000-4000-8000-000000000004",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 91,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 529
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000011",
+    "claim_id": "d1000001-0000-4000-8000-000000000004",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 88,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "procedure_codes"
+    ],
+    "evidence_summary": "Overlapping date range: veteran has concurrent inpatient and outpatient claims for the same treatment period 2025-08-03.",
+    "finding_details": {},
+    "processing_time_ms": 2396
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000012",
+    "claim_id": "d1000001-0000-4000-8000-000000000005",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 88,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Claim filed through accredited representative. Asset levels consistent with reported pension eligibility.",
+    "finding_details": {},
+    "processing_time_ms": 1465
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000013",
+    "claim_id": "d1000001-0000-4000-8000-000000000005",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 92,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "ICD-10 diagnosis codes are compatible with reported CPT procedure codes. Billing amount is consistent with fee schedule.",
+    "finding_details": {},
+    "processing_time_ms": 740
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000014",
+    "claim_id": "d1000001-0000-4000-8000-000000000005",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 90,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No fabrication indicators detected in disability evaluation. Examination findings are clinically plausible.",
+    "finding_details": {},
+    "processing_time_ms": 2184
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000015",
+    "claim_id": "d1000001-0000-4000-8000-000000000005",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 83,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Cross-batch analysis shows no overlapping claims for the same service period or procedure.",
+    "finding_details": {},
+    "processing_time_ms": 2178
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000016",
+    "claim_id": "d1000001-0000-4000-8000-000000000006",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 84,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ template usage appears standard. Medical evidence supports the claimed disability rating increase.",
+    "finding_details": {},
+    "processing_time_ms": 2092
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000017",
+    "claim_id": "d1000001-0000-4000-8000-000000000006",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 87,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Filing representative is VA-accredited. No inflated fee patterns detected in claim history.",
+    "finding_details": {},
+    "processing_time_ms": 1227
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000018",
+    "claim_id": "d1000001-0000-4000-8000-000000000006",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 83,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified.",
+    "finding_details": {},
+    "processing_time_ms": 2530
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000019",
+    "claim_id": "d1000001-0000-4000-8000-000000000007",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 80,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "service_date"
+    ],
+    "evidence_summary": "Unaccredited consultant charging $8656 for pension claim preparation. Fee exceeds reasonable range by 450%.",
+    "finding_details": {},
+    "processing_time_ms": 3193
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000020",
+    "claim_id": "d1000001-0000-4000-8000-000000000007",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 89,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "All policy checks passed. Billing amount $26738 aligns with VA fee schedule for the reported procedures.",
+    "finding_details": {},
+    "processing_time_ms": 2652
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000021",
+    "claim_id": "d1000001-0000-4000-8000-000000000008",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 89,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ template usage appears standard. Medical evidence supports the claimed disability rating increase.",
+    "finding_details": {},
+    "processing_time_ms": 874
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000022",
+    "claim_id": "d1000001-0000-4000-8000-000000000008",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 86,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Cross-reference with Death Master File shows no match. Provider NPI is valid and active. All identity fields consistent.",
+    "finding_details": {},
+    "processing_time_ms": 2451
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000023",
+    "claim_id": "d1000001-0000-4000-8000-000000000008",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 83,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "finding_details": {},
+    "processing_time_ms": 2259
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000024",
+    "claim_id": "d1000001-0000-4000-8000-000000000009",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 74,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "service_date"
+    ],
+    "evidence_summary": "Clinical notes contain copy-paste artifacts and inconsistent date references. Document hash does not match the original facility records.",
+    "finding_details": {},
+    "processing_time_ms": 3243
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000025",
+    "claim_id": "d1000001-0000-4000-8000-000000000009",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 85,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ template usage appears standard. Medical evidence supports the claimed disability rating increase.",
+    "finding_details": {},
+    "processing_time_ms": 1810
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000026",
+    "claim_id": "d1000001-0000-4000-8000-000000000009",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 95,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service date falls within acceptable window. Provider eligibility confirmed. Benefit code compliance verified.",
+    "finding_details": {},
+    "processing_time_ms": 1700
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000027",
+    "claim_id": "d1000001-0000-4000-8000-000000000009",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 89,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No duplicate or overlapping services found in batch or historical claims for this veteran and date range.",
+    "finding_details": {},
+    "processing_time_ms": 2646
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000028",
+    "claim_id": "d1000001-0000-4000-8000-000000000010",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 81,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "veteran_status"
+    ],
+    "evidence_summary": "Billing amount of $7904 exceeds expected range for reported procedure codes by 340%. Possible upcoding detected.",
+    "finding_details": {},
+    "processing_time_ms": 1228
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000029",
+    "claim_id": "d1000001-0000-4000-8000-000000000010",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 92,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "diagnosis_codes"
+    ],
+    "evidence_summary": "ICD-10 code M54.5 (upper respiratory infection) is incompatible with CPT codes for orthopedic surgery. Diagnosis-procedure mismatch indicates possible upcoding.",
+    "finding_details": {},
+    "processing_time_ms": 2527
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000030",
+    "claim_id": "d1000001-0000-4000-8000-000000000010",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 91,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "veteran_status"
+    ],
+    "evidence_summary": "Unaccredited consultant charging $27171 for pension claim preparation. Fee exceeds reasonable range by 450%.",
+    "finding_details": {},
+    "processing_time_ms": 451
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000031",
+    "claim_id": "d1000001-0000-4000-8000-000000000011",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 92,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ template usage appears standard. Medical evidence supports the claimed disability rating increase.",
+    "finding_details": {},
+    "processing_time_ms": 639
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000032",
+    "claim_id": "d1000001-0000-4000-8000-000000000011",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 97,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified.",
+    "finding_details": {},
+    "processing_time_ms": 3137
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000033",
+    "claim_id": "d1000001-0000-4000-8000-000000000011",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 85,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Filing representative is VA-accredited. No inflated fee patterns detected in claim history.",
+    "finding_details": {},
+    "processing_time_ms": 2625
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000034",
+    "claim_id": "d1000001-0000-4000-8000-000000000012",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 98,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "finding_details": {},
+    "processing_time_ms": 1429
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000035",
+    "claim_id": "d1000001-0000-4000-8000-000000000012",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 69,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "procedure_codes"
+    ],
+    "evidence_summary": "Clinical notes contain copy-paste artifacts and inconsistent date references. Document hash does not match the original facility records.",
+    "finding_details": {},
+    "processing_time_ms": 1075
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000036",
+    "claim_id": "d1000001-0000-4000-8000-000000000012",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 84,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Filing representative is VA-accredited. No inflated fee patterns detected in claim history.",
+    "finding_details": {},
+    "processing_time_ms": 2008
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000037",
+    "claim_id": "d1000001-0000-4000-8000-000000000012",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 87,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "procedure_codes"
+    ],
+    "evidence_summary": "Disability questionnaire claims 100% disability for condition with median rating of 30%. Clinical findings section uses boilerplate language inconsistent with examination.",
+    "finding_details": {},
+    "processing_time_ms": 2106
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000038",
+    "claim_id": "d1000001-0000-4000-8000-000000000013",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 94,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "All claim fields are internally consistent. Admission dates align with service dates. Billing within expected range.",
+    "finding_details": {},
+    "processing_time_ms": 1316
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000039",
+    "claim_id": "d1000001-0000-4000-8000-000000000013",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 92,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Cross-reference with Death Master File shows no match. Provider NPI is valid and active. All identity fields consistent.",
+    "finding_details": {},
+    "processing_time_ms": 1368
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000040",
+    "claim_id": "d1000001-0000-4000-8000-000000000013",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 83,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Disability questionnaire responses are internally consistent. Clinical findings align with reported diagnosis codes.",
+    "finding_details": {},
+    "processing_time_ms": 3315
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000041",
+    "claim_id": "d1000001-0000-4000-8000-000000000014",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 85,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No duplicate or overlapping services found in batch or historical claims for this veteran and date range.",
+    "finding_details": {},
+    "processing_time_ms": 3305
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000042",
+    "claim_id": "d1000001-0000-4000-8000-000000000014",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 85,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified.",
+    "finding_details": {},
+    "processing_time_ms": 2333
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000043",
+    "claim_id": "d1000001-0000-4000-8000-000000000014",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 82,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "dbq_response_time: 1m 47s",
+      "severity_ratings: all maximum"
+    ],
+    "evidence_summary": "DBQ responses show statistical improbability \u2014 all maximum severity ratings. DBQ completion timestamp indicates < 2 minutes for complex evaluation.",
+    "finding_details": {},
+    "processing_time_ms": 2296
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000044",
+    "claim_id": "d1000001-0000-4000-8000-000000000015",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 92,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "ICD-10 diagnosis codes are compatible with reported CPT procedure codes. Billing amount is consistent with fee schedule.",
+    "finding_details": {},
+    "processing_time_ms": 3322
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000045",
+    "claim_id": "d1000001-0000-4000-8000-000000000015",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 99,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Disability questionnaire responses are internally consistent. Clinical findings align with reported diagnosis codes.",
+    "finding_details": {},
+    "processing_time_ms": 2400
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000046",
+    "claim_id": "d1000001-0000-4000-8000-000000000015",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 97,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Document metadata is consistent. Image analysis shows no evidence of alteration or deepfake indicators.",
+    "finding_details": {},
+    "processing_time_ms": 2717
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000047",
+    "claim_id": "d1000001-0000-4000-8000-000000000016",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 96,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "finding_details": {},
+    "processing_time_ms": 1336
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000048",
+    "claim_id": "d1000001-0000-4000-8000-000000000016",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 90,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Claim amounts consistent with disability rating and service-connected conditions. No consulting scheme indicators.",
+    "finding_details": {},
+    "processing_time_ms": 2637
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000049",
+    "claim_id": "d1000001-0000-4000-8000-000000000016",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 83,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "ICD-10 diagnosis codes are compatible with reported CPT procedure codes. Billing amount is consistent with fee schedule.",
+    "finding_details": {},
+    "processing_time_ms": 660
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000050",
+    "claim_id": "d1000001-0000-4000-8000-000000000016",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 97,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Disability questionnaire responses are internally consistent. Clinical findings align with reported diagnosis codes.",
+    "finding_details": {},
+    "processing_time_ms": 1466
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000051",
+    "claim_id": "d1000001-0000-4000-8000-000000000017",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 89,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 3012
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000052",
+    "claim_id": "d1000001-0000-4000-8000-000000000017",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 84,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Disability questionnaire responses are internally consistent. Clinical findings align with reported diagnosis codes.",
+    "finding_details": {},
+    "processing_time_ms": 3345
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000053",
+    "claim_id": "d1000001-0000-4000-8000-000000000018",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 81,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "diagnosis_codes"
+    ],
+    "evidence_summary": "CPT code combination is clinically implausible for the reported diagnosis. Modifier usage suggests unbundling of services.",
+    "finding_details": {},
+    "processing_time_ms": 2887
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000054",
+    "claim_id": "d1000001-0000-4000-8000-000000000018",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 91,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "All policy checks passed. Billing amount $8949 aligns with VA fee schedule for the reported procedures.",
+    "finding_details": {},
+    "processing_time_ms": 1475
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000055",
+    "claim_id": "d1000001-0000-4000-8000-000000000018",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 79,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "provider_npi"
+    ],
+    "evidence_summary": "Same procedure billed 3 times across different claim types (medical, disability) within a 7-day window for the same veteran.",
+    "finding_details": {},
+    "processing_time_ms": 823
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000056",
+    "claim_id": "d1000001-0000-4000-8000-000000000019",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 85,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No duplicate or overlapping services found in batch or historical claims for this veteran and date range.",
+    "finding_details": {},
+    "processing_time_ms": 1774
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000057",
+    "claim_id": "d1000001-0000-4000-8000-000000000019",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 90,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "provider_npi"
+    ],
+    "evidence_summary": "Veteran was solicited within 48 hours of discharge. Claim amount $875 includes undisclosed consulting surcharge.",
+    "finding_details": {},
+    "processing_time_ms": 661
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000058",
+    "claim_id": "d1000001-0000-4000-8000-000000000019",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 99,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "finding_details": {},
+    "processing_time_ms": 2121
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000059",
+    "claim_id": "d1000001-0000-4000-8000-000000000020",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 96,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of unaccredited consulting fees. Benefit claim amount aligns with standard VA compensation tables.",
+    "finding_details": {},
+    "processing_time_ms": 1230
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000060",
+    "claim_id": "d1000001-0000-4000-8000-000000000020",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 98,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 3423
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000061",
+    "claim_id": "d1000001-0000-4000-8000-000000000021",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 97,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service date logic is valid. Diagnosis-to-procedure mapping is clinically appropriate. No data inconsistencies found.",
+    "finding_details": {},
+    "processing_time_ms": 628
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000062",
+    "claim_id": "d1000001-0000-4000-8000-000000000021",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 97,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 858
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000063",
+    "claim_id": "d1000001-0000-4000-8000-000000000021",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 96,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Veteran vital status confirmed alive via MVI cross-reference. SSN last-4 validated. Provider NPI 1662976399 verified in NPPES registry.",
+    "finding_details": {},
+    "processing_time_ms": 778
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000064",
+    "claim_id": "d1000001-0000-4000-8000-000000000022",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 97,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 853
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000065",
+    "claim_id": "d1000001-0000-4000-8000-000000000022",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 85,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Representative is accredited with VA OGC. No patterns of pension benefit exploitation identified.",
+    "finding_details": {},
+    "processing_time_ms": 1046
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000066",
+    "claim_id": "d1000001-0000-4000-8000-000000000022",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 91,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "provider_npi"
+    ],
+    "evidence_summary": "Same procedure billed 3 times across different claim types (medical, disability) within a 7-day window for the same veteran.",
+    "finding_details": {},
+    "processing_time_ms": 3062
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000067",
+    "claim_id": "d1000001-0000-4000-8000-000000000023",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 94,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "provider_npi"
+    ],
+    "evidence_summary": "Billing amount $11153 is 4.2x the expected amount for the reported procedures. Service date 2025-09-19 predates the diagnosis date by 15 days.",
+    "finding_details": {},
+    "processing_time_ms": 2429
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000068",
+    "claim_id": "d1000001-0000-4000-8000-000000000023",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 89,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "procedure_codes"
+    ],
+    "evidence_summary": "Pattern match: 4 veterans in same ZIP code filed identical pension claims through this unaccredited provider within 30 days.",
+    "finding_details": {},
+    "processing_time_ms": 2484
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000069",
+    "claim_id": "d1000001-0000-4000-8000-000000000023",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 91,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No duplicate or overlapping services found in batch or historical claims for this veteran and date range.",
+    "finding_details": {},
+    "processing_time_ms": 2151
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000070",
+    "claim_id": "d1000001-0000-4000-8000-000000000024",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 93,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Claim amounts consistent with disability rating and service-connected conditions. No consulting scheme indicators.",
+    "finding_details": {},
+    "processing_time_ms": 1026
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000071",
+    "claim_id": "d1000001-0000-4000-8000-000000000024",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 89,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified.",
+    "finding_details": {},
+    "processing_time_ms": 3203
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000072",
+    "claim_id": "d1000001-0000-4000-8000-000000000024",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 89,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "provider_npi"
+    ],
+    "evidence_summary": "DBQ examination date and medical record dates are inconsistent. Reported symptoms do not align with clinical standards for the diagnosed condition.",
+    "finding_details": {},
+    "processing_time_ms": 3321
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000073",
+    "claim_id": "d1000001-0000-4000-8000-000000000025",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 67,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "procedure_codes"
+    ],
+    "evidence_summary": "Image analysis of attached medical records shows evidence of digital splicing. EXIF data indicates multiple modification passes.",
+    "finding_details": {},
+    "processing_time_ms": 3426
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000074",
+    "claim_id": "d1000001-0000-4000-8000-000000000025",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 95,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service date falls within acceptable window. Provider eligibility confirmed. Benefit code compliance verified.",
+    "finding_details": {},
+    "processing_time_ms": 1935
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000075",
+    "claim_id": "d1000001-0000-4000-8000-000000000025",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 88,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "procedure_codes"
+    ],
+    "evidence_summary": "Veteran SSN last-4 does not match VA MPI records. Possible identity mismatch or data entry error.",
+    "finding_details": {},
+    "processing_time_ms": 2895
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000076",
+    "claim_id": "d1000001-0000-4000-8000-000000000026",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 86,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service date falls within acceptable window. Provider eligibility confirmed. Benefit code compliance verified.",
+    "finding_details": {},
+    "processing_time_ms": 1476
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000077",
+    "claim_id": "d1000001-0000-4000-8000-000000000026",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 85,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 969
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000078",
+    "claim_id": "d1000001-0000-4000-8000-000000000027",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 93,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified.",
+    "finding_details": {},
+    "processing_time_ms": 3260
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000079",
+    "claim_id": "d1000001-0000-4000-8000-000000000027",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 93,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "veteran_status"
+    ],
+    "evidence_summary": "Duplicate service detected: CPT 27447 was billed on 2025-08-09 by two different providers for the same veteran. Total double-billed amount: $6094.",
+    "finding_details": {},
+    "processing_time_ms": 2929
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000080",
+    "claim_id": "d1000001-0000-4000-8000-000000000027",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 85,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service date falls within acceptable window. Provider eligibility confirmed. Benefit code compliance verified.",
+    "finding_details": {},
+    "processing_time_ms": 2198
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000081",
+    "claim_id": "d1000001-0000-4000-8000-000000000028",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 97,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Disability questionnaire responses are internally consistent. Clinical findings align with reported diagnosis codes.",
+    "finding_details": {},
+    "processing_time_ms": 2750
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000082",
+    "claim_id": "d1000001-0000-4000-8000-000000000028",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 85,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Representative is accredited with VA OGC. No patterns of pension benefit exploitation identified.",
+    "finding_details": {},
+    "processing_time_ms": 893
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000083",
+    "claim_id": "d1000001-0000-4000-8000-000000000028",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 85,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "provider_npi: failed NPPES validation",
+      "service_date: precedes enrollment"
+    ],
+    "evidence_summary": "Provider NPI validation failed against CMS NPPES registry. Service date precedes veteran enrollment effective date.",
+    "finding_details": {},
+    "processing_time_ms": 1188
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000084",
+    "claim_id": "d1000001-0000-4000-8000-000000000029",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 74,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "diagnosis_codes"
+    ],
+    "evidence_summary": "DBQ examination date and medical record dates are inconsistent. Reported symptoms do not align with clinical standards for the diagnosed condition.",
+    "finding_details": {},
+    "processing_time_ms": 1094
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000085",
+    "claim_id": "d1000001-0000-4000-8000-000000000029",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 92,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Claim filed through accredited representative. Asset levels consistent with reported pension eligibility.",
+    "finding_details": {},
+    "processing_time_ms": 2186
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000086",
+    "claim_id": "d1000001-0000-4000-8000-000000000029",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 96,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Document metadata is consistent. Image analysis shows no evidence of alteration or deepfake indicators.",
+    "finding_details": {},
+    "processing_time_ms": 1353
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000087",
+    "claim_id": "d1000001-0000-4000-8000-000000000030",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 88,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amount of $17545 is within expected range for procedure codes. Service date is valid and provider is eligible.",
+    "finding_details": {},
+    "processing_time_ms": 3332
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000088",
+    "claim_id": "d1000001-0000-4000-8000-000000000030",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 99,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "All claim fields are internally consistent. Admission dates align with service dates. Billing within expected range.",
+    "finding_details": {},
+    "processing_time_ms": 2106
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000089",
+    "claim_id": "d1000001-0000-4000-8000-000000000030",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 95,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Cross-reference with Death Master File shows no match. Provider NPI is valid and active. All identity fields consistent.",
+    "finding_details": {},
+    "processing_time_ms": 1446
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000090",
+    "claim_id": "d1000001-0000-4000-8000-000000000031",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 91,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 1888
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000091",
+    "claim_id": "d1000001-0000-4000-8000-000000000031",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 86,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Disability questionnaire responses are internally consistent. Clinical findings align with reported diagnosis codes.",
+    "finding_details": {},
+    "processing_time_ms": 2759
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000092",
+    "claim_id": "d1000001-0000-4000-8000-000000000031",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 96,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service date falls within acceptable window. Provider eligibility confirmed. Benefit code compliance verified.",
+    "finding_details": {},
+    "processing_time_ms": 2872
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000093",
+    "claim_id": "d1000001-0000-4000-8000-000000000032",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 94,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "veteran_status"
+    ],
+    "evidence_summary": "Overlapping date range: veteran has concurrent inpatient and outpatient claims for the same treatment period 2025-09-03.",
+    "finding_details": {},
+    "processing_time_ms": 2720
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000094",
+    "claim_id": "d1000001-0000-4000-8000-000000000032",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 83,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ template usage appears standard. Medical evidence supports the claimed disability rating increase.",
+    "finding_details": {},
+    "processing_time_ms": 1464
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000095",
+    "claim_id": "d1000001-0000-4000-8000-000000000033",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 93,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service date logic is valid. Diagnosis-to-procedure mapping is clinically appropriate. No data inconsistencies found.",
+    "finding_details": {},
+    "processing_time_ms": 1800
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000096",
+    "claim_id": "d1000001-0000-4000-8000-000000000033",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 89,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "veteran_status"
+    ],
+    "evidence_summary": "Disability questionnaire claims 100% disability for condition with median rating of 30%. Clinical findings section uses boilerplate language inconsistent with examination.",
+    "finding_details": {},
+    "processing_time_ms": 3353
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000097",
+    "claim_id": "d1000001-0000-4000-8000-000000000033",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 91,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 1849
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000098",
+    "claim_id": "d1000001-0000-4000-8000-000000000034",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 91,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of unaccredited consulting fees. Benefit claim amount aligns with standard VA compensation tables.",
+    "finding_details": {},
+    "processing_time_ms": 1190
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000099",
+    "claim_id": "d1000001-0000-4000-8000-000000000034",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 87,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified.",
+    "finding_details": {},
+    "processing_time_ms": 2288
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000100",
+    "claim_id": "d1000001-0000-4000-8000-000000000034",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 89,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Document metadata is consistent. Image analysis shows no evidence of alteration or deepfake indicators.",
+    "finding_details": {},
+    "processing_time_ms": 1267
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000101",
+    "claim_id": "d1000001-0000-4000-8000-000000000035",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 93,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Claim filed through accredited representative. Asset levels consistent with reported pension eligibility.",
+    "finding_details": {},
+    "processing_time_ms": 825
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000102",
+    "claim_id": "d1000001-0000-4000-8000-000000000035",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 89,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Document metadata is consistent. Image analysis shows no evidence of alteration or deepfake indicators.",
+    "finding_details": {},
+    "processing_time_ms": 1985
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000103",
+    "claim_id": "d1000001-0000-4000-8000-000000000035",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 92,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "ICD-10 diagnosis codes are compatible with reported CPT procedure codes. Billing amount is consistent with fee schedule.",
+    "finding_details": {},
+    "processing_time_ms": 2970
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000104",
+    "claim_id": "d1000001-0000-4000-8000-000000000035",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 70,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "veteran_status"
+    ],
+    "evidence_summary": "Billing amount of $17572 exceeds expected range for reported procedure codes by 340%. Possible upcoding detected.",
+    "finding_details": {},
+    "processing_time_ms": 2322
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000105",
+    "claim_id": "d1000001-0000-4000-8000-000000000036",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 99,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Veteran vital status confirmed alive via MVI cross-reference. SSN last-4 validated. Provider NPI 3469810046 verified in NPPES registry.",
+    "finding_details": {},
+    "processing_time_ms": 2156
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000106",
+    "claim_id": "d1000001-0000-4000-8000-000000000036",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 70,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "procedure_codes"
+    ],
+    "evidence_summary": "Clinical notes contain copy-paste artifacts and inconsistent date references. Document hash does not match the original facility records.",
+    "finding_details": {},
+    "processing_time_ms": 516
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000107",
+    "claim_id": "d1000001-0000-4000-8000-000000000037",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 85,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified.",
+    "finding_details": {},
+    "processing_time_ms": 1196
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000108",
+    "claim_id": "d1000001-0000-4000-8000-000000000037",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 84,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Claim filed through accredited representative. Asset levels consistent with reported pension eligibility.",
+    "finding_details": {},
+    "processing_time_ms": 2389
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000109",
+    "claim_id": "d1000001-0000-4000-8000-000000000037",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 88,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service date logic is valid. Diagnosis-to-procedure mapping is clinically appropriate. No data inconsistencies found.",
+    "finding_details": {},
+    "processing_time_ms": 1838
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000110",
+    "claim_id": "d1000001-0000-4000-8000-000000000038",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 98,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service date logic is valid. Diagnosis-to-procedure mapping is clinically appropriate. No data inconsistencies found.",
+    "finding_details": {},
+    "processing_time_ms": 777
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000111",
+    "claim_id": "d1000001-0000-4000-8000-000000000038",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 91,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "finding_details": {},
+    "processing_time_ms": 3069
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000112",
+    "claim_id": "d1000001-0000-4000-8000-000000000038",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 83,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of unaccredited consulting fees. Benefit claim amount aligns with standard VA compensation tables.",
+    "finding_details": {},
+    "processing_time_ms": 3092
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000113",
+    "claim_id": "d1000001-0000-4000-8000-000000000039",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 74,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "procedure_codes"
+    ],
+    "evidence_summary": "Same procedure billed 3 times across different claim types (medical, disability) within a 7-day window for the same veteran.",
+    "finding_details": {},
+    "processing_time_ms": 1591
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000114",
+    "claim_id": "d1000001-0000-4000-8000-000000000039",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 85,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of unaccredited consulting fees. Benefit claim amount aligns with standard VA compensation tables.",
+    "finding_details": {},
+    "processing_time_ms": 2461
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000115",
+    "claim_id": "d1000001-0000-4000-8000-000000000039",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 86,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Disability questionnaire responses are internally consistent. Clinical findings align with reported diagnosis codes.",
+    "finding_details": {},
+    "processing_time_ms": 2670
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000116",
+    "claim_id": "d1000001-0000-4000-8000-000000000040",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 87,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ template usage appears standard. Medical evidence supports the claimed disability rating increase.",
+    "finding_details": {},
+    "processing_time_ms": 2794
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000117",
+    "claim_id": "d1000001-0000-4000-8000-000000000040",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 99,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Medical records appear authentic. No signs of digital tampering or document fabrication detected.",
+    "finding_details": {},
+    "processing_time_ms": 752
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000118",
+    "claim_id": "d1000001-0000-4000-8000-000000000040",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 92,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified.",
+    "finding_details": {},
+    "processing_time_ms": 2572
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000119",
+    "claim_id": "d1000001-0000-4000-8000-000000000041",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 89,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ template usage appears standard. Medical evidence supports the claimed disability rating increase.",
+    "finding_details": {},
+    "processing_time_ms": 2635
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000120",
+    "claim_id": "d1000001-0000-4000-8000-000000000041",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 75,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "procedure_codes"
+    ],
+    "evidence_summary": "Veteran SSN last-4 does not match VA MPI records. Possible identity mismatch or data entry error.",
+    "finding_details": {},
+    "processing_time_ms": 574
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000121",
+    "claim_id": "d1000001-0000-4000-8000-000000000041",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 99,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Document metadata is consistent. Image analysis shows no evidence of alteration or deepfake indicators.",
+    "finding_details": {},
+    "processing_time_ms": 2433
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000122",
+    "claim_id": "d1000001-0000-4000-8000-000000000042",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 85,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "provider_npi"
+    ],
+    "evidence_summary": "Veteran was solicited within 48 hours of discharge. Claim amount $23434 includes undisclosed consulting surcharge.",
+    "finding_details": {},
+    "processing_time_ms": 951
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000123",
+    "claim_id": "d1000001-0000-4000-8000-000000000042",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 80,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "procedure_codes"
+    ],
+    "evidence_summary": "Provider Freedom Medical Group is not accredited with VA OGC but is filing pension benefit claims. Asset manipulation pattern detected: veteran assets depleted 87% in 60 days prior to filing.",
+    "finding_details": {},
+    "processing_time_ms": 1730
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000124",
+    "claim_id": "d1000001-0000-4000-8000-000000000042",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 75,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "service_date"
+    ],
+    "evidence_summary": "Disability questionnaire claims 100% disability for condition with median rating of 30%. Clinical findings section uses boilerplate language inconsistent with examination.",
+    "finding_details": {},
+    "processing_time_ms": 2839
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000125",
+    "claim_id": "d1000001-0000-4000-8000-000000000043",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 97,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "All policy checks passed. Billing amount $1335 aligns with VA fee schedule for the reported procedures.",
+    "finding_details": {},
+    "processing_time_ms": 659
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000126",
+    "claim_id": "d1000001-0000-4000-8000-000000000043",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 88,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service date logic is valid. Diagnosis-to-procedure mapping is clinically appropriate. No data inconsistencies found.",
+    "finding_details": {},
+    "processing_time_ms": 846
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000127",
+    "claim_id": "d1000001-0000-4000-8000-000000000043",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 92,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Claim filed through accredited representative. Asset levels consistent with reported pension eligibility.",
+    "finding_details": {},
+    "processing_time_ms": 1011
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000128",
+    "claim_id": "d1000001-0000-4000-8000-000000000044",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 98,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "ICD-10 diagnosis codes are compatible with reported CPT procedure codes. Billing amount is consistent with fee schedule.",
+    "finding_details": {},
+    "processing_time_ms": 2755
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000129",
+    "claim_id": "d1000001-0000-4000-8000-000000000044",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 82,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ template usage appears standard. Medical evidence supports the claimed disability rating increase.",
+    "finding_details": {},
+    "processing_time_ms": 2819
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000130",
+    "claim_id": "d1000001-0000-4000-8000-000000000044",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 83,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Claim amounts consistent with disability rating and service-connected conditions. No consulting scheme indicators.",
+    "finding_details": {},
+    "processing_time_ms": 527
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000131",
+    "claim_id": "d1000001-0000-4000-8000-000000000045",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 78,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "provider_npi"
+    ],
+    "evidence_summary": "Overlapping date range: veteran has concurrent inpatient and outpatient claims for the same treatment period 2025-08-23.",
+    "finding_details": {},
+    "processing_time_ms": 2602
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000132",
+    "claim_id": "d1000001-0000-4000-8000-000000000045",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 76,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "diagnosis_codes"
+    ],
+    "evidence_summary": "Consulting fee of $23234 embedded in benefit claim is 5x the accredited representative maximum. Provider is unaccredited.",
+    "finding_details": {},
+    "processing_time_ms": 1633
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000133",
+    "claim_id": "d1000001-0000-4000-8000-000000000045",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 97,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Cross-reference with Death Master File shows no match. Provider NPI is valid and active. All identity fields consistent.",
+    "finding_details": {},
+    "processing_time_ms": 1639
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000134",
+    "claim_id": "d1000001-0000-4000-8000-000000000046",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 93,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount"
+    ],
+    "evidence_summary": "DBQ examination date and medical record dates are inconsistent. Reported symptoms do not align with clinical standards for the diagnosed condition.",
+    "finding_details": {},
+    "processing_time_ms": 2971
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000135",
+    "claim_id": "d1000001-0000-4000-8000-000000000046",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 89,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No duplicate or overlapping services found in batch or historical claims for this veteran and date range.",
+    "finding_details": {},
+    "processing_time_ms": 3240
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000136",
+    "claim_id": "d1000001-0000-4000-8000-000000000047",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 97,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "All policy checks passed. Billing amount $13871 aligns with VA fee schedule for the reported procedures.",
+    "finding_details": {},
+    "processing_time_ms": 2161
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000137",
+    "claim_id": "d1000001-0000-4000-8000-000000000047",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 87,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Disability questionnaire responses are internally consistent. Clinical findings align with reported diagnosis codes.",
+    "finding_details": {},
+    "processing_time_ms": 1615
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000138",
+    "claim_id": "d1000001-0000-4000-8000-000000000047",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 99,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified.",
+    "finding_details": {},
+    "processing_time_ms": 1503
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000139",
+    "claim_id": "d1000001-0000-4000-8000-000000000048",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 88,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amount of $27374 is within expected range for procedure codes. Service date is valid and provider is eligible.",
+    "finding_details": {},
+    "processing_time_ms": 1466
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000140",
+    "claim_id": "d1000001-0000-4000-8000-000000000048",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 89,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "service_date"
+    ],
+    "evidence_summary": "Duplicate service detected: CPT 27447 was billed on 2025-09-10 by two different providers for the same veteran. Total double-billed amount: $30077.",
+    "finding_details": {},
+    "processing_time_ms": 704
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000141",
+    "claim_id": "d1000001-0000-4000-8000-000000000048",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 96,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Representative is accredited with VA OGC. No patterns of pension benefit exploitation identified.",
+    "finding_details": {},
+    "processing_time_ms": 3325
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000142",
+    "claim_id": "d1000001-0000-4000-8000-000000000049",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 84,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "All claim fields are internally consistent. Admission dates align with service dates. Billing within expected range.",
+    "finding_details": {},
+    "processing_time_ms": 1793
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000143",
+    "claim_id": "d1000001-0000-4000-8000-000000000049",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 96,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Medical records appear authentic. No signs of digital tampering or document fabrication detected.",
+    "finding_details": {},
+    "processing_time_ms": 2759
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000144",
+    "claim_id": "d1000001-0000-4000-8000-000000000049",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 94,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "diagnosis_codes"
+    ],
+    "evidence_summary": "DBQ examination date and medical record dates are inconsistent. Reported symptoms do not align with clinical standards for the diagnosed condition.",
+    "finding_details": {},
+    "processing_time_ms": 3318
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000145",
+    "claim_id": "d1000001-0000-4000-8000-000000000049",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 68,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "provider_npi"
+    ],
+    "evidence_summary": "CRITICAL: Veteran Robert Mitchell (SSN ***7887) has date_of_death 2025-08-10 in Death Master File, but service_date is 2025-09-06 -- 28 days AFTER death. Billing for deceased veteran detected.",
+    "finding_details": {},
+    "processing_time_ms": 778
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000146",
+    "claim_id": "d1000001-0000-4000-8000-000000000050",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 90,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "diagnosis_codes"
+    ],
+    "evidence_summary": "Pattern match: 4 veterans in same ZIP code filed identical pension claims through this unaccredited provider within 30 days.",
+    "finding_details": {},
+    "processing_time_ms": 1222
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000147",
+    "claim_id": "d1000001-0000-4000-8000-000000000050",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 85,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No duplicate or overlapping services found in batch or historical claims for this veteran and date range.",
+    "finding_details": {},
+    "processing_time_ms": 3202
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000148",
+    "claim_id": "d1000001-0000-4000-8000-000000000050",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 83,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "ICD-10 diagnosis codes are compatible with reported CPT procedure codes. Billing amount is consistent with fee schedule.",
+    "finding_details": {},
+    "processing_time_ms": 3446
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000149",
+    "claim_id": "d1000001-0000-4000-8000-000000000050",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 85,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "procedure_codes"
+    ],
+    "evidence_summary": "Billing amount of $20576 exceeds expected range for reported procedure codes by 340%. Possible upcoding detected.",
+    "finding_details": {},
+    "processing_time_ms": 2199
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000150",
+    "claim_id": "d1000001-0000-4000-8000-000000000051",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 92,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "All claim fields are internally consistent. Admission dates align with service dates. Billing within expected range.",
+    "finding_details": {},
+    "processing_time_ms": 3348
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000151",
+    "claim_id": "d1000001-0000-4000-8000-000000000051",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 96,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amount of $27845 is within expected range for procedure codes. Service date is valid and provider is eligible.",
+    "finding_details": {},
+    "processing_time_ms": 1969
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000152",
+    "claim_id": "d1000001-0000-4000-8000-000000000051",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 77,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "procedure_codes"
+    ],
+    "evidence_summary": "Provider Freedom Medical Group is not accredited with VA OGC but is filing pension benefit claims. Asset manipulation pattern detected: veteran assets depleted 87% in 60 days prior to filing.",
+    "finding_details": {},
+    "processing_time_ms": 930
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000153",
+    "claim_id": "d1000001-0000-4000-8000-000000000051",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 97,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of unaccredited consulting fees. Benefit claim amount aligns with standard VA compensation tables.",
+    "finding_details": {},
+    "processing_time_ms": 2486
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000154",
+    "claim_id": "d1000001-0000-4000-8000-000000000052",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 92,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Veteran vital status confirmed alive via MVI cross-reference. SSN last-4 validated. Provider NPI 6638957137 verified in NPPES registry.",
+    "finding_details": {},
+    "processing_time_ms": 1074
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000155",
+    "claim_id": "d1000001-0000-4000-8000-000000000052",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 89,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Document metadata is consistent. Image analysis shows no evidence of alteration or deepfake indicators.",
+    "finding_details": {},
+    "processing_time_ms": 1023
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000156",
+    "claim_id": "d1000001-0000-4000-8000-000000000052",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 97,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No duplicate or overlapping services found in batch or historical claims for this veteran and date range.",
+    "finding_details": {},
+    "processing_time_ms": 1397
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000157",
+    "claim_id": "d1000001-0000-4000-8000-000000000053",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 96,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Representative is accredited with VA OGC. No patterns of pension benefit exploitation identified.",
+    "finding_details": {},
+    "processing_time_ms": 1624
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000158",
+    "claim_id": "d1000001-0000-4000-8000-000000000053",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 92,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount"
+    ],
+    "evidence_summary": "Billing amount of $7813 exceeds expected range for reported procedure codes by 340%. Possible upcoding detected.",
+    "finding_details": {},
+    "processing_time_ms": 1978
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000159",
+    "claim_id": "d1000001-0000-4000-8000-000000000054",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 89,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service date logic is valid. Diagnosis-to-procedure mapping is clinically appropriate. No data inconsistencies found.",
+    "finding_details": {},
+    "processing_time_ms": 488
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000160",
+    "claim_id": "d1000001-0000-4000-8000-000000000054",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 84,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ template usage appears standard. Medical evidence supports the claimed disability rating increase.",
+    "finding_details": {},
+    "processing_time_ms": 1598
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000161",
+    "claim_id": "d1000001-0000-4000-8000-000000000054",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 83,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Veteran vital status confirmed alive via MVI cross-reference. SSN last-4 validated. Provider NPI 8820716211 verified in NPPES registry.",
+    "finding_details": {},
+    "processing_time_ms": 3479
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000162",
+    "claim_id": "d1000001-0000-4000-8000-000000000055",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 83,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Veteran vital status confirmed alive via MVI cross-reference. SSN last-4 validated. Provider NPI 5621463184 verified in NPPES registry.",
+    "finding_details": {},
+    "processing_time_ms": 1384
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000163",
+    "claim_id": "d1000001-0000-4000-8000-000000000055",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 94,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ template usage appears standard. Medical evidence supports the claimed disability rating increase.",
+    "finding_details": {},
+    "processing_time_ms": 1547
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000164",
+    "claim_id": "d1000001-0000-4000-8000-000000000055",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 86,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Cross-batch analysis shows no overlapping claims for the same service period or procedure.",
+    "finding_details": {},
+    "processing_time_ms": 992
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000165",
+    "claim_id": "d1000001-0000-4000-8000-000000000056",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 99,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Claim filed through accredited representative. Asset levels consistent with reported pension eligibility.",
+    "finding_details": {},
+    "processing_time_ms": 500
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000166",
+    "claim_id": "d1000001-0000-4000-8000-000000000056",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 94,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of unaccredited consulting fees. Benefit claim amount aligns with standard VA compensation tables.",
+    "finding_details": {},
+    "processing_time_ms": 2230
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000167",
+    "claim_id": "d1000001-0000-4000-8000-000000000057",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 93,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Document metadata is consistent. Image analysis shows no evidence of alteration or deepfake indicators.",
+    "finding_details": {},
+    "processing_time_ms": 2006
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000168",
+    "claim_id": "d1000001-0000-4000-8000-000000000057",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 92,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Representative is accredited with VA OGC. No patterns of pension benefit exploitation identified.",
+    "finding_details": {},
+    "processing_time_ms": 1757
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000169",
+    "claim_id": "d1000001-0000-4000-8000-000000000057",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 97,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Claim amounts consistent with disability rating and service-connected conditions. No consulting scheme indicators.",
+    "finding_details": {},
+    "processing_time_ms": 2684
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000170",
+    "claim_id": "d1000001-0000-4000-8000-000000000058",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 69,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $8,200.00"
+    ],
+    "evidence_summary": "Claim triggers 3+ automated fraud detection rules including duplicate billing patterns.",
+    "finding_details": {},
+    "processing_time_ms": 2183
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000171",
+    "claim_id": "d1000001-0000-4000-8000-000000000058",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 84,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "finding_details": {},
+    "processing_time_ms": 1466
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000172",
+    "claim_id": "d1000001-0000-4000-8000-000000000058",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 93,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of unaccredited consulting fees. Benefit claim amount aligns with standard VA compensation tables.",
+    "finding_details": {},
+    "processing_time_ms": 2541
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000173",
+    "claim_id": "d1000001-0000-4000-8000-000000000059",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 98,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of unaccredited consulting fees. Benefit claim amount aligns with standard VA compensation tables.",
+    "finding_details": {},
+    "processing_time_ms": 1727
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000174",
+    "claim_id": "d1000001-0000-4000-8000-000000000059",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 88,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "All claim fields are internally consistent. Admission dates align with service dates. Billing within expected range.",
+    "finding_details": {},
+    "processing_time_ms": 3361
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000175",
+    "claim_id": "d1000001-0000-4000-8000-000000000059",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 86,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "procedure_codes"
+    ],
+    "evidence_summary": "Pattern match: 4 veterans in same ZIP code filed identical pension claims through this unaccredited provider within 30 days.",
+    "finding_details": {},
+    "processing_time_ms": 2220
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000176",
+    "claim_id": "d1000001-0000-4000-8000-000000000059",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 88,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Document metadata is consistent. Image analysis shows no evidence of alteration or deepfake indicators.",
+    "finding_details": {},
+    "processing_time_ms": 1785
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000177",
+    "claim_id": "d1000001-0000-4000-8000-000000000060",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 97,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "All claim fields are internally consistent. Admission dates align with service dates. Billing within expected range.",
+    "finding_details": {},
+    "processing_time_ms": 3341
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000178",
+    "claim_id": "d1000001-0000-4000-8000-000000000060",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 84,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service date falls within acceptable window. Provider eligibility confirmed. Benefit code compliance verified.",
+    "finding_details": {},
+    "processing_time_ms": 2041
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000179",
+    "claim_id": "d1000001-0000-4000-8000-000000000060",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 73,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "service_date"
+    ],
+    "evidence_summary": "Pattern match: 4 veterans in same ZIP code filed identical pension claims through this unaccredited provider within 30 days.",
+    "finding_details": {},
+    "processing_time_ms": 1216
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000180",
+    "claim_id": "d1000001-0000-4000-8000-000000000061",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 82,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service date logic is valid. Diagnosis-to-procedure mapping is clinically appropriate. No data inconsistencies found.",
+    "finding_details": {},
+    "processing_time_ms": 2765
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000181",
+    "claim_id": "d1000001-0000-4000-8000-000000000061",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 79,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount"
+    ],
+    "evidence_summary": "Disability questionnaire claims 100% disability for condition with median rating of 30%. Clinical findings section uses boilerplate language inconsistent with examination.",
+    "finding_details": {},
+    "processing_time_ms": 1547
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000182",
+    "claim_id": "d1000001-0000-4000-8000-000000000061",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 93,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service date falls within acceptable window. Provider eligibility confirmed. Benefit code compliance verified.",
+    "finding_details": {},
+    "processing_time_ms": 930
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000183",
+    "claim_id": "d1000001-0000-4000-8000-000000000062",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 93,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Claim amounts consistent with disability rating and service-connected conditions. No consulting scheme indicators.",
+    "finding_details": {},
+    "processing_time_ms": 2795
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000184",
+    "claim_id": "d1000001-0000-4000-8000-000000000062",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 98,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 1032
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000185",
+    "claim_id": "d1000001-0000-4000-8000-000000000062",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 90,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Cross-batch analysis shows no overlapping claims for the same service period or procedure.",
+    "finding_details": {},
+    "processing_time_ms": 1961
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000186",
+    "claim_id": "d1000001-0000-4000-8000-000000000063",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 70,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "diagnosis_codes"
+    ],
+    "evidence_summary": "CPT code combination is clinically implausible for the reported diagnosis. Modifier usage suggests unbundling of services.",
+    "finding_details": {},
+    "processing_time_ms": 1772
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000187",
+    "claim_id": "d1000001-0000-4000-8000-000000000063",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 92,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Claim filed through accredited representative. Asset levels consistent with reported pension eligibility.",
+    "finding_details": {},
+    "processing_time_ms": 452
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000188",
+    "claim_id": "d1000001-0000-4000-8000-000000000063",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 95,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Disability questionnaire responses are internally consistent. Clinical findings align with reported diagnosis codes.",
+    "finding_details": {},
+    "processing_time_ms": 3107
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000189",
+    "claim_id": "d1000001-0000-4000-8000-000000000064",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 89,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "All policy checks passed. Billing amount $6776 aligns with VA fee schedule for the reported procedures.",
+    "finding_details": {},
+    "processing_time_ms": 3235
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000190",
+    "claim_id": "d1000001-0000-4000-8000-000000000064",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 82,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Claim amounts consistent with disability rating and service-connected conditions. No consulting scheme indicators.",
+    "finding_details": {},
+    "processing_time_ms": 3443
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000191",
+    "claim_id": "d1000001-0000-4000-8000-000000000064",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 85,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "finding_details": {},
+    "processing_time_ms": 3112
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000192",
+    "claim_id": "d1000001-0000-4000-8000-000000000065",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 86,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service date logic is valid. Diagnosis-to-procedure mapping is clinically appropriate. No data inconsistencies found.",
+    "finding_details": {},
+    "processing_time_ms": 2208
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000193",
+    "claim_id": "d1000001-0000-4000-8000-000000000065",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 86,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "finding_details": {},
+    "processing_time_ms": 2570
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000194",
+    "claim_id": "d1000001-0000-4000-8000-000000000065",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 88,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Cross-batch analysis shows no overlapping claims for the same service period or procedure.",
+    "finding_details": {},
+    "processing_time_ms": 499
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000195",
+    "claim_id": "d1000001-0000-4000-8000-000000000066",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 95,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "finding_details": {},
+    "processing_time_ms": 697
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000196",
+    "claim_id": "d1000001-0000-4000-8000-000000000066",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 94,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified.",
+    "finding_details": {},
+    "processing_time_ms": 792
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000197",
+    "claim_id": "d1000001-0000-4000-8000-000000000066",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 98,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of unaccredited consulting fees. Benefit claim amount aligns with standard VA compensation tables.",
+    "finding_details": {},
+    "processing_time_ms": 1427
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000198",
+    "claim_id": "d1000001-0000-4000-8000-000000000067",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 85,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Filing representative is VA-accredited. No inflated fee patterns detected in claim history.",
+    "finding_details": {},
+    "processing_time_ms": 2592
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000199",
+    "claim_id": "d1000001-0000-4000-8000-000000000067",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 90,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amount of $25170 is within expected range for procedure codes. Service date is valid and provider is eligible.",
+    "finding_details": {},
+    "processing_time_ms": 2811
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000200",
+    "claim_id": "d1000001-0000-4000-8000-000000000068",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 68,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount"
+    ],
+    "evidence_summary": "Billing amount $11736 is 4.2x the expected amount for the reported procedures. Service date 2025-09-25 predates the diagnosis date by 15 days.",
+    "finding_details": {},
+    "processing_time_ms": 1451
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000201",
+    "claim_id": "d1000001-0000-4000-8000-000000000068",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 88,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount"
+    ],
+    "evidence_summary": "Consulting fee of $10635 embedded in benefit claim is 5x the accredited representative maximum. Provider is unaccredited.",
+    "finding_details": {},
+    "processing_time_ms": 2791
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000202",
+    "claim_id": "d1000001-0000-4000-8000-000000000069",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 87,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Veteran vital status confirmed alive via MVI cross-reference. SSN last-4 validated. Provider NPI 5215140451 verified in NPPES registry.",
+    "finding_details": {},
+    "processing_time_ms": 2320
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000203",
+    "claim_id": "d1000001-0000-4000-8000-000000000069",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 77,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "provider_npi"
+    ],
+    "evidence_summary": "Disability questionnaire claims 100% disability for condition with median rating of 30%. Clinical findings section uses boilerplate language inconsistent with examination.",
+    "finding_details": {},
+    "processing_time_ms": 547
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000204",
+    "claim_id": "d1000001-0000-4000-8000-000000000069",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 93,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Cross-batch analysis shows no overlapping claims for the same service period or procedure.",
+    "finding_details": {},
+    "processing_time_ms": 1425
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000205",
+    "claim_id": "d1000001-0000-4000-8000-000000000070",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 84,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "ICD-10 diagnosis codes are compatible with reported CPT procedure codes. Billing amount is consistent with fee schedule.",
+    "finding_details": {},
+    "processing_time_ms": 2065
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000206",
+    "claim_id": "d1000001-0000-4000-8000-000000000070",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 68,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "service_date"
+    ],
+    "evidence_summary": "Service date 2025-09-28 falls outside the valid benefit window. Provider eligibility expired on 2025-06-30.",
+    "finding_details": {},
+    "processing_time_ms": 755
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000207",
+    "claim_id": "d1000001-0000-4000-8000-000000000070",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 86,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified.",
+    "finding_details": {},
+    "processing_time_ms": 2301
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000208",
+    "claim_id": "d1000001-0000-4000-8000-000000000071",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 84,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "diagnosis_codes"
+    ],
+    "evidence_summary": "CPT code combination is clinically implausible for the reported diagnosis. Modifier usage suggests unbundling of services.",
+    "finding_details": {},
+    "processing_time_ms": 1515
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000209",
+    "claim_id": "d1000001-0000-4000-8000-000000000071",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 87,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "finding_details": {},
+    "processing_time_ms": 1360
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000210",
+    "claim_id": "d1000001-0000-4000-8000-000000000071",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 90,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount"
+    ],
+    "evidence_summary": "Service date 2025-08-03 falls outside the valid benefit window. Provider eligibility expired on 2025-06-30.",
+    "finding_details": {},
+    "processing_time_ms": 2338
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000211",
+    "claim_id": "d1000001-0000-4000-8000-000000000072",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 94,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Representative is accredited with VA OGC. No patterns of pension benefit exploitation identified.",
+    "finding_details": {},
+    "processing_time_ms": 2965
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000212",
+    "claim_id": "d1000001-0000-4000-8000-000000000072",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 89,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No fabrication indicators detected in disability evaluation. Examination findings are clinically plausible.",
+    "finding_details": {},
+    "processing_time_ms": 3082
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000213",
+    "claim_id": "d1000001-0000-4000-8000-000000000073",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 93,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Filing representative is VA-accredited. No inflated fee patterns detected in claim history.",
+    "finding_details": {},
+    "processing_time_ms": 689
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000214",
+    "claim_id": "d1000001-0000-4000-8000-000000000073",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 97,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Cross-batch analysis shows no overlapping claims for the same service period or procedure.",
+    "finding_details": {},
+    "processing_time_ms": 2808
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000215",
+    "claim_id": "d1000001-0000-4000-8000-000000000073",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 94,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ template usage appears standard. Medical evidence supports the claimed disability rating increase.",
+    "finding_details": {},
+    "processing_time_ms": 2758
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000216",
+    "claim_id": "d1000001-0000-4000-8000-000000000073",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 88,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "All policy checks passed. Billing amount $21054 aligns with VA fee schedule for the reported procedures.",
+    "finding_details": {},
+    "processing_time_ms": 2407
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000217",
+    "claim_id": "d1000001-0000-4000-8000-000000000074",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 73,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "diagnosis_codes"
+    ],
+    "evidence_summary": "Overlapping date range: veteran has concurrent inpatient and outpatient claims for the same treatment period 2025-08-05.",
+    "finding_details": {},
+    "processing_time_ms": 3335
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000218",
+    "claim_id": "d1000001-0000-4000-8000-000000000074",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 94,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No fabrication indicators detected in disability evaluation. Examination findings are clinically plausible.",
+    "finding_details": {},
+    "processing_time_ms": 3346
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000219",
+    "claim_id": "d1000001-0000-4000-8000-000000000075",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 94,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "finding_details": {},
+    "processing_time_ms": 1753
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000220",
+    "claim_id": "d1000001-0000-4000-8000-000000000075",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 89,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified.",
+    "finding_details": {},
+    "processing_time_ms": 3055
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000221",
+    "claim_id": "d1000001-0000-4000-8000-000000000075",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 84,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "All claim fields are internally consistent. Admission dates align with service dates. Billing within expected range.",
+    "finding_details": {},
+    "processing_time_ms": 455
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000222",
+    "claim_id": "d1000001-0000-4000-8000-000000000075",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 93,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "veteran_status"
+    ],
+    "evidence_summary": "DBQ examination date and medical record dates are inconsistent. Reported symptoms do not align with clinical standards for the diagnosed condition.",
+    "finding_details": {},
+    "processing_time_ms": 3116
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000223",
+    "claim_id": "d1000001-0000-4000-8000-000000000076",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 83,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Representative is accredited with VA OGC. No patterns of pension benefit exploitation identified.",
+    "finding_details": {},
+    "processing_time_ms": 831
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000224",
+    "claim_id": "d1000001-0000-4000-8000-000000000076",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 95,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "procedure_codes"
+    ],
+    "evidence_summary": "Veteran was solicited within 48 hours of discharge. Claim amount $2831 includes undisclosed consulting surcharge.",
+    "finding_details": {},
+    "processing_time_ms": 2719
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000225",
+    "claim_id": "d1000001-0000-4000-8000-000000000076",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 99,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "All policy checks passed. Billing amount $19249 aligns with VA fee schedule for the reported procedures.",
+    "finding_details": {},
+    "processing_time_ms": 2201
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000226",
+    "claim_id": "d1000001-0000-4000-8000-000000000077",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 97,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Disability questionnaire responses are internally consistent. Clinical findings align with reported diagnosis codes.",
+    "finding_details": {},
+    "processing_time_ms": 2378
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000227",
+    "claim_id": "d1000001-0000-4000-8000-000000000077",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 90,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Medical records appear authentic. No signs of digital tampering or document fabrication detected.",
+    "finding_details": {},
+    "processing_time_ms": 1528
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000228",
+    "claim_id": "d1000001-0000-4000-8000-000000000078",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fabrication",
+    "confidence_score": 71,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount"
+    ],
+    "evidence_summary": "DBQ responses show template-identical language across 6 veterans evaluated by the same provider. Fabrication indicators: 94% text similarity score.",
+    "finding_details": {},
+    "processing_time_ms": 2506
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000229",
+    "claim_id": "d1000001-0000-4000-8000-000000000078",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 98,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "procedure_codes"
+    ],
+    "evidence_summary": "CPT code combination is clinically implausible for the reported diagnosis. Modifier usage suggests unbundling of services.",
+    "finding_details": {},
+    "processing_time_ms": 2233
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000230",
+    "claim_id": "d1000001-0000-4000-8000-000000000078",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 74,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "provider_npi"
+    ],
+    "evidence_summary": "Billing amount $17700 is 2.8x the VA fee schedule maximum for the reported CPT codes. Requires manual review.",
+    "finding_details": {},
+    "processing_time_ms": 500
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000231",
+    "claim_id": "d1000001-0000-4000-8000-000000000079",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 71,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "service_date"
+    ],
+    "evidence_summary": "Document metadata analysis reveals editing timestamps inconsistent with creation date. Font rendering anomalies detected in clinical findings section.",
+    "finding_details": {},
+    "processing_time_ms": 1578
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000232",
+    "claim_id": "d1000001-0000-4000-8000-000000000079",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 90,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "provider_npi"
+    ],
+    "evidence_summary": "Billing amount of $26738 exceeds expected range for reported procedure codes by 340%. Possible upcoding detected.",
+    "finding_details": {},
+    "processing_time_ms": 3301
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000233",
+    "claim_id": "d1000001-0000-4000-8000-000000000079",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 89,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of unaccredited consulting fees. Benefit claim amount aligns with standard VA compensation tables.",
+    "finding_details": {},
+    "processing_time_ms": 3484
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000234",
+    "claim_id": "d1000001-0000-4000-8000-000000000079",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 98,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "service_date"
+    ],
+    "evidence_summary": "Provider NPI 1682781467 is not found in NPPES registry. Provider identity cannot be validated.",
+    "finding_details": {},
+    "processing_time_ms": 1272
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000235",
+    "claim_id": "d1000001-0000-4000-8000-000000000080",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 88,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "veteran_status"
+    ],
+    "evidence_summary": "Veteran was solicited within 48 hours of discharge. Claim amount $13848 includes undisclosed consulting surcharge.",
+    "finding_details": {},
+    "processing_time_ms": 2277
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000236",
+    "claim_id": "d1000001-0000-4000-8000-000000000080",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 95,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "service_date"
+    ],
+    "evidence_summary": "Billing amount $23721 is 2.8x the VA fee schedule maximum for the reported CPT codes. Requires manual review.",
+    "finding_details": {},
+    "processing_time_ms": 2793
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000301",
+    "claim_id": "d1000001-0000-4000-8000-000000000100",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 27,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amount within expected range for procedure codes. Service date is valid and provider is eligible.",
+    "finding_details": {},
+    "processing_time_ms": 2332
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000302",
+    "claim_id": "d1000001-0000-4000-8000-000000000100",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 18,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "finding_details": {},
+    "processing_time_ms": 1002
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000303",
+    "claim_id": "d1000001-0000-4000-8000-000000000100",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 19,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "finding_details": {},
+    "processing_time_ms": 2513
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000304",
+    "claim_id": "d1000001-0000-4000-8000-000000000100",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 79,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $19,743.99"
+    ],
+    "evidence_summary": "Provider solicitation pattern detected \u2014 high volume of new veteran patients.",
+    "finding_details": {},
+    "processing_time_ms": 753
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000305",
+    "claim_id": "d1000001-0000-4000-8000-000000000100",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fraud",
+    "confidence_score": 27,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ responses consistent with documented medical condition. Completion time within normal range.",
+    "finding_details": {},
+    "processing_time_ms": 1831
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000306",
+    "claim_id": "d1000001-0000-4000-8000-000000000100",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 83,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $19,743.99"
+    ],
+    "evidence_summary": "Overlapping service dates with another approved claim for identical services.",
+    "finding_details": {},
+    "processing_time_ms": 736
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000307",
+    "claim_id": "d1000001-0000-4000-8000-000000000100",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 75,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $19,743.99"
+    ],
+    "evidence_summary": "Diagnosis code inconsistent with veteran's age/gender demographics.",
+    "finding_details": {},
+    "processing_time_ms": 518
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000308",
+    "claim_id": "d1000001-0000-4000-8000-000000000100",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 7,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amounts and codes consistent with clinical documentation and fee schedule.",
+    "finding_details": {},
+    "processing_time_ms": 1656
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000309",
+    "claim_id": "d1000001-0000-4000-8000-000000000101",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 14,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amount within expected range for procedure codes. Service date is valid and provider is eligible.",
+    "finding_details": {},
+    "processing_time_ms": 2674
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000310",
+    "claim_id": "d1000001-0000-4000-8000-000000000101",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 85,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $13,684.05"
+    ],
+    "evidence_summary": "Deceased veteran flag triggered \u2014 claim filed after recorded date of death.",
+    "finding_details": {},
+    "processing_time_ms": 887
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000311",
+    "claim_id": "d1000001-0000-4000-8000-000000000101",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 27,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "finding_details": {},
+    "processing_time_ms": 384
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000312",
+    "claim_id": "d1000001-0000-4000-8000-000000000101",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 6,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Provider billing patterns within normal parameters. No solicitation indicators detected.",
+    "finding_details": {},
+    "processing_time_ms": 2808
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000313",
+    "claim_id": "d1000001-0000-4000-8000-000000000101",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fraud",
+    "confidence_score": 76,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $13,684.05"
+    ],
+    "evidence_summary": "Identical DBQ narrative text found across multiple unrelated veterans.",
+    "finding_details": {},
+    "processing_time_ms": 426
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000314",
+    "claim_id": "d1000001-0000-4000-8000-000000000101",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 32,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "finding_details": {},
+    "processing_time_ms": 1053
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000315",
+    "claim_id": "d1000001-0000-4000-8000-000000000101",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 32,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 513
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000316",
+    "claim_id": "d1000001-0000-4000-8000-000000000101",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 17,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amounts and codes consistent with clinical documentation and fee schedule.",
+    "finding_details": {},
+    "processing_time_ms": 1238
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000317",
+    "claim_id": "d1000001-0000-4000-8000-000000000102",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 12,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amount within expected range for procedure codes. Service date is valid and provider is eligible.",
+    "finding_details": {},
+    "processing_time_ms": 769
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000318",
+    "claim_id": "d1000001-0000-4000-8000-000000000102",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 19,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "finding_details": {},
+    "processing_time_ms": 1654
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000319",
+    "claim_id": "d1000001-0000-4000-8000-000000000102",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 79,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $17,751.97"
+    ],
+    "evidence_summary": "Provider has pattern of converting medical claims to pension benefits.",
+    "finding_details": {},
+    "processing_time_ms": 2904
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000320",
+    "claim_id": "d1000001-0000-4000-8000-000000000102",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 15,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Provider billing patterns within normal parameters. No solicitation indicators detected.",
+    "finding_details": {},
+    "processing_time_ms": 329
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000321",
+    "claim_id": "d1000001-0000-4000-8000-000000000102",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fraud",
+    "confidence_score": 76,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $17,751.97"
+    ],
+    "evidence_summary": "DBQ responses show statistical improbability \u2014 all maximum severity ratings.",
+    "finding_details": {},
+    "processing_time_ms": 1392
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000322",
+    "claim_id": "d1000001-0000-4000-8000-000000000102",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 87,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $17,751.97"
+    ],
+    "evidence_summary": "Overlapping service dates with another approved claim for identical services.",
+    "finding_details": {},
+    "processing_time_ms": 371
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000323",
+    "claim_id": "d1000001-0000-4000-8000-000000000102",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 11,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 2423
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000324",
+    "claim_id": "d1000001-0000-4000-8000-000000000102",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 33,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amounts and codes consistent with clinical documentation and fee schedule.",
+    "finding_details": {},
+    "processing_time_ms": 1388
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000325",
+    "claim_id": "d1000001-0000-4000-8000-000000000103",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 18,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amount within expected range for procedure codes. Service date is valid and provider is eligible.",
+    "finding_details": {},
+    "processing_time_ms": 2490
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000326",
+    "claim_id": "d1000001-0000-4000-8000-000000000103",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 17,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "finding_details": {},
+    "processing_time_ms": 1582
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000327",
+    "claim_id": "d1000001-0000-4000-8000-000000000103",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 12,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "finding_details": {},
+    "processing_time_ms": 666
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000328",
+    "claim_id": "d1000001-0000-4000-8000-000000000103",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 21,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Provider billing patterns within normal parameters. No solicitation indicators detected.",
+    "finding_details": {},
+    "processing_time_ms": 2121
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000329",
+    "claim_id": "d1000001-0000-4000-8000-000000000103",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fraud",
+    "confidence_score": 67,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $37,560.30"
+    ],
+    "evidence_summary": "DBQ responses show statistical improbability \u2014 all maximum severity ratings.",
+    "finding_details": {},
+    "processing_time_ms": 549
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000330",
+    "claim_id": "d1000001-0000-4000-8000-000000000103",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 71,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $37,560.30",
+      "procedure_codes: ['99215', '97110']"
+    ],
+    "evidence_summary": "Duplicate procedure codes billed within 7-day window for same veteran.",
+    "finding_details": {},
+    "processing_time_ms": 2887
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000331",
+    "claim_id": "d1000001-0000-4000-8000-000000000103",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 18,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 2542
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000332",
+    "claim_id": "d1000001-0000-4000-8000-000000000103",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 66,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $37,560.30",
+      "procedure_codes: ['99215', '97110']"
+    ],
+    "evidence_summary": "Number of units billed exceeds clinical guidelines for this procedure.",
+    "finding_details": {},
+    "processing_time_ms": 1663
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000333",
+    "claim_id": "d1000001-0000-4000-8000-000000000104",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 89,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $36,640.02",
+      "procedure_codes: ['90837', '90847']"
+    ],
+    "evidence_summary": "Multiple billing anomalies detected: procedure codes inconsistent with diagnosis.",
+    "finding_details": {},
+    "processing_time_ms": 1958
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000334",
+    "claim_id": "d1000001-0000-4000-8000-000000000104",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 5,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "finding_details": {},
+    "processing_time_ms": 1178
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000335",
+    "claim_id": "d1000001-0000-4000-8000-000000000104",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 94,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $36,640.02"
+    ],
+    "evidence_summary": "Provider has pattern of converting medical claims to pension benefits.",
+    "finding_details": {},
+    "processing_time_ms": 2179
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000336",
+    "claim_id": "d1000001-0000-4000-8000-000000000104",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 34,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Provider billing patterns within normal parameters. No solicitation indicators detected.",
+    "finding_details": {},
+    "processing_time_ms": 535
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000337",
+    "claim_id": "d1000001-0000-4000-8000-000000000104",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fraud",
+    "confidence_score": 32,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ responses consistent with documented medical condition. Completion time within normal range.",
+    "finding_details": {},
+    "processing_time_ms": 2661
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000338",
+    "claim_id": "d1000001-0000-4000-8000-000000000104",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 81,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $36,640.02",
+      "procedure_codes: ['90837', '90847']"
+    ],
+    "evidence_summary": "Duplicate procedure codes billed within 7-day window for same veteran.",
+    "finding_details": {},
+    "processing_time_ms": 726
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000339",
+    "claim_id": "d1000001-0000-4000-8000-000000000104",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 16,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 761
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000340",
+    "claim_id": "d1000001-0000-4000-8000-000000000104",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 22,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amounts and codes consistent with clinical documentation and fee schedule.",
+    "finding_details": {},
+    "processing_time_ms": 2272
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000341",
+    "claim_id": "d1000001-0000-4000-8000-000000000105",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 33,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amount within expected range for procedure codes. Service date is valid and provider is eligible.",
+    "finding_details": {},
+    "processing_time_ms": 2423
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000342",
+    "claim_id": "d1000001-0000-4000-8000-000000000105",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 35,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "finding_details": {},
+    "processing_time_ms": 422
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000343",
+    "claim_id": "d1000001-0000-4000-8000-000000000105",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 7,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "finding_details": {},
+    "processing_time_ms": 2090
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000344",
+    "claim_id": "d1000001-0000-4000-8000-000000000105",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 66,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $4,249.85"
+    ],
+    "evidence_summary": "Provider solicitation pattern detected \u2014 high volume of new veteran patients.",
+    "finding_details": {},
+    "processing_time_ms": 625
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000345",
+    "claim_id": "d1000001-0000-4000-8000-000000000105",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fraud",
+    "confidence_score": 26,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ responses consistent with documented medical condition. Completion time within normal range.",
+    "finding_details": {},
+    "processing_time_ms": 2046
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000346",
+    "claim_id": "d1000001-0000-4000-8000-000000000105",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 35,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "finding_details": {},
+    "processing_time_ms": 2351
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000347",
+    "claim_id": "d1000001-0000-4000-8000-000000000105",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 10,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 1185
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000348",
+    "claim_id": "d1000001-0000-4000-8000-000000000105",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 21,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amounts and codes consistent with clinical documentation and fee schedule.",
+    "finding_details": {},
+    "processing_time_ms": 2584
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000349",
+    "claim_id": "d1000001-0000-4000-8000-000000000106",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 7,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amount within expected range for procedure codes. Service date is valid and provider is eligible.",
+    "finding_details": {},
+    "processing_time_ms": 1484
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000350",
+    "claim_id": "d1000001-0000-4000-8000-000000000106",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 5,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "finding_details": {},
+    "processing_time_ms": 2509
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000351",
+    "claim_id": "d1000001-0000-4000-8000-000000000106",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 22,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "finding_details": {},
+    "processing_time_ms": 1042
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000352",
+    "claim_id": "d1000001-0000-4000-8000-000000000106",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 76,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $18,861.20"
+    ],
+    "evidence_summary": "Provider solicitation pattern detected \u2014 high volume of new veteran patients.",
+    "finding_details": {},
+    "processing_time_ms": 390
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000353",
+    "claim_id": "d1000001-0000-4000-8000-000000000106",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fraud",
+    "confidence_score": 27,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ responses consistent with documented medical condition. Completion time within normal range.",
+    "finding_details": {},
+    "processing_time_ms": 2684
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000354",
+    "claim_id": "d1000001-0000-4000-8000-000000000106",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 6,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "finding_details": {},
+    "processing_time_ms": 1037
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000355",
+    "claim_id": "d1000001-0000-4000-8000-000000000106",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 7,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 228
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000356",
+    "claim_id": "d1000001-0000-4000-8000-000000000106",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 32,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amounts and codes consistent with clinical documentation and fee schedule.",
+    "finding_details": {},
+    "processing_time_ms": 1453
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000357",
+    "claim_id": "d1000001-0000-4000-8000-000000000107",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 30,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amount within expected range for procedure codes. Service date is valid and provider is eligible.",
+    "finding_details": {},
+    "processing_time_ms": 1767
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000358",
+    "claim_id": "d1000001-0000-4000-8000-000000000107",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 11,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "finding_details": {},
+    "processing_time_ms": 486
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000359",
+    "claim_id": "d1000001-0000-4000-8000-000000000107",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 8,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "finding_details": {},
+    "processing_time_ms": 2799
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000360",
+    "claim_id": "d1000001-0000-4000-8000-000000000107",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 18,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Provider billing patterns within normal parameters. No solicitation indicators detected.",
+    "finding_details": {},
+    "processing_time_ms": 1551
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000361",
+    "claim_id": "d1000001-0000-4000-8000-000000000107",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fraud",
+    "confidence_score": 18,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ responses consistent with documented medical condition. Completion time within normal range.",
+    "finding_details": {},
+    "processing_time_ms": 1783
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000362",
+    "claim_id": "d1000001-0000-4000-8000-000000000107",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 19,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "finding_details": {},
+    "processing_time_ms": 321
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000363",
+    "claim_id": "d1000001-0000-4000-8000-000000000107",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 26,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 2776
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000364",
+    "claim_id": "d1000001-0000-4000-8000-000000000107",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 68,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $29,255.64"
+    ],
+    "evidence_summary": "Billed amount exceeds Medicare fee schedule by 300%+.",
+    "finding_details": {},
+    "processing_time_ms": 1749
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000365",
+    "claim_id": "d1000001-0000-4000-8000-000000000108",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 34,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amount within expected range for procedure codes. Service date is valid and provider is eligible.",
+    "finding_details": {},
+    "processing_time_ms": 408
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000366",
+    "claim_id": "d1000001-0000-4000-8000-000000000108",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 19,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "finding_details": {},
+    "processing_time_ms": 2354
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000367",
+    "claim_id": "d1000001-0000-4000-8000-000000000108",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 8,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "finding_details": {},
+    "processing_time_ms": 307
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000368",
+    "claim_id": "d1000001-0000-4000-8000-000000000108",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 96,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $10,876.22"
+    ],
+    "evidence_summary": "Provider solicitation pattern detected \u2014 high volume of new veteran patients.",
+    "finding_details": {},
+    "processing_time_ms": 482
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000369",
+    "claim_id": "d1000001-0000-4000-8000-000000000108",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fraud",
+    "confidence_score": 34,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ responses consistent with documented medical condition. Completion time within normal range.",
+    "finding_details": {},
+    "processing_time_ms": 1068
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000370",
+    "claim_id": "d1000001-0000-4000-8000-000000000108",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 10,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "finding_details": {},
+    "processing_time_ms": 1764
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000371",
+    "claim_id": "d1000001-0000-4000-8000-000000000108",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 93,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $10,876.22"
+    ],
+    "evidence_summary": "Diagnosis code inconsistent with veteran's age/gender demographics.",
+    "finding_details": {},
+    "processing_time_ms": 975
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000372",
+    "claim_id": "d1000001-0000-4000-8000-000000000108",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 32,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amounts and codes consistent with clinical documentation and fee schedule.",
+    "finding_details": {},
+    "processing_time_ms": 1742
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000373",
+    "claim_id": "d1000001-0000-4000-8000-000000000109",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 11,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amount within expected range for procedure codes. Service date is valid and provider is eligible.",
+    "finding_details": {},
+    "processing_time_ms": 1315
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000374",
+    "claim_id": "d1000001-0000-4000-8000-000000000109",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 75,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $41,434.39"
+    ],
+    "evidence_summary": "Provider NPI validation failed against CMS NPPES registry.",
+    "finding_details": {},
+    "processing_time_ms": 2472
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000375",
+    "claim_id": "d1000001-0000-4000-8000-000000000109",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 28,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "finding_details": {},
+    "processing_time_ms": 2320
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000376",
+    "claim_id": "d1000001-0000-4000-8000-000000000109",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 6,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Provider billing patterns within normal parameters. No solicitation indicators detected.",
+    "finding_details": {},
+    "processing_time_ms": 1384
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000377",
+    "claim_id": "d1000001-0000-4000-8000-000000000109",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fraud",
+    "confidence_score": 6,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ responses consistent with documented medical condition. Completion time within normal range.",
+    "finding_details": {},
+    "processing_time_ms": 305
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000378",
+    "claim_id": "d1000001-0000-4000-8000-000000000109",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 23,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "finding_details": {},
+    "processing_time_ms": 2052
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000379",
+    "claim_id": "d1000001-0000-4000-8000-000000000109",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 21,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 2275
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000380",
+    "claim_id": "d1000001-0000-4000-8000-000000000109",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 72,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $41,434.39"
+    ],
+    "evidence_summary": "Billed amount exceeds Medicare fee schedule by 300%+.",
+    "finding_details": {},
+    "processing_time_ms": 2180
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000381",
+    "claim_id": "d1000001-0000-4000-8000-000000000110",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 88,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $6,116.49"
+    ],
+    "evidence_summary": "Claim triggers 3+ automated fraud detection rules including duplicate billing patterns.",
+    "finding_details": {},
+    "processing_time_ms": 2490
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000382",
+    "claim_id": "d1000001-0000-4000-8000-000000000110",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 23,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "finding_details": {},
+    "processing_time_ms": 2241
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000383",
+    "claim_id": "d1000001-0000-4000-8000-000000000110",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 15,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "finding_details": {},
+    "processing_time_ms": 1168
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000384",
+    "claim_id": "d1000001-0000-4000-8000-000000000110",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 11,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Provider billing patterns within normal parameters. No solicitation indicators detected.",
+    "finding_details": {},
+    "processing_time_ms": 2843
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000385",
+    "claim_id": "d1000001-0000-4000-8000-000000000110",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fraud",
+    "confidence_score": 82,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $6,116.49"
+    ],
+    "evidence_summary": "DBQ responses show statistical improbability \u2014 all maximum severity ratings.",
+    "finding_details": {},
+    "processing_time_ms": 1187
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000386",
+    "claim_id": "d1000001-0000-4000-8000-000000000110",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 17,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "finding_details": {},
+    "processing_time_ms": 636
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000387",
+    "claim_id": "d1000001-0000-4000-8000-000000000110",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 26,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 2743
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000388",
+    "claim_id": "d1000001-0000-4000-8000-000000000110",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 81,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $6,116.49",
+      "procedure_codes: ['99213', '92551']"
+    ],
+    "evidence_summary": "Number of units billed exceeds clinical guidelines for this procedure.",
+    "finding_details": {},
+    "processing_time_ms": 1395
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000389",
+    "claim_id": "d1000001-0000-4000-8000-000000000111",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 33,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amount within expected range for procedure codes. Service date is valid and provider is eligible.",
+    "finding_details": {},
+    "processing_time_ms": 381
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000390",
+    "claim_id": "d1000001-0000-4000-8000-000000000111",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 33,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "finding_details": {},
+    "processing_time_ms": 1100
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000391",
+    "claim_id": "d1000001-0000-4000-8000-000000000111",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 16,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "finding_details": {},
+    "processing_time_ms": 1267
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000392",
+    "claim_id": "d1000001-0000-4000-8000-000000000111",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 10,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Provider billing patterns within normal parameters. No solicitation indicators detected.",
+    "finding_details": {},
+    "processing_time_ms": 1894
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000393",
+    "claim_id": "d1000001-0000-4000-8000-000000000111",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fraud",
+    "confidence_score": 31,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ responses consistent with documented medical condition. Completion time within normal range.",
+    "finding_details": {},
+    "processing_time_ms": 2325
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000394",
+    "claim_id": "d1000001-0000-4000-8000-000000000111",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 81,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $27,414.63",
+      "procedure_codes: ['99214', '12011']"
+    ],
+    "evidence_summary": "Duplicate procedure codes billed within 7-day window for same veteran.",
+    "finding_details": {},
+    "processing_time_ms": 2835
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000395",
+    "claim_id": "d1000001-0000-4000-8000-000000000111",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 31,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 2371
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000396",
+    "claim_id": "d1000001-0000-4000-8000-000000000111",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 14,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amounts and codes consistent with clinical documentation and fee schedule.",
+    "finding_details": {},
+    "processing_time_ms": 2817
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000397",
+    "claim_id": "d1000001-0000-4000-8000-000000000112",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 25,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amount within expected range for procedure codes. Service date is valid and provider is eligible.",
+    "finding_details": {},
+    "processing_time_ms": 1181
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000398",
+    "claim_id": "d1000001-0000-4000-8000-000000000112",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 94,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $37,753.94"
+    ],
+    "evidence_summary": "Service date precedes veteran's enrollment effective date.",
+    "finding_details": {},
+    "processing_time_ms": 1128
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000399",
+    "claim_id": "d1000001-0000-4000-8000-000000000112",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 33,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "finding_details": {},
+    "processing_time_ms": 308
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000400",
+    "claim_id": "d1000001-0000-4000-8000-000000000112",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 7,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Provider billing patterns within normal parameters. No solicitation indicators detected.",
+    "finding_details": {},
+    "processing_time_ms": 2698
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000401",
+    "claim_id": "d1000001-0000-4000-8000-000000000112",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fraud",
+    "confidence_score": 18,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ responses consistent with documented medical condition. Completion time within normal range.",
+    "finding_details": {},
+    "processing_time_ms": 1233
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000402",
+    "claim_id": "d1000001-0000-4000-8000-000000000112",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 64,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $37,753.94",
+      "procedure_codes: ['90834', '90785']"
+    ],
+    "evidence_summary": "Duplicate procedure codes billed within 7-day window for same veteran.",
+    "finding_details": {},
+    "processing_time_ms": 1466
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000403",
+    "claim_id": "d1000001-0000-4000-8000-000000000112",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 29,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 635
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000404",
+    "claim_id": "d1000001-0000-4000-8000-000000000112",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 78,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $37,753.94"
+    ],
+    "evidence_summary": "Billed amount exceeds Medicare fee schedule by 300%+.",
+    "finding_details": {},
+    "processing_time_ms": 1909
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000405",
+    "claim_id": "d1000001-0000-4000-8000-000000000113",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 9,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amount within expected range for procedure codes. Service date is valid and provider is eligible.",
+    "finding_details": {},
+    "processing_time_ms": 271
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000406",
+    "claim_id": "d1000001-0000-4000-8000-000000000113",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 14,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "finding_details": {},
+    "processing_time_ms": 1593
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000407",
+    "claim_id": "d1000001-0000-4000-8000-000000000113",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 64,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $3,872.28"
+    ],
+    "evidence_summary": "Multiple veterans from same provider filing similar pension claims within 30 days.",
+    "finding_details": {},
+    "processing_time_ms": 960
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000408",
+    "claim_id": "d1000001-0000-4000-8000-000000000113",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 77,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $3,872.28"
+    ],
+    "evidence_summary": "Provider solicitation pattern detected \u2014 high volume of new veteran patients.",
+    "finding_details": {},
+    "processing_time_ms": 1548
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000409",
+    "claim_id": "d1000001-0000-4000-8000-000000000113",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fraud",
+    "confidence_score": 29,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ responses consistent with documented medical condition. Completion time within normal range.",
+    "finding_details": {},
+    "processing_time_ms": 2393
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000410",
+    "claim_id": "d1000001-0000-4000-8000-000000000113",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 33,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "finding_details": {},
+    "processing_time_ms": 1764
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000411",
+    "claim_id": "d1000001-0000-4000-8000-000000000113",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 24,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 733
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000412",
+    "claim_id": "d1000001-0000-4000-8000-000000000113",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 34,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amounts and codes consistent with clinical documentation and fee schedule.",
+    "finding_details": {},
+    "processing_time_ms": 1069
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000413",
+    "claim_id": "d1000001-0000-4000-8000-000000000114",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 27,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amount within expected range for procedure codes. Service date is valid and provider is eligible.",
+    "finding_details": {},
+    "processing_time_ms": 542
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000414",
+    "claim_id": "d1000001-0000-4000-8000-000000000114",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 17,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "finding_details": {},
+    "processing_time_ms": 258
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000415",
+    "claim_id": "d1000001-0000-4000-8000-000000000114",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 92,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $10,405.39"
+    ],
+    "evidence_summary": "Provider has pattern of converting medical claims to pension benefits.",
+    "finding_details": {},
+    "processing_time_ms": 917
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000416",
+    "claim_id": "d1000001-0000-4000-8000-000000000114",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 31,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Provider billing patterns within normal parameters. No solicitation indicators detected.",
+    "finding_details": {},
+    "processing_time_ms": 1985
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000417",
+    "claim_id": "d1000001-0000-4000-8000-000000000114",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fraud",
+    "confidence_score": 16,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ responses consistent with documented medical condition. Completion time within normal range.",
+    "finding_details": {},
+    "processing_time_ms": 1350
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000418",
+    "claim_id": "d1000001-0000-4000-8000-000000000114",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 31,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "finding_details": {},
+    "processing_time_ms": 1032
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000419",
+    "claim_id": "d1000001-0000-4000-8000-000000000114",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 76,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $10,405.39",
+      "procedure_codes: ['99214', '72148']"
+    ],
+    "evidence_summary": "Procedure billed not supported by documented medical necessity.",
+    "finding_details": {},
+    "processing_time_ms": 2803
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000420",
+    "claim_id": "d1000001-0000-4000-8000-000000000114",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 11,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amounts and codes consistent with clinical documentation and fee schedule.",
+    "finding_details": {},
+    "processing_time_ms": 1732
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000421",
+    "claim_id": "d1000001-0000-4000-8000-000000000115",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 33,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amount within expected range for procedure codes. Service date is valid and provider is eligible.",
+    "finding_details": {},
+    "processing_time_ms": 1169
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000422",
+    "claim_id": "d1000001-0000-4000-8000-000000000115",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 73,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $17,019.13"
+    ],
+    "evidence_summary": "Deceased veteran flag triggered \u2014 claim filed after recorded date of death.",
+    "finding_details": {},
+    "processing_time_ms": 1187
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000423",
+    "claim_id": "d1000001-0000-4000-8000-000000000115",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 6,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "finding_details": {},
+    "processing_time_ms": 544
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000424",
+    "claim_id": "d1000001-0000-4000-8000-000000000115",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 24,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Provider billing patterns within normal parameters. No solicitation indicators detected.",
+    "finding_details": {},
+    "processing_time_ms": 1879
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000425",
+    "claim_id": "d1000001-0000-4000-8000-000000000115",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fraud",
+    "confidence_score": 16,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ responses consistent with documented medical condition. Completion time within normal range.",
+    "finding_details": {},
+    "processing_time_ms": 1384
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000426",
+    "claim_id": "d1000001-0000-4000-8000-000000000115",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 18,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "finding_details": {},
+    "processing_time_ms": 2583
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000427",
+    "claim_id": "d1000001-0000-4000-8000-000000000115",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 21,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 573
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000428",
+    "claim_id": "d1000001-0000-4000-8000-000000000115",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 17,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amounts and codes consistent with clinical documentation and fee schedule.",
+    "finding_details": {},
+    "processing_time_ms": 2461
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000429",
+    "claim_id": "d1000001-0000-4000-8000-000000000116",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 81,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $3,565.11"
+    ],
+    "evidence_summary": "Claim triggers 3+ automated fraud detection rules including duplicate billing patterns.",
+    "finding_details": {},
+    "processing_time_ms": 1366
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000430",
+    "claim_id": "d1000001-0000-4000-8000-000000000116",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 26,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "finding_details": {},
+    "processing_time_ms": 1772
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000431",
+    "claim_id": "d1000001-0000-4000-8000-000000000116",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 15,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "finding_details": {},
+    "processing_time_ms": 1748
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000432",
+    "claim_id": "d1000001-0000-4000-8000-000000000116",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 27,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Provider billing patterns within normal parameters. No solicitation indicators detected.",
+    "finding_details": {},
+    "processing_time_ms": 1311
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000433",
+    "claim_id": "d1000001-0000-4000-8000-000000000116",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fraud",
+    "confidence_score": 22,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ responses consistent with documented medical condition. Completion time within normal range.",
+    "finding_details": {},
+    "processing_time_ms": 621
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000434",
+    "claim_id": "d1000001-0000-4000-8000-000000000116",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 74,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $3,565.11"
+    ],
+    "evidence_summary": "Overlapping service dates with another approved claim for identical services.",
+    "finding_details": {},
+    "processing_time_ms": 2823
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000435",
+    "claim_id": "d1000001-0000-4000-8000-000000000116",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 35,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 1652
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000436",
+    "claim_id": "d1000001-0000-4000-8000-000000000116",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 73,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $3,565.11",
+      "procedure_codes: ['99214', '93000']"
+    ],
+    "evidence_summary": "Number of units billed exceeds clinical guidelines for this procedure.",
+    "finding_details": {},
+    "processing_time_ms": 1763
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000437",
+    "claim_id": "d1000001-0000-4000-8000-000000000117",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 10,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amount within expected range for procedure codes. Service date is valid and provider is eligible.",
+    "finding_details": {},
+    "processing_time_ms": 2798
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000438",
+    "claim_id": "d1000001-0000-4000-8000-000000000117",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 7,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "finding_details": {},
+    "processing_time_ms": 1262
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000439",
+    "claim_id": "d1000001-0000-4000-8000-000000000117",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 21,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "finding_details": {},
+    "processing_time_ms": 2819
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000440",
+    "claim_id": "d1000001-0000-4000-8000-000000000117",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 25,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Provider billing patterns within normal parameters. No solicitation indicators detected.",
+    "finding_details": {},
+    "processing_time_ms": 2636
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000441",
+    "claim_id": "d1000001-0000-4000-8000-000000000117",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fraud",
+    "confidence_score": 15,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ responses consistent with documented medical condition. Completion time within normal range.",
+    "finding_details": {},
+    "processing_time_ms": 482
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000442",
+    "claim_id": "d1000001-0000-4000-8000-000000000117",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 77,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $11,592.03"
+    ],
+    "evidence_summary": "Overlapping service dates with another approved claim for identical services.",
+    "finding_details": {},
+    "processing_time_ms": 1020
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000443",
+    "claim_id": "d1000001-0000-4000-8000-000000000117",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 74,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $11,592.03",
+      "procedure_codes: ['99214', '20610']"
+    ],
+    "evidence_summary": "Procedure billed not supported by documented medical necessity.",
+    "finding_details": {},
+    "processing_time_ms": 200
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000444",
+    "claim_id": "d1000001-0000-4000-8000-000000000117",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 64,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $11,592.03"
+    ],
+    "evidence_summary": "Billed amount exceeds Medicare fee schedule by 300%+.",
+    "finding_details": {},
+    "processing_time_ms": 2046
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000445",
+    "claim_id": "d1000001-0000-4000-8000-000000000118",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 25,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amount within expected range for procedure codes. Service date is valid and provider is eligible.",
+    "finding_details": {},
+    "processing_time_ms": 2916
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000446",
+    "claim_id": "d1000001-0000-4000-8000-000000000118",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 62,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $37,616.27"
+    ],
+    "evidence_summary": "Provider NPI validation failed against CMS NPPES registry.",
+    "finding_details": {},
+    "processing_time_ms": 1841
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000447",
+    "claim_id": "d1000001-0000-4000-8000-000000000118",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 12,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "finding_details": {},
+    "processing_time_ms": 820
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000448",
+    "claim_id": "d1000001-0000-4000-8000-000000000118",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 95,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $37,616.27"
+    ],
+    "evidence_summary": "Billing amount significantly inflated compared to regional averages.",
+    "finding_details": {},
+    "processing_time_ms": 305
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000449",
+    "claim_id": "d1000001-0000-4000-8000-000000000118",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fraud",
+    "confidence_score": 22,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ responses consistent with documented medical condition. Completion time within normal range.",
+    "finding_details": {},
+    "processing_time_ms": 1120
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000450",
+    "claim_id": "d1000001-0000-4000-8000-000000000118",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 34,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "finding_details": {},
+    "processing_time_ms": 597
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000451",
+    "claim_id": "d1000001-0000-4000-8000-000000000118",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 19,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 646
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000452",
+    "claim_id": "d1000001-0000-4000-8000-000000000118",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 30,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amounts and codes consistent with clinical documentation and fee schedule.",
+    "finding_details": {},
+    "processing_time_ms": 2003
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000453",
+    "claim_id": "d1000001-0000-4000-8000-000000000119",
+    "agent_name": "Rules Engine",
+    "fraud_type": "policy_violation",
+    "confidence_score": 29,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Billing amount within expected range for procedure codes. Service date is valid and provider is eligible.",
+    "finding_details": {},
+    "processing_time_ms": 1112
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000454",
+    "claim_id": "d1000001-0000-4000-8000-000000000119",
+    "agent_name": "Data Validation Agent",
+    "fraud_type": "data_integrity",
+    "confidence_score": 31,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "finding_details": {},
+    "processing_time_ms": 2711
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000455",
+    "claim_id": "d1000001-0000-4000-8000-000000000119",
+    "agent_name": "Pension Poaching Agent",
+    "fraud_type": "pension_poaching",
+    "confidence_score": 79,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $27,087.11"
+    ],
+    "evidence_summary": "Multiple veterans from same provider filing similar pension claims within 30 days.",
+    "finding_details": {},
+    "processing_time_ms": 2667
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000456",
+    "claim_id": "d1000001-0000-4000-8000-000000000119",
+    "agent_name": "Claim Sharking Agent",
+    "fraud_type": "claim_sharking",
+    "confidence_score": 77,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $27,087.11"
+    ],
+    "evidence_summary": "Billing amount significantly inflated compared to regional averages.",
+    "finding_details": {},
+    "processing_time_ms": 1901
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000457",
+    "claim_id": "d1000001-0000-4000-8000-000000000119",
+    "agent_name": "DBQ Fraud Agent",
+    "fraud_type": "dbq_fraud",
+    "confidence_score": 7,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "DBQ responses consistent with documented medical condition. Completion time within normal range.",
+    "finding_details": {},
+    "processing_time_ms": 1270
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000458",
+    "claim_id": "d1000001-0000-4000-8000-000000000119",
+    "agent_name": "Overlapping Claim Agent",
+    "fraud_type": "overlapping_claims",
+    "confidence_score": 12,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "finding_details": {},
+    "processing_time_ms": 1212
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000459",
+    "claim_id": "d1000001-0000-4000-8000-000000000119",
+    "agent_name": "Medical Record Manipulation Agent",
+    "fraud_type": "record_manipulation",
+    "confidence_score": 15,
+    "recommendation": "pass",
+    "flagged_data_points": [],
+    "evidence_summary": "Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.",
+    "finding_details": {},
+    "processing_time_ms": 1409
+  },
+  {
+    "id": "e1000001-0000-4000-8000-000000000460",
+    "claim_id": "d1000001-0000-4000-8000-000000000119",
+    "agent_name": "Claim Data Discrepancy Agent",
+    "fraud_type": "data_discrepancy",
+    "confidence_score": 96,
+    "recommendation": "flag",
+    "flagged_data_points": [
+      "billing_amount: $27,087.11"
+    ],
+    "evidence_summary": "Billed amount exceeds Medicare fee schedule by 300%+.",
+    "finding_details": {},
+    "processing_time_ms": 666
+  }
+]

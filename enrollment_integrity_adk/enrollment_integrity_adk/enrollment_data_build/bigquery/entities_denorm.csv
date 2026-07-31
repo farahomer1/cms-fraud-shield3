@@ -1,0 +1,294 @@
+entity_id,legal_name,entity_type,status,application_date,formed_date,address_id,agent_id,building_key,is_cmra
+ENT-0000,Benoit Radiology Inc,Radiology,enrolled,,2019-07-12,ADDR-C0000,AGT-007,1578 Main St|30060,False
+ENT-0001,Nolan Lab PC,Lab services,enrolled,,2008-10-08,ADDR-C0001,AGT-003,3248 Peachtree St|30901,False
+ENT-0002,Ames DME PC,DME supplier,enrolled,,2018-10-23,ADDR-C0002,AGT-002,3334 Riverside Dr|30060,False
+ENT-0003,Hune Behavioral LLC,Behavioral health,enrolled,,2023-06-04,ADDR-C0003,AGT-006,9130 Baxter St|30601,False
+ENT-0004,Ordway Family LLC,Family practice,enrolled,,2017-10-26,ADDR-C0004,AGT-007,7350 Whitlock Ave|30030,False
+ENT-0005,Osei Cardiology Inc,Cardiology,enrolled,,2010-04-10,ADDR-C0005,AGT-000,3699 Whitlock Ave|31201,False
+ENT-0006,Boyd DME PC,DME supplier,enrolled,,2017-12-18,ADDR-C0006,AGT-005,3132 Oak Ave|31201,False
+ENT-0007,Ablett Cardiology LLC,Cardiology,enrolled,,2017-12-14,ADDR-C0007,AGT-007,5237 Elm St|30075,False
+ENT-0008,Vance DME PC,DME supplier,enrolled,,2019-01-29,ADDR-C0008,AGT-007,427 Whitlock Ave|30030,False
+ENT-0009,Udall Family Inc,Family practice,enrolled,,2020-12-08,ADDR-C0009,AGT-004,5526 Ponce De Leon Ave|30309,False
+ENT-0010,Ablett Lab LLC,Lab services,enrolled,,2012-08-22,ADDR-C0010,AGT-000,6793 Elm St|31901,False
+ENT-0011,Reyes Cardiology Inc,Cardiology,enrolled,,2008-06-04,ADDR-C0011,AGT-005,4353 Oak Ave|30075,False
+ENT-0012,Quill DME Group,DME supplier,enrolled,,2009-03-18,ADDR-C0012,AGT-000,9135 Riverside Dr|31901,False
+ENT-0013,Frost DME Inc,DME supplier,enrolled,,2021-10-08,ADDR-C0013,AGT-004,8702 Clairmont Rd|30030,False
+ENT-0014,Sable DME LLC,DME supplier,enrolled,,2020-03-01,ADDR-C0014,AGT-001,1438 Elm St|30309,False
+ENT-0015,Gale Behavioral Inc,Behavioral health,enrolled,,2013-05-07,ADDR-C0015,AGT-004,206 Ponce De Leon Ave|30096,False
+ENT-0016,Kerr DME PC,DME supplier,enrolled,,2023-09-28,ADDR-C0016,AGT-007,2159 Riverside Dr|30309,False
+ENT-0017,Cross Home Group,Home health,enrolled,,2012-10-04,ADDR-C0017,AGT-004,9572 Whitlock Ave|30060,False
+ENT-0018,Vance DME Inc,DME supplier,enrolled,,2009-02-15,ADDR-C0018,AGT-003,695 Oak Ave|30030,False
+ENT-0019,Lund Radiology LLC,Radiology,enrolled,,2014-08-29,ADDR-C0019,AGT-001,2739 Sycamore Ln|31901,False
+ENT-0020,Voss Radiology Inc,Radiology,enrolled,,2018-03-29,ADDR-C0020,AGT-004,4314 Peachtree St|31901,False
+ENT-0021,Zane DME PC,DME supplier,enrolled,,2008-02-29,ADDR-C0021,AGT-001,4312 Whitlock Ave|31201,False
+ENT-0022,Voss Behavioral PC,Behavioral health,enrolled,,2009-05-19,ADDR-C0022,AGT-004,7475 Clairmont Rd|30601,False
+ENT-0023,Pratt Home PC,Home health,enrolled,,2014-03-22,ADDR-C0023,AGT-005,5259 Ponce De Leon Ave|30309,False
+ENT-0024,Nolan DME PC,DME supplier,enrolled,,2023-01-01,ADDR-C0024,AGT-001,1185 Highland Ave|31901,False
+ENT-0025,York Cardiology Group,Cardiology,enrolled,,2019-04-30,ADDR-C0025,AGT-006,9175 Sycamore Ln|30096,False
+ENT-0026,Nolan Radiology Inc,Radiology,enrolled,,2015-06-18,ADDR-C0026,AGT-004,9434 Oak Ave|30096,False
+ENT-0027,Vance Radiology PC,Radiology,enrolled,,2022-08-19,ADDR-C0027,AGT-002,7600 Peachtree St|30096,False
+ENT-0028,Osei DME LLC,DME supplier,enrolled,,2015-12-15,ADDR-C0028,AGT-006,6705 Sycamore Ln|31901,False
+ENT-0029,Dunmore Lab Inc,Lab services,enrolled,,2021-04-22,ADDR-C0029,AGT-002,6488 Oak Ave|31401,False
+ENT-0030,Ordway Family PC,Family practice,enrolled,,2010-02-26,ADDR-C0030,AGT-004,5222 Elm St|30030,False
+ENT-0031,Roth Cardiology Group,Cardiology,enrolled,,2009-02-05,ADDR-C0031,AGT-004,7203 Clairmont Rd|30060,False
+ENT-0032,Ward Cardiology Inc,Cardiology,enrolled,,2014-06-29,ADDR-C0032,AGT-005,8320 Baxter St|30060,False
+ENT-0033,Osei Home Group,Home health,applying,2026-11-19,2017-05-04,ADDR-C0033,AGT-002,9068 Ponce De Leon Ave|30060,False
+ENT-0034,Lund DME Group,DME supplier,enrolled,,2021-05-05,ADDR-C0034,AGT-003,7578 Ponce De Leon Ave|30030,False
+ENT-0035,Hart Lab Inc,Lab services,enrolled,,2020-06-07,ADDR-C0035,AGT-001,5148 Main St|30309,False
+ENT-0036,Boyd Family Inc,Family practice,enrolled,,2014-08-29,ADDR-C0036,AGT-005,9478 Lakeview Dr|31201,False
+ENT-0037,York Cardiology LLC,Cardiology,enrolled,,2023-03-24,ADDR-C0037,AGT-006,2649 Clairmont Rd|30096,False
+ENT-0038,Frost Home LLC,Home health,enrolled,,2008-12-02,ADDR-C0038,AGT-001,5796 Peachtree St|31901,False
+ENT-0039,Ames Physical PC,Physical therapy,enrolled,,2021-07-12,ADDR-C0039,AGT-002,7245 Highland Ave|31901,False
+ENT-0040,Sable Cardiology LLC,Cardiology,enrolled,,2019-04-13,ADDR-C0040,AGT-003,1360 Lakeview Dr|30060,False
+ENT-0041,Voss DME Inc,DME supplier,applying,2026-03-10,2016-10-30,ADDR-C0041,AGT-007,1019 Whitlock Ave|30075,False
+ENT-0042,Zane Family Inc,Family practice,applying,2026-11-19,2018-02-22,ADDR-C0042,AGT-001,9532 Oak Ave|30075,False
+ENT-0043,Hune Home LLC,Home health,enrolled,,2011-02-05,ADDR-C0043,AGT-004,9061 Whitlock Ave|30096,False
+ENT-0044,Osei Cardiology Inc,Cardiology,enrolled,,2018-10-06,ADDR-C0044,AGT-006,1778 Clairmont Rd|31401,False
+ENT-0045,Frost Behavioral Inc,Behavioral health,enrolled,,2010-01-23,ADDR-C0045,AGT-003,6486 Riverside Dr|30075,False
+ENT-0046,Ward Home Inc,Home health,enrolled,,2010-03-12,ADDR-C0046,AGT-005,1449 Clairmont Rd|31201,False
+ENT-0047,Ablett Cardiology LLC,Cardiology,enrolled,,2011-10-07,ADDR-C0047,AGT-006,5909 Clairmont Rd|30075,False
+ENT-0048,Calder Family Group,Family practice,enrolled,,2018-05-07,ADDR-C0048,AGT-001,1620 Highland Ave|30030,False
+ENT-0049,Nolan DME Group,DME supplier,enrolled,,2010-01-24,ADDR-C0049,AGT-005,29 Baxter St|30075,False
+ENT-0050,Zane Behavioral Group,Behavioral health,enrolled,,2015-07-10,ADDR-C0050,AGT-001,7457 Highland Ave|30030,False
+ENT-0051,Boyd Home LLC,Home health,applying,2026-02-01,2016-02-24,ADDR-C0051,AGT-004,9973 Highland Ave|30096,False
+ENT-0052,Vance Radiology PC,Radiology,applying,2024-10-04,2018-01-30,ADDR-C0052,AGT-004,8630 Clairmont Rd|30901,False
+ENT-0053,Pratt DME Group,DME supplier,enrolled,,2009-02-19,ADDR-C0053,AGT-007,9675 Elm St|30060,False
+ENT-0054,Hune Behavioral Group,Behavioral health,enrolled,,2019-08-03,ADDR-C0054,AGT-003,8955 Main St|30096,False
+ENT-0055,Quill Radiology Group,Radiology,enrolled,,2021-03-02,ADDR-C0055,AGT-005,5397 Oak Ave|30096,False
+ENT-0056,Boyd Lab Group,Lab services,enrolled,,2021-09-27,ADDR-C0056,AGT-006,5069 Clairmont Rd|30601,False
+ENT-0057,Voss Family LLC,Family practice,enrolled,,2009-02-18,ADDR-C0057,AGT-000,667 Ponce De Leon Ave|31401,False
+ENT-0058,Osei Radiology Group,Radiology,enrolled,,2017-09-02,ADDR-C0058,AGT-006,2458 Clairmont Rd|31201,False
+ENT-0059,Udall Behavioral Group,Behavioral health,enrolled,,2022-06-23,ADDR-C0059,AGT-004,97 Whitlock Ave|30901,False
+ENT-0060,Calder Family Group,Family practice,enrolled,,2019-08-26,ADDR-C0060,AGT-007,1037 Whitlock Ave|30309,False
+ENT-0061,Ames Family LLC,Family practice,applying,2026-09-15,2008-03-29,ADDR-C0061,AGT-006,1117 Main St|31901,False
+ENT-0062,Lund DME Inc,DME supplier,enrolled,,2023-02-04,ADDR-C0062,AGT-006,6121 Clairmont Rd|30075,False
+ENT-0063,Pratt DME Inc,DME supplier,enrolled,,2017-11-16,ADDR-C0063,AGT-001,1858 Clairmont Rd|30309,False
+ENT-0064,Vance Cardiology PC,Cardiology,enrolled,,2020-09-13,ADDR-C0064,AGT-004,5703 Elm St|31901,False
+ENT-0065,Dunmore Cardiology PC,Cardiology,enrolled,,2020-12-11,ADDR-C0065,AGT-004,7194 Lakeview Dr|30060,False
+ENT-0066,Benoit Behavioral PC,Behavioral health,enrolled,,2011-05-18,ADDR-C0066,AGT-003,550 Ponce De Leon Ave|31401,False
+ENT-0067,Lund Lab LLC,Lab services,applying,2026-07-30,2021-01-04,ADDR-C0067,AGT-000,8541 Highland Ave|31901,False
+ENT-0068,Udall Behavioral PC,Behavioral health,enrolled,,2013-09-26,ADDR-C0068,AGT-001,5142 Lakeview Dr|30060,False
+ENT-0069,Benoit Family LLC,Family practice,enrolled,,2023-09-08,ADDR-C0069,AGT-002,3460 Main St|31401,False
+ENT-0070,Voss Cardiology LLC,Cardiology,enrolled,,2015-08-23,ADDR-C0070,AGT-005,6067 Ponce De Leon Ave|30601,False
+ENT-0071,Quill Cardiology PC,Cardiology,enrolled,,2014-01-22,ADDR-C0071,AGT-007,4894 Ponce De Leon Ave|31401,False
+ENT-0072,Quill Behavioral PC,Behavioral health,enrolled,,2014-11-20,ADDR-C0072,AGT-002,5529 Sycamore Ln|31901,False
+ENT-0073,Marsh Radiology Group,Radiology,enrolled,,2021-03-13,ADDR-C0073,AGT-007,6755 Baxter St|30030,False
+ENT-0074,Pike Lab LLC,Lab services,enrolled,,2016-10-25,ADDR-C0074,AGT-000,2661 Baxter St|31901,False
+ENT-0075,Calder Family PC,Family practice,applying,2025-06-05,2019-01-01,ADDR-C0075,AGT-004,5960 Elm St|30901,False
+ENT-0076,Zane Cardiology PC,Cardiology,applying,2026-06-03,2023-10-08,ADDR-C0076,AGT-006,2056 Highland Ave|30096,False
+ENT-0077,Ablett Family Group,Family practice,enrolled,,2015-03-26,ADDR-C0077,AGT-002,4683 Baxter St|31401,False
+ENT-0078,Gale Lab Group,Lab services,enrolled,,2022-01-29,ADDR-C0078,AGT-005,7965 Highland Ave|30309,False
+ENT-0079,Osei Behavioral Group,Behavioral health,enrolled,,2023-03-26,ADDR-C0079,AGT-002,5909 Riverside Dr|31201,False
+ENT-0080,Ordway Radiology LLC,Radiology,enrolled,,2023-07-31,ADDR-C0080,AGT-007,795 Highland Ave|31401,False
+ENT-0081,York Physical PC,Physical therapy,enrolled,,2009-10-05,ADDR-C0081,AGT-003,6487 Main St|30309,False
+ENT-0082,Ordway Home LLC,Home health,enrolled,,2010-11-22,ADDR-C0082,AGT-000,4323 Baxter St|31901,False
+ENT-0083,Udall Behavioral Inc,Behavioral health,enrolled,,2015-08-19,ADDR-C0083,AGT-006,1352 Peachtree St|30075,False
+ENT-0084,Calder Cardiology LLC,Cardiology,enrolled,,2016-07-02,ADDR-C0084,AGT-000,6591 Whitlock Ave|31201,False
+ENT-0085,Calder Cardiology LLC,Cardiology,enrolled,,2022-05-04,ADDR-C0085,AGT-004,4829 Riverside Dr|31901,False
+ENT-0086,Ames Family Group,Family practice,enrolled,,2020-01-04,ADDR-C0086,AGT-007,63 Lakeview Dr|31401,False
+ENT-0087,Thorpe Cardiology PC,Cardiology,enrolled,,2008-12-14,ADDR-C0087,AGT-000,1683 Ponce De Leon Ave|30601,False
+ENT-0088,Pratt Home LLC,Home health,enrolled,,2017-09-03,ADDR-C0088,AGT-000,6592 Highland Ave|30309,False
+ENT-0089,Frost Physical Inc,Physical therapy,enrolled,,2014-11-03,ADDR-C0089,AGT-007,6694 Clairmont Rd|31401,False
+ENT-0090,Drake Radiology PC,Radiology,enrolled,,2009-01-24,ADDR-C0090,AGT-003,3710 Ponce De Leon Ave|31201,False
+ENT-0091,Ames Lab PC,Lab services,enrolled,,2019-07-18,ADDR-C0091,AGT-006,9499 Main St|30901,False
+ENT-0092,Reyes Behavioral LLC,Behavioral health,enrolled,,2021-09-30,ADDR-C0092,AGT-001,8975 Elm St|30601,False
+ENT-0093,Hune Behavioral Inc,Behavioral health,enrolled,,2023-09-07,ADDR-C0093,AGT-003,2486 Main St|30601,False
+ENT-0094,Zane Radiology Group,Radiology,enrolled,,2009-05-16,ADDR-C0094,AGT-003,5454 Oak Ave|30075,False
+ENT-0095,Frost Family Inc,Family practice,enrolled,,2008-07-28,ADDR-C0095,AGT-006,5297 Main St|31401,False
+ENT-0096,Drake Cardiology LLC,Cardiology,enrolled,,2019-03-10,ADDR-C0096,AGT-001,8988 Whitlock Ave|30075,False
+ENT-0097,Roth Home PC,Home health,enrolled,,2019-04-28,ADDR-C0097,AGT-005,3900 Whitlock Ave|30601,False
+ENT-0098,Ward Cardiology LLC,Cardiology,enrolled,,2020-06-05,ADDR-C0098,AGT-003,1045 Main St|31401,False
+ENT-0099,Boyd Radiology PC,Radiology,enrolled,,2016-08-15,ADDR-C0099,AGT-007,4892 Clairmont Rd|30060,False
+ENT-0100,Hune DME Group,DME supplier,enrolled,,2022-05-27,ADDR-C0100,AGT-002,5521 Oak Ave|31401,False
+ENT-0101,Dunmore Home PC,Home health,enrolled,,2014-11-25,ADDR-C0101,AGT-002,4251 Highland Ave|30096,False
+ENT-0102,Pike Cardiology LLC,Cardiology,enrolled,,2008-04-14,ADDR-C0102,AGT-000,9196 Highland Ave|31901,False
+ENT-0103,Quill Physical PC,Physical therapy,enrolled,,2020-12-24,ADDR-C0103,AGT-007,9251 Lakeview Dr|30060,False
+ENT-0104,Quill DME Group,DME supplier,enrolled,,2009-09-24,ADDR-C0104,AGT-000,9032 Lakeview Dr|31401,False
+ENT-0105,Kerr Radiology Group,Radiology,enrolled,,2010-05-07,ADDR-C0105,AGT-003,1477 Lakeview Dr|30030,False
+ENT-0106,Ward Physical PC,Physical therapy,applying,2024-02-13,2014-02-23,ADDR-C0106,AGT-001,8397 Lakeview Dr|31201,False
+ENT-0107,Reyes Behavioral Inc,Behavioral health,enrolled,,2023-07-05,ADDR-C0107,AGT-004,8274 Ponce De Leon Ave|30601,False
+ENT-0108,Udall Family LLC,Family practice,enrolled,,2015-02-27,ADDR-C0108,AGT-001,3673 Highland Ave|31901,False
+ENT-0109,Calder Physical LLC,Physical therapy,enrolled,,2020-07-08,ADDR-C0109,AGT-001,475 Riverside Dr|30096,False
+ENT-0110,Drake Home Group,Home health,enrolled,,2016-11-24,ADDR-C0110,AGT-002,1350 Clairmont Rd|30030,False
+ENT-0111,Gale Physical Inc,Physical therapy,enrolled,,2009-10-01,ADDR-C0111,AGT-005,8116 Whitlock Ave|31401,False
+ENT-0112,Roth Cardiology Inc,Cardiology,enrolled,,2012-03-07,ADDR-C0112,AGT-006,9369 Baxter St|30309,False
+ENT-0113,Thorpe Physical LLC,Physical therapy,enrolled,,2021-05-24,ADDR-C0113,AGT-001,5312 Lakeview Dr|30060,False
+ENT-0114,Hune Lab Group,Lab services,enrolled,,2018-08-31,ADDR-C0114,AGT-004,6376 Peachtree St|30075,False
+ENT-0115,Hune Family LLC,Family practice,enrolled,,2022-05-23,ADDR-C0115,AGT-006,2199 Clairmont Rd|30309,False
+ENT-0116,Reyes Lab PC,Lab services,enrolled,,2015-11-20,ADDR-C0116,AGT-000,316 Sycamore Ln|30075,False
+ENT-0117,Ordway Family LLC,Family practice,enrolled,,2013-11-22,ADDR-C0117,AGT-005,350 Peachtree St|31901,False
+ENT-0118,Calder Radiology Inc,Radiology,applying,2026-08-29,2011-04-21,ADDR-C0118,AGT-003,4446 Elm St|31901,False
+ENT-0119,Roth Radiology Inc,Radiology,enrolled,,2013-01-03,ADDR-C0119,AGT-002,2186 Riverside Dr|30901,False
+ENT-0120,Dunmore Cardiology Group,Cardiology,enrolled,,2019-10-31,ADDR-C0120,AGT-000,671 Main St|30096,False
+ENT-0121,Hart Family LLC,Family practice,enrolled,,2016-04-13,ADDR-C0121,AGT-000,4939 Elm St|30075,False
+ENT-0122,Pike Family Group,Family practice,enrolled,,2013-12-13,ADDR-C0122,AGT-003,1626 Peachtree St|30601,False
+ENT-0123,Pike Behavioral Group,Behavioral health,enrolled,,2010-01-02,ADDR-C0123,AGT-004,8657 Baxter St|30096,False
+ENT-0124,Udall Physical PC,Physical therapy,enrolled,,2020-06-13,ADDR-C0124,AGT-004,9404 Ponce De Leon Ave|31201,False
+ENT-0125,Ablett Home Group,Home health,applying,2024-02-28,2019-06-15,ADDR-C0125,AGT-000,6470 Clairmont Rd|30060,False
+ENT-0126,Lund DME Inc,DME supplier,enrolled,,2021-04-05,ADDR-C0126,AGT-004,2391 Main St|31201,False
+ENT-0127,Hune Family Group,Family practice,enrolled,,2021-12-24,ADDR-C0127,AGT-002,9890 Whitlock Ave|31401,False
+ENT-0128,Pratt Home Inc,Home health,enrolled,,2008-07-08,ADDR-C0128,AGT-001,8391 Baxter St|30601,False
+ENT-0129,Benoit Cardiology PC,Cardiology,enrolled,,2012-01-02,ADDR-C0129,AGT-003,4814 Highland Ave|30601,False
+ENT-0130,Boyd Home Group,Home health,applying,2026-02-28,2017-05-13,ADDR-C0130,AGT-004,2821 Sycamore Ln|30601,False
+ENT-0131,Ordway Family PC,Family practice,enrolled,,2010-09-17,ADDR-C0131,AGT-000,2342 Whitlock Ave|30901,False
+ENT-0132,York DME LLC,DME supplier,enrolled,,2011-12-30,ADDR-C0132,AGT-007,7652 Highland Ave|30075,False
+ENT-0133,Ordway Home Group,Home health,applying,2025-10-13,2019-01-02,ADDR-C0133,AGT-001,2615 Whitlock Ave|30901,False
+ENT-0134,Sable Cardiology PC,Cardiology,enrolled,,2019-01-15,ADDR-C0134,AGT-004,1621 Highland Ave|31201,False
+ENT-0135,Lund DME LLC,DME supplier,enrolled,,2012-01-31,ADDR-C0135,AGT-002,2177 Elm St|30030,False
+ENT-0136,Ames Home LLC,Home health,enrolled,,2022-05-25,ADDR-C0136,AGT-003,6135 Main St|30030,False
+ENT-0137,Pratt Lab Group,Lab services,applying,2025-10-01,2016-06-28,ADDR-C0137,AGT-002,5824 Ponce De Leon Ave|30901,False
+ENT-0138,Voss Cardiology LLC,Cardiology,enrolled,,2014-07-16,ADDR-C0138,AGT-001,1484 Ponce De Leon Ave|31901,False
+ENT-0139,Benoit Family LLC,Family practice,enrolled,,2021-11-05,ADDR-C0139,AGT-002,6910 Baxter St|30096,False
+ENT-0140,Marsh Family Inc,Family practice,enrolled,,2008-11-13,ADDR-C0140,AGT-001,8536 Elm St|31901,False
+ENT-0141,Osei Lab Group,Lab services,applying,2024-08-07,2010-05-25,ADDR-C0141,AGT-006,9567 Main St|31901,False
+ENT-0142,Quill Behavioral LLC,Behavioral health,enrolled,,2020-02-27,ADDR-C0142,AGT-001,3327 Highland Ave|31901,False
+ENT-0143,Reyes Physical LLC,Physical therapy,enrolled,,2017-11-01,ADDR-C0143,AGT-001,5588 Main St|30030,False
+ENT-0144,Ablett Lab LLC,Lab services,enrolled,,2022-06-10,ADDR-C0144,AGT-003,7021 Oak Ave|30075,False
+ENT-0145,Zane DME LLC,DME supplier,enrolled,,2020-02-19,ADDR-C0145,AGT-002,9699 Riverside Dr|30060,False
+ENT-0146,Dunmore Home PC,Home health,enrolled,,2014-03-27,ADDR-C0146,AGT-000,3321 Elm St|31901,False
+ENT-0147,Frost Home PC,Home health,enrolled,,2020-05-07,ADDR-C0147,AGT-004,1718 Lakeview Dr|31401,False
+ENT-0148,Pike Cardiology Inc,Cardiology,enrolled,,2015-01-23,ADDR-C0148,AGT-001,9668 Oak Ave|30030,False
+ENT-0149,Zane Radiology Group,Radiology,enrolled,,2017-02-18,ADDR-C0149,AGT-007,4839 Peachtree St|30030,False
+ENT-0150,Gale Home LLC,Home health,enrolled,,2021-09-16,ADDR-C0150,AGT-002,769 Lakeview Dr|31201,False
+ENT-0151,Hune Physical PC,Physical therapy,enrolled,,2014-02-24,ADDR-C0151,AGT-004,6100 Peachtree St|30060,False
+ENT-0152,Ablett Radiology Group,Radiology,enrolled,,2022-03-30,ADDR-C0152,AGT-002,3272 Oak Ave|30030,False
+ENT-0153,Ward Physical Inc,Physical therapy,enrolled,,2022-05-24,ADDR-C0153,AGT-004,6644 Clairmont Rd|30060,False
+ENT-0154,Udall Physical PC,Physical therapy,enrolled,,2011-04-16,ADDR-C0154,AGT-007,87 Whitlock Ave|31201,False
+ENT-0155,Nolan Behavioral Inc,Behavioral health,enrolled,,2023-03-21,ADDR-C0155,AGT-007,8542 Main St|31901,False
+ENT-0156,Voss DME LLC,DME supplier,applying,2024-11-27,2010-06-24,ADDR-C0156,AGT-002,1106 Highland Ave|30309,False
+ENT-0157,Nolan Radiology Group,Radiology,enrolled,,2012-10-24,ADDR-C0157,AGT-006,1602 Baxter St|30309,False
+ENT-0158,Thorpe Cardiology PC,Cardiology,enrolled,,2022-03-09,ADDR-C0158,AGT-004,7943 Highland Ave|30309,False
+ENT-0159,Roth Cardiology Inc,Cardiology,enrolled,,2021-08-08,ADDR-C0159,AGT-004,7743 Elm St|30901,False
+ENT-0160,Reyes DME LLC,DME supplier,enrolled,,2023-10-12,ADDR-C0160,AGT-003,8703 Sycamore Ln|30075,False
+ENT-0161,Benoit DME Inc,DME supplier,enrolled,,2009-02-12,ADDR-C0161,AGT-001,3039 Highland Ave|30096,False
+ENT-0162,Voss Cardiology Group,Cardiology,enrolled,,2023-12-03,ADDR-C0162,AGT-001,4281 Baxter St|30075,False
+ENT-0163,Pike Family PC,Family practice,enrolled,,2023-07-10,ADDR-C0163,AGT-000,3119 Ponce De Leon Ave|31401,False
+ENT-0164,Nolan Behavioral LLC,Behavioral health,enrolled,,2011-07-05,ADDR-C0164,AGT-001,5253 Main St|30901,False
+ENT-0165,York Physical LLC,Physical therapy,enrolled,,2018-11-28,ADDR-C0165,AGT-002,6364 Lakeview Dr|31401,False
+ENT-0166,York Home LLC,Home health,enrolled,,2016-07-19,ADDR-C0166,AGT-006,5019 Lakeview Dr|31901,False
+ENT-0167,Boyd Family Group,Family practice,enrolled,,2009-04-12,ADDR-C0167,AGT-000,4080 Whitlock Ave|30096,False
+ENT-0168,Ordway Family LLC,Family practice,enrolled,,2018-01-21,ADDR-C0168,AGT-001,9101 Whitlock Ave|30060,False
+ENT-0169,Ward Home PC,Home health,enrolled,,2018-07-24,ADDR-C0169,AGT-007,6394 Main St|31201,False
+ENT-0170,Benoit Behavioral PC,Behavioral health,enrolled,,2010-03-18,ADDR-C0170,AGT-004,5235 Whitlock Ave|30601,False
+ENT-0171,Calder Home PC,Home health,enrolled,,2018-01-10,ADDR-C0171,AGT-002,5085 Lakeview Dr|30096,False
+ENT-0172,Boyd Home LLC,Home health,enrolled,,2018-06-04,ADDR-C0172,AGT-000,4486 Riverside Dr|30060,False
+ENT-0173,Benoit Behavioral PC,Behavioral health,enrolled,,2011-09-17,ADDR-C0173,AGT-004,7951 Sycamore Ln|30309,False
+ENT-0174,Reyes Behavioral Group,Behavioral health,enrolled,,2023-05-05,ADDR-C0174,AGT-004,5556 Peachtree St|30901,False
+ENT-0175,Marsh DME Group,DME supplier,enrolled,,2022-07-13,ADDR-C0175,AGT-004,1612 Elm St|30075,False
+ENT-0176,Pike Behavioral PC,Behavioral health,enrolled,,2019-06-30,ADDR-C0176,AGT-007,9462 Whitlock Ave|30601,False
+ENT-0177,Sable Lab Inc,Lab services,enrolled,,2020-05-23,ADDR-C0177,AGT-007,7477 Main St|30030,False
+ENT-0178,Vance Cardiology LLC,Cardiology,enrolled,,2013-03-13,ADDR-C0178,AGT-005,9170 Highland Ave|30096,False
+ENT-0179,Pike Lab PC,Lab services,enrolled,,2009-08-28,ADDR-C0179,AGT-003,3949 Clairmont Rd|31401,False
+ENT-0180,Calder Family Group,Family practice,enrolled,,2011-09-04,ADDR-C0180,AGT-004,8399 Elm St|30601,False
+ENT-0181,Cross Home Group,Home health,applying,2024-09-08,2020-06-09,ADDR-C0181,AGT-007,7909 Whitlock Ave|30901,False
+ENT-0182,Ames Behavioral Inc,Behavioral health,enrolled,,2021-04-05,ADDR-C0182,AGT-000,935 Sycamore Ln|30309,False
+ENT-0183,Pratt Cardiology PC,Cardiology,applying,2024-11-01,2019-12-09,ADDR-C0183,AGT-007,3905 Peachtree St|30030,False
+ENT-0184,Ordway Radiology PC,Radiology,enrolled,,2017-09-04,ADDR-C0184,AGT-001,2540 Main St|30601,False
+ENT-0185,Voss Behavioral PC,Behavioral health,enrolled,,2011-02-27,ADDR-C0185,AGT-006,5331 Clairmont Rd|31201,False
+ENT-0186,Dunmore DME PC,DME supplier,enrolled,,2023-04-10,ADDR-C0186,AGT-000,8089 Peachtree St|30601,False
+ENT-0187,Ames Lab PC,Lab services,enrolled,,2023-08-15,ADDR-C0187,AGT-004,6727 Elm St|30601,False
+ENT-0188,Ordway Physical Group,Physical therapy,applying,2024-10-24,2015-02-05,ADDR-C0188,AGT-002,5774 Peachtree St|30096,False
+ENT-0189,Sable Physical Inc,Physical therapy,applying,2026-09-20,2013-03-19,ADDR-C0189,AGT-003,3162 Peachtree St|30075,False
+ENT-0190,Vance Lab LLC,Lab services,enrolled,,2013-05-31,ADDR-C0190,AGT-002,5377 Highland Ave|30075,False
+ENT-0191,Lund Radiology PC,Radiology,enrolled,,2013-05-17,ADDR-C0191,AGT-004,4024 Baxter St|30060,False
+ENT-0192,Kerr Radiology PC,Radiology,enrolled,,2009-11-25,ADDR-C0192,AGT-004,6951 Ponce De Leon Ave|31201,False
+ENT-0193,Hune DME Inc,DME supplier,enrolled,,2012-11-17,ADDR-C0193,AGT-005,6269 Clairmont Rd|30096,False
+ENT-0194,Pike Radiology LLC,Radiology,enrolled,,2021-01-11,ADDR-C0194,AGT-005,8949 Lakeview Dr|30060,False
+ENT-0195,Osei Radiology Group,Radiology,enrolled,,2020-10-18,ADDR-C0195,AGT-007,6335 Lakeview Dr|30030,False
+ENT-0196,Cross Lab PC,Lab services,applying,2025-03-01,2013-07-17,ADDR-C0196,AGT-003,501 Clairmont Rd|31201,False
+ENT-0197,Pike Behavioral LLC,Behavioral health,enrolled,,2011-11-25,ADDR-C0197,AGT-003,1850 Highland Ave|30601,False
+ENT-0198,Thorpe Radiology Inc,Radiology,applying,2024-07-11,2019-05-09,ADDR-C0198,AGT-004,540 Sycamore Ln|30901,False
+ENT-0199,Hart Family Inc,Family practice,enrolled,,2016-04-06,ADDR-C0199,AGT-001,7198 Highland Ave|30060,False
+ENT-0200,York Lab Inc,Lab services,applying,2025-11-02,2011-08-30,ADDR-C0200,AGT-007,3226 Whitlock Ave|30060,False
+ENT-0201,Calder Home LLC,Home health,enrolled,,2013-03-30,ADDR-C0201,AGT-002,7885 Riverside Dr|30030,False
+ENT-0202,Dunmore Lab PC,Lab services,enrolled,,2015-10-15,ADDR-C0202,AGT-000,1492 Oak Ave|30096,False
+ENT-0203,Marsh Radiology Inc,Radiology,enrolled,,2015-07-14,ADDR-C0203,AGT-001,7649 Main St|31401,False
+ENT-0204,Reyes DME Group,DME supplier,enrolled,,2019-06-28,ADDR-C0204,AGT-002,6133 Baxter St|30309,False
+ENT-0205,Reyes Home PC,Home health,enrolled,,2021-05-25,ADDR-C0205,AGT-006,2062 Main St|30030,False
+ENT-0206,Hart Family PC,Family practice,enrolled,,2016-07-22,ADDR-C0206,AGT-007,9158 Baxter St|30030,False
+ENT-0207,Ablett Home Inc,Home health,enrolled,,2014-10-09,ADDR-C0207,AGT-006,2834 Riverside Dr|31201,False
+ENT-0208,Quill Radiology Inc,Radiology,enrolled,,2008-03-10,ADDR-C0208,AGT-002,5024 Peachtree St|30309,False
+ENT-0209,Gale DME LLC,DME supplier,enrolled,,2014-05-27,ADDR-C0209,AGT-007,2342 Elm St|30601,False
+ENT-0210,Osei Behavioral LLC,Behavioral health,enrolled,,2011-10-21,ADDR-C0210,AGT-002,5217 Elm St|30096,False
+ENT-0211,Thorpe DME Group,DME supplier,enrolled,,2023-04-21,ADDR-C0211,AGT-007,2898 Riverside Dr|30075,False
+ENT-0212,Ward Home Group,Home health,enrolled,,2022-07-10,ADDR-C0212,AGT-003,2633 Elm St|31201,False
+ENT-0213,Gale Radiology Group,Radiology,enrolled,,2019-07-20,ADDR-C0213,AGT-003,6773 Clairmont Rd|30601,False
+ENT-0214,Marsh Family Inc,Family practice,enrolled,,2023-01-26,ADDR-C0214,AGT-001,6698 Oak Ave|31201,False
+ENT-0215,York Radiology PC,Radiology,enrolled,,2019-11-07,ADDR-C0215,AGT-002,7830 Oak Ave|31901,False
+ENT-0216,Cross Behavioral Group,Behavioral health,enrolled,,2011-07-06,ADDR-C0216,AGT-006,1136 Oak Ave|30075,False
+ENT-0217,Benoit Family LLC,Family practice,enrolled,,2022-02-20,ADDR-C0217,AGT-004,2007 Highland Ave|31901,False
+ENT-0218,Ames Family Inc,Family practice,enrolled,,2015-03-21,ADDR-C0218,AGT-000,2276 Whitlock Ave|30030,False
+ENT-0219,Nolan DME LLC,DME supplier,enrolled,,2008-03-07,ADDR-C0219,AGT-000,2373 Ponce De Leon Ave|30309,False
+ENT-0220,Hune Behavioral Group,Behavioral health,enrolled,,2018-05-20,ADDR-C0220,AGT-002,4441 Oak Ave|31901,False
+ENT-0221,Voss Radiology PC,Radiology,enrolled,,2019-02-22,ADDR-C0221,AGT-001,1957 Baxter St|30096,False
+ENT-0222,Nolan Behavioral Inc,Behavioral health,enrolled,,2018-05-01,ADDR-C0222,AGT-001,6770 Whitlock Ave|30096,False
+ENT-0223,Hune Cardiology LLC,Cardiology,enrolled,,2008-01-18,ADDR-C0223,AGT-005,873 Sycamore Ln|30096,False
+ENT-0224,Zane Home LLC,Home health,applying,2025-11-19,2009-10-21,ADDR-C0224,AGT-004,7798 Lakeview Dr|30060,False
+ENT-0225,Cross Family Inc,Family practice,applying,2024-10-30,2017-05-08,ADDR-C0225,AGT-002,4663 Highland Ave|30901,False
+ENT-0226,Nolan Behavioral PC,Behavioral health,enrolled,,2008-09-02,ADDR-C0226,AGT-006,8709 Main St|31901,False
+ENT-0227,Ablett Family Group,Family practice,enrolled,,2023-11-01,ADDR-C0227,AGT-004,5578 Highland Ave|31201,False
+ENT-0228,Hune Lab Inc,Lab services,enrolled,,2012-08-23,ADDR-C0228,AGT-005,7064 Ponce De Leon Ave|30060,False
+ENT-0229,York DME LLC,DME supplier,enrolled,,2012-05-05,ADDR-C0229,AGT-007,9111 Baxter St|30601,False
+ENT-0230,Calder Lab Inc,Lab services,applying,2024-02-24,2009-03-16,ADDR-C0230,AGT-002,1421 Highland Ave|30309,False
+ENT-0231,Gale Lab PC,Lab services,enrolled,,2014-06-21,ADDR-C0231,AGT-006,2466 Sycamore Ln|31401,False
+ENT-0232,Roth Radiology Inc,Radiology,enrolled,,2015-05-11,ADDR-C0232,AGT-007,6095 Main St|31901,False
+ENT-0233,Udall Family PC,Family practice,enrolled,,2020-09-08,ADDR-C0233,AGT-004,7918 Elm St|31201,False
+ENT-0234,Reyes Lab PC,Lab services,applying,2025-02-15,2017-08-10,ADDR-C0234,AGT-001,659 Lakeview Dr|30901,False
+ENT-0235,Lund Lab LLC,Lab services,enrolled,,2014-04-10,ADDR-C0235,AGT-005,4643 Highland Ave|30075,False
+ENT-0236,Ordway Cardiology LLC,Cardiology,enrolled,,2012-07-27,ADDR-C0236,AGT-000,6239 Clairmont Rd|31401,False
+ENT-0237,Hune Physical LLC,Physical therapy,enrolled,,2015-11-15,ADDR-C0237,AGT-005,4754 Peachtree St|30309,False
+ENT-0238,Zane Home PC,Home health,enrolled,,2013-01-10,ADDR-C0238,AGT-004,3925 Ponce De Leon Ave|30096,False
+ENT-0239,Calder Radiology Inc,Radiology,enrolled,,2011-03-30,ADDR-C0239,AGT-007,2245 Ponce De Leon Ave|30601,False
+ENT-0240,Vance Home Group,Home health,enrolled,,2010-10-29,ADDR-C0240,AGT-001,6740 Riverside Dr|30075,False
+ENT-0241,Nolan Cardiology Inc,Cardiology,enrolled,,2016-12-04,ADDR-C0241,AGT-000,303 Baxter St|30060,False
+ENT-0242,Nolan Home Inc,Home health,enrolled,,2011-10-15,ADDR-C0242,AGT-000,8397 Lakeview Dr|30075,False
+ENT-0243,Hune Family Inc,Family practice,enrolled,,2017-03-24,ADDR-C0243,AGT-007,2028 Main St|30601,False
+ENT-0244,Ordway Cardiology Inc,Cardiology,enrolled,,2011-03-17,ADDR-C0244,AGT-004,7690 Main St|30075,False
+ENT-0245,Pike Radiology PC,Radiology,enrolled,,2013-06-03,ADDR-C0245,AGT-005,2183 Sycamore Ln|31401,False
+ENT-0246,Zane Home Group,Home health,enrolled,,2015-02-22,ADDR-C0246,AGT-006,4679 Highland Ave|30030,False
+ENT-0247,Hune Family LLC,Family practice,enrolled,,2021-07-11,ADDR-C0247,AGT-001,4945 Sycamore Ln|30030,False
+ENT-0248,Gale Lab PC,Lab services,enrolled,,2008-10-05,ADDR-C0248,AGT-003,3974 Sycamore Ln|30075,False
+ENT-0249,York Physical LLC,Physical therapy,enrolled,,2013-07-16,ADDR-C0249,AGT-007,7571 Sycamore Ln|31901,False
+ENT-0250,York Lab LLC,Lab services,enrolled,,2015-04-05,ADDR-C0250,AGT-004,9893 Clairmont Rd|31401,False
+ENT-0251,Hart DME LLC,DME supplier,enrolled,,2015-09-13,ADDR-C0251,AGT-003,8741 Baxter St|31201,False
+ENT-0252,Marsh Radiology PC,Radiology,enrolled,,2009-02-04,ADDR-C0252,AGT-003,9471 Highland Ave|31901,False
+ENT-0253,Quill Home Group,Home health,enrolled,,2018-11-19,ADDR-C0253,AGT-002,2293 Sycamore Ln|30096,False
+ENT-0254,Nolan DME Group,DME supplier,enrolled,,2016-04-20,ADDR-C0254,AGT-004,935 Main St|31901,False
+ENT-0255,Lund Radiology Group,Radiology,applying,2025-11-21,2013-07-30,ADDR-C0255,AGT-002,6800 Clairmont Rd|30060,False
+ENT-0256,Pike Family LLC,Family practice,enrolled,,2023-05-22,ADDR-C0256,AGT-005,1985 Lakeview Dr|30601,False
+ENT-0257,Thorpe Behavioral PC,Behavioral health,enrolled,,2012-01-07,ADDR-C0257,AGT-001,4579 Whitlock Ave|30075,False
+ENT-0258,Lund Home Inc,Home health,enrolled,,2011-03-06,ADDR-C0258,AGT-005,9333 Oak Ave|30309,False
+ENT-0259,Voss Lab LLC,Lab services,enrolled,,2022-08-14,ADDR-C0259,AGT-005,9018 Whitlock Ave|30601,False
+ENT-0260,Pratt Cardiology Group,Cardiology,enrolled,,2010-02-19,ADDR-C0260,AGT-002,7525 Clairmont Rd|30601,False
+ENT-0261,Pratt Home Inc,Home health,enrolled,,2016-04-10,ADDR-C0261,AGT-004,2448 Baxter St|31901,False
+ENT-0262,Gale Cardiology PC,Cardiology,applying,2024-07-01,2017-05-01,ADDR-C0262,AGT-000,7967 Baxter St|31201,False
+ENT-0263,Ablett Radiology PC,Radiology,applying,2026-03-02,2015-12-23,ADDR-C0263,AGT-000,3283 Sycamore Ln|31901,False
+ENT-0264,Ames Behavioral LLC,Behavioral health,enrolled,,2019-06-28,ADDR-C0264,AGT-007,8568 Baxter St|31901,False
+ENT-0265,Benoit Lab LLC,Lab services,enrolled,,2010-06-06,ADDR-C0265,AGT-001,1305 Highland Ave|30096,False
+ENT-0266,Cross Family PC,Family practice,enrolled,,2018-11-28,ADDR-C0266,AGT-007,7232 Riverside Dr|31201,False
+ENT-0267,Zane Behavioral PC,Behavioral health,enrolled,,2015-08-14,ADDR-C0267,AGT-005,3580 Baxter St|31901,False
+ENT-0268,Sable Cardiology LLC,Cardiology,enrolled,,2016-05-01,ADDR-C0268,AGT-003,687 Oak Ave|30901,False
+ENT-0269,Cross Radiology Inc,Radiology,enrolled,,2021-03-06,ADDR-C0269,AGT-003,9166 Whitlock Ave|30030,False
+ENT-0270,Dunmore Home LLC,Home health,enrolled,,2019-12-30,ADDR-C0270,AGT-007,9078 Sycamore Ln|30075,False
+ENT-0271,Vance Home Group,Home health,enrolled,,2012-06-20,ADDR-C0271,AGT-006,4467 Highland Ave|30601,False
+ENT-0272,Quill Physical PC,Physical therapy,enrolled,,2008-10-22,ADDR-C0272,AGT-002,1945 Oak Ave|30075,False
+ENT-0273,Lund Family Group,Family practice,enrolled,,2011-09-23,ADDR-C0273,AGT-000,2866 Ponce De Leon Ave|31401,False
+ENT-0274,Ames Cardiology PC,Cardiology,applying,2024-11-17,2014-08-15,ADDR-C0274,AGT-005,7667 Baxter St|30901,False
+ENT-0275,Zane Family Group,Family practice,enrolled,,2008-03-16,ADDR-C0275,AGT-005,2544 Whitlock Ave|30309,False
+ENT-0276,Pike Cardiology Group,Cardiology,enrolled,,2011-04-26,ADDR-C0276,AGT-000,9794 Main St|31901,False
+ENT-0277,Osei Home LLC,Home health,enrolled,,2015-08-18,ADDR-C0277,AGT-002,1269 Main St|30060,False
+ENT-0278,Dunmore Cardiology PC,Cardiology,enrolled,,2013-08-27,ADDR-C0278,AGT-005,576 Main St|31201,False
+ENT-0279,Hart Family Inc,Family practice,enrolled,,2014-09-22,ADDR-C0279,AGT-006,6140 Lakeview Dr|30096,False
+ENT-HARBOR,Harbor Health Devices LLC,DME supplier,revoked,,2021-02-11,ADDR-4471-200,AGT-SENTINEL,4471 Peachtree Industrial Blvd|30096,True
+ENT-COASTAL,Coastal Medical Supply LLC,DME supplier,applying,2026-07-08,2026-05-28,ADDR-4471-214,AGT-SENTINEL,4471 Peachtree Industrial Blvd|30096,True
+ENT-TIDEWATER,Tidewater DME LLC,DME supplier,enrolled,2025-11-20,2025-11-05,ADDR-4471-231,AGT-SENTINEL,4471 Peachtree Industrial Blvd|30096,True
+ENT-GULFSTREAM,Gulfstream Medical LLC,DME supplier,applying,2026-05-30,2026-01-08,ADDR-4471-200,AGT-SENTINEL,4471 Peachtree Industrial Blvd|30096,True
+ENT-REDOAK,Red Oak Home Health LLC,Home health,applying,2026-06-20,2026-03-01,ADDR-REDOAK,AGT-001,4537 Clairmont Rd|31401,False
+ENT-MARSHVIEW,Marshview Supply Co,DME supplier,applying,2026-06-10,2026-04-15,ADDR-4471-245,AGT-006,4471 Peachtree Industrial Blvd|30096,True
+ENT-BEACON,Beacon Family Clinic,Family practice,enrolled,,2011-05-02,ADDR-BEACON,AGT-004,9914 Sycamore Ln|30309,False
+ENT-CLEARPATH,Clearpath Radiology,Radiology,enrolled,,2014-09-14,ADDR-CLEARPATH,AGT-000,3905 Clairmont Rd|31201,False
+ENT-NORTHSTAR,Northstar Physical Therapy,Physical therapy,enrolled,,2019-02-01,ADDR-NORTHSTAR,AGT-004,8813 Lakeview Dr|30309,False
+ENT-PROBE-V1,Probe Alpha Medical LLC,DME supplier,applying,2026-06-25,2026-05-01,ADDR-4471-270,AGT-SENTINEL,4471 Peachtree Industrial Blvd|30096,True
+ENT-PROBE-V2,Probe Beta Medical LLC,DME supplier,applying,2026-06-26,2026-05-02,ADDR-4471-280,AGT-SENTINEL,4471 Peachtree Industrial Blvd|30096,True
+ENT-PROBE-V3,Probe Gamma Medical LLC,DME supplier,applying,2026-06-27,2026-05-03,ADDR-4471-290,AGT-PROBECLEAN,4471 Peachtree Industrial Blvd|30096,True
+ENT-PROBE-V4,Probe Delta Medical LLC,DME supplier,applying,2026-06-28,2026-05-04,ADDR-PROBE-V4,AGT-PROBECLEAN,3804 Oak Ave|31401,False

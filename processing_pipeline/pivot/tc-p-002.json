@@ -1,0 +1,21 @@
+{
+    "format": "X12 EDI",
+    "metadata": {
+        "sender": "SENDERID",
+        "receiver": "VA_RECEIVER"
+    },
+    "claim": {
+        "services": [
+            {
+                "proc_code": "99215",
+                "charge": "450.00",
+                "units": "1"
+            }
+        ],
+        "attachments": [],
+        "billing_provider": "VET CLINIC",
+        "patient_name": "JAMES DOE",
+        "id": "TC-P-002",
+        "total_charge": "450.00"
+    }
+}

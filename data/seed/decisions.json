@@ -1,0 +1,542 @@
+[
+  {
+    "id": "f1000001-0000-4000-8000-000000000001",
+    "claim_id": "d1000001-0000-4000-8000-000000000001",
+    "decision_type": "approved",
+    "actor": "David.Reeves@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Automated review passed all 8 agent checks. Manual spot-check confirmed clean claim.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000002",
+    "claim_id": "d1000001-0000-4000-8000-000000000002",
+    "decision_type": "approved",
+    "actor": "Amanda.Brooks@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Agent analysis complete. No fraud indicators detected. Billing amount within expected range for procedures.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000003",
+    "claim_id": "d1000001-0000-4000-8000-000000000003",
+    "decision_type": "approved",
+    "actor": "Michael.Torres@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Agent analysis complete. No fraud indicators detected. Billing amount within expected range for procedures.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000005",
+    "claim_id": "d1000001-0000-4000-8000-000000000005",
+    "decision_type": "approved",
+    "actor": "Sarah.Jenkins@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Claims data validated against veteran record and provider history. No anomalies detected.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000006",
+    "claim_id": "d1000001-0000-4000-8000-000000000006",
+    "decision_type": "approved",
+    "actor": "David.Reeves@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Claims data validated against veteran record and provider history. No anomalies detected.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000008",
+    "claim_id": "d1000001-0000-4000-8000-000000000008",
+    "decision_type": "approved",
+    "actor": "Michael.Torres@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Agent analysis complete. No fraud indicators detected. Billing amount within expected range for procedures.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000009",
+    "claim_id": "d1000001-0000-4000-8000-000000000009",
+    "decision_type": "approved",
+    "actor": "Michael.Torres@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Automated review passed all 8 agent checks. Manual spot-check confirmed clean claim.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000010",
+    "claim_id": "d1000001-0000-4000-8000-000000000011",
+    "decision_type": "approved",
+    "actor": "Sarah.Jenkins@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Reviewed agent findings and supporting documentation. Claim meets all VA payment criteria.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000011",
+    "claim_id": "d1000001-0000-4000-8000-000000000012",
+    "decision_type": "denied",
+    "actor": "Sarah.Jenkins@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Claim data discrepancies confirmed upon manual review. Diagnosis-procedure mismatch verified. Savings: $34721.01.",
+    "savings_amount": 34721.01
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000012",
+    "claim_id": "d1000001-0000-4000-8000-000000000013",
+    "decision_type": "approved",
+    "actor": "Jennifer.Walsh@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Automated review passed all 8 agent checks. Manual spot-check confirmed clean claim.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000014",
+    "claim_id": "d1000001-0000-4000-8000-000000000015",
+    "decision_type": "approved",
+    "actor": "Jennifer.Walsh@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Agent analysis complete. No fraud indicators detected. Billing amount within expected range for procedures.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000015",
+    "claim_id": "d1000001-0000-4000-8000-000000000016",
+    "decision_type": "approved",
+    "actor": "Sarah.Jenkins@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Claims data validated against veteran record and provider history. No anomalies detected.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000016",
+    "claim_id": "d1000001-0000-4000-8000-000000000017",
+    "decision_type": "approved",
+    "actor": "Amanda.Brooks@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Automated review passed all 8 agent checks. Manual spot-check confirmed clean claim.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000017",
+    "claim_id": "d1000001-0000-4000-8000-000000000019",
+    "decision_type": "approved",
+    "actor": "David.Reeves@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Claims data validated against veteran record and provider history. No anomalies detected.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000018",
+    "claim_id": "d1000001-0000-4000-8000-000000000020",
+    "decision_type": "approved",
+    "actor": "Jennifer.Walsh@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "All agent findings returned pass. Claim data is consistent and within VA policy guidelines.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000019",
+    "claim_id": "d1000001-0000-4000-8000-000000000021",
+    "decision_type": "denied",
+    "actor": "David.Reeves@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Data Validation Agent and Rules Engine both flagged critical issues. Claim denied pending provider audit. Savings: $36513.58.",
+    "savings_amount": 36513.58
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000020",
+    "claim_id": "d1000001-0000-4000-8000-000000000022",
+    "decision_type": "approved",
+    "actor": "Michael.Torres@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Claims data validated against veteran record and provider history. No anomalies detected.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000021",
+    "claim_id": "d1000001-0000-4000-8000-000000000025",
+    "decision_type": "approved",
+    "actor": "Sarah.Jenkins@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "All agent findings returned pass. Claim data is consistent and within VA policy guidelines.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000022",
+    "claim_id": "d1000001-0000-4000-8000-000000000026",
+    "decision_type": "approved",
+    "actor": "Michael.Torres@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "All agent findings returned pass. Claim data is consistent and within VA policy guidelines.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000023",
+    "claim_id": "d1000001-0000-4000-8000-000000000027",
+    "decision_type": "approved",
+    "actor": "David.Reeves@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Automated review passed all 8 agent checks. Manual spot-check confirmed clean claim.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000025",
+    "claim_id": "d1000001-0000-4000-8000-000000000029",
+    "decision_type": "approved",
+    "actor": "Amanda.Brooks@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Reviewed agent findings and supporting documentation. Claim meets all VA payment criteria.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000026",
+    "claim_id": "d1000001-0000-4000-8000-000000000030",
+    "decision_type": "approved",
+    "actor": "David.Reeves@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "All agent findings returned pass. Claim data is consistent and within VA policy guidelines.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000027",
+    "claim_id": "d1000001-0000-4000-8000-000000000031",
+    "decision_type": "approved",
+    "actor": "Michael.Torres@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Reviewed agent findings and supporting documentation. Claim meets all VA payment criteria.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000028",
+    "claim_id": "d1000001-0000-4000-8000-000000000032",
+    "decision_type": "approved",
+    "actor": "David.Reeves@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Claims data validated against veteran record and provider history. No anomalies detected.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000030",
+    "claim_id": "d1000001-0000-4000-8000-000000000034",
+    "decision_type": "approved",
+    "actor": "David.Reeves@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Claims data validated against veteran record and provider history. No anomalies detected.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000031",
+    "claim_id": "d1000001-0000-4000-8000-000000000035",
+    "decision_type": "approved",
+    "actor": "Jennifer.Walsh@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Agent analysis complete. No fraud indicators detected. Billing amount within expected range for procedures.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000032",
+    "claim_id": "d1000001-0000-4000-8000-000000000037",
+    "decision_type": "approved",
+    "actor": "Sarah.Jenkins@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Automated review passed all 8 agent checks. Manual spot-check confirmed clean claim.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000033",
+    "claim_id": "d1000001-0000-4000-8000-000000000038",
+    "decision_type": "approved",
+    "actor": "Amanda.Brooks@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Agent analysis complete. No fraud indicators detected. Billing amount within expected range for procedures.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000034",
+    "claim_id": "d1000001-0000-4000-8000-000000000039",
+    "decision_type": "denied",
+    "actor": "Amanda.Brooks@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Data Validation Agent and Rules Engine both flagged critical issues. Claim denied pending provider audit. Savings: $43507.86.",
+    "savings_amount": 43507.86
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000035",
+    "claim_id": "d1000001-0000-4000-8000-000000000040",
+    "decision_type": "approved",
+    "actor": "Sarah.Jenkins@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Automated review passed all 8 agent checks. Manual spot-check confirmed clean claim.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000036",
+    "claim_id": "d1000001-0000-4000-8000-000000000041",
+    "decision_type": "approved",
+    "actor": "Sarah.Jenkins@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "All agent findings returned pass. Claim data is consistent and within VA policy guidelines.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000038",
+    "claim_id": "d1000001-0000-4000-8000-000000000043",
+    "decision_type": "approved",
+    "actor": "Amanda.Brooks@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Agent analysis complete. No fraud indicators detected. Billing amount within expected range for procedures.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000039",
+    "claim_id": "d1000001-0000-4000-8000-000000000044",
+    "decision_type": "approved",
+    "actor": "David.Reeves@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Reviewed agent findings and supporting documentation. Claim meets all VA payment criteria.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000040",
+    "claim_id": "d1000001-0000-4000-8000-000000000046",
+    "decision_type": "approved",
+    "actor": "Sarah.Jenkins@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Reviewed agent findings and supporting documentation. Claim meets all VA payment criteria.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000041",
+    "claim_id": "d1000001-0000-4000-8000-000000000047",
+    "decision_type": "approved",
+    "actor": "Michael.Torres@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Reviewed agent findings and supporting documentation. Claim meets all VA payment criteria.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000042",
+    "claim_id": "d1000001-0000-4000-8000-000000000048",
+    "decision_type": "approved",
+    "actor": "Amanda.Brooks@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "All agent findings returned pass. Claim data is consistent and within VA policy guidelines.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000043",
+    "claim_id": "d1000001-0000-4000-8000-000000000049",
+    "decision_type": "denied",
+    "actor": "Sarah.Jenkins@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Claim data discrepancies confirmed upon manual review. Diagnosis-procedure mismatch verified. Savings: $6073.47.",
+    "savings_amount": 6073.47
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000045",
+    "claim_id": "d1000001-0000-4000-8000-000000000051",
+    "decision_type": "approved",
+    "actor": "David.Reeves@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Automated review passed all 8 agent checks. Manual spot-check confirmed clean claim.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000046",
+    "claim_id": "d1000001-0000-4000-8000-000000000052",
+    "decision_type": "approved",
+    "actor": "Jennifer.Walsh@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Automated review passed all 8 agent checks. Manual spot-check confirmed clean claim.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000047",
+    "claim_id": "d1000001-0000-4000-8000-000000000053",
+    "decision_type": "approved",
+    "actor": "Sarah.Jenkins@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Claims data validated against veteran record and provider history. No anomalies detected.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000048",
+    "claim_id": "d1000001-0000-4000-8000-000000000054",
+    "decision_type": "denied",
+    "actor": "Jennifer.Walsh@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Multiple agent findings flagged this claim. Billing amount significantly exceeds fee schedule. Savings: $10964.8.",
+    "savings_amount": 10964.8
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000049",
+    "claim_id": "d1000001-0000-4000-8000-000000000055",
+    "decision_type": "approved",
+    "actor": "David.Reeves@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Automated review passed all 8 agent checks. Manual spot-check confirmed clean claim.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000050",
+    "claim_id": "d1000001-0000-4000-8000-000000000056",
+    "decision_type": "approved",
+    "actor": "Jennifer.Walsh@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Agent analysis complete. No fraud indicators detected. Billing amount within expected range for procedures.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000051",
+    "claim_id": "d1000001-0000-4000-8000-000000000057",
+    "decision_type": "approved",
+    "actor": "Jennifer.Walsh@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Agent analysis complete. No fraud indicators detected. Billing amount within expected range for procedures.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000053",
+    "claim_id": "d1000001-0000-4000-8000-000000000059",
+    "decision_type": "approved",
+    "actor": "Jennifer.Walsh@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Automated review passed all 8 agent checks. Manual spot-check confirmed clean claim.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000055",
+    "claim_id": "d1000001-0000-4000-8000-000000000061",
+    "decision_type": "approved",
+    "actor": "Amanda.Brooks@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "All agent findings returned pass. Claim data is consistent and within VA policy guidelines.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000056",
+    "claim_id": "d1000001-0000-4000-8000-000000000062",
+    "decision_type": "approved",
+    "actor": "Jennifer.Walsh@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Reviewed agent findings and supporting documentation. Claim meets all VA payment criteria.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000057",
+    "claim_id": "d1000001-0000-4000-8000-000000000064",
+    "decision_type": "approved",
+    "actor": "Michael.Torres@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Claims data validated against veteran record and provider history. No anomalies detected.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000058",
+    "claim_id": "d1000001-0000-4000-8000-000000000065",
+    "decision_type": "approved",
+    "actor": "David.Reeves@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Reviewed agent findings and supporting documentation. Claim meets all VA payment criteria.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000059",
+    "claim_id": "d1000001-0000-4000-8000-000000000066",
+    "decision_type": "approved",
+    "actor": "David.Reeves@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Reviewed agent findings and supporting documentation. Claim meets all VA payment criteria.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000060",
+    "claim_id": "d1000001-0000-4000-8000-000000000067",
+    "decision_type": "denied",
+    "actor": "Michael.Torres@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Claim data discrepancies confirmed upon manual review. Diagnosis-procedure mismatch verified. Savings: $9454.56.",
+    "savings_amount": 9454.56
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000061",
+    "claim_id": "d1000001-0000-4000-8000-000000000068",
+    "decision_type": "approved",
+    "actor": "David.Reeves@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Reviewed agent findings and supporting documentation. Claim meets all VA payment criteria.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000062",
+    "claim_id": "d1000001-0000-4000-8000-000000000069",
+    "decision_type": "approved",
+    "actor": "Amanda.Brooks@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Claims data validated against veteran record and provider history. No anomalies detected.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000063",
+    "claim_id": "d1000001-0000-4000-8000-000000000070",
+    "decision_type": "approved",
+    "actor": "Michael.Torres@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Automated review passed all 8 agent checks. Manual spot-check confirmed clean claim.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000065",
+    "claim_id": "d1000001-0000-4000-8000-000000000072",
+    "decision_type": "approved",
+    "actor": "Michael.Torres@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Agent analysis complete. No fraud indicators detected. Billing amount within expected range for procedures.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000066",
+    "claim_id": "d1000001-0000-4000-8000-000000000073",
+    "decision_type": "approved",
+    "actor": "David.Reeves@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Reviewed agent findings and supporting documentation. Claim meets all VA payment criteria.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000067",
+    "claim_id": "d1000001-0000-4000-8000-000000000075",
+    "decision_type": "approved",
+    "actor": "David.Reeves@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Agent analysis complete. No fraud indicators detected. Billing amount within expected range for procedures.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000068",
+    "claim_id": "d1000001-0000-4000-8000-000000000076",
+    "decision_type": "denied",
+    "actor": "David.Reeves@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Overlapping claim detected with existing approved claim. Duplicate billing confirmed. Savings: $21539.67.",
+    "savings_amount": 21539.67
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000069",
+    "claim_id": "d1000001-0000-4000-8000-000000000077",
+    "decision_type": "approved",
+    "actor": "Sarah.Jenkins@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "All agent findings returned pass. Claim data is consistent and within VA policy guidelines.",
+    "savings_amount": null
+  },
+  {
+    "id": "f1000001-0000-4000-8000-000000000071",
+    "claim_id": "d1000001-0000-4000-8000-000000000079",
+    "decision_type": "denied",
+    "actor": "Michael.Torres@va.gov",
+    "actor_role": "payment_integrity_analyst",
+    "rationale": "Provider risk score exceeds threshold. Combined agent confidence score warrants denial. Savings: $10656.68.",
+    "savings_amount": 10656.68
+  }
+]

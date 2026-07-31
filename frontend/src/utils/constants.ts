@@ -1,0 +1,73 @@
+// Copyright 2026 Google. Google provides these Materials as “Free Evaluation Services” subject to the terms, restrictions and limitations at https://cloud.google.com/terms/service-terms.
+
+export const ROUTES = {
+  LOGIN: '/login',
+  DASHBOARD: '/dashboard',
+  INGESTION: '/ingestion',
+  VALIDATION: '/validation',
+  ANALYTICS: '/analytics',
+  FRAUD_RESEARCH: '/fraud-research',
+  AUDIT_LOG: '/audit-log',
+  MONITORING: '/monitoring',
+  RECOUPMENT: '/recoupment',
+  AGENT_MANAGEMENT: '/agent-management',
+  AUDITOR_WORKFLOWS: '/auditor-workflows',
+  USER_MANAGEMENT: '/user-management',
+  ENROLLMENT: '/enrollment-integrity',
+  REFERRALS: '/nfed-referrals',
+} as const;
+
+/**
+ * Role-based page access configuration.
+ * Maps each role to the routes they can access.
+ */
+export const ROLE_ROUTES: Record<string, string[]> = {
+  'Enrollment Analyst': [ROUTES.DASHBOARD, ROUTES.ENROLLMENT, ROUTES.VALIDATION],
+  'Senior Investigator': [ROUTES.REFERRALS, ROUTES.FRAUD_RESEARCH, ROUTES.ANALYTICS, ROUTES.VALIDATION],
+  'Platform Administrator': [
+    ROUTES.DASHBOARD,
+    ROUTES.FRAUD_RESEARCH,
+    ROUTES.AGENT_MANAGEMENT,
+    ROUTES.USER_MANAGEMENT,
+  ],
+  'Claims Auditor': [
+    ROUTES.DASHBOARD,
+    ROUTES.VALIDATION,
+    ROUTES.AUDITOR_WORKFLOWS,
+    ROUTES.AGENT_MANAGEMENT,
+    ROUTES.AUDIT_LOG,
+  ],
+};
+
+/** The default landing page for each role (first in their allowed routes). */
+export const ROLE_DEFAULT_ROUTE: Record<string, string> = {
+  'Enrollment Analyst': ROUTES.DASHBOARD,
+  'Senior Investigator': ROUTES.REFERRALS,
+  'Platform Administrator': ROUTES.FRAUD_RESEARCH,
+  'Claims Auditor': ROUTES.VALIDATION,
+};
+
+/** Roles available for login selection. */
+export const LOGIN_ROLES = [
+  'Enrollment Analyst',
+  'Senior Investigator',
+  'Platform Administrator',
+  'Claims Auditor',
+] as const;
+
+export const AGENT_NAMES: Record<string, string> = {
+  rules_engine: 'Rules Engine',
+  data_validation: 'Data Validation',
+  pension_poaching: 'Beneficiary Exploitation',
+  claim_sharking: 'Provider Exploitation Check',
+  dbq_fraud: 'Clinical Assessment Integrity Check',
+  overlapping_claims: 'Overlapping Claims',
+  medical_record: 'Medical Record Check',
+  claim_discrepancy: 'Claim Discrepancy',
+};
+
+export const RISK_COLORS: Record<string, string> = {
+  high: '#E31C3D',
+  medium: '#D97706',
+  low: '#2E8540',
+};
