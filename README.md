@@ -91,7 +91,7 @@ flowchart LR
         MAIN["main.py<br/>CORS + GZip + auto-seed lifespan"]
         ROUTES["routes/ — 13 routers, 51 endpoints"]
         SERVICES["services/<br/>batch, chat, analytics, documents,<br/>fraud research, monitoring, overpayments"]
-        AGENTS["agents/ — 8 fraud agents<br/>BaseAgent + AGENT_REGISTRY"]
+        AGENTS["agents/ — 7 active agents<br/>BaseAgent + AGENT_REGISTRY"]
         DB["database.py<br/>BigQuery client + async helpers"]
     end
 
