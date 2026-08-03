@@ -1,44 +1,48 @@
-# CMS Fraud Shield: Executive Video Demo Guide
+# 📺 CMS Fraud Shield: Executive Video Demo Guide & Playbook
 
-Welcome to the **CMS Fraud Shield** demo recording playbook. This guide is structured to help you deliver a flawless, high-impact screen recording and presentation to leadership. It demonstrates how our advanced payment integrity system transitions from reactive monitoring to **proactive agentic prevention**, and finally to **criminal law enforcement action**.
+Welcome to the **CMS Fraud Shield** demo recording playbook. This guide is structured to help you deliver a flawless, high-impact screen recording and presentation to your engineering leadership, hirable consultants, and stakeholders. 
+
+It demonstrates how our payment integrity platform shifts the Centers for Medicare & Medicaid Services (CMS) from slow, reactive "pay-and-chase" retrospective recoveries to **proactive, real-time pre-payment transaction holding**, backed by a fleet of **7 active federated agents**.
 
 ---
 
 ## 🎭 Setting the Stage: Demo Background & Technical Context
-Before starting the click-through, deliver this technical introduction to your audience. This frames the platform's engineering integrity and shows that the entire application is backed by real-world databases, policies, and agentic workflows.
+Before starting the click-through, deliver this technical introduction to your audience. This frames the platform's engineering integrity and shows that the entire application is backed by real-world databases, clinical policies, and agentic workflows.
 
 ### 📊 1. The Core Data Foundations
-We have engineered a unified, multi-source synthetic database that mirrors actual Medicare operations across three layers:
-* **Stone's Relational Synthetic Data:** A high-fidelity dataset of **358 claims, 25 members, and 14 providers** mapped relationally in Google BigQuery. This database is hosted live in our Google Cloud BigQuery sandbox project (`faromerjul22`) and connected directly to our web frontend via standard Google Client Libraries. Every map point, filter, and chat response is powered by real cloud queries.
-* **Noel's ADK Provider Enrollment Data:** A specialized identity resolution dataset containing corporate registration histories, Social Security Numbers (SSNs), dates of birth, and OIG exclusions. This drives our **Front-Door Provider Enrollment Screening Agent**.
-* **Our Custom Catheter (DME) Data:** Custom-generated transaction files and billing logs mimicking urological catheter phantom-billing schemes. This data simulates the Victor Malen fraud ring exploiting compromised beneficiary MBIs (such as Eleanor's) via dormant shell companies, which we load directly into our pre-payment simulation sandbox.
+We have engineered a unified, multi-source synthetic database that mirrors actual Medicare operations across three key dimensions:
+*   **BigQuery Relational Synthetic Data:** A high-fidelity, schema-validated database of claims, beneficiaries, and providers mapped relationally in Google Cloud BigQuery (sandbox project `faromerjul22`). Every query, filter, and chat response in this demo pulls live from real cloud databases.
+*   **Front-Door Enrollment Data:** A specialized identity resolution dataset containing PECOS corporate registration histories, Social Security Numbers (SSNs), dates of birth, and OIG exclusions. This drives our **Enrollment Integrity** checks.
+*   **Custom Catheter (DME) Data:** Custom-generated transaction files and billing logs mimicking urological catheter phantom-billing schemes. This data simulates the Victor Malen fraud ring exploiting compromised beneficiary Medicare Beneficiary Identifiers (MBIs) via dormant shell companies, which we load directly into our pre-payment simulation sandbox.
 
-### 🤖 2. The 4 Federated AI Agents
-Our platform represents a transition from static rules to an autonomous, multi-agent cooperative security model. Throughout the demo, refer to these 4 agents:
-1. **Agent 1 (Trust Defender - Proactive Simulation):** Runs continuous automated threat modeling to find existing system loopholes before bad actors do.
-2. **Agent 2 (Crush Fraud - Pre-Payment Scoring Engine):** Intercepts live claim batches at the transaction gate, executes scoring algorithms, and applies real-time holds.
-3. **Agent 3 (System Resilience - Hardening):** Integrates with PECOS databases to automatically suspend fraudulent provider enrollments and addresses.
-4. **Agent 4 (Program Integrity Ops - Enforcement Hand-Off):** Packages multi-source audit trails, databases, and graph linkages into secure case portfolios for the FBI and DOJ.
+### 🤖 2. The 7 Active Agents Architecture
+Our platform represents a transition from static database rules to an autonomous, multi-agent cooperative security model. Throughout the demo, refer to these 7 agents:
+1.  **Threat Simulation "Trust Defender" (AI-Based):** Monitors early-stage risk signals, practice address changes, and PECOS ownership transfers to unmask fraudulent provider enrollments.
+2.  **Pre-Payment Claims Hold "Crush Fraud" (AI-Based):** The transactional gatekeeper that intercepts suspect claims and applies immediate prepayment holds (Score ≥ 0.95 with ≥2 corroborating hits).
+3.  **Enrollment Audit & Unmasking "System Resilience" (AI-Based):** Audits the network graph of held claims, revoking fraudulent provider networks or LLC chains linked to excluded operators.
+4.  **Policy & Referral "Program Integrity Ops" (AI-Based):** Compiles standardized investigation packages (dossiers) for DOJ/FBI referral and recommends systemic policy adaptations.
+5.  **Rules Engine (Rule-Based):** Enforces statutory limits (such as quantity caps under LCD L33803) and identifies supplier billing anomalies.
+6.  **Overlapping Claims Check (Rule-Based):** Screens for duplicate procedures, services filed with overlapping dates of service, or multi-provider velocity anomalies.
+7.  **Data Validation Integrity (Rule-Based):** Verifies structured NPI formatting, diagnostic code logic, and fee schedule compliance.
 
-### 📋 3. Gina's 4 Policy-Backed Rules (LCD L33803)
+### 📋 3. Real-World Policy-Backed Ruleset (LCD L33803)
 We have mapped the billing thresholds directly to actual Medicare Local Coverage Determinations (LCDs) and OIG reports:
-* **Rule R-01 (Quantity Cap Exceeded):** Catheter billing exceeding standard clinical caps of 30 units per month (or total billed amount > $1,500/mo) across NPIs (LCD L33803).
-* **Rule R-02 (Dormant Supplier Burst):** Newly purchased or dormant NPIs (under $5,000 billed in prior 180 days) suddenly submitting > $100,000 in rolling 14-day claims.
-* **Rule R-03 (MBI Velocity Anomaly):** A single beneficiary MBI billed by >= 3 distinct NPIs across >= 2 state lines within a rolling 48-hour window.
-* **Rule R-04 (High-Risk PECOS Enrollment):** Provider registered address resolving to a CMRA commercial mailbox (UPS Store) combined with a recent ownership transfer.
+*   **Rule R-01 (Quantity Cap Exceeded):** Catheter billing exceeding standard clinical caps of 30 units per month (or total billed amount > $1,500/mo) across NPIs (LCD L33803).
+*   **Rule R-02 (Dormant Supplier Burst):** Newly purchased or dormant NPIs (under $5,000 billed in prior 180 days) suddenly submitting > $100,000 in rolling 14-day claims.
+*   **Rule R-03 (MBI Velocity Anomaly):** A single beneficiary MBI billed by ≥ 3 distinct NPIs across ≥ 2 state lines within a rolling 48-hour window.
+*   **Rule R-04 (High-Risk PECOS Enrollment):** Provider registered address resolves to a CMRA commercial mailbox (UPS Store) combined with a recent ownership transfer.
 
 ---
 
 ## 🛡️ Leadership Objection Handling & Technical Justifications
-When presenting to leadership and hirable consultants, they may challenge our prototype's depth. Use this technical matrix to disarm their questions with concrete, on-screen proof.
+When presenting to leadership, they may challenge our system's depth. Use this technical matrix to disarm their questions with concrete, on-screen proof.
 
 | Leadership Question / Objection | Where It Is Proven Live in Your Demo | Under-the-Hood Technical Justification |
 | :--- | :--- | :--- |
-| **"What does your database structure actually look like? Are we just guessing?"** | **Scene 2 & 3** (Grounded AI Chat & BigQuery integration). | The entire app is connected to a standard-compliant, schema-validated database in GCP BigQuery (`faromerjul22`) loaded parent-first from 8 relational schemas (matching actual CMS-1500 and PECOS definitions) containing MBIs, NPIs, HCPCS limits, and vital statistics. |
+| **"What does your database structure actually look like? Are we just guessing?"** | **Scene 2 & 3** (Grounded AI Chat & BigQuery integration). | The entire app is connected to a standard-compliant, schema-validated database in GCP BigQuery (`faromerjul22`) loaded parent-first from relational schemas containing MBIs, NPIs, HCPCS limits, and vital statistics. |
 | **"R-01 quantity limits depend on clinical modifiers. How does the system handle exceptions?"** | **Scene 3** (Two-Tier Appeals Panel / R-01 ruleset). | Under LCD L33803, standard catheter limits are capped at 30/mo. If a claim has a `KX` or `KS` modifier, our engine dynamically queries clinical databases for urology specialty consultations (**CPT-99214**) within 90 days, raising the clinical threshold to 150/mo. |
 | **"Where do you find your commercial mailbox (CMRA) addresses for Rule R-04?"** | **Scene 1 & 2** (Entity Graph & AI Chatbot). | We ground this in a local compilation of the **USPS Coding Accuracy Support System (CASS)** database (National Customer Support Center Commercial Mail Receiving Agency master files), flagging `is_cmra = True` in the address tables. |
 | **"Does pre-payment holding block patient care? How do you prevent high false-positives?"** | **Scene 3** (Two-Tier Appeal Sandbox). | We engineered and visualized a **Two-Tier Pre-Payment Appeal & False-Positive Tolerance** loop. Legitimate patients (Eleanor Vance) can submit electronic telehealth modifiers which automatically release holds in **<3 seconds with $0.00 administrative overhead** (Level 1). Fraud syndicates (William Jackson) fail Level 1 and are safely routed to manual Administrative Law Judge (ALJ) Redetermination (Level 2). |
-| **"What are the acceptance criteria to prove this system is actually 'done'?"** | **Section 5** of the Technical Specification. | We established 5 exact, pass/fail metrics: sub-50ms pre-payment evaluation latency, $<1.5\%$ false-positive rates via Level-1 auto-approvals, and 100% case packaging rates for DOJ portfolios. |
 | **"Is this a scripted simulation or a functional system?"** | **Scene 1, 2 & 3** (Graph, Filters & AI Chat). | It is a queryable database architecture. The frontend dynamically filters, the entity linkages query actual DB tables, and the AI chatbot uses generative LLMs with live SQL-grounding to answer custom, unscripted user questions about any provider in real-time. |
 
 ---
@@ -74,8 +78,6 @@ graph TD
 
 ## 🎥 Recording Playbook: Step-by-Step Walkthrough
 
----
-
 ### 🎬 Scene 1: The Front-Door Enrollment Page (Role: Enrollment Analyst)
 **Visual Target:** Front-Door Enrollment page (`/enrollment-integrity`).
 
@@ -100,7 +102,7 @@ graph TD
 9. Watch the terminal-style logger scroll in real-time, showing the ADK Agent intercepting and neutralizing the evasion checks, ending with a threat block.
 
 #### 🎙️ Voiceover Script
-> *"Let's begin our demo with the **Front-Door Enrollment** page, which utilizes our Provider Enrollment Agent to block bad actors before they ever gain access to our billing systems. 
+> *"Let's begin our demo with the **Front-Door Enrollment** page, which utilizes our Trust Defender Agent to block bad actors before they ever gain access to our billing systems. 
 > 
 > Here in our queue, we have an application from **Coastal DME Supplier LLC**. It has been flagged as **High Risk (94%)**. 
 > 
@@ -113,13 +115,13 @@ graph TD
 ---
 
 ### 🎬 Scene 2: Claims Review Deep Dive & AI Chat (Role: Enrollment Analyst)
-**Visual Target:** Pre-Payment Claims Review / Validation Queue (`/enrollment-integrity` $\rightarrow$ `/validation` via sidebar).
+**Visual Target:** Pre-Payment Claims Review / Validation Queue (`/validation` via sidebar).
 
 > [!TIP]
 > This scene demonstrates how we analyze active fraudulent transactions that got into the system (or hijacked clean accounts) and leverage grounded AI to query evidence in real-time.
 
 #### 📍 Click-by-Step Navigation
-1. While still logged in as **Enrollment Analyst**, click on **Pre-Payment Claims Review** in the sidebar.
+1. Click on **Pre-Payment Claims Review** in the sidebar.
 2. Under the **Flagged Claims** tab, find the **Claim Type** filter dropdown (far right).
 3. Select **`DME`** from the dropdown options.
 4. Point to the results table on your screen:
@@ -190,14 +192,14 @@ graph TD
 > 
 > However, pre-payment holds must not block access to legitimate clinical care. That is why we built our **Two-Tier Pre-Payment Appeal Engine**. 
 > 
-> If we select **Eleanor Vance**—a genuine patient who needs 45 catheters per month—and submit an electronic appeal, our system scans her health record. It detects a valid urological modifier (CPT-99214 + ICD-10 N31.9) on file from Dr. Sarah Jenkins within 10 days. The system immediately triggers a Level 1 Auto-Release, disbursing the funds instantly with **zero manual administrative overhead.**
+> If we select **Eleanor Vance**—a genuine patient who needs 45 catheters per month—and submit an electronic appeal, our system scans her health record. It detects a valid urological modifier (CPT-99214 + ICD-10 N31.9) on file from Dr. Sarah Jenkins within 10 days. The system immediately triggers a Level 1 Auto-Release, disbursing the funds instantly with **zero manual administrative overhead."**
 > 
 > Conversely, if we select **William Jackson** from the fraudulent Apex ring, the Level 1 checks fail. Since no clinical consult modifier exists, the hold stands, and the claim is automatically routed to Level 2 Administrative Law Judge redetermination, safeguarding the trust fund."*
 
 ---
 
 ### 🎬 Scene 4: Coordinated Law Enforcement Hand-Off (The Referral dossiers)
-**Visual Target:** Investigative Referrals / NFED Referrals page.
+**Visual Target:** Investigative Referrals / NFED Referrals page (`/referrals` via sidebar).
 
 #### 📍 Click-by-Step Navigation
 1. In the navigation sidebar, click on **DOJ & FBI Referrals**.
@@ -207,7 +209,7 @@ graph TD
    * *Commercial PO Box address geolocations.*
    * *450% billing burst anomalies.*
 4. Select the second case dossier: **Malen Straw Owner Evasion Network (NFED-2026-002)**.
-5. Explain how Noel's ADK unmasked Victor A. Malen attempting to register **Coastal DME Supplier LLC** through three nested shells and offshore entities.
+5. Explain how our Trust Defender agent unmasked Victor A. Malen attempting to register **Coastal DME Supplier LLC** through three nested shells and offshore entities.
 6. Click the **"Export Referral Package"** button. This packages the BigQuery audit trails, identity resolution graphs, and pre-payment logs into an encrypted file sent directly to the **DOJ National Fraud Enforcement Division (NFED)** and the **FBI Healthcare Fraud Unit**.
 
 #### 🎙️ Voiceover Script
@@ -224,4 +226,4 @@ graph TD
 ## 🎯 The Strategic "Bigger Purpose" (The Closing Pitch)
 To conclude your demo video, deliver this powerful summary of the platform's macro-level impact:
 
-> *"By combining Noel's ADK Enrollment Agent with our Pre-Payment Rules and Claim Sharking Agents, we have created an end-to-end Payment Integrity Shield. We block malicious entities at the front door before they can enroll, flag automated bulk-billing syndicates before they are paid, and package audit-ready evidence for the FBI and DOJ to prosecute bad actors. This completely shuts down the high-volume DME fraud lifecycle, saving millions in CMS billing losses."*
+> *"By combining our Trust Defender Enrollment Agent with our Pre-Payment Rules and Crush Fraud Agents, we have created an end-to-end Payment Integrity Shield. We block malicious entities at the front door before they can enroll, flag automated bulk-billing syndicates before they are paid, and package audit-ready evidence for the FBI and DOJ to prosecute bad actors. This completely shuts down the high-volume DME fraud lifecycle, saving millions in CMS billing losses."*
