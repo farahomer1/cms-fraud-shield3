@@ -8,6 +8,7 @@ export interface Alert {
   risk_level: 'high' | 'medium' | 'low' | null;
   flagging_agents: string[];
   veteran_name: string;
+  beneficiary_name?: string;
   provider_name: string;
   billing_amount: number;
   timestamp: string;

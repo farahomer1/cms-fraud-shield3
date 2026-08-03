@@ -28,53 +28,46 @@ const ALL_AGENT_DEFINITIONS: {
       'Billing amount within expected range for procedure codes. Service date is valid and provider is eligible.',
   },
   {
-    key: 'data_validation',
-    name: 'Data Validation Agent',
-    fraud_type: 'data_integrity',
+    key: 'trust_defender',
+    name: 'Threat Simulation "Trust Defender"',
+    fraud_type: 'proactive_vulnerability_simulation',
     pass_evidence:
-      'Member vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.',
+      'Beneficiary and provider credentials verified. No early-stage identity or enrollment anomalies detected.',
   },
   {
-    key: 'pension_poaching',
-    name: 'Pension Poaching Agent',
-    fraud_type: 'pension_poaching',
+    key: 'crush_fraud',
+    name: 'Pre-Payment Claims Hold "Crush Fraud"',
+    fraud_type: 'prepayment_modifier_exploit',
     pass_evidence:
-      'No indicators of asset manipulation detected. Benefit claim amounts are consistent with member disability rating.',
+      'No high-risk billing bursts or pre-payment hold triggers matched for this claim.',
   },
   {
-    key: 'claim_sharking',
-    name: 'Claim Sharking Agent',
-    fraud_type: 'claim_sharking',
+    key: 'system_resilience',
+    name: 'Enrollment Audit & Unmasking "System Resilience"',
+    fraud_type: 'PECOS_enrollment_compromise',
     pass_evidence:
-      'Provider billing patterns within normal parameters. No solicitation indicators detected.',
+      'Beneficial ownership resolution verified. Provider does not map to any excluded operators or shell company networks.',
   },
   {
-    key: 'dbq_fraud',
-    name: 'CMN Fraud Agent',
-    fraud_type: 'dbq_fraud',
+    key: 'program_integrity_ops',
+    name: 'Policy & Referral "Program Integrity Ops"',
+    fraud_type: 'DOJ_legal_referral_dossier',
     pass_evidence:
-      'Certificate of Medical Necessity (CMN) responses consistent with documented medical condition. Completion time within normal range.',
+      'No patterns of persistent non-compliance or federal enforcement triggers identified.',
   },
   {
     key: 'overlapping_claims',
-    name: 'Overlapping Claim Agent',
+    name: 'Overlapping Claims Check',
     fraud_type: 'overlapping_claims',
     pass_evidence:
       'Service dates and procedure codes are unique across all claims for this beneficiary. No double-billing detected.',
   },
   {
-    key: 'medical_record',
-    name: 'Medical Record Manipulation Agent',
-    fraud_type: 'record_manipulation',
+    key: 'data_validation',
+    name: 'Data Validation Integrity',
+    fraud_type: 'data_integrity',
     pass_evidence:
-      'Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.',
-  },
-  {
-    key: 'claim_discrepancy',
-    name: 'Claim Data Discrepancy Agent',
-    fraud_type: 'data_discrepancy',
-    pass_evidence:
-      'Billing amounts and codes consistent with clinical documentation and fee schedule.',
+      'Inbound data formatting and NPI structure verified. Codes are compliant with standard billing schedules.',
   },
 ];
 

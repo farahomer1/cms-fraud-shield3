@@ -34,26 +34,25 @@ export const NODE_DESCRIPTIONS: Record<string, string> = {
   warehouse:
     'BigQuery-based data warehouse for claims storage with full audit trail. Maintains referential integrity across all integrated systems.',
   rules_engine:
-    'Executes >1000 compliance rules including CMS edits, PPS logic, VA business rules, and Fee Schedule rate validations in real-time.',
-  agent_army: 'Multi-agent analysis system with 8 specialized fraud and compliance detection agents.',
+    'Executes >1000 compliance rules including CMS edits, PPS logic, Medicare national coverage (NCD/LCD), and Fee Schedule rate validations in real-time.',
+  agent_army: 'Multi-agent analysis system with 7 specialized fraud and compliance detection agents.',
   decision_routing:
     'Routes claims based on flag severity: High \u2192 automated rejection, Medium/Low \u2192 manual review queue.',
 };
 
 export const AGENT_ARMY_AGENTS = [
-  { name: 'Rules Engine Agent', description: 'Validates claims against CMS Financial Policy, benefits eligibility, and Medicare coverage requirements. Cross-references CMS National Coverage Determinations (NCDs) and Local Coverage Determinations (LCDs).' },
-  { name: 'Data Validation Agent', description: 'Verifies data completeness, referential integrity, and format compliance across all claim fields. Checks ICD-10, CPT, HCPCS, and NDC code validity.' },
-  { name: 'Beneficiary Exploitation Agent', description: 'Detects predatory providers targeting vulnerable beneficiaries with unsolicited medical equipment/supplies claims. Identifies dual claims for the same service period across multiple providers.' },
-  { name: 'Claim Sharking Agent', description: 'Identifies high-volume suspicious filing patterns, unsolicited contact schemes, and provider networks engaging in coordinated claim submission fraud.' },
-  { name: 'CMN Fraud Agent', description: 'Analyzes Certificates of Medical Necessity (CMN) for fabrication indicators: physician signature anomalies, template manipulation, copy-paste patterns, and inconsistent findings.' },
-  { name: 'Overlapping Claims Agent', description: 'Detects duplicate and overlapping service periods, unbundling schemes, and upcoding patterns. Validates modifier usage (-25, -59, -76, -XE, -XS).' },
-  { name: 'Medical Record Agent', description: 'Cross-validates medical codes against clinical documentation using NLP. Detects service-diagnosis mismatches, impossible procedure combinations, and deceased member billing.' },
-  { name: 'Claim Discrepancy Agent', description: 'Performs holistic claim-to-record reconciliation. Uses anomaly detection to identify billing amount outliers, geographic impossibilities, and temporal inconsistencies.' },
+  { name: 'Rules Engine', description: 'Enforces statutory limits (LCD L33803) and billing integrity rules.' },
+  { name: 'Threat Simulation "Trust Defender"', description: 'Monitors early-stage risk signals and anomalies in enrollment records.' },
+  { name: 'Pre-Payment Claims Hold "Crush Fraud"', description: 'Intercepts high-risk billing and coordinates immediate prepay holds.' },
+  { name: 'Enrollment Audit & Unmasking "System Resilience"', description: 'Uncovers complex shell company structures and shared address links.' },
+  { name: 'Policy & Referral "Program Integrity Ops"', description: 'Compiles formal OIG/DOJ evidence packages and policy adjustment notes.' },
+  { name: 'Overlapping Claims Check', description: 'Flags overlapping service dates or duplicate procedures.' },
+  { name: 'Data Validation Integrity', description: 'Ensures NPI format compliance and diagnostic logic validation.' }
 ];
 
 /**
  * Comprehensive RFI-aligned detail sections for each pipeline node,
- * mapping to PWS Sections 5.2.1-5.2.6 and 6.4 Performance Metrics.
+ * mapping to CMS Sections 5.2.1-5.2.6 and 6.4 Performance Metrics.
  */
 export interface NodeDetailSection {
   pwsRef: string;
@@ -65,7 +64,7 @@ export interface NodeDetailSection {
 
 export const NODE_DETAIL_SECTIONS: Record<string, NodeDetailSection> = {
   normalization: {
-    pwsRef: 'PWS Section 5.2.1 \u2014 Data Ingest and Management',
+    pwsRef: 'CMS Section 5.2.1 \u2014 Data Ingest and Management',
     overview:
       'Ingests, parses, and normalizes healthcare claim transactions across all standard electronic formats. Converts raw EDI, NCPDP, and document-based submissions into a unified internal schema with full data provenance tracking.',
     capabilities: [
@@ -73,10 +72,10 @@ export const NODE_DETAIL_SECTIONS: Record<string, NodeDetailSection> = {
       'Process NCPDP pharmacy claims and Medicare Part D transactions',
       'Extract structured data from PDF/scanned documents using OCR and NLP',
       'Validate field-level data quality: completeness, format, referential integrity',
-      'Map ICD-10, CPT, HCPCS, NDC, and VA-specific code sets to canonical references',
-      'Generate unique claim identifiers and link to veteran/provider master records',
+      'Map ICD-10, CPT, HCPCS, NDC, and Medicare-specific code sets to canonical references',
+      'Generate unique claim identifiers and link to beneficiary/provider master records',
       'Maintain full data lineage from source document to normalized record',
-      'Support CMS quarterly code set updates and VA-specific modifier handling',
+      'Support CMS quarterly code set updates and Medicare-specific modifier handling',
     ],
     metrics: [
       { label: 'Data Quality Score', target: '\u2265 98%' },
@@ -91,7 +90,7 @@ export const NODE_DETAIL_SECTIONS: Record<string, NodeDetailSection> = {
     ],
   },
   warehouse: {
-    pwsRef: 'PWS Section 5.2.1 (Items 2\u20135) \u2014 Data Management & Architecture',
+    pwsRef: 'CMS Section 5.2.1 (Items 2\u20135) \u2014 Data Management & Architecture',
     overview:
       'Google BigQuery-powered data warehouse providing petabyte-scale storage, real-time analytics, and immutable audit trails. Supports the full claims lifecycle from ingestion through final disposition with columnar storage optimized for fraud pattern detection queries.',
     capabilities: [
@@ -117,7 +116,7 @@ export const NODE_DETAIL_SECTIONS: Record<string, NodeDetailSection> = {
     ],
   },
   rules_engine: {
-    pwsRef: 'PWS Section 5.2.2 \u2014 Rules Engine',
+    pwsRef: 'CMS Section 5.2.2 \u2014 Rules Engine',
     overview:
       'High-performance rules engine executing over 1,000 configurable compliance rules in real-time. Applies CMS Correct Coding Initiative (CCI) edits, Prospective Payment System (PPS) logic, CMS Financial Policy guidelines, and fee schedule rate validations to every claim.',
     capabilities: [
@@ -145,17 +144,17 @@ export const NODE_DETAIL_SECTIONS: Record<string, NodeDetailSection> = {
     ],
   },
   agent_army: {
-    pwsRef: 'PWS Section 5.2.3 \u2014 Pattern Recognition Engine (AI/ML)',
+    pwsRef: 'Medicare Payment Integrity \u2014 AI/ML Orchestration',
     overview:
-      'Multi-agent AI/ML system with 8 specialized fraud and compliance detection agents. Uses supervised learning, anomaly detection, network analysis, and NLP to identify complex fraud patterns that evade traditional rules. Incorporates human-in-the-loop (HITL) feedback for continuous model improvement and provides explainable AI (xAI) evidence for every finding.',
+      'Multi-agent AI/ML system with 7 specialized fraud and compliance detection agents. Uses supervised learning, anomaly detection, network analysis, and NLP to identify complex fraud patterns that evade traditional rules. Incorporates human-in-the-loop (HITL) feedback for continuous model improvement and provides explainable AI (xAI) evidence for every finding.',
     capabilities: [
-      'Detect upcoding, unbundling, and billing amount anomalies using statistical models',
-      'Identify provider network fraud: kickback schemes, patient steering, phantom clinics',
-      'Flag modifier misuse and service-diagnosis mismatch patterns',
-      'Detect deceased member billing and identity theft schemes',
-      'Beneficiary poaching: identify predatory providers targeting vulnerable seniors',
-      'Claim sharking: detect unsolicited contact and high-volume suspicious filing patterns',
-      'CMN fraud: flag Certificate of Medical Necessity anomalies, template manipulation, and signatures',
+      'Enforce statutory rules and billing quantity limits via the Rules Engine',
+      'Monitor early enrollment risk signals via Threat Simulation "Trust Defender"',
+      'Intercept high-risk billing and execute prepayment claims holds via "Crush Fraud"',
+      'Resolve complex beneficial ownership links and PECOS registry unmasking via "System Resilience"',
+      'Compile formal federal fraud evidence dossiers for DOJ/OIG referral via "Program Integrity Ops"',
+      'Detect overlapping service dates and duplicate procedures via Overlapping Claims Check',
+      'Validate inbound data format, NPI structure, and clinical coding via Data Validation Integrity',
       'Continuous model retraining using HITL reviewer feedback and outcome labels',
       'Explainable AI: generate human-readable evidence summaries for each finding',
       'Ensemble scoring: combine multiple agent signals into unified risk assessment',
@@ -164,7 +163,7 @@ export const NODE_DETAIL_SECTIONS: Record<string, NodeDetailSection> = {
       { label: 'AI/ML Accuracy', target: '\u2265 95%' },
       { label: 'False Positive Rate', target: '\u2264 5%' },
       { label: 'Model Drift Detection', target: 'Monthly monitoring' },
-      { label: 'HITL Feedback Loop', target: '< 24hr label incorporation' },
+      { label: 'HITL Feedback Loop', target: '\u003c 24hr label incorporation' },
     ],
     compliance: [
       'NIST AI Risk Management Framework (AI RMF)',
@@ -174,7 +173,7 @@ export const NODE_DETAIL_SECTIONS: Record<string, NodeDetailSection> = {
     ],
   },
   decision_routing: {
-    pwsRef: 'PWS Sections 5.2.4, 5.2.5, 5.2.6 \u2014 Flags, Recoupment & Audit',
+    pwsRef: 'CMS Sections 5.2.4, 5.2.5, 5.2.6 \u2014 Flags, Recoupment \u0026 Audit',
     overview:
       'Intelligent routing engine that classifies claims by aggregate risk and directs them to appropriate workflows. High-risk claims receive automated denial recommendations, medium-risk route to senior human reviewers, and low-risk proceed through expedited approval. Integrates with overpayment/recoupment tracking and comprehensive audit logging.',
     capabilities: [

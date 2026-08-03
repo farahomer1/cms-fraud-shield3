@@ -168,7 +168,7 @@ const DeepDiveModal: React.FC = () => {
                 Member
               </Typography>
               <Typography variant="body2" fontWeight={600}>
-                {claim.veteran?.name_display ?? 'Unknown'}
+                {claim.beneficiary?.name_display ?? claim.veteran?.name_display ?? 'Unknown'}
               </Typography>
             </Box>
             <Box>

@@ -125,7 +125,7 @@ const AlertFeed: React.FC = () => {
                     <Box>
                       <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mb: 0.5 }}>
                         <Typography variant="caption" color="text.secondary">
-                          {alert.veteran_name} &middot; {alert.provider_name} &middot;{' '}
+                          {alert.beneficiary_name ?? alert.veteran_name} &middot; {alert.provider_name} &middot;{' '}
                           {formatCurrency(alert.billing_amount)}
                         </Typography>
                       </Box>

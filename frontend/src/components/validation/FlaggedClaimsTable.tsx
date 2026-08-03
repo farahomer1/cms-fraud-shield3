@@ -294,7 +294,7 @@ const FlaggedClaimsTable: React.FC<FlaggedClaimsTableProps> = ({ onCountChange, 
                       </Typography>
                     </TableCell>
                     <TableCell>
-                      {claim.veteran?.name_display ?? 'Unknown'}
+                      {claim.beneficiary?.name_display ?? claim.veteran?.name_display ?? 'Unknown'}
                     </TableCell>
                     <TableCell>
                       {claim.provider?.name ?? 'Unknown'}

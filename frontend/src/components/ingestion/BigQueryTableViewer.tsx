@@ -31,39 +31,39 @@ function generateDemoData(tableName: string): RowData[] {
   switch (tableName) {
     case 'claims':
       return [
-        { claim_id: 'CLM-20240301-001', claim_number: 'VA-2024-88431', veteran_name: 'James R. Patterson', provider_name: 'Midwest Members Care LLC', claim_type: 'medical', status: 'flagged', billing_amount: 14250.00, service_date: '2024-02-15', risk_level: 'high', diagnosis_codes: 'M54.5, G89.29' },
-        { claim_id: 'CLM-20240301-002', claim_number: 'VA-2024-88432', veteran_name: 'Maria T. Gonzalez', provider_name: 'Southeast Health Partners', claim_type: 'disability', status: 'approved', billing_amount: 3820.50, service_date: '2024-02-18', risk_level: 'low', diagnosis_codes: 'F43.10' },
-        { claim_id: 'CLM-20240301-003', claim_number: 'VA-2024-88433', veteran_name: 'Robert L. Washington', provider_name: 'National Member Services Inc', claim_type: 'medical', status: 'flagged', billing_amount: 28900.00, service_date: '2024-01-22', risk_level: 'high', diagnosis_codes: 'M79.3, R29.6' },
-        { claim_id: 'CLM-20240301-004', claim_number: 'VA-2024-88434', veteran_name: 'Susan K. Miller', provider_name: 'Pacific Coast Medical Group', claim_type: 'dental', status: 'pending', billing_amount: 1540.00, service_date: '2024-03-01', risk_level: 'low', diagnosis_codes: 'K02.9' },
-        { claim_id: 'CLM-20240301-005', claim_number: 'VA-2024-88435', veteran_name: 'Thomas A. Chen', provider_name: 'Midwest Members Care LLC', claim_type: 'pension', status: 'flagged', billing_amount: 45200.00, service_date: '2024-02-10', risk_level: 'high', diagnosis_codes: 'F31.9, F41.1' },
-        { claim_id: 'CLM-20240301-006', claim_number: 'VA-2024-88436', veteran_name: 'Dorothy E. Brown', provider_name: 'Southeast Health Partners', claim_type: 'medical', status: 'approved', billing_amount: 7830.00, service_date: '2024-02-25', risk_level: 'medium', diagnosis_codes: 'J44.1' },
-        { claim_id: 'CLM-20240301-007', claim_number: 'VA-2024-88437', veteran_name: 'Michael D. Johnson', provider_name: 'Great Plains VA Clinic', claim_type: 'disability', status: 'processing', billing_amount: 5120.75, service_date: '2024-03-05', risk_level: 'medium', diagnosis_codes: 'G47.33, E11.9' },
+        { claim_id: 'CLM-20240301-001', claim_number: 'CMS-2024-88431', beneficiary_name: 'James R. Patterson', provider_name: 'Midwest Medicare Care LLC', claim_type: 'medical', status: 'flagged', billing_amount: 14250.00, service_date: '2024-02-15', risk_level: 'high', diagnosis_codes: 'M54.5, G89.29' },
+        { claim_id: 'CLM-20240301-002', claim_number: 'CMS-2024-88432', beneficiary_name: 'Maria T. Gonzalez', provider_name: 'Southeast Health Partners', claim_type: 'dme', status: 'approved', billing_amount: 3820.50, service_date: '2024-02-18', risk_level: 'low', diagnosis_codes: 'F43.10' },
+        { claim_id: 'CLM-20240301-003', claim_number: 'CMS-2024-88433', beneficiary_name: 'Robert L. Washington', provider_name: 'National Medicare Services Inc', claim_type: 'medical', status: 'flagged', billing_amount: 28900.00, service_date: '2024-01-22', risk_level: 'high', diagnosis_codes: 'M79.3, R29.6' },
+        { claim_id: 'CLM-20240301-004', claim_number: 'CMS-2024-88434', beneficiary_name: 'Susan K. Miller', provider_name: 'Pacific Coast Medical Group', claim_type: 'pharmacy', status: 'pending', billing_amount: 1540.00, service_date: '2024-03-01', risk_level: 'low', diagnosis_codes: 'K02.9' },
+        { claim_id: 'CLM-20240301-005', claim_number: 'CMS-2024-88435', beneficiary_name: 'Thomas A. Chen', provider_name: 'Midwest Medicare Care LLC', claim_type: 'dme', status: 'flagged', billing_amount: 45200.00, service_date: '2024-02-10', risk_level: 'high', diagnosis_codes: 'F31.9, F41.1' },
+        { claim_id: 'CLM-20240301-006', claim_number: 'CMS-2024-88436', beneficiary_name: 'Dorothy E. Brown', provider_name: 'Southeast Health Partners', claim_type: 'medical', status: 'approved', billing_amount: 7830.00, service_date: '2024-02-25', risk_level: 'medium', diagnosis_codes: 'J44.1' },
+        { claim_id: 'CLM-20240301-007', claim_number: 'CMS-2024-88437', beneficiary_name: 'Michael D. Johnson', provider_name: 'Great Plains Medicare Clinic', claim_type: 'dme', status: 'processing', billing_amount: 5120.75, service_date: '2024-03-05', risk_level: 'medium', diagnosis_codes: 'G47.33, E11.9' },
       ];
 
     case 'agent_findings':
       return [
-        { finding_id: 'FND-001', claim_number: 'VA-2024-88431', agent_name: 'Pension Poaching', fraud_type: 'pension_poaching', confidence_score: 0.94, recommendation: 'flag', evidence_summary: 'Provider pattern matches known pension poaching scheme; 12 similar claims in 30-day window', processing_time_ms: 1240 },
-        { finding_id: 'FND-002', claim_number: 'VA-2024-88431', agent_name: 'Claim Sharking', fraud_type: 'claim_sharking', confidence_score: 0.87, recommendation: 'flag', evidence_summary: 'Unsolicited contact pattern detected; veteran had no prior claims with this provider', processing_time_ms: 890 },
-        { finding_id: 'FND-003', claim_number: 'VA-2024-88433', agent_name: 'DBQ Fraud', fraud_type: 'dbq_fabrication', confidence_score: 0.91, recommendation: 'flag', evidence_summary: 'DBQ completion time anomaly; form completed in 3 minutes vs 45-min average', processing_time_ms: 1560 },
-        { finding_id: 'FND-004', claim_number: 'VA-2024-88435', agent_name: 'Overlapping Claims', fraud_type: 'overlapping_claims', confidence_score: 0.96, recommendation: 'flag', evidence_summary: 'Duplicate service dates with different providers; $45K billing overlap detected', processing_time_ms: 720 },
-        { finding_id: 'FND-005', claim_number: 'VA-2024-88432', agent_name: 'Rules Engine', fraud_type: 'none', confidence_score: 0.12, recommendation: 'pass', evidence_summary: 'All rules passed; claim within normal parameters', processing_time_ms: 340 },
-        { finding_id: 'FND-006', claim_number: 'VA-2024-88436', agent_name: 'Medical Record', fraud_type: 'inconsistent_records', confidence_score: 0.62, recommendation: 'flag', evidence_summary: 'Minor discrepancy between service dates in medical record and claim form', processing_time_ms: 1100 },
+        { finding_id: 'FND-001', claim_number: 'CMS-2024-88431', agent_name: 'Threat Simulation "Trust Defender"', fraud_type: 'vulnerability_simulation', confidence_score: 0.94, recommendation: 'flag', evidence_summary: 'Inbound PECOS simulation flagged enrollment address matches with a high-risk mail-drop cluster.', processing_time_ms: 1240 },
+        { finding_id: 'FND-002', claim_number: 'CMS-2024-88431', agent_name: 'Pre-Payment Claims Hold "Crush Fraud"', fraud_type: 'modifier_exploit', confidence_score: 0.87, recommendation: 'flag', evidence_summary: 'Prepayment audit flagged DME high-frequency burst billing pattern lacking the KX prior authorization modifier.', processing_time_ms: 890 },
+        { finding_id: 'FND-003', claim_number: 'CMS-2024-88433', agent_name: 'Enrollment Audit & Unmasking "System Resilience"', fraud_type: 'unmask_shell_company', confidence_score: 0.91, recommendation: 'flag', evidence_summary: 'Ownership graph simulation identified multiple hidden shared-address links between clinics.', processing_time_ms: 1560 },
+        { finding_id: 'FND-004', claim_number: 'CMS-2024-88435', agent_name: 'Overlapping Claims Check', fraud_type: 'overlapping_claims', confidence_score: 0.96, recommendation: 'flag', evidence_summary: 'Duplicate dme service dates across different providers; overlapping billing period detected.', processing_time_ms: 720 },
+        { finding_id: 'FND-005', claim_number: 'CMS-2024-88432', agent_name: 'Rules Engine', fraud_type: 'none', confidence_score: 0.12, recommendation: 'pass', evidence_summary: 'All Medicare LCD/NCD rules passed successfully; billing within allowable thresholds.', processing_time_ms: 340 },
+        { finding_id: 'FND-006', claim_number: 'CMS-2024-88436', agent_name: 'Data Validation Integrity', fraud_type: 'data_integrity', confidence_score: 0.62, recommendation: 'flag', evidence_summary: 'Field discrepancy: National Provider Identifier (NPI) structure validation mismatch.', processing_time_ms: 1100 },
       ];
 
     case 'decisions':
       return [
-        { decision_id: 'DEC-001', claim_number: 'VA-2024-88431', decision_type: 'denied', actor: 'Sarah Mitchell', actor_role: 'Senior Reviewer', rationale: 'Confirmed pension poaching scheme; provider under active investigation', savings_amount: 14250.00, created_at: '2024-03-05T14:22:00Z' },
-        { decision_id: 'DEC-002', claim_number: 'VA-2024-88432', decision_type: 'approved', actor: 'System Auto-Approve', actor_role: 'system', rationale: 'All agent checks passed with low risk scores', savings_amount: null, created_at: '2024-03-03T09:15:00Z' },
-        { decision_id: 'DEC-003', claim_number: 'VA-2024-88433', decision_type: 'denied', actor: 'Mark Rodriguez', actor_role: 'Fraud Analyst', rationale: 'DBQ fabrication confirmed; exam duration inconsistent with reported findings', savings_amount: 28900.00, created_at: '2024-03-06T11:45:00Z' },
-        { decision_id: 'DEC-004', claim_number: 'VA-2024-88436', decision_type: 'false_positive', actor: 'Sarah Mitchell', actor_role: 'Senior Reviewer', rationale: 'Date discrepancy due to timezone conversion error; claim is legitimate', savings_amount: null, created_at: '2024-03-07T16:30:00Z' },
+        { decision_id: 'DEC-001', claim_number: 'CMS-2024-88431', decision_type: 'denied', actor: 'Sarah Mitchell', actor_role: 'Senior Reviewer', rationale: 'Confirmed prepayment modifier exploit scheme; provider recommended for immediate suspension', savings_amount: 14250.00, created_at: '2024-03-05T14:22:00Z' },
+        { decision_id: 'DEC-002', claim_number: 'CMS-2024-88432', decision_type: 'approved', actor: 'System Auto-Approve', actor_role: 'system', rationale: 'All automated agent checks and validations passed with low risk score', savings_amount: null, created_at: '2024-03-03T09:15:00Z' },
+        { decision_id: 'DEC-003', claim_number: 'CMS-2024-88433', decision_type: 'denied', actor: 'Mark Rodriguez', actor_role: 'Claims Auditor', rationale: 'Enrollment unmasking confirmed shell company operator with deactivated NPI', savings_amount: 28900.00, created_at: '2024-03-06T11:45:00Z' },
+        { decision_id: 'DEC-004', claim_number: 'CMS-2024-88436', decision_type: 'false_positive', actor: 'Sarah Mitchell', actor_role: 'Senior Reviewer', rationale: 'NPI structure warning resolved via updated NPPES registry entry', savings_amount: null, created_at: '2024-03-07T16:30:00Z' },
       ];
 
     case 'documents':
       return [
         { document_id: 'DOC-001', filename: 'claim_88431_837p.edi', file_type: 'edi_837p', file_size: 24576, parse_status: 'parsed', uploaded_at: '2024-03-01T08:00:00Z' },
-        { document_id: 'DOC-002', filename: 'veteran_patterson_records.pdf', file_type: 'pdf', file_size: 1048576, parse_status: 'parsed', uploaded_at: '2024-03-01T08:00:00Z' },
+        { document_id: 'DOC-002', filename: 'beneficiary_patterson_records.pdf', file_type: 'pdf', file_size: 1048576, parse_status: 'parsed', uploaded_at: '2024-03-01T08:00:00Z' },
         { document_id: 'DOC-003', filename: 'claim_88432_837p.edi', file_type: 'edi_837p', file_size: 18432, parse_status: 'parsed', uploaded_at: '2024-03-01T08:01:00Z' },
-        { document_id: 'DOC-004', filename: 'gonzalez_dbq_form.pdf', file_type: 'pdf', file_size: 524288, parse_status: 'parsed', uploaded_at: '2024-03-01T08:01:00Z' },
+        { document_id: 'DOC-004', filename: 'gonzalez_cmn_form.pdf', file_type: 'pdf', file_size: 524288, parse_status: 'parsed', uploaded_at: '2024-03-01T08:01:00Z' },
         { document_id: 'DOC-005', filename: 'claim_88433_837i.edi', file_type: 'edi_837i', file_size: 32768, parse_status: 'parsed', uploaded_at: '2024-03-01T08:02:00Z' },
         { document_id: 'DOC-006', filename: 'washington_ehr_export.json', file_type: 'ehr', file_size: 2097152, parse_status: 'parsed', uploaded_at: '2024-03-01T08:02:00Z' },
         { document_id: 'DOC-007', filename: 'batch_manifest.pdf', file_type: 'pdf', file_size: 12288, parse_status: 'parsed', uploaded_at: '2024-03-01T08:00:00Z' },
@@ -71,33 +71,33 @@ function generateDemoData(tableName: string): RowData[] {
 
     case "members":
       return [
-        { veteran_id: 'VET-001', name_display: 'James R. Patterson', ssn_last4: '4421', date_of_birth: '1968-07-14', vital_status: 'alive', service_branch: 'Army', disability_rating: 70, service_start: '1986-06-01', service_end: '2006-09-30' },
-        { veteran_id: 'VET-002', name_display: 'Maria T. Gonzalez', ssn_last4: '7783', date_of_birth: '1975-11-02', vital_status: 'alive', service_branch: 'Navy', disability_rating: 40, service_start: '1993-03-15', service_end: '2013-03-14' },
-        { veteran_id: 'VET-003', name_display: 'Robert L. Washington', ssn_last4: '2259', date_of_birth: '1950-03-28', vital_status: 'alive', service_branch: 'Marines', disability_rating: 100, service_start: '1968-01-10', service_end: '1988-01-09' },
-        { veteran_id: 'VET-004', name_display: 'Susan K. Miller', ssn_last4: '6614', date_of_birth: '1982-09-15', vital_status: 'alive', service_branch: 'Air Force', disability_rating: 20, service_start: '2001-08-01', service_end: '2009-07-31' },
-        { veteran_id: 'VET-005', name_display: 'Thomas A. Chen', ssn_last4: '3398', date_of_birth: '1945-12-01', vital_status: 'deceased', service_branch: 'Army', disability_rating: 80, service_start: '1965-04-20', service_end: '1985-04-19' },
-        { veteran_id: 'VET-006', name_display: 'Dorothy E. Brown', ssn_last4: '5547', date_of_birth: '1970-05-22', vital_status: 'alive', service_branch: 'Coast Guard', disability_rating: 50, service_start: '1990-10-01', service_end: '2010-09-30' },
+        { beneficiary_id: 'BEN-001', name_display: 'James R. Patterson', ssn_last4: '4421', date_of_birth: '1968-07-14', vital_status: 'alive', medicare_part: 'Part B', risk_score: 1.2, enrollment_date: '2010-06-01' },
+        { beneficiary_id: 'BEN-002', name_display: 'Maria T. Gonzalez', ssn_last4: '7783', date_of_birth: '1975-11-02', vital_status: 'alive', medicare_part: 'Part A', risk_score: 0.8, enrollment_date: '2015-03-15' },
+        { beneficiary_id: 'BEN-003', name_display: 'Robert L. Washington', ssn_last4: '2259', date_of_birth: '1950-03-28', vital_status: 'alive', medicare_part: 'Part B', risk_score: 1.5, enrollment_date: '2005-01-10' },
+        { beneficiary_id: 'BEN-004', name_display: 'Susan K. Miller', ssn_last4: '6614', date_of_birth: '1982-09-15', vital_status: 'alive', medicare_part: 'Part D', risk_score: 0.9, enrollment_date: '2018-08-01' },
+        { beneficiary_id: 'BEN-005', name_display: 'Thomas A. Chen', ssn_last4: '3398', date_of_birth: '1945-12-01', vital_status: 'deceased', medicare_part: 'Part B', risk_score: 1.1, enrollment_date: '2000-04-20' },
+        { beneficiary_id: 'BEN-006', name_display: 'Dorothy E. Brown', ssn_last4: '5547', date_of_birth: '1970-05-22', vital_status: 'alive', medicare_part: 'Part B', risk_score: 1.0, enrollment_date: '2012-10-01' },
       ];
 
     case 'providers':
       return [
-        { provider_id: 'PRV-001', name: 'Midwest Members Care LLC', npi: '1234567890', provider_type: 'organization', specialty: 'General Practice', risk_score: 0.89, accreditation_status: 'suspended', total_claims: 847, flagged_claims: 312 },
+        { provider_id: 'PRV-001', name: 'Midwest Medicare Care LLC', npi: '1234567890', provider_type: 'organization', specialty: 'General Practice', risk_score: 0.89, accreditation_status: 'suspended', total_claims: 847, flagged_claims: 312 },
         { provider_id: 'PRV-002', name: 'Southeast Health Partners', npi: '2345678901', provider_type: 'organization', specialty: 'Internal Medicine', risk_score: 0.23, accreditation_status: 'accredited', total_claims: 1204, flagged_claims: 18 },
-        { provider_id: 'PRV-003', name: 'National Member Services Inc', npi: '3456789012', provider_type: 'organization', specialty: 'Disability Evaluation', risk_score: 0.76, accreditation_status: 'unaccredited', total_claims: 523, flagged_claims: 198 },
+        { provider_id: 'PRV-003', name: 'National Medicare Services Inc', npi: '3456789012', provider_type: 'organization', specialty: 'Durable Medical Equipment (DME)', risk_score: 0.76, accreditation_status: 'unaccredited', total_claims: 523, flagged_claims: 198 },
         { provider_id: 'PRV-004', name: 'Pacific Coast Medical Group', npi: '4567890123', provider_type: 'organization', specialty: 'Dental', risk_score: 0.15, accreditation_status: 'accredited', total_claims: 356, flagged_claims: 5 },
-        { provider_id: 'PRV-005', name: 'Great Plains VA Clinic', npi: '5678901234', provider_type: 'organization', specialty: 'Multi-Specialty', risk_score: 0.31, accreditation_status: 'accredited', total_claims: 2145, flagged_claims: 42 },
+        { provider_id: 'PRV-005', name: 'Great Plains Medicare Clinic', npi: '5678901234', provider_type: 'organization', specialty: 'Multi-Specialty', risk_score: 0.31, accreditation_status: 'accredited', total_claims: 2145, flagged_claims: 42 },
       ];
 
     case 'audit_log':
       return [
         { log_id: 'AUD-001', timestamp: '2024-03-01T08:00:12Z', actor: 'System', actor_type: 'system', action_type: 'batch_event', claim_id: null, details: 'Batch ingestion started; 7 documents received' },
         { log_id: 'AUD-002', timestamp: '2024-03-01T08:05:34Z', actor: 'Rules Engine', actor_type: 'agent', action_type: 'finding', claim_id: 'CLM-20240301-001', details: 'Flagged: billing amount exceeds threshold ($14,250)' },
-        { log_id: 'AUD-003', timestamp: '2024-03-01T08:06:12Z', actor: 'Pension Poaching Agent', actor_type: 'agent', action_type: 'finding', claim_id: 'CLM-20240301-001', details: 'High confidence pension poaching pattern detected (0.94)' },
-        { log_id: 'AUD-004', timestamp: '2024-03-01T08:07:45Z', actor: 'Claim Sharking Agent', actor_type: 'agent', action_type: 'finding', claim_id: 'CLM-20240301-001', details: 'Unsolicited contact pattern detected (0.87)' },
+        { log_id: 'AUD-003', timestamp: '2024-03-01T08:06:12Z', actor: 'Threat Simulation "Trust Defender"', actor_type: 'agent', action_type: 'finding', claim_id: 'CLM-20240301-001', details: 'High confidence enrollment simulation anomaly detected (0.94)' },
+        { log_id: 'AUD-004', timestamp: '2024-03-01T08:07:45Z', actor: 'Pre-Payment Claims Hold "Crush Fraud"', actor_type: 'agent', action_type: 'finding', claim_id: 'CLM-20240301-001', details: 'Prepayment modifier exploit hold triggered (0.87)' },
         { log_id: 'AUD-005', timestamp: '2024-03-03T09:15:00Z', actor: 'System Auto-Approve', actor_type: 'system', action_type: 'decision', claim_id: 'CLM-20240301-002', details: 'Auto-approved: all checks passed, low risk' },
-        { log_id: 'AUD-006', timestamp: '2024-03-05T14:22:00Z', actor: 'Sarah Mitchell', actor_type: 'human', action_type: 'decision', claim_id: 'CLM-20240301-001', details: 'Denied: confirmed pension poaching scheme' },
-        { log_id: 'AUD-007', timestamp: '2024-03-06T11:45:00Z', actor: 'Mark Rodriguez', actor_type: 'human', action_type: 'decision', claim_id: 'CLM-20240301-003', details: 'Denied: DBQ fabrication confirmed' },
-        { log_id: 'AUD-008', timestamp: '2024-03-07T16:30:00Z', actor: 'Sarah Mitchell', actor_type: 'human', action_type: 'decision', claim_id: 'CLM-20240301-006', details: 'False positive: date discrepancy was timezone error' },
+        { log_id: 'AUD-006', timestamp: '2024-03-05T14:22:00Z', actor: 'Sarah Mitchell', actor_type: 'human', action_type: 'decision', claim_id: 'CLM-20240301-001', details: 'Denied: confirmed prepayment modifier exploit scheme' },
+        { log_id: 'AUD-007', timestamp: '2024-03-06T11:45:00Z', actor: 'Mark Rodriguez', actor_type: 'human', action_type: 'decision', claim_id: 'CLM-20240301-003', details: 'Denied: PECOS enrollment shell company verification confirmed compromise' },
+        { log_id: 'AUD-008', timestamp: '2024-03-07T16:30:00Z', actor: 'Sarah Mitchell', actor_type: 'human', action_type: 'decision', claim_id: 'CLM-20240301-006', details: 'False positive: NPI structure warning resolved via NPPES update' },
       ];
 
     default:

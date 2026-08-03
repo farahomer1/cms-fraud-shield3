@@ -90,6 +90,10 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
         if name not in legit_names:
             legit_names.append(name)
 
+    # Explicitly seed demo-compliant names
+    legit_names[9] = "Eric Evans"
+    legit_names[119] = "Stephanie Ortiz"
+
     # Pre-seed tables
     beneficiaries = []
     pecos_records = []
@@ -459,6 +463,16 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
         prior_auth = exceeds_cap_exempt and (i % 10 == 0)
         modifier = "KX" if (exceeds_cap_exempt and not prior_auth) else None
 
+        # Override for demo alignment
+        status = "disbursed"
+        risk_level = "LOW"
+        if i == 10:
+            status = "held"
+            risk_level = "CRITICAL"
+        elif i == 120:
+            status = "held"
+            risk_level = "HIGH"
+
         claims.append({
             "id": claim_id,
             "claim_number": f"CLM-LEG-{i:03d}",
@@ -466,8 +480,8 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
             "beneficiary_id": f"BEN-LEG-{i:03d}",
             "provider_id": leg_npi,
             "claim_type": "DME",
-            "status": "disbursed", # immediately approved and paid
-            "risk_level": "LOW",
+            "status": status,
+            "risk_level": risk_level,
             "billing_amount": 250.00,
             "service_date": "2026-07-05",
             "mbi": leg_mbi,
@@ -483,7 +497,7 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
         })
         claim_labels.append({
             "claim_id": claim_id,
-            "is_fraud": False,
+            "is_fraud": (i == 10 or i == 120),
         })
 
     # E. Let's pre-load legacy/prior claim histories into 'claims' table (dated e.g. March 2026, so Viktor NPIs have history < $5000)
@@ -681,6 +695,8 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
 
     # 4. Legitimate Claims Findings
     for i in range(1, 151):
+        if i == 10 or i == 120:
+            continue
         claim_id = f"claim_leg_{i:03d}"
         agent_findings.append({
             "id": str(uuid.uuid4()),
@@ -695,6 +711,92 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
             "processing_time_ms": 600,
             "created_at": now_ts,
         })
+
+    # Explicit agent findings for claim_leg_010 (Eric Evans - Deceased Beneficiary)
+    agent_findings.append({
+        "id": str(uuid.uuid4()),
+        "claim_id": "claim_leg_010",
+        "agent_name": "rules_engine",
+        "fraud_type": "policy_violation",
+        "confidence_score": 98,
+        "recommendation": "flag",
+        "flagged_data_points": json.dumps(["service_date"]),
+        "evidence_summary": "Rule R-01 (Deceased Beneficiary Post-Mortem Billing) triggered. Beneficiary Eric Evans has a recorded date of death of 2025-06-15 in the Social Security Death Master File, but the claim service date is 2026-07-05 (over a year after death).",
+        "finding_details": json.dumps({
+            "death_date": "2025-06-15",
+            "service_date": "2026-07-05",
+            "rule_violated": "R-01: Post-Mortem Billing"
+        }),
+        "processing_time_ms": 1100,
+        "created_at": now_ts,
+    })
+    agent_findings.append({
+        "id": str(uuid.uuid4()),
+        "claim_id": "claim_leg_010",
+        "agent_name": "trust_defender",
+        "fraud_type": "identity_evasion",
+        "confidence_score": 99,
+        "recommendation": "flag",
+        "flagged_data_points": json.dumps(["mbi", "service_date"]),
+        "evidence_summary": "Deceased Beneficiary Flag: Identity verification failed. MBI cross-reference with the Social Security Death Master File confirms Eric Evans is deceased. All billing for this identity is suspended under Pre-Payment Claims Hold.",
+        "finding_details": json.dumps({
+            "death_master_file_match": True,
+            "suspended_status": "Pre-Payment Hold"
+        }),
+        "processing_time_ms": 950,
+        "created_at": now_ts,
+    })
+    agent_findings.append({
+        "id": str(uuid.uuid4()),
+        "claim_id": "claim_leg_010",
+        "agent_name": "crush_fraud",
+        "fraud_type": "prepay_hold",
+        "confidence_score": 97,
+        "recommendation": "flag",
+        "flagged_data_points": json.dumps(["billing_amount"]),
+        "evidence_summary": "Pre-Payment Claims Hold: Automated holding rule triggered for post-mortem billing. Billed amount of $250.00 is placed on permanent administrative hold pending referral.",
+        "finding_details": json.dumps({
+            "hold_reason": "Post-Mortem Billing Rule",
+            "amount_held": 250.00
+        }),
+        "processing_time_ms": 850,
+        "created_at": now_ts,
+    })
+
+    # Explicit agent findings for claim_leg_120 (Stephanie Ortiz - Beneficial Ownership)
+    agent_findings.append({
+        "id": str(uuid.uuid4()),
+        "claim_id": "claim_leg_120",
+        "agent_name": "system_resilience",
+        "fraud_type": "beneficial_ownership",
+        "confidence_score": 96,
+        "recommendation": "flag",
+        "flagged_data_points": json.dumps(["provider_id"]),
+        "evidence_summary": "Beneficial Ownership Unmasked: System Resilience audit unmasked the underlying owner of Apex Medical Supplies as Yury Viktor (alias Yury Victor / Victor Malen), a high-risk barred operator who was previously excluded from Medicare/Medicaid participation.",
+        "finding_details": json.dumps({
+            "unmasked_owner": "Yury Viktor (Victor Malen)",
+            "exclusion_status": "EXCLUDED",
+            "entity_shell_match": True
+        }),
+        "processing_time_ms": 1250,
+        "created_at": now_ts,
+    })
+    agent_findings.append({
+        "id": str(uuid.uuid4()),
+        "claim_id": "claim_leg_120",
+        "agent_name": "program_integrity_ops",
+        "fraud_type": "policy_referral",
+        "confidence_score": 95,
+        "recommendation": "flag",
+        "flagged_data_points": json.dumps(["provider_id"]),
+        "evidence_summary": "System exclusion policy referral. Highly recommended for immediate administrative sanction and referral to OIG for criminal investigation due to illegal beneficial ownership bypass.",
+        "finding_details": json.dumps({
+            "referral_target": "OIG Criminal Division",
+            "sanction_basis": "Excluded Owner Evasion"
+        }),
+        "processing_time_ms": 910,
+        "created_at": now_ts,
+    })
 
     # 5. Prior Claims Findings (Legacy)
     for i in range(1, 16):
@@ -760,13 +862,18 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
 
     # 4. Legitimate members (1 to 150)
     for i in range(1, 151):
+        death_date = None
+        vital_status = "alive"
+        if i == 10:
+            death_date = "2025-06-15"
+            vital_status = "deceased"
         members.append({
             "id": f"BEN-LEG-{i:03d}",
             "name_display": legit_names[i-1],
             "ssn_last4": f"{1000 + i}"[-4:],
             "date_of_birth": "1960-01-01",
-            "date_of_death": None,
-            "vital_status": "alive",
+            "date_of_death": death_date,
+            "vital_status": vital_status,
             "service_branch": "Medicare Part B",
             "disability_rating": 0,
             "benefits_enrolled": "{}",

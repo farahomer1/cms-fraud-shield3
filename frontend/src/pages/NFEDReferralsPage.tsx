@@ -54,13 +54,13 @@ const REFERRAL_CASES: ReferralCase[] = [
     summary: 'A coordinated billing network spanning Miami and Boston. The ring is leveraging automated claims submission portals to bulk-bill high-cost orthotic devices (knee braces, CPAP machines, and oxygen concentrators) on behalf of Medicare beneficiaries with zero record of corresponding physician specialist consultation visits.',
     evidence: [
       'Claims Edit Rule #714 Trigger: 6 core claims identified with missing pulmonology, sleep medicine, or orthopedic consultations.',
-      'Claim Sharking Cluster: Coordinate submissions from commercial PO Box front addresses in high-intensity billing areas.',
+      'Trust Defender Anomaly Cluster: Coordinate submissions from commercial PO Box front addresses in high-intensity billing areas.',
       'Billing Spikes: Apex DME experienced a 450% billing increase inside a 14-day window for CPAP (E0601) and Knee Braces (L1833) at the exact cap limits ($1,499.00 and $799.00).',
     ],
     entities: [
       'Apex Durable Medical Supplies Inc. (NPI: 9876543210, Miami FL) - Suspended',
       'Horizon Oxygen & Orthotics LLC (NPI: 8765432109, Boston MA) - Under Review',
-      'Coordinated beneficiary pool: 25 distinct veterans targeted across Northeast and Southeast regions.',
+      'Coordinated beneficiary pool: 25 distinct beneficiaries targeted across Northeast and Southeast regions.',
     ],
     recommendation: 'Immediate referral to the DOJ National Fraud Enforcement Division (NFED) and FBI Healthcare Fraud Unit. Execute immediate payment hold on Apex Durable Medical Supplies Inc. and initiate site visit verification at the commercial mail storefronts.',
   },

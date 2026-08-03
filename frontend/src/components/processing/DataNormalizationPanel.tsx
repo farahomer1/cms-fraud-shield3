@@ -464,7 +464,7 @@ const AGENT_DEFINITIONS: AgentDefinition[] = [
     shortName: 'MUE Adjudication',
     pattern: 'Pattern 5',
     description:
-      'Enforces Medically Unlikely Edits (MUEs) and frequency limits. Tracks veteran utilization history and applies MAI-based summation logic.',
+      'Enforces Medically Unlikely Edits (MUEs) and frequency limits. Tracks beneficiary utilization history and applies MAI-based summation logic.',
     logicFormula: 'IF (Units + History > Limit) THEN Result = STOP_PAY',
     testCases: [
       {

@@ -164,7 +164,7 @@ const ClaimHoverPopover: React.FC<ClaimHoverPopoverProps> = ({ claimId, children
   const riskLevel = pick(RISK_LEVELS, h, 1);
   const claimType = pick(CLAIM_TYPES, h, 2);
   const assignedTo = syntheticReviewer(h);
-  const veteranName = syntheticName(h, 20);
+  const beneficiaryName = syntheticName(h, 20);
   const providerName = pick(PROVIDER_NAMES, h, 4);
   const billingAmount = syntheticAmount(h);
   const serviceDate = syntheticDate(h, 30);
@@ -269,7 +269,7 @@ const ClaimHoverPopover: React.FC<ClaimHoverPopoverProps> = ({ claimId, children
         {/* Member */}
         <Row label="Member">
           <Typography variant="body2" sx={{ color: '#112E51', fontSize: 13 }}>
-            {veteranName}
+            {beneficiaryName}
           </Typography>
         </Row>
 

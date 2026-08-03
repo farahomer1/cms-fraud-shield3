@@ -59,13 +59,12 @@ export const LOGIN_ROLES = [
 
 export const AGENT_NAMES: Record<string, string> = {
   rules_engine: 'Rules Engine',
-  data_validation: 'Data Validation',
-  pension_poaching: 'Beneficiary Exploitation',
-  claim_sharking: 'Provider Exploitation Check',
-  dbq_fraud: 'Clinical Assessment Integrity Check',
-  overlapping_claims: 'Overlapping Claims',
-  medical_record: 'Medical Record Check',
-  claim_discrepancy: 'Claim Discrepancy',
+  trust_defender: 'Threat Simulation "Trust Defender"',
+  crush_fraud: 'Pre-Payment Claims Hold "Crush Fraud"',
+  system_resilience: 'Enrollment Audit & Unmasking "System Resilience"',
+  program_integrity_ops: 'Policy & Referral "Program Integrity Ops"',
+  overlapping_claims: 'Overlapping Claims Check',
+  data_validation: 'Data Validation Integrity',
 };
 
 export const RISK_COLORS: Record<string, string> = {

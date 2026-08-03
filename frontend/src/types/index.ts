@@ -19,8 +19,10 @@ export interface Member {
   date_of_birth: string;
   date_of_death: string | null;
   vital_status: 'alive' | 'deceased';
-  service_branch: string | null;
-  disability_rating: number | null;
+  service_branch?: string | null;
+  disability_rating?: number | null;
+  medicare_part?: string | null;
+  risk_score?: number | null;
 }
 
 export interface Provider {
