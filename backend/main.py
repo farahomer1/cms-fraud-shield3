@@ -23,6 +23,7 @@ from routes.overpayments import router as overpayments_router
 from routes.normalization import router as normalization_router
 from routes.audit_workflows import router as audit_workflows_router
 from routes.enrollment_integrity import router as enrollment_integrity_router
+from routes.appeals import router as appeals_router
 
 # Load environment variables from .env before any os.environ reads below.
 load_dotenv()
@@ -35,10 +36,10 @@ async def lifespan(app: FastAPI):
     # Auto-seed database on startup so demo data is always fresh
     try:
         from database import get_sync_client
-        from seed import reset_and_seed
+        from datagen.generator import generate_all_data
         bq = get_sync_client()
         logger.info("Auto-seeding database on startup...")
-        await reset_and_seed(bq)
+        await generate_all_data(bq)
         logger.info("Database seeded successfully.")
     except Exception as e:
         logger.warning(f"Auto-seed skipped or failed: {e}")
@@ -74,4 +75,5 @@ app.include_router(overpayments_router)
 app.include_router(normalization_router)
 app.include_router(audit_workflows_router)
 app.include_router(enrollment_integrity_router)
+app.include_router(appeals_router)
 

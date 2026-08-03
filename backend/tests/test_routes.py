@@ -540,8 +540,8 @@ class TestBatchRoutes:
                 yield {"type": "batch_start", "data": {"batchId": batch_id, "totalClaims": 1, "totalAgents": 8}}
                 yield {"type": "batch_complete", "data": {"batchId": batch_id, "totalClaims": 1, "flaggedCount": 0, "approvedCount": 1}}
 
-            with patch("routes.batches.process_batch_claims", side_effect=mock_events, create=True), \
-                 patch("services.batch_service.process_batch_claims", side_effect=mock_events):
+            with patch("routes.batches.process_batch_claims_fast", side_effect=mock_events, create=True), \
+                 patch("services.fake_batch_service.process_batch_claims_fast", side_effect=mock_events):
                 response = await client.get(f"/api/batches/{uuid.uuid4()}/progress")
                 assert response.status_code == 200
                 assert "text/event-stream" in response.headers.get("content-type", "")
@@ -602,7 +602,7 @@ class TestClaimRoutes:
                 response = await client.get("/api/claims?status=flagged")
                 assert response.status_code == 200
                 # Verify the query was called with status parameter
-                call_args = mock_rq.call_args
+                call_args = mock_rq.call_args_list[0]
                 assert "status" in call_args[0][0].lower() or any("status" in str(p) for p in (call_args[0][1] or []))
         finally:
             await client.aclose()
@@ -1182,12 +1182,10 @@ class TestAlertRoutes:
         client, _ = await _get_client()
         try:
             claim_row = _make_claim_row(status="flagged")
-            finding_agent_row = MagicMock()
-            finding_agent_row.agent_name = "data_validation"
+            claim_row.flagging_agents = ["data_validation"]
 
             with patch("routes.alerts.run_query", new_callable=AsyncMock) as mock_rq:
-                # First call: flagged claims, second call: flagging agents for the claim
-                mock_rq.side_effect = [[claim_row], [finding_agent_row]]
+                mock_rq.return_value = [claim_row]
                 response = await client.get("/api/alerts/recent")
                 assert response.status_code == 200
                 data = response.json()

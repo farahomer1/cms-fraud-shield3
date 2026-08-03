@@ -15,53 +15,62 @@ import type { AgentFinding } from '../../types';
 // All agents that should appear for every claim, using the display names
 // that match the seed data and the AGENT_NAMES constant fallback.
 const ALL_AGENT_DEFINITIONS: {
+  key: string;
   name: string;
   fraud_type: string;
   pass_evidence: string;
 }[] = [
   {
+    key: 'rules_engine',
     name: 'Rules Engine',
     fraud_type: 'policy_violation',
     pass_evidence:
       'Billing amount within expected range for procedure codes. Service date is valid and provider is eligible.',
   },
   {
+    key: 'data_validation',
     name: 'Data Validation Agent',
     fraud_type: 'data_integrity',
     pass_evidence:
       'Member vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.',
   },
   {
+    key: 'pension_poaching',
     name: 'Pension Poaching Agent',
     fraud_type: 'pension_poaching',
     pass_evidence:
       'No indicators of asset manipulation detected. Benefit claim amounts are consistent with member disability rating.',
   },
   {
+    key: 'claim_sharking',
     name: 'Claim Sharking Agent',
     fraud_type: 'claim_sharking',
     pass_evidence:
       'Provider billing patterns within normal parameters. No solicitation indicators detected.',
   },
   {
+    key: 'dbq_fraud',
     name: 'CMN Fraud Agent',
     fraud_type: 'dbq_fraud',
     pass_evidence:
       'Certificate of Medical Necessity (CMN) responses consistent with documented medical condition. Completion time within normal range.',
   },
   {
+    key: 'overlapping_claims',
     name: 'Overlapping Claim Agent',
     fraud_type: 'overlapping_claims',
     pass_evidence:
       'Service dates and procedure codes are unique across all claims for this beneficiary. No double-billing detected.',
   },
   {
+    key: 'medical_record',
     name: 'Medical Record Manipulation Agent',
     fraud_type: 'record_manipulation',
     pass_evidence:
       'Clinical notes are internally consistent and show expected progression. No manipulation artifacts detected.',
   },
   {
+    key: 'claim_discrepancy',
     name: 'Claim Data Discrepancy Agent',
     fraud_type: 'data_discrepancy',
     pass_evidence:
@@ -105,15 +114,15 @@ const ExplainableAIPanel: React.FC<ExplainableAIPanelProps> = ({ claimId }) => {
     const filled = [...findings];
 
     for (const def of ALL_AGENT_DEFINITIONS) {
-      if (!presentAgents.has(def.name)) {
+      if (!presentAgents.has(def.key) && !presentAgents.has(def.name)) {
         // Seeded random-ish confidence based on claim+agent for consistency
         const hash = (claimId + def.name).split('').reduce((a, c) => a + c.charCodeAt(0), 0);
         const confidence = 80 + (hash % 18); // 80-97 range for pass findings
 
         filled.push({
-          id: `synth-${claimId}-${def.name}`,
+          id: `synth-${claimId}-${def.key}`,
           claim_id: claimId,
-          agent_name: def.name,
+          agent_name: def.key,
           fraud_type: def.fraud_type,
           confidence_score: confidence,
           recommendation: 'pass',
@@ -128,6 +137,7 @@ const ExplainableAIPanel: React.FC<ExplainableAIPanelProps> = ({ claimId }) => {
 
     return filled;
   }, [findings, claimId]);
+
 
   const sortedFindings = useMemo(
     () =>

@@ -11,6 +11,7 @@ import ShieldIcon from '@mui/icons-material/Shield';
 import FactCheckIcon from '@mui/icons-material/FactCheck';
 import HistoryIcon from '@mui/icons-material/History';
 import SmartToyIcon from '@mui/icons-material/SmartToy';
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import { ROUTES, ROLE_ROUTES } from '../../utils/constants';
 import { useAuth } from '../../contexts/AuthContext';
 
@@ -18,6 +19,7 @@ const DRAWER_WIDTH = 240;
 
 const NAV_ITEMS = [
   { label: 'Red-Team Mission Control', icon: <DashboardIcon />, path: ROUTES.DASHBOARD },
+  { label: 'Dynamic Ingestion Gateway', icon: <RocketLaunchIcon />, path: ROUTES.INGESTION },
   { label: 'Front-Door Enrollment', icon: <ShieldIcon />, path: ROUTES.ENROLLMENT },
   { label: 'Pre-Payment Claims Review', icon: <FactCheckIcon />, path: ROUTES.VALIDATION },
   { label: 'Adversarial Hunt Workspaces', icon: <SearchIcon />, path: ROUTES.FRAUD_RESEARCH },

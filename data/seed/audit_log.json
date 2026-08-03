@@ -83,7 +83,7 @@
       "finding_id": "e1000001-0000-4000-8000-000000000023",
       "recommendation": "pass",
       "fraud_type": "pension_poaching",
-      "evidence_summary_preview": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating."
+      "evidence_summary_preview": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with beneficiary disability rating."
     },
     "confidence_score": 83
   },
@@ -113,7 +113,7 @@
       "finding_id": "e1000001-0000-4000-8000-000000000075",
       "recommendation": "flag",
       "fraud_type": "data_integrity",
-      "evidence_summary_preview": "Veteran SSN last-4 does not match VA MPI records. Possible identity mismatch or data entry error."
+      "evidence_summary_preview": "Beneficiary SSN last-4 does not match VA MPI records. Possible identity mismatch or data entry error."
     },
     "confidence_score": 88
   },
@@ -142,7 +142,7 @@
       "finding_id": "e1000001-0000-4000-8000-000000000058",
       "recommendation": "pass",
       "fraud_type": "pension_poaching",
-      "evidence_summary_preview": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating."
+      "evidence_summary_preview": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with beneficiary disability rating."
     },
     "confidence_score": 99
   },
@@ -247,7 +247,7 @@
       "finding_id": "e1000001-0000-4000-8000-000000000047",
       "recommendation": "pass",
       "fraud_type": "overlapping_claims",
-      "evidence_summary_preview": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected."
+      "evidence_summary_preview": "Service dates and procedure codes are unique across all claims for this beneficiary. No double-billing detected."
     },
     "confidence_score": 96
   },
@@ -456,7 +456,7 @@
     "details": {
       "decision_id": "f1000001-0000-4000-8000-000000000006",
       "decision_type": "approved",
-      "rationale_preview": "Claims data validated against veteran record and provider history. No anomalies detected.",
+      "rationale_preview": "Claims data validated against beneficiary record and provider history. No anomalies detected.",
       "savings_amount": null
     },
     "confidence_score": null
@@ -471,7 +471,7 @@
     "details": {
       "decision_id": "f1000001-0000-4000-8000-000000000015",
       "decision_type": "approved",
-      "rationale_preview": "Claims data validated against veteran record and provider history. No anomalies detected.",
+      "rationale_preview": "Claims data validated against beneficiary record and provider history. No anomalies detected.",
       "savings_amount": null
     },
     "confidence_score": null
@@ -486,7 +486,7 @@
     "details": {
       "decision_id": "f1000001-0000-4000-8000-000000000005",
       "decision_type": "approved",
-      "rationale_preview": "Claims data validated against veteran record and provider history. No anomalies detected.",
+      "rationale_preview": "Claims data validated against beneficiary record and provider history. No anomalies detected.",
       "savings_amount": null
     },
     "confidence_score": null
@@ -786,7 +786,7 @@
     "details": {
       "decision_id": "f1000001-0000-4000-8000-000000000020",
       "decision_type": "approved",
-      "rationale_preview": "Claims data validated against veteran record and provider history. No anomalies detected.",
+      "rationale_preview": "Claims data validated against beneficiary record and provider history. No anomalies detected.",
       "savings_amount": null
     },
     "confidence_score": null
@@ -801,7 +801,7 @@
     "details": {
       "decision_id": "f1000001-0000-4000-8000-000000000017",
       "decision_type": "approved",
-      "rationale_preview": "Claims data validated against veteran record and provider history. No anomalies detected.",
+      "rationale_preview": "Claims data validated against beneficiary record and provider history. No anomalies detected.",
       "savings_amount": null
     },
     "confidence_score": null
@@ -919,7 +919,7 @@
       "finding_id": "e1000001-0000-4000-8000-000000000122",
       "recommendation": "flag",
       "fraud_type": "claim_sharking",
-      "evidence_summary_preview": "Veteran was solicited within 48 hours of discharge. Claim amount $23434 includes undisclosed consulting surcharge."
+      "evidence_summary_preview": "Beneficiary was solicited within 48 hours of discharge. Claim amount $23434 includes undisclosed consulting surcharge."
     },
     "confidence_score": 85
   },
@@ -934,7 +934,7 @@
       "finding_id": "e1000001-0000-4000-8000-000000000138",
       "recommendation": "pass",
       "fraud_type": "data_integrity",
-      "evidence_summary_preview": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified."
+      "evidence_summary_preview": "MVI Vital Status check passed. Beneficiary DOB and SSN consistent with VA records. Provider credentials verified."
     },
     "confidence_score": 99
   },
@@ -964,7 +964,7 @@
       "finding_id": "e1000001-0000-4000-8000-000000000162",
       "recommendation": "pass",
       "fraud_type": "data_integrity",
-      "evidence_summary_preview": "Veteran vital status confirmed alive via MVI cross-reference. SSN last-4 validated. Provider NPI 5621463184 verified in "
+      "evidence_summary_preview": "Beneficiary vital status confirmed alive via MVI cross-reference. SSN last-4 validated. Provider NPI 5621463184 verified in "
     },
     "confidence_score": 83
   },
@@ -1203,7 +1203,7 @@
     "details": {
       "decision_id": "f1000001-0000-4000-8000-000000000030",
       "decision_type": "approved",
-      "rationale_preview": "Claims data validated against veteran record and provider history. No anomalies detected.",
+      "rationale_preview": "Claims data validated against beneficiary record and provider history. No anomalies detected.",
       "savings_amount": null
     },
     "confidence_score": null
@@ -1233,7 +1233,7 @@
     "details": {
       "decision_id": "f1000001-0000-4000-8000-000000000028",
       "decision_type": "approved",
-      "rationale_preview": "Claims data validated against veteran record and provider history. No anomalies detected.",
+      "rationale_preview": "Claims data validated against beneficiary record and provider history. No anomalies detected.",
       "savings_amount": null
     },
     "confidence_score": null
@@ -1487,7 +1487,7 @@
     "details": {
       "decision_id": "f1000001-0000-4000-8000-000000000047",
       "decision_type": "approved",
-      "rationale_preview": "Claims data validated against veteran record and provider history. No anomalies detected.",
+      "rationale_preview": "Claims data validated against beneficiary record and provider history. No anomalies detected.",
       "savings_amount": null
     },
     "confidence_score": null
@@ -1561,7 +1561,7 @@
       "finding_id": "e1000001-0000-4000-8000-000000000179",
       "recommendation": "flag",
       "fraud_type": "pension_poaching",
-      "evidence_summary_preview": "Pattern match: 4 veterans in same ZIP code filed identical pension claims through this unaccredited provider within 30 d"
+      "evidence_summary_preview": "Pattern match: 4 beneficiaries in same ZIP code filed identical pension claims through this unaccredited provider within 30 d"
     },
     "confidence_score": 73
   },
@@ -1695,7 +1695,7 @@
       "finding_id": "e1000001-0000-4000-8000-000000000209",
       "recommendation": "pass",
       "fraud_type": "pension_poaching",
-      "evidence_summary_preview": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating."
+      "evidence_summary_preview": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with beneficiary disability rating."
     },
     "confidence_score": 87
   },
@@ -1975,7 +1975,7 @@
     "details": {
       "decision_id": "f1000001-0000-4000-8000-000000000062",
       "decision_type": "approved",
-      "rationale_preview": "Claims data validated against veteran record and provider history. No anomalies detected.",
+      "rationale_preview": "Claims data validated against beneficiary record and provider history. No anomalies detected.",
       "savings_amount": null
     },
     "confidence_score": null
@@ -2154,7 +2154,7 @@
     "details": {
       "decision_id": "f1000001-0000-4000-8000-000000000057",
       "decision_type": "approved",
-      "rationale_preview": "Claims data validated against veteran record and provider history. No anomalies detected.",
+      "rationale_preview": "Claims data validated against beneficiary record and provider history. No anomalies detected.",
       "savings_amount": null
     },
     "confidence_score": null

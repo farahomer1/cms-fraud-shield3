@@ -39,7 +39,7 @@ TABLES_DELETE_ORDER = [
     "claims",
     "documents",
     "providers",
-    "veterans",
+    "members",
     "batches",
 ]
 
@@ -124,10 +124,10 @@ async def _seed_batches(bq: bigquery.Client) -> int:
     return len(bq_rows)
 
 
-async def _seed_veterans(bq: bigquery.Client) -> int:
-    """Insert veteran records."""
+async def _seed_members(bq: bigquery.Client) -> int:
+    """Insert member records."""
     from database import insert_rows
-    rows = _load_json("veterans.json")
+    rows = _load_json("beneficiaries_registry.json")
     now = _now_iso()
     bq_rows = []
     for r in rows:
@@ -144,10 +144,10 @@ async def _seed_veterans(bq: bigquery.Client) -> int:
             "created_at": now,
         })
     if bq_rows:
-        errors = await insert_rows("veterans", bq_rows)
+        errors = await insert_rows("members", bq_rows)
         if errors:
-            logger.error(f"Veteran insert errors: {errors}")
-    logger.info(f"Seeded {len(bq_rows)} veterans.")
+            logger.error(f"Member insert errors: {errors}")
+    logger.info(f"Seeded {len(bq_rows)} members.")
     return len(bq_rows)
 
 
@@ -189,7 +189,7 @@ async def _seed_claims(bq: bigquery.Client) -> int:
             "id": r["id"],
             "claim_number": r["claim_number"],
             "batch_id": r["batch_id"],
-            "veteran_id": r["veteran_id"],
+            "beneficiary_id": r["beneficiary_id"],
             "provider_id": r["provider_id"],
             "claim_type": r["claim_type"],
             "status": r["status"],
@@ -337,7 +337,7 @@ async def reset_and_seed(bq: bigquery.Client) -> dict:
     # Step 2: Seed in FK-safe order (parents first)
     summary = {}
     summary["batches"] = await _seed_batches(bq)
-    summary["veterans"] = await _seed_veterans(bq)
+    summary["members"] = await _seed_members(bq)
     summary["providers"] = await _seed_providers(bq)
     summary["claims"] = await _seed_claims(bq)
     summary["agent_findings"] = await _seed_agent_findings(bq)
@@ -368,7 +368,7 @@ async def _main():
 
     print("\nSeed complete!")
     print(f"  Batches:        {summary.get('batches', 0)}")
-    print(f"  Veterans:       {summary.get('veterans', 0)}")
+    print(f"  Members:        {summary.get('members', 0)}")
     print(f"  Providers:      {summary.get('providers', 0)}")
     print(f"  Claims:         {summary.get('claims', 0)}")
     print(f"  Agent Findings: {summary.get('agent_findings', 0)}")

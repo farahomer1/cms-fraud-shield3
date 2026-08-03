@@ -107,7 +107,7 @@ async def get_dashboard_metrics(bq: bigquery.Client) -> dict:
         f"""SELECT
             COUNT(*) as total,
             COUNTIF(
-                c.status = 'flagged'
+                c.status IN ('flagged', 'held')
                 AND NOT EXISTS (SELECT 1 FROM `{ds}.decisions` d WHERE d.claim_id = c.id)
             ) as flagged,
             COUNTIF(

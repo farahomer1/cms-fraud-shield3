@@ -122,42 +122,49 @@ export const DMELoopholeSimulator: React.FC = () => {
   const [appealStatus, setAppealStatus] = useState<'idle' | 'analyzing' | 'level1_released' | 'level2_held'>('idle');
   const [appealLogs, setAppealLogs] = useState<string[]>([]);
 
-  const handleSimulateAppeal = () => {
+  const handleSimulateAppeal = async () => {
     setAppealStatus('analyzing');
     setAppealLogs([
       '[INIT] Intercepting appeal submission...',
       '[CHECK] Retrieving transaction details and pre-payment hold records...',
     ]);
 
-    setTimeout(() => {
+    try {
+      const claimId = appealClaim === 'vance' ? 'claim_vance_01' : 'claim_jackson_01';
+      const apiBase = import.meta.env.VITE_API_BASE_URL || '';
+      const response = await fetch(`${apiBase}/api/appeals`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ claim_id: claimId }),
+      });
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.detail || 'Appeal service error');
+      }
+
       setAppealLogs((prev) => [
         ...prev,
-        '[AUDIT] Assessing Level 1: Electronic Tele-Health & Clinical Consult Validation...',
-        '[QUERY] Looking up NPI registry and recent PECOS ownership logs...',
+        `[AUDIT] Assessing Level 1: Electronic Tele-Health & Clinical Consult Validation...`,
+        `[LATENCY] Under-3-seconds SLA compliance: Latency measured at ${data.latency_ms} ms.`,
+        `[RESULT] ${data.msg}`,
+        data.released 
+          ? `[STATUS] LEVEL-1 RELEASE: Pre-payment hold auto-released with $0.00 administrative cost. CLAIM DISBURSED.` 
+          : `[STATUS] LEVEL-1 REJECTED. ESCALATED: Case routed to Level 2 ALJ manual review queue. MBI protective lock active.`,
       ]);
-    }, 1000);
 
-    setTimeout(() => {
-      if (appealClaim === 'vance') {
-        setAppealLogs((prev) => [
-          ...prev,
-          '[SUCCESS] Modifier detected: Patient Eleanor Vance possesses certified neurogenic bladder condition.',
-          '[SUCCESS] Specialist consult modifier found: CPT-99214 + ICD-10 N31.9 (Urology consult on record with Dr. Sarah Jenkins within 10 days).',
-          '[LEVEL-1 RELEASE] Pre-payment hold auto-released with $0.00 administrative cost.',
-          '[STATUS] CLAIM DISBURSED successfully.',
-        ]);
+      if (data.released) {
         setAppealStatus('level1_released');
       } else {
-        setAppealLogs((prev) => [
-          ...prev,
-          '[FAIL] No specialist consult or telehealth modifier exists for HCPCS A4351/A4352 within the past 180 days.',
-          '[FAIL] Level 1 electronic auto-release REJECTED.',
-          '[ROUTING] Case routed to Level 2: Standard Administrative Law Judge (ALJ) Redetermination Queue.',
-          '[STATUS] CLAIM REMAINS HELD; fraud alert escalated to Program Integrity Ops.',
-        ]);
         setAppealStatus('level2_held');
       }
-    }, 2500);
+    } catch (err: any) {
+      setAppealLogs((prev) => [
+        ...prev,
+        `[ERROR] Failed to execute electronic appeal: ${err.message}`,
+      ]);
+      setAppealStatus('idle');
+    }
   };
 
   const scenario = DME_SCENARIOS.find((s) => s.id === selectedScenario) || DME_SCENARIOS[0];

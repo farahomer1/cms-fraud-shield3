@@ -109,7 +109,7 @@ async def process_batch(batch_id: str, bq: bigquery.Client = Depends(get_db)):
 
 
 ALLOWED_TABLES = {
-    "batches", "veterans", "providers", "documents", "claims",
+    "batches", "members", "providers", "documents", "claims",
     "agent_findings", "decisions", "audit_log",
 }
 
@@ -163,11 +163,11 @@ async def get_batch_table_data(
             bigquery.ScalarQueryParameter("lim", "INT64", limit),
             bigquery.ScalarQueryParameter("off", "INT64", offset),
         ]
-    elif table_name == "veterans":
-        # Join through claims to get veterans associated with this batch
+    elif table_name == "members":
+        # Join through claims to get members associated with this batch
         query = (
-            f"SELECT DISTINCT v.* FROM `{ds}.veterans` v "
-            f"JOIN `{ds}.claims` c ON v.id = c.veteran_id "
+            f"SELECT DISTINCT v.* FROM `{ds}.members` v "
+            f"JOIN `{ds}.claims` c ON v.id = c.beneficiary_id "
             f"WHERE c.batch_id = @batch_id "
             f"ORDER BY v.name_display LIMIT @lim OFFSET @off"  # nosec B608 - dataset identifier validated in get_dataset(); user input parameterized
         )

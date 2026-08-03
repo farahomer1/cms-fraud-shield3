@@ -19,7 +19,7 @@
     "confidence_score": 99,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this beneficiary. No double-billing detected.",
     "finding_details": {},
     "processing_time_ms": 868
   },
@@ -67,7 +67,7 @@
     "confidence_score": 83,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Veteran vital status confirmed alive via MVI cross-reference. SSN last-4 validated. Provider NPI 8752612686 verified in NPPES registry.",
+    "evidence_summary": "Beneficiary vital status confirmed alive via MVI cross-reference. SSN last-4 validated. Provider NPI 8752612686 verified in NPPES registry.",
     "finding_details": {},
     "processing_time_ms": 3134
   },
@@ -79,7 +79,7 @@
     "confidence_score": 96,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with beneficiary disability rating.",
     "finding_details": {},
     "processing_time_ms": 1016
   },
@@ -131,7 +131,7 @@
     "flagged_data_points": [
       "procedure_codes"
     ],
-    "evidence_summary": "Overlapping date range: veteran has concurrent inpatient and outpatient claims for the same treatment period 2025-08-03.",
+    "evidence_summary": "Overlapping date range: beneficiary has concurrent inpatient and outpatient claims for the same treatment period 2025-08-03.",
     "finding_details": {},
     "processing_time_ms": 2396
   },
@@ -215,7 +215,7 @@
     "confidence_score": 83,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified.",
+    "evidence_summary": "MVI Vital Status check passed. Beneficiary DOB and SSN consistent with VA records. Provider credentials verified.",
     "finding_details": {},
     "processing_time_ms": 2530
   },
@@ -277,7 +277,7 @@
     "confidence_score": 83,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with beneficiary disability rating.",
     "finding_details": {},
     "processing_time_ms": 2259
   },
@@ -327,7 +327,7 @@
     "confidence_score": 89,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No duplicate or overlapping services found in batch or historical claims for this veteran and date range.",
+    "evidence_summary": "No duplicate or overlapping services found in batch or historical claims for this beneficiary and date range.",
     "finding_details": {},
     "processing_time_ms": 2646
   },
@@ -339,7 +339,7 @@
     "confidence_score": 81,
     "recommendation": "flag",
     "flagged_data_points": [
-      "veteran_status"
+      "beneficiary_status"
     ],
     "evidence_summary": "Billing amount of $7904 exceeds expected range for reported procedure codes by 340%. Possible upcoding detected.",
     "finding_details": {},
@@ -367,7 +367,7 @@
     "confidence_score": 91,
     "recommendation": "flag",
     "flagged_data_points": [
-      "veteran_status"
+      "beneficiary_status"
     ],
     "evidence_summary": "Unaccredited consultant charging $27171 for pension claim preparation. Fee exceeds reasonable range by 450%.",
     "finding_details": {},
@@ -393,7 +393,7 @@
     "confidence_score": 97,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified.",
+    "evidence_summary": "MVI Vital Status check passed. Beneficiary DOB and SSN consistent with VA records. Provider credentials verified.",
     "finding_details": {},
     "processing_time_ms": 3137
   },
@@ -417,7 +417,7 @@
     "confidence_score": 98,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this beneficiary. No double-billing detected.",
     "finding_details": {},
     "processing_time_ms": 1429
   },
@@ -505,7 +505,7 @@
     "confidence_score": 85,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No duplicate or overlapping services found in batch or historical claims for this veteran and date range.",
+    "evidence_summary": "No duplicate or overlapping services found in batch or historical claims for this beneficiary and date range.",
     "finding_details": {},
     "processing_time_ms": 3305
   },
@@ -517,7 +517,7 @@
     "confidence_score": 85,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified.",
+    "evidence_summary": "MVI Vital Status check passed. Beneficiary DOB and SSN consistent with VA records. Provider credentials verified.",
     "finding_details": {},
     "processing_time_ms": 2333
   },
@@ -580,7 +580,7 @@
     "confidence_score": 96,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this beneficiary. No double-billing detected.",
     "finding_details": {},
     "processing_time_ms": 1336
   },
@@ -680,7 +680,7 @@
     "flagged_data_points": [
       "provider_npi"
     ],
-    "evidence_summary": "Same procedure billed 3 times across different claim types (medical, disability) within a 7-day window for the same veteran.",
+    "evidence_summary": "Same procedure billed 3 times across different claim types (medical, disability) within a 7-day window for the same beneficiary.",
     "finding_details": {},
     "processing_time_ms": 823
   },
@@ -692,7 +692,7 @@
     "confidence_score": 85,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No duplicate or overlapping services found in batch or historical claims for this veteran and date range.",
+    "evidence_summary": "No duplicate or overlapping services found in batch or historical claims for this beneficiary and date range.",
     "finding_details": {},
     "processing_time_ms": 1774
   },
@@ -706,7 +706,7 @@
     "flagged_data_points": [
       "provider_npi"
     ],
-    "evidence_summary": "Veteran was solicited within 48 hours of discharge. Claim amount $875 includes undisclosed consulting surcharge.",
+    "evidence_summary": "Beneficiary was solicited within 48 hours of discharge. Claim amount $875 includes undisclosed consulting surcharge.",
     "finding_details": {},
     "processing_time_ms": 661
   },
@@ -718,7 +718,7 @@
     "confidence_score": 99,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with beneficiary disability rating.",
     "finding_details": {},
     "processing_time_ms": 2121
   },
@@ -778,7 +778,7 @@
     "confidence_score": 96,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Veteran vital status confirmed alive via MVI cross-reference. SSN last-4 validated. Provider NPI 1662976399 verified in NPPES registry.",
+    "evidence_summary": "Beneficiary vital status confirmed alive via MVI cross-reference. SSN last-4 validated. Provider NPI 1662976399 verified in NPPES registry.",
     "finding_details": {},
     "processing_time_ms": 778
   },
@@ -816,7 +816,7 @@
     "flagged_data_points": [
       "provider_npi"
     ],
-    "evidence_summary": "Same procedure billed 3 times across different claim types (medical, disability) within a 7-day window for the same veteran.",
+    "evidence_summary": "Same procedure billed 3 times across different claim types (medical, disability) within a 7-day window for the same beneficiary.",
     "finding_details": {},
     "processing_time_ms": 3062
   },
@@ -844,7 +844,7 @@
     "flagged_data_points": [
       "procedure_codes"
     ],
-    "evidence_summary": "Pattern match: 4 veterans in same ZIP code filed identical pension claims through this unaccredited provider within 30 days.",
+    "evidence_summary": "Pattern match: 4 beneficiaries in same ZIP code filed identical pension claims through this unaccredited provider within 30 days.",
     "finding_details": {},
     "processing_time_ms": 2484
   },
@@ -856,7 +856,7 @@
     "confidence_score": 91,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No duplicate or overlapping services found in batch or historical claims for this veteran and date range.",
+    "evidence_summary": "No duplicate or overlapping services found in batch or historical claims for this beneficiary and date range.",
     "finding_details": {},
     "processing_time_ms": 2151
   },
@@ -880,7 +880,7 @@
     "confidence_score": 89,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified.",
+    "evidence_summary": "MVI Vital Status check passed. Beneficiary DOB and SSN consistent with VA records. Provider credentials verified.",
     "finding_details": {},
     "processing_time_ms": 3203
   },
@@ -934,7 +934,7 @@
     "flagged_data_points": [
       "procedure_codes"
     ],
-    "evidence_summary": "Veteran SSN last-4 does not match VA MPI records. Possible identity mismatch or data entry error.",
+    "evidence_summary": "Beneficiary SSN last-4 does not match VA MPI records. Possible identity mismatch or data entry error.",
     "finding_details": {},
     "processing_time_ms": 2895
   },
@@ -970,7 +970,7 @@
     "confidence_score": 93,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified.",
+    "evidence_summary": "MVI Vital Status check passed. Beneficiary DOB and SSN consistent with VA records. Provider credentials verified.",
     "finding_details": {},
     "processing_time_ms": 3260
   },
@@ -982,9 +982,9 @@
     "confidence_score": 93,
     "recommendation": "flag",
     "flagged_data_points": [
-      "veteran_status"
+      "beneficiary_status"
     ],
-    "evidence_summary": "Duplicate service detected: CPT 27447 was billed on 2025-08-09 by two different providers for the same veteran. Total double-billed amount: $6094.",
+    "evidence_summary": "Duplicate service detected: CPT 27447 was billed on 2025-08-09 by two different providers for the same beneficiary. Total double-billed amount: $6094.",
     "finding_details": {},
     "processing_time_ms": 2929
   },
@@ -1035,7 +1035,7 @@
       "provider_npi: failed NPPES validation",
       "service_date: precedes enrollment"
     ],
-    "evidence_summary": "Provider NPI validation failed against CMS NPPES registry. Service date precedes veteran enrollment effective date.",
+    "evidence_summary": "Provider NPI validation failed against CMS NPPES registry. Service date precedes beneficiary enrollment effective date.",
     "finding_details": {},
     "processing_time_ms": 1188
   },
@@ -1157,9 +1157,9 @@
     "confidence_score": 94,
     "recommendation": "flag",
     "flagged_data_points": [
-      "veteran_status"
+      "beneficiary_status"
     ],
-    "evidence_summary": "Overlapping date range: veteran has concurrent inpatient and outpatient claims for the same treatment period 2025-09-03.",
+    "evidence_summary": "Overlapping date range: beneficiary has concurrent inpatient and outpatient claims for the same treatment period 2025-09-03.",
     "finding_details": {},
     "processing_time_ms": 2720
   },
@@ -1195,7 +1195,7 @@
     "confidence_score": 89,
     "recommendation": "flag",
     "flagged_data_points": [
-      "veteran_status"
+      "beneficiary_status"
     ],
     "evidence_summary": "Disability questionnaire claims 100% disability for condition with median rating of 30%. Clinical findings section uses boilerplate language inconsistent with examination.",
     "finding_details": {},
@@ -1233,7 +1233,7 @@
     "confidence_score": 87,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified.",
+    "evidence_summary": "MVI Vital Status check passed. Beneficiary DOB and SSN consistent with VA records. Provider credentials verified.",
     "finding_details": {},
     "processing_time_ms": 2288
   },
@@ -1293,7 +1293,7 @@
     "confidence_score": 70,
     "recommendation": "flag",
     "flagged_data_points": [
-      "veteran_status"
+      "beneficiary_status"
     ],
     "evidence_summary": "Billing amount of $17572 exceeds expected range for reported procedure codes by 340%. Possible upcoding detected.",
     "finding_details": {},
@@ -1307,7 +1307,7 @@
     "confidence_score": 99,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Veteran vital status confirmed alive via MVI cross-reference. SSN last-4 validated. Provider NPI 3469810046 verified in NPPES registry.",
+    "evidence_summary": "Beneficiary vital status confirmed alive via MVI cross-reference. SSN last-4 validated. Provider NPI 3469810046 verified in NPPES registry.",
     "finding_details": {},
     "processing_time_ms": 2156
   },
@@ -1333,7 +1333,7 @@
     "confidence_score": 85,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified.",
+    "evidence_summary": "MVI Vital Status check passed. Beneficiary DOB and SSN consistent with VA records. Provider credentials verified.",
     "finding_details": {},
     "processing_time_ms": 1196
   },
@@ -1381,7 +1381,7 @@
     "confidence_score": 91,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this beneficiary. No double-billing detected.",
     "finding_details": {},
     "processing_time_ms": 3069
   },
@@ -1407,7 +1407,7 @@
     "flagged_data_points": [
       "procedure_codes"
     ],
-    "evidence_summary": "Same procedure billed 3 times across different claim types (medical, disability) within a 7-day window for the same veteran.",
+    "evidence_summary": "Same procedure billed 3 times across different claim types (medical, disability) within a 7-day window for the same beneficiary.",
     "finding_details": {},
     "processing_time_ms": 1591
   },
@@ -1467,7 +1467,7 @@
     "confidence_score": 92,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified.",
+    "evidence_summary": "MVI Vital Status check passed. Beneficiary DOB and SSN consistent with VA records. Provider credentials verified.",
     "finding_details": {},
     "processing_time_ms": 2572
   },
@@ -1493,7 +1493,7 @@
     "flagged_data_points": [
       "procedure_codes"
     ],
-    "evidence_summary": "Veteran SSN last-4 does not match VA MPI records. Possible identity mismatch or data entry error.",
+    "evidence_summary": "Beneficiary SSN last-4 does not match VA MPI records. Possible identity mismatch or data entry error.",
     "finding_details": {},
     "processing_time_ms": 574
   },
@@ -1519,7 +1519,7 @@
     "flagged_data_points": [
       "provider_npi"
     ],
-    "evidence_summary": "Veteran was solicited within 48 hours of discharge. Claim amount $23434 includes undisclosed consulting surcharge.",
+    "evidence_summary": "Beneficiary was solicited within 48 hours of discharge. Claim amount $23434 includes undisclosed consulting surcharge.",
     "finding_details": {},
     "processing_time_ms": 951
   },
@@ -1533,7 +1533,7 @@
     "flagged_data_points": [
       "procedure_codes"
     ],
-    "evidence_summary": "Provider Freedom Medical Group is not accredited with VA OGC but is filing pension benefit claims. Asset manipulation pattern detected: veteran assets depleted 87% in 60 days prior to filing.",
+    "evidence_summary": "Provider Freedom Medical Group is not accredited with VA OGC but is filing pension benefit claims. Asset manipulation pattern detected: beneficiary assets depleted 87% in 60 days prior to filing.",
     "finding_details": {},
     "processing_time_ms": 1730
   },
@@ -1633,7 +1633,7 @@
     "flagged_data_points": [
       "provider_npi"
     ],
-    "evidence_summary": "Overlapping date range: veteran has concurrent inpatient and outpatient claims for the same treatment period 2025-08-23.",
+    "evidence_summary": "Overlapping date range: beneficiary has concurrent inpatient and outpatient claims for the same treatment period 2025-08-23.",
     "finding_details": {},
     "processing_time_ms": 2602
   },
@@ -1685,7 +1685,7 @@
     "confidence_score": 89,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No duplicate or overlapping services found in batch or historical claims for this veteran and date range.",
+    "evidence_summary": "No duplicate or overlapping services found in batch or historical claims for this beneficiary and date range.",
     "finding_details": {},
     "processing_time_ms": 3240
   },
@@ -1721,7 +1721,7 @@
     "confidence_score": 99,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified.",
+    "evidence_summary": "MVI Vital Status check passed. Beneficiary DOB and SSN consistent with VA records. Provider credentials verified.",
     "finding_details": {},
     "processing_time_ms": 1503
   },
@@ -1747,7 +1747,7 @@
     "flagged_data_points": [
       "service_date"
     ],
-    "evidence_summary": "Duplicate service detected: CPT 27447 was billed on 2025-09-10 by two different providers for the same veteran. Total double-billed amount: $30077.",
+    "evidence_summary": "Duplicate service detected: CPT 27447 was billed on 2025-09-10 by two different providers for the same beneficiary. Total double-billed amount: $30077.",
     "finding_details": {},
     "processing_time_ms": 704
   },
@@ -1811,7 +1811,7 @@
     "flagged_data_points": [
       "provider_npi"
     ],
-    "evidence_summary": "CRITICAL: Veteran Robert Mitchell (SSN ***7887) has date_of_death 2025-08-10 in Death Master File, but service_date is 2025-09-06 -- 28 days AFTER death. Billing for deceased veteran detected.",
+    "evidence_summary": "CRITICAL: Beneficiary Robert Mitchell (SSN ***7887) has date_of_death 2025-08-10 in Death Master File, but service_date is 2025-09-06 -- 28 days AFTER death. Billing for deceased beneficiary detected.",
     "finding_details": {},
     "processing_time_ms": 778
   },
@@ -1825,7 +1825,7 @@
     "flagged_data_points": [
       "diagnosis_codes"
     ],
-    "evidence_summary": "Pattern match: 4 veterans in same ZIP code filed identical pension claims through this unaccredited provider within 30 days.",
+    "evidence_summary": "Pattern match: 4 beneficiaries in same ZIP code filed identical pension claims through this unaccredited provider within 30 days.",
     "finding_details": {},
     "processing_time_ms": 1222
   },
@@ -1837,7 +1837,7 @@
     "confidence_score": 85,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No duplicate or overlapping services found in batch or historical claims for this veteran and date range.",
+    "evidence_summary": "No duplicate or overlapping services found in batch or historical claims for this beneficiary and date range.",
     "finding_details": {},
     "processing_time_ms": 3202
   },
@@ -1901,7 +1901,7 @@
     "flagged_data_points": [
       "procedure_codes"
     ],
-    "evidence_summary": "Provider Freedom Medical Group is not accredited with VA OGC but is filing pension benefit claims. Asset manipulation pattern detected: veteran assets depleted 87% in 60 days prior to filing.",
+    "evidence_summary": "Provider Freedom Medical Group is not accredited with VA OGC but is filing pension benefit claims. Asset manipulation pattern detected: beneficiary assets depleted 87% in 60 days prior to filing.",
     "finding_details": {},
     "processing_time_ms": 930
   },
@@ -1925,7 +1925,7 @@
     "confidence_score": 92,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Veteran vital status confirmed alive via MVI cross-reference. SSN last-4 validated. Provider NPI 6638957137 verified in NPPES registry.",
+    "evidence_summary": "Beneficiary vital status confirmed alive via MVI cross-reference. SSN last-4 validated. Provider NPI 6638957137 verified in NPPES registry.",
     "finding_details": {},
     "processing_time_ms": 1074
   },
@@ -1949,7 +1949,7 @@
     "confidence_score": 97,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No duplicate or overlapping services found in batch or historical claims for this veteran and date range.",
+    "evidence_summary": "No duplicate or overlapping services found in batch or historical claims for this beneficiary and date range.",
     "finding_details": {},
     "processing_time_ms": 1397
   },
@@ -2011,7 +2011,7 @@
     "confidence_score": 83,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Veteran vital status confirmed alive via MVI cross-reference. SSN last-4 validated. Provider NPI 8820716211 verified in NPPES registry.",
+    "evidence_summary": "Beneficiary vital status confirmed alive via MVI cross-reference. SSN last-4 validated. Provider NPI 8820716211 verified in NPPES registry.",
     "finding_details": {},
     "processing_time_ms": 3479
   },
@@ -2023,7 +2023,7 @@
     "confidence_score": 83,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Veteran vital status confirmed alive via MVI cross-reference. SSN last-4 validated. Provider NPI 5621463184 verified in NPPES registry.",
+    "evidence_summary": "Beneficiary vital status confirmed alive via MVI cross-reference. SSN last-4 validated. Provider NPI 5621463184 verified in NPPES registry.",
     "finding_details": {},
     "processing_time_ms": 1384
   },
@@ -2133,7 +2133,7 @@
     "confidence_score": 84,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this beneficiary. No double-billing detected.",
     "finding_details": {},
     "processing_time_ms": 1466
   },
@@ -2183,7 +2183,7 @@
     "flagged_data_points": [
       "procedure_codes"
     ],
-    "evidence_summary": "Pattern match: 4 veterans in same ZIP code filed identical pension claims through this unaccredited provider within 30 days.",
+    "evidence_summary": "Pattern match: 4 beneficiaries in same ZIP code filed identical pension claims through this unaccredited provider within 30 days.",
     "finding_details": {},
     "processing_time_ms": 2220
   },
@@ -2233,7 +2233,7 @@
     "flagged_data_points": [
       "service_date"
     ],
-    "evidence_summary": "Pattern match: 4 veterans in same ZIP code filed identical pension claims through this unaccredited provider within 30 days.",
+    "evidence_summary": "Pattern match: 4 beneficiaries in same ZIP code filed identical pension claims through this unaccredited provider within 30 days.",
     "finding_details": {},
     "processing_time_ms": 1216
   },
@@ -2381,7 +2381,7 @@
     "confidence_score": 85,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this beneficiary. No double-billing detected.",
     "finding_details": {},
     "processing_time_ms": 3112
   },
@@ -2405,7 +2405,7 @@
     "confidence_score": 86,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with beneficiary disability rating.",
     "finding_details": {},
     "processing_time_ms": 2570
   },
@@ -2429,7 +2429,7 @@
     "confidence_score": 95,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this beneficiary. No double-billing detected.",
     "finding_details": {},
     "processing_time_ms": 697
   },
@@ -2441,7 +2441,7 @@
     "confidence_score": 94,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified.",
+    "evidence_summary": "MVI Vital Status check passed. Beneficiary DOB and SSN consistent with VA records. Provider credentials verified.",
     "finding_details": {},
     "processing_time_ms": 792
   },
@@ -2517,7 +2517,7 @@
     "confidence_score": 87,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Veteran vital status confirmed alive via MVI cross-reference. SSN last-4 validated. Provider NPI 5215140451 verified in NPPES registry.",
+    "evidence_summary": "Beneficiary vital status confirmed alive via MVI cross-reference. SSN last-4 validated. Provider NPI 5215140451 verified in NPPES registry.",
     "finding_details": {},
     "processing_time_ms": 2320
   },
@@ -2581,7 +2581,7 @@
     "confidence_score": 86,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified.",
+    "evidence_summary": "MVI Vital Status check passed. Beneficiary DOB and SSN consistent with VA records. Provider credentials verified.",
     "finding_details": {},
     "processing_time_ms": 2301
   },
@@ -2607,7 +2607,7 @@
     "confidence_score": 87,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with beneficiary disability rating.",
     "finding_details": {},
     "processing_time_ms": 1360
   },
@@ -2707,7 +2707,7 @@
     "flagged_data_points": [
       "diagnosis_codes"
     ],
-    "evidence_summary": "Overlapping date range: veteran has concurrent inpatient and outpatient claims for the same treatment period 2025-08-05.",
+    "evidence_summary": "Overlapping date range: beneficiary has concurrent inpatient and outpatient claims for the same treatment period 2025-08-05.",
     "finding_details": {},
     "processing_time_ms": 3335
   },
@@ -2731,7 +2731,7 @@
     "confidence_score": 94,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this beneficiary. No double-billing detected.",
     "finding_details": {},
     "processing_time_ms": 1753
   },
@@ -2743,7 +2743,7 @@
     "confidence_score": 89,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "MVI Vital Status check passed. Veteran DOB and SSN consistent with VA records. Provider credentials verified.",
+    "evidence_summary": "MVI Vital Status check passed. Beneficiary DOB and SSN consistent with VA records. Provider credentials verified.",
     "finding_details": {},
     "processing_time_ms": 3055
   },
@@ -2767,7 +2767,7 @@
     "confidence_score": 93,
     "recommendation": "flag",
     "flagged_data_points": [
-      "veteran_status"
+      "beneficiary_status"
     ],
     "evidence_summary": "DBQ examination date and medical record dates are inconsistent. Reported symptoms do not align with clinical standards for the diagnosed condition.",
     "finding_details": {},
@@ -2795,7 +2795,7 @@
     "flagged_data_points": [
       "procedure_codes"
     ],
-    "evidence_summary": "Veteran was solicited within 48 hours of discharge. Claim amount $2831 includes undisclosed consulting surcharge.",
+    "evidence_summary": "Beneficiary was solicited within 48 hours of discharge. Claim amount $2831 includes undisclosed consulting surcharge.",
     "finding_details": {},
     "processing_time_ms": 2719
   },
@@ -2845,7 +2845,7 @@
     "flagged_data_points": [
       "billing_amount"
     ],
-    "evidence_summary": "DBQ responses show template-identical language across 6 veterans evaluated by the same provider. Fabrication indicators: 94% text similarity score.",
+    "evidence_summary": "DBQ responses show template-identical language across 6 beneficiaries evaluated by the same provider. Fabrication indicators: 94% text similarity score.",
     "finding_details": {},
     "processing_time_ms": 2506
   },
@@ -2939,9 +2939,9 @@
     "confidence_score": 88,
     "recommendation": "flag",
     "flagged_data_points": [
-      "veteran_status"
+      "beneficiary_status"
     ],
-    "evidence_summary": "Veteran was solicited within 48 hours of discharge. Claim amount $13848 includes undisclosed consulting surcharge.",
+    "evidence_summary": "Beneficiary was solicited within 48 hours of discharge. Claim amount $13848 includes undisclosed consulting surcharge.",
     "finding_details": {},
     "processing_time_ms": 2277
   },
@@ -2979,7 +2979,7 @@
     "confidence_score": 18,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "evidence_summary": "Beneficiary vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
     "finding_details": {},
     "processing_time_ms": 1002
   },
@@ -2991,7 +2991,7 @@
     "confidence_score": 19,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with beneficiary disability rating.",
     "finding_details": {},
     "processing_time_ms": 2513
   },
@@ -3005,7 +3005,7 @@
     "flagged_data_points": [
       "billing_amount: $19,743.99"
     ],
-    "evidence_summary": "Provider solicitation pattern detected \u2014 high volume of new veteran patients.",
+    "evidence_summary": "Provider solicitation pattern detected \u2014 high volume of new beneficiary patients.",
     "finding_details": {},
     "processing_time_ms": 753
   },
@@ -3045,7 +3045,7 @@
     "flagged_data_points": [
       "billing_amount: $19,743.99"
     ],
-    "evidence_summary": "Diagnosis code inconsistent with veteran's age/gender demographics.",
+    "evidence_summary": "Diagnosis code inconsistent with beneficiary's age/gender demographics.",
     "finding_details": {},
     "processing_time_ms": 518
   },
@@ -3083,7 +3083,7 @@
     "flagged_data_points": [
       "billing_amount: $13,684.05"
     ],
-    "evidence_summary": "Deceased veteran flag triggered \u2014 claim filed after recorded date of death.",
+    "evidence_summary": "Deceased beneficiary flag triggered \u2014 claim filed after recorded date of death.",
     "finding_details": {},
     "processing_time_ms": 887
   },
@@ -3095,7 +3095,7 @@
     "confidence_score": 27,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with beneficiary disability rating.",
     "finding_details": {},
     "processing_time_ms": 384
   },
@@ -3121,7 +3121,7 @@
     "flagged_data_points": [
       "billing_amount: $13,684.05"
     ],
-    "evidence_summary": "Identical DBQ narrative text found across multiple unrelated veterans.",
+    "evidence_summary": "Identical DBQ narrative text found across multiple unrelated beneficiaries.",
     "finding_details": {},
     "processing_time_ms": 426
   },
@@ -3133,7 +3133,7 @@
     "confidence_score": 32,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this beneficiary. No double-billing detected.",
     "finding_details": {},
     "processing_time_ms": 1053
   },
@@ -3181,7 +3181,7 @@
     "confidence_score": 19,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "evidence_summary": "Beneficiary vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
     "finding_details": {},
     "processing_time_ms": 1654
   },
@@ -3283,7 +3283,7 @@
     "confidence_score": 17,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "evidence_summary": "Beneficiary vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
     "finding_details": {},
     "processing_time_ms": 1582
   },
@@ -3295,7 +3295,7 @@
     "confidence_score": 12,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with beneficiary disability rating.",
     "finding_details": {},
     "processing_time_ms": 666
   },
@@ -3336,7 +3336,7 @@
       "billing_amount: $37,560.30",
       "procedure_codes: ['99215', '97110']"
     ],
-    "evidence_summary": "Duplicate procedure codes billed within 7-day window for same veteran.",
+    "evidence_summary": "Duplicate procedure codes billed within 7-day window for same beneficiary.",
     "finding_details": {},
     "processing_time_ms": 2887
   },
@@ -3390,7 +3390,7 @@
     "confidence_score": 5,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "evidence_summary": "Beneficiary vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
     "finding_details": {},
     "processing_time_ms": 1178
   },
@@ -3443,7 +3443,7 @@
       "billing_amount: $36,640.02",
       "procedure_codes: ['90837', '90847']"
     ],
-    "evidence_summary": "Duplicate procedure codes billed within 7-day window for same veteran.",
+    "evidence_summary": "Duplicate procedure codes billed within 7-day window for same beneficiary.",
     "finding_details": {},
     "processing_time_ms": 726
   },
@@ -3491,7 +3491,7 @@
     "confidence_score": 35,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "evidence_summary": "Beneficiary vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
     "finding_details": {},
     "processing_time_ms": 422
   },
@@ -3503,7 +3503,7 @@
     "confidence_score": 7,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with beneficiary disability rating.",
     "finding_details": {},
     "processing_time_ms": 2090
   },
@@ -3517,7 +3517,7 @@
     "flagged_data_points": [
       "billing_amount: $4,249.85"
     ],
-    "evidence_summary": "Provider solicitation pattern detected \u2014 high volume of new veteran patients.",
+    "evidence_summary": "Provider solicitation pattern detected \u2014 high volume of new beneficiary patients.",
     "finding_details": {},
     "processing_time_ms": 625
   },
@@ -3541,7 +3541,7 @@
     "confidence_score": 35,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this beneficiary. No double-billing detected.",
     "finding_details": {},
     "processing_time_ms": 2351
   },
@@ -3589,7 +3589,7 @@
     "confidence_score": 5,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "evidence_summary": "Beneficiary vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
     "finding_details": {},
     "processing_time_ms": 2509
   },
@@ -3601,7 +3601,7 @@
     "confidence_score": 22,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with beneficiary disability rating.",
     "finding_details": {},
     "processing_time_ms": 1042
   },
@@ -3615,7 +3615,7 @@
     "flagged_data_points": [
       "billing_amount: $18,861.20"
     ],
-    "evidence_summary": "Provider solicitation pattern detected \u2014 high volume of new veteran patients.",
+    "evidence_summary": "Provider solicitation pattern detected \u2014 high volume of new beneficiary patients.",
     "finding_details": {},
     "processing_time_ms": 390
   },
@@ -3639,7 +3639,7 @@
     "confidence_score": 6,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this beneficiary. No double-billing detected.",
     "finding_details": {},
     "processing_time_ms": 1037
   },
@@ -3687,7 +3687,7 @@
     "confidence_score": 11,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "evidence_summary": "Beneficiary vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
     "finding_details": {},
     "processing_time_ms": 486
   },
@@ -3699,7 +3699,7 @@
     "confidence_score": 8,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with beneficiary disability rating.",
     "finding_details": {},
     "processing_time_ms": 2799
   },
@@ -3735,7 +3735,7 @@
     "confidence_score": 19,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this beneficiary. No double-billing detected.",
     "finding_details": {},
     "processing_time_ms": 321
   },
@@ -3785,7 +3785,7 @@
     "confidence_score": 19,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "evidence_summary": "Beneficiary vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
     "finding_details": {},
     "processing_time_ms": 2354
   },
@@ -3797,7 +3797,7 @@
     "confidence_score": 8,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with beneficiary disability rating.",
     "finding_details": {},
     "processing_time_ms": 307
   },
@@ -3811,7 +3811,7 @@
     "flagged_data_points": [
       "billing_amount: $10,876.22"
     ],
-    "evidence_summary": "Provider solicitation pattern detected \u2014 high volume of new veteran patients.",
+    "evidence_summary": "Provider solicitation pattern detected \u2014 high volume of new beneficiary patients.",
     "finding_details": {},
     "processing_time_ms": 482
   },
@@ -3835,7 +3835,7 @@
     "confidence_score": 10,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this beneficiary. No double-billing detected.",
     "finding_details": {},
     "processing_time_ms": 1764
   },
@@ -3849,7 +3849,7 @@
     "flagged_data_points": [
       "billing_amount: $10,876.22"
     ],
-    "evidence_summary": "Diagnosis code inconsistent with veteran's age/gender demographics.",
+    "evidence_summary": "Diagnosis code inconsistent with beneficiary's age/gender demographics.",
     "finding_details": {},
     "processing_time_ms": 975
   },
@@ -3899,7 +3899,7 @@
     "confidence_score": 28,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with beneficiary disability rating.",
     "finding_details": {},
     "processing_time_ms": 2320
   },
@@ -3935,7 +3935,7 @@
     "confidence_score": 23,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this beneficiary. No double-billing detected.",
     "finding_details": {},
     "processing_time_ms": 2052
   },
@@ -3987,7 +3987,7 @@
     "confidence_score": 23,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "evidence_summary": "Beneficiary vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
     "finding_details": {},
     "processing_time_ms": 2241
   },
@@ -3999,7 +3999,7 @@
     "confidence_score": 15,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with beneficiary disability rating.",
     "finding_details": {},
     "processing_time_ms": 1168
   },
@@ -4037,7 +4037,7 @@
     "confidence_score": 17,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this beneficiary. No double-billing detected.",
     "finding_details": {},
     "processing_time_ms": 636
   },
@@ -4088,7 +4088,7 @@
     "confidence_score": 33,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "evidence_summary": "Beneficiary vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
     "finding_details": {},
     "processing_time_ms": 1100
   },
@@ -4100,7 +4100,7 @@
     "confidence_score": 16,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with beneficiary disability rating.",
     "finding_details": {},
     "processing_time_ms": 1267
   },
@@ -4139,7 +4139,7 @@
       "billing_amount: $27,414.63",
       "procedure_codes: ['99214', '12011']"
     ],
-    "evidence_summary": "Duplicate procedure codes billed within 7-day window for same veteran.",
+    "evidence_summary": "Duplicate procedure codes billed within 7-day window for same beneficiary.",
     "finding_details": {},
     "processing_time_ms": 2835
   },
@@ -4189,7 +4189,7 @@
     "flagged_data_points": [
       "billing_amount: $37,753.94"
     ],
-    "evidence_summary": "Service date precedes veteran's enrollment effective date.",
+    "evidence_summary": "Service date precedes beneficiary's enrollment effective date.",
     "finding_details": {},
     "processing_time_ms": 1128
   },
@@ -4201,7 +4201,7 @@
     "confidence_score": 33,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with beneficiary disability rating.",
     "finding_details": {},
     "processing_time_ms": 308
   },
@@ -4240,7 +4240,7 @@
       "billing_amount: $37,753.94",
       "procedure_codes: ['90834', '90785']"
     ],
-    "evidence_summary": "Duplicate procedure codes billed within 7-day window for same veteran.",
+    "evidence_summary": "Duplicate procedure codes billed within 7-day window for same beneficiary.",
     "finding_details": {},
     "processing_time_ms": 1466
   },
@@ -4290,7 +4290,7 @@
     "confidence_score": 14,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "evidence_summary": "Beneficiary vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
     "finding_details": {},
     "processing_time_ms": 1593
   },
@@ -4304,7 +4304,7 @@
     "flagged_data_points": [
       "billing_amount: $3,872.28"
     ],
-    "evidence_summary": "Multiple veterans from same provider filing similar pension claims within 30 days.",
+    "evidence_summary": "Multiple beneficiaries from same provider filing similar pension claims within 30 days.",
     "finding_details": {},
     "processing_time_ms": 960
   },
@@ -4318,7 +4318,7 @@
     "flagged_data_points": [
       "billing_amount: $3,872.28"
     ],
-    "evidence_summary": "Provider solicitation pattern detected \u2014 high volume of new veteran patients.",
+    "evidence_summary": "Provider solicitation pattern detected \u2014 high volume of new beneficiary patients.",
     "finding_details": {},
     "processing_time_ms": 1548
   },
@@ -4342,7 +4342,7 @@
     "confidence_score": 33,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this beneficiary. No double-billing detected.",
     "finding_details": {},
     "processing_time_ms": 1764
   },
@@ -4390,7 +4390,7 @@
     "confidence_score": 17,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "evidence_summary": "Beneficiary vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
     "finding_details": {},
     "processing_time_ms": 258
   },
@@ -4440,7 +4440,7 @@
     "confidence_score": 31,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this beneficiary. No double-billing detected.",
     "finding_details": {},
     "processing_time_ms": 1032
   },
@@ -4493,7 +4493,7 @@
     "flagged_data_points": [
       "billing_amount: $17,019.13"
     ],
-    "evidence_summary": "Deceased veteran flag triggered \u2014 claim filed after recorded date of death.",
+    "evidence_summary": "Deceased beneficiary flag triggered \u2014 claim filed after recorded date of death.",
     "finding_details": {},
     "processing_time_ms": 1187
   },
@@ -4505,7 +4505,7 @@
     "confidence_score": 6,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with beneficiary disability rating.",
     "finding_details": {},
     "processing_time_ms": 544
   },
@@ -4541,7 +4541,7 @@
     "confidence_score": 18,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this beneficiary. No double-billing detected.",
     "finding_details": {},
     "processing_time_ms": 2583
   },
@@ -4591,7 +4591,7 @@
     "confidence_score": 26,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "evidence_summary": "Beneficiary vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
     "finding_details": {},
     "processing_time_ms": 1772
   },
@@ -4603,7 +4603,7 @@
     "confidence_score": 15,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with beneficiary disability rating.",
     "finding_details": {},
     "processing_time_ms": 1748
   },
@@ -4692,7 +4692,7 @@
     "confidence_score": 7,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "evidence_summary": "Beneficiary vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
     "finding_details": {},
     "processing_time_ms": 1262
   },
@@ -4704,7 +4704,7 @@
     "confidence_score": 21,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with beneficiary disability rating.",
     "finding_details": {},
     "processing_time_ms": 2819
   },
@@ -4809,7 +4809,7 @@
     "confidence_score": 12,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with veteran disability rating.",
+    "evidence_summary": "No indicators of asset manipulation detected. Benefit claim amounts are consistent with beneficiary disability rating.",
     "finding_details": {},
     "processing_time_ms": 820
   },
@@ -4847,7 +4847,7 @@
     "confidence_score": 34,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this beneficiary. No double-billing detected.",
     "finding_details": {},
     "processing_time_ms": 597
   },
@@ -4895,7 +4895,7 @@
     "confidence_score": 31,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Veteran vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
+    "evidence_summary": "Beneficiary vital status confirmed. SSN last-4 validated. Provider NPI verified in NPPES registry.",
     "finding_details": {},
     "processing_time_ms": 2711
   },
@@ -4909,7 +4909,7 @@
     "flagged_data_points": [
       "billing_amount: $27,087.11"
     ],
-    "evidence_summary": "Multiple veterans from same provider filing similar pension claims within 30 days.",
+    "evidence_summary": "Multiple beneficiaries from same provider filing similar pension claims within 30 days.",
     "finding_details": {},
     "processing_time_ms": 2667
   },
@@ -4947,7 +4947,7 @@
     "confidence_score": 12,
     "recommendation": "pass",
     "flagged_data_points": [],
-    "evidence_summary": "Service dates and procedure codes are unique across all claims for this veteran. No double-billing detected.",
+    "evidence_summary": "Service dates and procedure codes are unique across all claims for this beneficiary. No double-billing detected.",
     "finding_details": {},
     "processing_time_ms": 1212
   },

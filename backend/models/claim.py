@@ -15,7 +15,7 @@ class Claim:
     id: str = field(default_factory=lambda: str(uuid.uuid4()))
     claim_number: str = ""
     batch_id: str = ""
-    veteran_id: str = ""
+    beneficiary_id: str = ""
     provider_id: str = ""
     claim_type: str = "medical"
     raw_document_id: str | None = None
@@ -30,11 +30,27 @@ class Claim:
     updated_at: datetime | None = None
 
     # Joined relations (populated by routes when needed)
-    veteran: Any = field(default=None, repr=False)
+    beneficiary: Any = field(default=None, repr=False)
     provider: Any = field(default=None, repr=False)
     findings: list = field(default_factory=list, repr=False)
     decision: Any = field(default=None, repr=False)
     chat_messages: list = field(default_factory=list, repr=False)
+
+    @property
+    def veteran_id(self) -> str:
+        return self.beneficiary_id
+
+    @veteran_id.setter
+    def veteran_id(self, value: str) -> None:
+        self.beneficiary_id = value
+
+    @property
+    def veteran(self) -> Any:
+        return self.beneficiary
+
+    @veteran.setter
+    def veteran(self, value: Any) -> None:
+        self.beneficiary = value
 
     @classmethod
     def from_bq_row(cls, row) -> "Claim":
@@ -52,11 +68,14 @@ class Claim:
             if any(code in {'E0601', 'L1833', 'L1843', 'E1390'} for code in proc):
                 claim_type = "dme"
 
+        # Handle either field name during migration
+        beneficiary_id = getattr(row, 'beneficiary_id', None) or getattr(row, 'veteran_id', "")
+
         return cls(
             id=row.id,
             claim_number=row.claim_number,
             batch_id=row.batch_id,
-            veteran_id=row.veteran_id,
+            beneficiary_id=beneficiary_id,
             provider_id=row.provider_id,
             claim_type=claim_type,
             raw_document_id=getattr(row, 'raw_document_id', None),
@@ -76,7 +95,7 @@ class Claim:
             "id": self.id,
             "claim_number": self.claim_number,
             "batch_id": self.batch_id,
-            "veteran_id": self.veteran_id,
+            "beneficiary_id": self.beneficiary_id,
             "provider_id": self.provider_id,
             "claim_type": self.claim_type,
             "raw_document_id": self.raw_document_id,
@@ -90,8 +109,9 @@ class Claim:
             "created_at": self.created_at.isoformat() if self.created_at else None,
             "updated_at": self.updated_at.isoformat() if self.updated_at else None,
         }
-        if self.veteran:
-            result["veteran"] = self.veteran.to_dict() if hasattr(self.veteran, 'to_dict') else self.veteran
+        if self.beneficiary:
+            result["beneficiary"] = self.beneficiary.to_dict() if hasattr(self.beneficiary, 'to_dict') else self.beneficiary
+            result["veteran"] = result["beneficiary"] # keep transition safety alias
         if self.provider:
             result["provider"] = self.provider.to_dict() if hasattr(self.provider, 'to_dict') else self.provider
         if self.findings:

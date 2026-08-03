@@ -5,22 +5,26 @@ import { Chip } from '@mui/material';
 import { RISK_COLORS } from '../../utils/constants';
 
 interface RiskBadgeProps {
-  level: 'high' | 'medium' | 'low';
+  level: string;
 }
 
-const labelMap: Record<RiskBadgeProps['level'], string> = {
+const labelMap: Record<string, string> = {
   high: 'High Risk',
   medium: 'Medium Risk',
   low: 'Low Risk',
+  critical: 'Critical Risk',
 };
 
 const RiskBadge: React.FC<RiskBadgeProps> = ({ level }) => {
-  const backgroundColor = RISK_COLORS[level] ?? '#5B616B';
-  const textColor = level === 'medium' ? '#212121' : '#FFFFFF';
+  const l = level ? level.toLowerCase() : 'low';
+  const normalized = l === 'critical' || l === 'high' ? 'high' : (l === 'medium' || l === 'warn' ? 'medium' : 'low');
+  const backgroundColor = RISK_COLORS[normalized] ?? '#5B616B';
+  const textColor = normalized === 'medium' ? '#212121' : '#FFFFFF';
+  const label = l === 'critical' ? 'Critical Risk' : (labelMap[normalized] ?? 'Low Risk');
 
   return (
     <Chip
-      label={labelMap[level]}
+      label={label}
       size="small"
       sx={{
         backgroundColor,
@@ -35,5 +39,6 @@ const RiskBadge: React.FC<RiskBadgeProps> = ({ level }) => {
     />
   );
 };
+
 
 export default React.memo(RiskBadge);

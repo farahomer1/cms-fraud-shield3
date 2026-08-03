@@ -6,21 +6,33 @@ import apiClient from '../services/apiClient';
 
 /**
  * Fuzzy-match a SEED agent name against an agent_findings / agent_flags name.
- * Handles differences like "Pension Poaching" vs "Pension Poaching Agent",
- * "Overlapping Claims" vs "Overlapping Claim Agent", etc.
+ * Handles differences like "Pre-Payment Claims Hold "Crush Fraud"" vs "crush_fraud",
+ * "Rules Engine" vs "rules_engine", etc.
  */
 function matchesAgentName(seedName: string, flagName: string): boolean {
-  const normalize = (s: string) =>
-    s.toLowerCase().replace(/\bagent\b/g, '').trim();
+  const normalize = (s: string) => {
+    return s.toLowerCase()
+      .replace(/["']/g, '')         // remove quotes
+      .replace(/_/g, ' ')           // replace underscores with spaces
+      .replace(/\bagent\b/g, '')    // remove standalone word "agent"
+      .replace(/[^a-z0-9\s]/g, '')  // strip special characters like hyphens/slashes
+      .replace(/\s+/g, ' ')         // normalize whitespace
+      .trim();
+  };
+
   const a = normalize(seedName);
   const b = normalize(flagName);
   if (a === b) return true;
+
+  // Check if one contains the other
+  if (a.includes(b) || b.includes(a)) return true;
+
   const aWords = a.split(/\s+/).filter(Boolean);
   const bWords = b.split(/\s+/).filter(Boolean);
   const [shorter, longer] =
     aWords.length <= bWords.length ? [aWords, bWords] : [bWords, aWords];
   return shorter.every((word) =>
-    longer.some((w) => w === word || w.startsWith(word) || word.startsWith(w))
+    longer.some((w) => w === word || w.startsWith(word) || word.startsWith(word))
   );
 }
 
@@ -28,89 +40,78 @@ const SEED_AGENTS: PipelineAgent[] = [
   {
     id: 'agent-rules-engine',
     name: 'Rules Engine',
-    description: 'Validates claims against VA policy rules and billing thresholds.',
+    description: 'Enforces statutory limits (LCD L33803) and billing integrity rules.',
     type: 'rule-based',
-    definition: 'Flag any claim where the billing amount exceeds $50,000 or the service date is more than 365 days before the submission date.',
+    definition: 'Flag any claim violating standard quantity caps (30-150 rolling window), dormant supplier spikes, or multi-provider velocity bounds.',
     status: 'production',
     createdAt: '2025-08-15T10:00:00Z',
-    updatedAt: '2025-12-01T14:30:00Z',
+    updatedAt: '2026-01-10T14:30:00Z',
     flags: [],
   },
   {
-    id: 'agent-pension-poaching',
-    name: 'Pension Poaching',
-    description: 'Detects patterns where providers exploit veteran pension benefits.',
+    id: 'agent-trust-defender',
+    name: 'Threat Simulation "Trust Defender"',
+    description: 'Monitors early-stage risk signals and anomalies in enrollment records.',
     type: 'ai-based',
-    definition: 'Analyze the claim and related veteran data to determine if the provider is engaging in pension poaching tactics, such as unnecessary services billed to pension-eligible veterans with high disability ratings.',
+    definition: 'Analyze PECOS ownership transfers, practice-address changes to CMRA mail-drops, and early-warning transaction spikes.',
     status: 'production',
     createdAt: '2025-09-01T08:00:00Z',
-    updatedAt: '2025-11-20T16:00:00Z',
+    updatedAt: '2026-01-15T16:00:00Z',
     flags: [],
   },
   {
-    id: 'agent-claim-sharking',
-    name: 'Claim Sharking',
-    description: 'Identifies coordinated claim filing patterns across multiple veterans.',
+    id: 'agent-crush-fraud',
+    name: 'Pre-Payment Claims Hold "Crush Fraud"',
+    description: 'Intercepts high-risk billing and coordinates immediate prepay holds.',
     type: 'ai-based',
-    definition: 'Examine provider claim submission patterns to detect claim sharking — look for suspiciously similar diagnosis/procedure combinations filed in batches across multiple veterans by the same provider.',
+    definition: 'Execute sub-second prepayment holding and triage suspect transactions to priority investigator review.',
     status: 'production',
     createdAt: '2025-09-10T12:00:00Z',
-    updatedAt: '2025-11-15T09:00:00Z',
+    updatedAt: '2026-01-20T09:00:00Z',
     flags: [],
   },
   {
-    id: 'agent-dbq-fraud',
-    name: 'CMN Fraud',
-    description: 'Detects fraudulent Certificate of Medical Necessity submissions.',
-    type: 'rule-based',
-    definition: 'Flag claims where the Certificate of Medical Necessity (CMN) was completed by a provider who is not accredited or where the order date does not match PECOS enrollment records.',
-    status: 'testing',
+    id: 'agent-system-resilience',
+    name: 'Enrollment Audit & Unmasking "System Resilience"',
+    description: 'Uncovers complex shell company structures and shared address links.',
+    type: 'ai-based',
+    definition: 'Unmask multi-provider shell networks utilizing common Authorized Officials, lock compromised MBIs, and trigger prior-auth bounds.',
+    status: 'production',
     createdAt: '2025-10-05T10:00:00Z',
-    updatedAt: '2025-12-10T11:00:00Z',
+    updatedAt: '2026-01-25T11:00:00Z',
+    flags: [],
+  },
+  {
+    id: 'agent-program-integrity-ops',
+    name: 'Policy & Referral "Program Integrity Ops"',
+    description: 'Compiles formal OIG/DOJ evidence packages and policy adjustment notes.',
+    type: 'ai-based',
+    definition: 'Generate standard referral dossiers for federal prosecutors and recommend systemic policy adaptations to prevent recurring schemes.',
+    status: 'production',
+    createdAt: '2025-08-20T09:00:00Z',
+    updatedAt: '2026-01-28T10:00:00Z',
     flags: [],
   },
   {
     id: 'agent-overlapping-claims',
-    name: 'Overlapping Claims',
-    description: 'Detects duplicate or overlapping service dates across claims.',
+    name: 'Overlapping Claims Check',
+    description: 'Flags overlapping service dates or duplicate procedures.',
     type: 'rule-based',
-    definition: 'Flag any claim where the veteran has another claim with overlapping service dates and matching procedure codes from a different provider.',
-    status: 'production',
-    createdAt: '2025-08-20T09:00:00Z',
-    updatedAt: '2025-11-30T10:00:00Z',
-    flags: [],
-  },
-  {
-    id: 'agent-medical-record',
-    name: 'Medical Record',
-    description: 'Cross-references claims against medical record documentation.',
-    type: 'ai-based',
-    definition: 'Compare the claim diagnosis and procedure codes against the available medical records to verify that the claimed services are supported by clinical documentation.',
+    definition: 'Detect overlapping service dates and diagnostic procedure code duplicates filed by multiple suppliers.',
     status: 'production',
     createdAt: '2025-09-15T14:00:00Z',
-    updatedAt: '2025-12-05T08:00:00Z',
+    updatedAt: '2026-01-30T08:00:00Z',
     flags: [],
   },
   {
     id: 'agent-data-validation',
-    name: 'Data Validation',
-    description: 'Validates data integrity and format compliance of claim fields.',
+    name: 'Data Validation Integrity',
+    description: 'Ensures NPI format compliance and diagnostic logic validation.',
     type: 'rule-based',
-    definition: 'Flag claims with invalid NPI numbers, missing required diagnosis codes, or billing amounts that do not match the fee schedule for the stated procedure codes.',
+    definition: 'Verify inbound data formatting, check NPI structure, and validate diagnostic-code compatibility with billing fee schedules.',
     status: 'production',
     createdAt: '2025-08-10T07:00:00Z',
-    updatedAt: '2025-11-25T13:00:00Z',
-    flags: [],
-  },
-  {
-    id: 'agent-claim-discrepancy',
-    name: 'Claim Discrepancy',
-    description: 'Identifies discrepancies between claim data and supporting documents.',
-    type: 'ai-based',
-    definition: 'Analyze claim data against supporting documents to identify any discrepancies in dates, amounts, codes, or provider information that may indicate errors or fraud.',
-    status: 'testing',
-    createdAt: '2025-10-20T11:00:00Z',
-    updatedAt: '2025-12-08T15:00:00Z',
+    updatedAt: '2026-01-31T13:00:00Z',
     flags: [],
   },
 ];

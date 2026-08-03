@@ -7,7 +7,7 @@ from typing import Any
 from pydantic import BaseModel
 
 
-class VeteranResponse(BaseModel):
+class BeneficiaryResponse(BaseModel):
     id: str
     name_display: str
     ssn_last4: str
@@ -19,6 +19,10 @@ class VeteranResponse(BaseModel):
 
     class Config:
         from_attributes = True
+
+
+# Transition safety alias
+VeteranResponse = BeneficiaryResponse
 
 
 class ProviderResponse(BaseModel):
@@ -70,7 +74,8 @@ class ClaimResponse(BaseModel):
     id: str
     claim_number: str
     batch_id: str
-    veteran_id: str
+    beneficiary_id: str
+    veteran_id: str  # transition safety alias
     provider_id: str
     claim_type: str
     normalized_data: dict[str, Any] | None
@@ -81,7 +86,8 @@ class ClaimResponse(BaseModel):
     diagnosis_codes: list[str]
     procedure_codes: list[str]
     created_at: datetime
-    veteran: VeteranResponse | None = None
+    beneficiary: BeneficiaryResponse | None = None
+    veteran: VeteranResponse | None = None  # transition safety alias
     provider: ProviderResponse | None = None
     findings: list[AgentFindingResponse] | None = None
     decision: DecisionResponse | None = None

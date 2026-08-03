@@ -36,6 +36,26 @@ type SortDirection = 'asc' | 'desc';
 
 const riskOrder: Record<string, number> = { high: 3, medium: 2, low: 1 };
 
+const normalizeRiskLevel = (level?: string): string => {
+  if (!level) return 'low';
+  const l = level.toLowerCase();
+  if (l === 'critical' || l === 'high') return 'high';
+  if (l === 'medium' || l === 'warn') return 'medium';
+  return 'low';
+};
+
+const getClaimTypeLabel = (type?: string): string => {
+  if (!type) return 'Unknown';
+  const t = type.toLowerCase();
+  if (t === 'dme') return 'DME';
+  if (t === 'medical') return 'Medical';
+  if (t === 'dental') return 'Dental';
+  if (t === 'pension') return 'Pharmacy (Part D)';
+  if (t === 'disability') return 'Institutional';
+  return type.charAt(0).toUpperCase() + type.slice(1);
+};
+
+
 interface FlaggedClaimsTableProps {
   onCountChange?: (count: number) => void;
   refreshTrigger?: number;
@@ -86,7 +106,7 @@ const FlaggedClaimsTable: React.FC<FlaggedClaimsTableProps> = ({ onCountChange, 
     let result = [...claims];
 
     if (riskFilter !== 'all') {
-      result = result.filter((c) => c.risk_level === riskFilter);
+      result = result.filter((c) => normalizeRiskLevel(c.risk_level) === riskFilter);
     }
 
     if (agentFilter !== 'all') {
@@ -98,7 +118,7 @@ const FlaggedClaimsTable: React.FC<FlaggedClaimsTableProps> = ({ onCountChange, 
     }
 
     if (typeFilter !== 'all') {
-      result = result.filter((c) => c.claim_type === typeFilter);
+      result = result.filter((c) => c.claim_type?.toLowerCase() === typeFilter.toLowerCase());
     }
 
     result.sort((a, b) => {
@@ -106,8 +126,8 @@ const FlaggedClaimsTable: React.FC<FlaggedClaimsTableProps> = ({ onCountChange, 
       switch (sortField) {
         case 'risk_level':
           comparison =
-            (riskOrder[a.risk_level ?? ''] ?? 0) -
-            (riskOrder[b.risk_level ?? ''] ?? 0);
+            (riskOrder[normalizeRiskLevel(a.risk_level)] ?? 0) -
+            (riskOrder[normalizeRiskLevel(b.risk_level)] ?? 0);
           break;
         case 'confidence':
           comparison =
@@ -200,8 +220,8 @@ const FlaggedClaimsTable: React.FC<FlaggedClaimsTableProps> = ({ onCountChange, 
             <MenuItem value="dme">DME</MenuItem>
             <MenuItem value="medical">Medical</MenuItem>
             <MenuItem value="dental">Dental</MenuItem>
-            <MenuItem value="pension">Pension</MenuItem>
-            <MenuItem value="disability">Disability</MenuItem>
+            <MenuItem value="pension">Pharmacy (Part D)</MenuItem>
+            <MenuItem value="disability">Institutional</MenuItem>
           </Select>
         </FormControl>
       </Stack>
@@ -221,6 +241,7 @@ const FlaggedClaimsTable: React.FC<FlaggedClaimsTableProps> = ({ onCountChange, 
                   Provider
                 </TableSortLabel>
               </TableCell>
+              <TableCell sx={{ fontWeight: 700 }}>Provider Address</TableCell>
               <TableCell sx={{ fontWeight: 700 }}>Claim Type</TableCell>
               <TableCell sx={{ fontWeight: 700 }}>Flagging Agents</TableCell>
               <TableCell sx={{ fontWeight: 700 }}>
@@ -249,7 +270,7 @@ const FlaggedClaimsTable: React.FC<FlaggedClaimsTableProps> = ({ onCountChange, 
           <TableBody>
             {filteredAndSorted.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={8} align="center" sx={{ py: 4 }}>
+                <TableCell colSpan={9} align="center" sx={{ py: 4 }}>
                   <Typography color="text.secondary">
                     No flagged claims match the current filters.
                   </Typography>
@@ -279,8 +300,11 @@ const FlaggedClaimsTable: React.FC<FlaggedClaimsTableProps> = ({ onCountChange, 
                       {claim.provider?.name ?? 'Unknown'}
                     </TableCell>
                     <TableCell>
+                      {claim.provider?.address?.street ?? 'Unknown Address'}
+                    </TableCell>
+                    <TableCell>
                       <Chip
-                        label={claim.claim_type === 'dme' ? 'DME' : claim.claim_type.charAt(0).toUpperCase() + claim.claim_type.slice(1)}
+                        label={getClaimTypeLabel(claim.claim_type)}
                         size="small"
                         variant="outlined"
                         sx={{ fontSize: '0.75rem' }}
@@ -310,7 +334,7 @@ const FlaggedClaimsTable: React.FC<FlaggedClaimsTableProps> = ({ onCountChange, 
                     </TableCell>
                     <TableCell>
                       {claim.risk_level ? (
-                        <RiskBadge level={claim.risk_level} />
+                        <RiskBadge level={normalizeRiskLevel(claim.risk_level)} />
                       ) : (
                         <Typography variant="body2" color="text.secondary">
                           --

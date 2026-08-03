@@ -68,6 +68,7 @@ const ApprovedClaimsTable: React.FC<ApprovedClaimsTableProps> = ({ onCountChange
               <TableCell sx={{ fontWeight: 700 }}>Claim ID</TableCell>
               <TableCell sx={{ fontWeight: 700 }}>Member</TableCell>
               <TableCell sx={{ fontWeight: 700 }}>Provider</TableCell>
+              <TableCell sx={{ fontWeight: 700 }}>Provider Address</TableCell>
               <TableCell sx={{ fontWeight: 700 }}>Claim Type</TableCell>
               <TableCell sx={{ fontWeight: 700 }}>Status</TableCell>
               <TableCell sx={{ fontWeight: 700 }}>Notes</TableCell>
@@ -76,7 +77,7 @@ const ApprovedClaimsTable: React.FC<ApprovedClaimsTableProps> = ({ onCountChange
           <TableBody>
             {claims.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={6} align="center" sx={{ py: 4 }}>
+                <TableCell colSpan={7} align="center" sx={{ py: 4 }}>
                   <Typography color="text.secondary">
                     No approved claims to display.
                   </Typography>
@@ -97,8 +98,11 @@ const ApprovedClaimsTable: React.FC<ApprovedClaimsTableProps> = ({ onCountChange
                     {claim.provider?.name ?? 'Unknown'}
                   </TableCell>
                   <TableCell>
+                    {claim.provider?.address?.street ?? 'Unknown Address'}
+                  </TableCell>
+                  <TableCell>
                     <Chip
-                      label={claim.claim_type === 'dme' ? 'DME' : claim.claim_type.charAt(0).toUpperCase() + claim.claim_type.slice(1)}
+                      label={claim.claim_type?.toLowerCase() === 'dme' ? 'DME' : claim.claim_type.charAt(0).toUpperCase() + claim.claim_type.slice(1)}
                       size="small"
                       variant="outlined"
                       sx={{ fontSize: '0.75rem' }}

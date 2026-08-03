@@ -49,6 +49,7 @@ export interface Claim {
   id: string;
   claim_number: string;
   batch_id: string;
+  beneficiary_id: string;
   veteran_id: string;
   provider_id: string;
   claim_type: 'medical' | 'disability' | 'pension' | 'dental' | 'dme';
@@ -60,11 +61,14 @@ export interface Claim {
   diagnosis_codes: string[];
   procedure_codes: string[];
   created_at: string;
+  beneficiary?: Member;
   veteran?: Member;
   provider?: Provider;
   findings?: AgentFinding[];
   decision?: Decision | null;
 }
+
+export type Beneficiary = Member;
 
 export interface AgentFinding {
   id: string;

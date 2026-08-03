@@ -51,20 +51,18 @@ class TestAnalyticsService:
     async def test_get_dashboard_metrics(self, mock_db):
         from services.analytics_service import get_dashboard_metrics
 
-        # Mock run_query_single for 5 sequential calls
-        flagged_row = MagicMock()
-        flagged_row.cnt = 10
-        approved_row = MagicMock()
-        approved_row.cnt = 50
+        # Mock run_query_single for 2 sequential calls
+        counts_row = MagicMock()
+        counts_row.total = 65
+        counts_row.flagged = 10
+        counts_row.approved = 50
+        counts_row.denied = 5
+
         savings_row = MagicMock()
         savings_row.total = 45200.0
-        denied_row = MagicMock()
-        denied_row.cnt = 5
-        total_row = MagicMock()
-        total_row.cnt = 65
 
         with patch("services.analytics_service.run_query_single", new_callable=AsyncMock) as mock_rqs:
-            mock_rqs.side_effect = [flagged_row, approved_row, savings_row, denied_row, total_row]
+            mock_rqs.side_effect = [counts_row, savings_row]
             result = await get_dashboard_metrics(mock_db)
 
         assert result["total_claims"] == 65
@@ -786,10 +784,13 @@ class TestBatchService:
             async for event in process_batch_claims("b1", mock_db):
                 events.append(event)
 
-        # Should have 2 insert_rows calls per claim-agent: one for finding, one for audit_log
+        # Agent findings are inserted via run_dml to support immediate update/delete.
+        # Audit log is inserted via insert_rows.
+        dml_calls = mock_dml.call_args_list
+        assert any("agent_findings" in call[0][0] for call in dml_calls)
+
         insert_calls = mock_insert.call_args_list
         table_names = [call[0][0] for call in insert_calls]
-        assert "agent_findings" in table_names
         assert "audit_log" in table_names
         audit_calls = [c for c in insert_calls if c[0][0] == "audit_log"]
         assert len(audit_calls) == 1  # one audit entry per agent finding

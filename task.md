@@ -1,17 +1,12 @@
 # Task Checklist: CMS Fraud Shield Transition
 
-- `[ ]` Phase 1: Global Re-Branding to CMS Fraud Shield
-    - `[ ]` Update all global header titles and metadata references to "CMS Fraud Shield"
-    - `[ ]` Re-brand login pages, landing layouts, and themes to represent a secure protective perimeter
-    - `[ ]` Re-align sidebar routes and register constants
-- `[ ]` Phase 2: Integrating Noel's ADK Enrollment Agent
-    - `[ ]` Setup path and page `/enrollment-integrity`
-    - `[ ]` Build interactive Entity Linkage Graph displaying ownership layers (ENT-COASTAL)
-    - `[ ]` Add interactive adversarial purple-team simulation panel and hardening report
-- `[ ]` Phase 3: DME Fraud Ring & Database Seeding
-    - `[ ]` Model DME (Durable Medical Equipment) orthotics/wheelchairs fraud scenario
-    - `[ ]` Integrate Stone's synthetic dataset schema elements inside `seed.py`
-    - `[ ]` Populate claims database with synthetic DME fraud ring transactions
+- `[x]` **Phase 1: Parallelize Table Truncation**
+    - `[x]` Refactor `clear_all_tables` in `backend/datagen/generator.py` to truncate tables concurrently using `asyncio.gather`
+- `[x]` **Phase 2: Clean up Chat Suggestions**
+    - `[x]` Replace legacy `'What VA policy applies?'` suggestion in `frontend/src/components/deepdive/ChatInterface.tsx` with `'What CMS policy applies?'`
+- `[x]` **Phase 3: Run Database Re-seeding & Verification**
+    - `[x]` Execute seeding live to measure latency improvement (targeting <5 seconds truncation time)
+    - `[x]` Run backend pytest suite to verify zero regressions
 - `[ ]` Phase 4: Proactive Policy Alerts & DOJ (NFED) Referrals
     - `[ ]` Build Proactive Policy Amendment Alerts suggesting claims-edit closures (Rule #714)
     - `[ ]` Build automated DOJ (NFED) and FBI Investigative Referral Brief generator and workspace

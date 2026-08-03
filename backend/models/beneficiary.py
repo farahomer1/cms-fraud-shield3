@@ -1,6 +1,6 @@
 # Copyright 2026 Google. Google provides these Materials as “Free Evaluation Services” subject to the terms, restrictions and limitations at https://cloud.google.com/terms/service-terms.
 
-"""Veteran model for BigQuery."""
+"""Beneficiary model for BigQuery."""
 
 import json
 import uuid
@@ -10,7 +10,7 @@ from typing import Any
 
 
 @dataclass
-class Veteran:
+class Beneficiary:
     id: str = field(default_factory=lambda: str(uuid.uuid4()))
     name_display: str = ""
     ssn_last4: str = ""
@@ -23,7 +23,7 @@ class Veteran:
     created_at: datetime | None = None
 
     @classmethod
-    def from_bq_row(cls, row) -> "Veteran":
+    def from_bq_row(cls, row) -> "Beneficiary":
         benefits = row.benefits_enrolled
         if isinstance(benefits, str):
             benefits = json.loads(benefits)
@@ -90,4 +90,3 @@ class Veteran:
             "benefits_enrolled": cms_benefits,
             "created_at": self.created_at.isoformat() if self.created_at else None,
         }
-

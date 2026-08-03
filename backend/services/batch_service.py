@@ -29,7 +29,7 @@ async def process_batch_claims(batch_id: str, bq: bigquery.Client) -> AsyncGener
                p.specialty as p_specialty, p.risk_score as p_risk_score,
                p.accreditation_status as p_accreditation_status
         FROM `{ds}.claims` c
-        LEFT JOIN `{ds}.veterans` v ON c.veteran_id = v.id
+        LEFT JOIN `{ds}.members` v ON c.beneficiary_id = v.id
         LEFT JOIN `{ds}.providers` p ON c.provider_id = p.id
         WHERE c.batch_id = @batch_id AND c.status IN ('pending', 'parsed')
         ORDER BY c.claim_number""",  # nosec B608 - dataset identifier validated in get_dataset(); user input parameterized
@@ -42,7 +42,7 @@ async def process_batch_claims(batch_id: str, bq: bigquery.Client) -> AsyncGener
 
     # Get all claims in batch for overlapping analysis
     all_batch_rows = await run_query(
-        f"""SELECT claim_number, veteran_id, provider_id, service_date,
+        f"""SELECT claim_number, beneficiary_id, provider_id, service_date,
                billing_amount, procedure_codes, diagnosis_codes
         FROM `{ds}.claims` WHERE batch_id = @batch_id""",  # nosec B608 - dataset identifier validated in get_dataset(); user input parameterized
         [bigquery.ScalarQueryParameter("batch_id", "STRING", batch_id)],
@@ -57,7 +57,8 @@ async def process_batch_claims(batch_id: str, bq: bigquery.Client) -> AsyncGener
             diag_codes = json.loads(diag_codes)
         batch_claims_data.append({
             "claim_number": c.claim_number,
-            "veteran_id": c.veteran_id,
+            "beneficiary_id": getattr(c, "beneficiary_id", None) or getattr(c, "veteran_id", ""),
+            "veteran_id": getattr(c, "beneficiary_id", None) or getattr(c, "veteran_id", ""), # transition safety alias
             "provider_id": c.provider_id,
             "service_date": str(c.service_date),
             "billing_amount": float(c.billing_amount),

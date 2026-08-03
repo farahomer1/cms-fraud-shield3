@@ -6,7 +6,7 @@ from google.cloud import bigquery
 
 from database import get_dataset, run_query, run_query_single
 from models.claim import Claim
-from models.veteran import Veteran
+from models.beneficiary import Beneficiary
 from models.provider import Provider
 from models.agent_finding import AgentFinding
 from services import gemini_client
@@ -82,7 +82,7 @@ You can:
 
 
 async def _load_claim_with_relations(claim_id: str, bq: bigquery.Client) -> Claim | None:
-    """Load a claim with its veteran, provider, and findings from BigQuery."""
+    """Load a claim with its beneficiary, provider, and findings from BigQuery."""
     ds = get_dataset()
     row = await run_query_single(
         f"""SELECT c.*, v.name_display as v_name_display, v.ssn_last4 as v_ssn_last4,
@@ -91,21 +91,22 @@ async def _load_claim_with_relations(claim_id: str, bq: bigquery.Client) -> Clai
                p.name as p_name, p.npi as p_npi, p.provider_type as p_provider_type,
                p.specialty as p_specialty, p.address as p_address, p.risk_score as p_risk_score,
                p.accreditation_status as p_accreditation_status
-        FROM `{ds}.claims` c
-        LEFT JOIN `{ds}.veterans` v ON c.veteran_id = v.id
-        LEFT JOIN `{ds}.providers` p ON c.provider_id = p.id
-        WHERE c.id = @claim_id""",  # nosec B608 - dataset identifier validated in get_dataset(); user input parameterized
+         FROM `{ds}.claims` c
+         LEFT JOIN `{ds}.members` v ON c.beneficiary_id = v.id
+         LEFT JOIN `{ds}.providers` p ON c.provider_id = p.id
+         WHERE c.id = @claim_id""",  # nosec B608 - dataset identifier validated in get_dataset(); user input parameterized
         [bigquery.ScalarQueryParameter("claim_id", "STRING", claim_id)],
     )
     if not row:
         return None
 
     claim = Claim.from_bq_row(row)
-    claim.veteran = Veteran(
-        id=row.veteran_id, name_display=row.v_name_display or "", ssn_last4=row.v_ssn_last4 or "",
+    claim.beneficiary = Beneficiary(
+        id=row.beneficiary_id, name_display=row.v_name_display or "", ssn_last4=row.v_ssn_last4 or "",
         date_of_birth=row.v_dob, date_of_death=row.v_dod, vital_status=row.v_vital_status or "alive",
         service_branch=row.v_service_branch, disability_rating=row.v_disability_rating,
     )
+    claim.veteran = claim.beneficiary
     claim.provider = Provider(
         id=row.provider_id, name=row.p_name or "", npi=row.p_npi or "",
         provider_type=row.p_provider_type or "individual", specialty=row.p_specialty,
@@ -218,8 +219,8 @@ def _build_claim_context(claim: Claim) -> str:
     parts.append(f"**Diagnosis Codes:** {json.dumps(claim.diagnosis_codes)}")
     parts.append(f"**Procedure Codes:** {json.dumps(claim.procedure_codes)}")
 
-    if claim.veteran:
-        v = claim.veteran
+    if claim.beneficiary:
+        v = claim.beneficiary
         parts.append(f"\n**Beneficiary:** {v.name_display}")
         parts.append(f"**SSN (last 4):** {v.ssn_last4}")
         parts.append(f"**DOB:** {v.date_of_birth}")

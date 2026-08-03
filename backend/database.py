@@ -95,15 +95,22 @@ async def run_query_single(query: str, params: list | None = None):
     return rows[0] if rows else None
 
 
-async def insert_rows(table_name: str, rows: list[dict]) -> list:
-    """Insert rows into a BigQuery table using streaming inserts."""
+async def insert_rows(table_name: str, rows: list[dict], use_load: bool = False) -> list:
+    """Insert rows into a BigQuery table using streaming or load jobs."""
     client = _get_client()
     dataset = get_dataset()
     table_ref = f"{dataset}.{table_name}"
-    errors = await asyncio.to_thread(
-        client.insert_rows_json, table_ref, rows
-    )
-    return errors
+    if use_load:
+        def _load():
+            job = client.load_table_from_json(rows, table_ref)
+            job.result()
+            return []
+        return await asyncio.to_thread(_load)
+    else:
+        errors = await asyncio.to_thread(
+            client.insert_rows_json, table_ref, rows
+        )
+        return errors
 
 
 async def run_dml(query: str, params: list | None = None) -> int:

@@ -105,6 +105,7 @@ const DeniedClaimsTable: React.FC<DeniedClaimsTableProps> = ({ onCountChange, re
               <TableCell sx={{ fontWeight: 700 }}>Claim ID</TableCell>
               <TableCell sx={{ fontWeight: 700 }}>Member</TableCell>
               <TableCell sx={{ fontWeight: 700 }}>Provider</TableCell>
+              <TableCell sx={{ fontWeight: 700 }}>Provider Address</TableCell>
               <TableCell sx={{ fontWeight: 700 }}>Claim Type</TableCell>
               <TableCell sx={{ fontWeight: 700 }}>Billing Amount</TableCell>
               <TableCell sx={{ fontWeight: 700 }}>Status</TableCell>
@@ -117,7 +118,7 @@ const DeniedClaimsTable: React.FC<DeniedClaimsTableProps> = ({ onCountChange, re
           <TableBody>
             {claims.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={10} align="center" sx={{ py: 4 }}>
+                <TableCell colSpan={11} align="center" sx={{ py: 4 }}>
                   <Typography color="text.secondary">
                     No denied claims to display.
                   </Typography>
@@ -143,8 +144,11 @@ const DeniedClaimsTable: React.FC<DeniedClaimsTableProps> = ({ onCountChange, re
                     {claim.provider?.name ?? 'Unknown'}
                   </TableCell>
                   <TableCell>
+                    {claim.provider?.address?.street ?? 'Unknown Address'}
+                  </TableCell>
+                  <TableCell>
                     <Chip
-                      label={claim.claim_type === 'dme' ? 'DME' : claim.claim_type.charAt(0).toUpperCase() + claim.claim_type.slice(1)}
+                      label={claim.claim_type?.toLowerCase() === 'dme' ? 'DME' : claim.claim_type.charAt(0).toUpperCase() + claim.claim_type.slice(1)}
                       size="small"
                       variant="outlined"
                       sx={{ fontSize: '0.75rem' }}

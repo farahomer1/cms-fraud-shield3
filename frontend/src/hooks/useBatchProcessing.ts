@@ -4,13 +4,12 @@ import { useState, useRef, useCallback, useEffect } from 'react';
 import { LogEvent } from '../components/processing/StatusLog';
 import { PipelineNodeState } from '../components/processing/PipelineAnimation';
 import { processBatch } from '../services/batchService';
-import { createAuditLogBatch, AuditEventPayload } from '../services/auditService';
 
 const DEFAULT_PIPELINE_NODES: PipelineNodeState[] = [
   { id: 'normalization', label: 'Data Normalization', status: 'idle' },
   { id: 'warehouse', label: 'Data Warehouse', status: 'idle' },
   { id: 'rules_engine', label: 'Rules Engine', status: 'idle' },
-  { id: 'agent_army', label: 'Agent Army (7 nodes)', status: 'idle' },
+  { id: 'agent_army', label: 'Agent Army (4 concurrent nodes)', status: 'idle' },
   { id: 'decision_routing', label: 'Decision Routing', status: 'idle' },
 ];
 
@@ -28,69 +27,6 @@ interface UseBatchProcessingReturn {
   startProcessing: (batchId: string, fakeTotal?: number) => void;
 }
 
-// ── Fake event generation data ──────────────────────────────────────────
-
-const AGENT_DISPLAY_NAMES = [
-  'Gemini AI Rules Engine',
-  'Data Validation Agent',
-  'Pension Poaching Agent',
-  'Claim Sharking Agent',
-  'DBQ Fraud Agent',
-  'Overlapping Claims Agent',
-  'Medical Record Agent',
-  'Claim Discrepancy Agent',
-];
-
-const AGENT_KEYS = [
-  'rules_engine',
-  'data_validation',
-  'pension_poaching',
-  'claim_sharking',
-  'dbq_fraud',
-  'overlapping_claims',
-  'medical_record',
-  'claim_discrepancy',
-];
-
-const FLAG_MESSAGES = [
-  'Billing amount exceeds 95th percentile for this procedure/diagnosis combination.',
-  'Multiple billing anomalies detected: procedure codes inconsistent with diagnosis.',
-  'Provider NPI validation failed against CMS NPPES registry.',
-  'Deceased beneficiary flag triggered — claim filed after recorded date of death.',
-  'Provider has pattern of converting medical claims to unapproved benefits.',
-  'Billing amount significantly inflated compared to regional averages.',
-  'Clinical assessment responses show statistical improbability — all maximum severity ratings.',
-  'Duplicate procedure codes billed within 7-day window for same beneficiary.',
-  'Procedure billed not supported by documented medical necessity.',
-  'Billed amount exceeds Medicare fee schedule by 300%+.',
-  'Service date conflicts with beneficiary\'s recorded inpatient admission.',
-  'Identical clinical assessment narrative text found across multiple unrelated beneficiaries.',
-  'Overlapping service dates with another approved claim for identical services.',
-  'Treatment plan references conditions not documented in medical history.',
-];
-
-const PASS_MESSAGES = [
-  'All automated rules passed. No billing anomalies detected.',
-  'All data fields validated successfully against CMS records.',
-  'No beneficiary exploitation indicators detected in billing pattern.',
-  'Provider billing patterns within normal parameters.',
-  'DBQ responses consistent with documented medical condition.',
-  'No overlapping or duplicate claims found in lookback window.',
-  'Medical records support billed procedures and diagnoses.',
-  'Billing amounts and codes consistent with clinical documentation.',
-];
-
-/** Simple seeded PRNG for deterministic fake data */
-function mulberry32(seed: number): () => number {
-  let s = seed;
-  return () => {
-    s = (s + 0x6d2b79f5) | 0;
-    let t = Math.imul(s ^ (s >>> 15), 1 | s);
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-
 export function useBatchProcessing(): UseBatchProcessingReturn {
   const [events, setEvents] = useState<LogEvent[]>([]);
   const [isProcessing, setIsProcessing] = useState<boolean>(false);
@@ -104,16 +40,9 @@ export function useBatchProcessing(): UseBatchProcessingReturn {
   const [totalClaims, setTotalClaims] = useState<number>(0);
 
   const eventSourceRef = useRef<EventSource | null>(null);
-  const fakeTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const speedTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const fakeClaimCounter = useRef<number>(0);
-  const rngRef = useRef<(() => number) | null>(null);
-  const batchTotalRef = useRef<number>(200); // default, updated from batch_start
-
-  // Audit log buffering — accumulate entries and flush in batches
-  const auditBufferRef = useRef<AuditEventPayload[]>([]);
-  const auditFlushTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const auditAbortRef = useRef<AbortController | null>(null);
+  const startTimeRef = useRef<number | null>(null);
+  const processedCountRef = useRef<number>(0);
+  const totalClaimsRef = useRef<number>(0);
 
   const updateNodeStatus = useCallback((nodeId: string, status: PipelineNodeState['status']) => {
     setPipelineNodes((prev) =>
@@ -133,220 +62,109 @@ export function useBatchProcessing(): UseBatchProcessingReturn {
     });
   }, []);
 
-  // ── Audit log flush helpers ─────────────────────────────────────────
-  const flushAuditBuffer = useCallback(() => {
-    const entries = auditBufferRef.current.splice(0);
-    if (entries.length === 0) return;
-    const controller = new AbortController();
-    auditAbortRef.current = controller;
-    createAuditLogBatch(entries, controller.signal).catch(() => {
-      // Silently ignore — fire-and-forget for demo audit logs
-    });
-  }, []);
-
-  const stopAuditLogging = useCallback(() => {
-    if (auditFlushTimerRef.current) {
-      clearInterval(auditFlushTimerRef.current);
-      auditFlushTimerRef.current = null;
-    }
-    // Abort any in-flight request and discard remaining buffer
-    if (auditAbortRef.current) {
-      auditAbortRef.current.abort();
-      auditAbortRef.current = null;
-    }
-    auditBufferRef.current = [];
-  }, []);
-
-  // ── Fake event generator ──────────────────────────────────────────────
-  // Generates synthetic claim processing events at 20-40 claims/sec
-
-  const stopFakeEvents = useCallback(() => {
-    if (fakeTimerRef.current) {
-      clearInterval(fakeTimerRef.current);
-      fakeTimerRef.current = null;
-    }
-    if (speedTimerRef.current) {
-      clearInterval(speedTimerRef.current);
-      speedTimerRef.current = null;
-    }
-    stopAuditLogging();
-  }, [stopAuditLogging]);
-
-  const startFakeEvents = useCallback((batchTotal: number) => {
-    stopFakeEvents();
-
-    const rng = mulberry32(Date.now());
-    rngRef.current = rng;
-    fakeClaimCounter.current = 0;
-    batchTotalRef.current = batchTotal;
-    setTotalClaims(batchTotal);
-
-    // Start audit log flush timer — flush buffered entries every 2 seconds
-    auditBufferRef.current = [];
-    auditFlushTimerRef.current = setInterval(flushAuditBuffer, 2000);
-
-    // Track speed: update claimsPerSecond every 500ms
-    let lastCount = 0;
-    let lastTime = Date.now();
-    speedTimerRef.current = setInterval(() => {
-      const now = Date.now();
-      const elapsed = (now - lastTime) / 1000;
-      const delta = fakeClaimCounter.current - lastCount;
-      if (elapsed > 0) {
-        const speed = Math.round(delta / elapsed);
-        setClaimsPerSecond(speed);
-      }
-      lastCount = fakeClaimCounter.current;
-      lastTime = now;
-    }, 500);
-
-    // Generate fake events at variable speed (20-40 claims/sec)
-    // Use 50ms interval (~20/sec base), with bursts of multiple claims per tick
-    fakeTimerRef.current = setInterval(() => {
-      if (fakeClaimCounter.current >= batchTotal) {
-        // Done — flush remaining audit entries, then stop
-        flushAuditBuffer();
-        stopFakeEvents();
-        setPipelineNodes((prev) =>
-          prev.map((node) => ({ ...node, status: 'success' as const }))
-        );
-        setProgress(100);
-        setClaimsPerSecond(0);
-        setIsComplete(true);
-        setIsProcessing(false);
-        addEvent(`Batch processing complete. ${batchTotal.toLocaleString()} claims analyzed.`, 'pass');
-        return;
-      }
-
-      // Generate 1-2 log entries per tick, but each claim represents 12-20
-      // agent evaluation events so the counter advances much faster
-      const entriesThisTick = rng() < 0.5 ? 1 : 2;
-
-      for (let i = 0; i < entriesThisTick; i++) {
-        if (fakeClaimCounter.current >= batchTotal) break;
-
-        // Each claim generates 12-20 agent evaluation events
-        const eventsPerClaim = Math.floor(rng() * 9) + 12; // 12-20
-        fakeClaimCounter.current = Math.min(fakeClaimCounter.current + eventsPerClaim, batchTotal);
-
-        const claimNum = `CLM-${String(3000000 + fakeClaimCounter.current).padStart(10, '0')}`;
-        const agentIdx = Math.floor(rng() * AGENT_KEYS.length);
-        const agentName = AGENT_DISPLAY_NAMES[agentIdx];
-        const agentKey = AGENT_KEYS[agentIdx];
-        const confidence = Math.floor(rng() * 80 + 15);
-
-        // ~12% flag rate
-        const isFlagged = rng() < 0.12;
-
-        if (isFlagged) {
-          const msgIdx = Math.floor(rng() * FLAG_MESSAGES.length);
-          const message = `[FLAGGED] ${agentName} flagged ${claimNum} (${confidence}%): ${FLAG_MESSAGES[msgIdx]}`;
-          setEvents((prev) => {
-            const next = [...prev, { timestamp: new Date().toISOString(), message, type: 'alert' as const }];
-            return next.length > 2000 ? next.slice(-2000) : next;
-          });
-        } else {
-          const msgIdx = Math.floor(rng() * PASS_MESSAGES.length);
-          const message = `[PASS] ${agentName}: ${claimNum} — ${PASS_MESSAGES[msgIdx]}`;
-          setEvents((prev) => {
-            const next = [...prev, { timestamp: new Date().toISOString(), message, type: 'pass' as const }];
-            return next.length > 2000 ? next.slice(-2000) : next;
-          });
-        }
-
-        // Buffer ~50% of events as audit log entries
-        if (rng() < 0.5) {
-          auditBufferRef.current.push({
-            actor: agentKey,
-            actor_type: 'agent',
-            action_type: 'finding',
-            claim_id: claimNum,
-            details: {
-              recommendation: isFlagged ? 'flag' : 'pass',
-              confidence,
-              source: 'batch_processing',
-            },
-            confidence_score: confidence,
-          });
-        }
-
-        setClaimsProcessed(fakeClaimCounter.current);
-        const pct = Math.min(99, Math.round((fakeClaimCounter.current / batchTotal) * 100));
-        setProgress(pct);
-        setCurrentClaim(claimNum);
-        setCurrentAgent(AGENT_KEYS[agentIdx]);
-      }
-    }, 50);
-  }, [stopFakeEvents, addEvent, flushAuditBuffer]);
-
   // ── SSE message handler ──────────────────────────────────────────────
 
   const handleSSEMessage = useCallback(
     (event: MessageEvent) => {
       try {
         const data = JSON.parse(event.data);
-
         const eventType = (event.type !== 'message' ? event.type : '') || (data.event_type as string) || (data.type as string) || 'info';
 
-        // Auto-update pipeline nodes based on event types from batch processing
+        // Auto-update pipeline nodes and logs based on event types from real batch processing
         if (eventType === 'batch_start') {
+          startTimeRef.current = performance.now();
+          processedCountRef.current = 0;
+          const total = data.data?.totalClaims || data.totalClaims || 0;
+          totalClaimsRef.current = total;
+          setTotalClaims(total);
+          setClaimsProcessed(0);
+          setProgress(0);
           updateNodeStatus('normalization', 'active');
           updateNodeStatus('warehouse', 'active');
+          addEvent(`[SYSTEM] Batch processing initiated: Analyzing ${total} claims with CMS Federated AI Agents.`, 'system');
         } else if (eventType === 'claim_start') {
+          const claimNumber = data.data?.claimNumber || data.claimNumber || '';
+          setCurrentClaim(claimNumber);
           updateNodeStatus('normalization', 'success');
           updateNodeStatus('warehouse', 'success');
+          addEvent(`[SYSTEM] Starting multi-agent analysis of ${claimNumber}`, 'system');
         } else if (eventType === 'agent_start') {
-          const agentName = (data.agentName as string) || '';
-          if (agentName === 'rules_engine') {
+          const agentName = data.data?.agentName || data.agentName || '';
+          const agentDisplayName = data.data?.agentDisplayName || data.agentDisplayName || agentName;
+          setCurrentAgent(agentName);
+          if (agentName === 'rules_service' || agentName === 'rules_engine') {
             updateNodeStatus('rules_engine', 'active');
           } else {
             updateNodeStatus('agent_army', 'active');
           }
+          addEvent(`[SYSTEM] ${agentDisplayName} analyzing claim...`, 'system');
         } else if (eventType === 'agent_complete') {
-          const status = (data.status as string);
-          const agentName = (data.agentName as string) || '';
-          if (agentName === 'rules_engine') {
-            updateNodeStatus('rules_engine', status === 'flag' ? 'error' : 'success');
+          const agentName = data.data?.agentName || data.agentName || '';
+          const agentDisplayName = data.data?.agentDisplayName || data.agentDisplayName || agentName;
+          const status = data.data?.status || data.status || 'pass';
+          const recommendation = data.data?.recommendation || data.recommendation || 'pass';
+          const confidenceScore = data.data?.confidenceScore || data.confidenceScore || 0;
+          const msg = data.data?.message || data.message || '';
+
+          if (agentName === 'rules_service' || agentName === 'rules_engine') {
+            updateNodeStatus('rules_engine', status === 'flag' || status === 'error' ? 'error' : 'success');
+          } else {
+            updateNodeStatus('agent_army', 'active');
+          }
+
+          if (status === 'flag' || recommendation === 'flag' || status === 'error') {
+            addEvent(`[ALERT] ${agentDisplayName} flagged claim (${confidenceScore}%): ${msg}`, 'alert');
+          } else {
+            addEvent(`[PASS] ${agentDisplayName}: ${msg || 'Claim within normal compliance bounds.'}`, 'pass');
           }
         } else if (eventType === 'claim_complete') {
           updateNodeStatus('decision_routing', 'active');
-        }
+          processedCountRef.current += 1;
+          setClaimsProcessed(processedCountRef.current);
+          
+          const total = totalClaimsRef.current || 1;
+          const pct = Math.min(99, Math.round((processedCountRef.current / total) * 100));
+          setProgress(pct);
 
-        if (eventType === 'batch_complete' || eventType === 'complete') {
-          // Stop fake events and mark complete
-          stopFakeEvents();
+          // Calculate current speed
+          if (startTimeRef.current !== null) {
+            const elapsedSeconds = (performance.now() - startTimeRef.current) / 1000;
+            if (elapsedSeconds > 0) {
+              const speed = Math.round(processedCountRef.current / elapsedSeconds);
+              setClaimsPerSecond(speed);
+            }
+          }
+        } else if (eventType === 'batch_complete' || eventType === 'complete') {
           setPipelineNodes((prev) =>
             prev.map((node) => ({ ...node, status: 'success' as const }))
           );
           setProgress(100);
-          setClaimsProcessed(batchTotalRef.current);
+          const total = data.data?.totalClaims || data.totalClaims || processedCountRef.current;
+          setClaimsProcessed(total);
           setClaimsPerSecond(0);
           setIsComplete(true);
           setIsProcessing(false);
-          addEvent(data.message || `Batch processing complete. ${batchTotalRef.current} claims processed.`, 'pass');
+          const msg = data.data?.message || data.message || `Batch processing complete. ${total} claims processed.`;
+          addEvent(`[SYSTEM] ${msg}`, 'pass');
 
           if (eventSourceRef.current) {
             eventSourceRef.current.close();
             eventSourceRef.current = null;
           }
-          return;
-        }
-
-        if (eventType === 'error' || eventType === 'batch_error') {
-          if (data.stage) {
-            updateNodeStatus(data.stage, 'error');
+        } else if (eventType === 'error' || eventType === 'batch_error' || eventType === 'error_event') {
+          const stage = data.data?.stage || data.stage;
+          if (stage) {
+            updateNodeStatus(stage, 'error');
           }
-          addEvent(data.message || 'An error occurred during processing.', 'alert');
-          return;
+          const msg = data.data?.message || data.message || 'An error occurred during processing.';
+          addEvent(`[ALERT] ${msg}`, 'alert');
+          setIsProcessing(false);
         }
-
-        // Don't add SSE events to the log — fake events are the visual layer.
-        // The backend SSE events just drive pipeline node states.
       } catch (err) {
         console.error('Error parsing SSE event:', err);
       }
     },
-    [updateNodeStatus, addEvent, stopFakeEvents]
+    [updateNodeStatus, addEvent]
   );
 
   const startProcessing = useCallback(
@@ -361,7 +179,8 @@ export function useBatchProcessing(): UseBatchProcessingReturn {
       setClaimsProcessed(0);
       setClaimsPerSecond(0);
       setTotalClaims(0);
-      fakeClaimCounter.current = 0;
+      processedCountRef.current = 0;
+      startTimeRef.current = null;
       setPipelineNodes(
         DEFAULT_PIPELINE_NODES.map((node) => ({ ...node, status: 'idle' as const }))
       );
@@ -371,32 +190,27 @@ export function useBatchProcessing(): UseBatchProcessingReturn {
         eventSourceRef.current.close();
         eventSourceRef.current = null;
       }
-      stopFakeEvents();
 
-      addEvent('Initiating batch processing...', 'system');
-
-      const total = fakeTotal || 10000;
+      addEvent('[SYSTEM] Initiating real-time batch processing...', 'system');
 
       try {
         await processBatch(batchId);
-        addEvent('Batch processing started. Connecting to event stream...', 'system');
+        addEvent('[SYSTEM] Batch processing initiated. Subscribing to CMS live agent EventStream...', 'system');
       } catch (err) {
         console.error('Error starting batch processing:', err);
-        addEvent('Failed to start batch processing.', 'alert');
+        addEvent('[ALERT] Failed to start batch processing.', 'alert');
         setIsProcessing(false);
         return;
       }
 
       // Connect to SSE endpoint
-      const apiBase = import.meta.env.VITE_API_BASE_URL || '/api';
-      const sseUrl = `${apiBase}/batches/${batchId}/progress`;
+      const apiBase = import.meta.env.VITE_API_BASE_URL || '';
+      const sseUrl = `${apiBase}/api/batches/${batchId}/progress`;
       const eventSource = new EventSource(sseUrl);
       eventSourceRef.current = eventSource;
 
       eventSource.onopen = () => {
-        addEvent('Connected to processing event stream.', 'system');
-        // Start fake events only after event stream is connected
-        startFakeEvents(total);
+        addEvent('[SYSTEM] Successfully connected to processing event stream.', 'system');
         updateNodeStatus('normalization', 'active');
         updateNodeStatus('warehouse', 'active');
       };
@@ -416,17 +230,14 @@ export function useBatchProcessing(): UseBatchProcessingReturn {
         console.error('SSE connection error:', err);
 
         if (eventSource.readyState === EventSource.CLOSED) {
-          addEvent('Event stream connection closed.', 'system');
-          // If fake events haven't finished, let them continue
-          if (fakeClaimCounter.current >= batchTotalRef.current) {
-            setIsProcessing(false);
-          }
+          addEvent('[SYSTEM] Event stream connection closed.', 'system');
+          setIsProcessing(false);
         } else {
-          addEvent('Event stream connection error. Attempting to reconnect...', 'alert');
+          addEvent('[ALERT] Event stream connection error. Attempting automatic reconnection...', 'alert');
         }
       };
     },
-    [handleSSEMessage, addEvent, stopFakeEvents, startFakeEvents, updateNodeStatus]
+    [handleSSEMessage, addEvent, updateNodeStatus]
   );
 
   // Cleanup on unmount
@@ -436,9 +247,8 @@ export function useBatchProcessing(): UseBatchProcessingReturn {
         eventSourceRef.current.close();
         eventSourceRef.current = null;
       }
-      stopFakeEvents();
     };
-  }, [stopFakeEvents]);
+  }, []);
 
   return {
     events,

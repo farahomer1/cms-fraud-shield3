@@ -9,7 +9,7 @@ from google.cloud import bigquery
 
 from database import get_db, get_dataset, run_query, run_query_single, run_dml, insert_rows
 from models.claim import Claim
-from models.veteran import Veteran
+from models.beneficiary import Beneficiary
 from models.provider import Provider
 from models.agent_finding import AgentFinding
 from models.decision import Decision
@@ -35,8 +35,7 @@ async def list_claims(
         # Decision-aware filtering: the claim status UPDATE may not go through
         # due to BQ streaming buffer, so we also consult the decisions table.
         if status == "flagged":
-            conditions.append("c.status = @status")
-            params.append(bigquery.ScalarQueryParameter("status", "STRING", status))
+            conditions.append("c.status IN ('flagged', 'held')")
             # NOT EXISTS is NULL-safe (unlike NOT IN which fails if any claim_id is NULL)
             conditions.append(f"""NOT EXISTS (
                 SELECT 1 FROM `{ds}.decisions` d WHERE d.claim_id = c.id
@@ -75,7 +74,7 @@ async def list_claims(
                p.specialty as p_specialty, p.address as p_address, p.risk_score as p_risk_score,
                p.accreditation_status as p_accreditation_status
         FROM `{ds}.claims` c
-        LEFT JOIN `{ds}.veterans` v ON c.veteran_id = v.id
+        LEFT JOIN `{ds}.members` v ON c.beneficiary_id = v.id
         LEFT JOIN `{ds}.providers` p ON c.provider_id = p.id
         {where}
         ORDER BY c.created_at DESC
@@ -86,8 +85,8 @@ async def list_claims(
     claim_ids = []
     for r in rows:
         claim = Claim.from_bq_row(r)
-        claim.veteran = Veteran(
-            id=r.veteran_id, name_display=r.v_name_display or "", ssn_last4=r.v_ssn_last4 or "",
+        claim.beneficiary = Beneficiary(
+            id=r.beneficiary_id, name_display=r.v_name_display or "", ssn_last4=r.v_ssn_last4 or "",
             date_of_birth=r.v_dob, date_of_death=r.v_dod, vital_status=r.v_vital_status or "alive",
             service_branch=r.v_service_branch, disability_rating=r.v_disability_rating,
         )
@@ -186,7 +185,7 @@ async def get_claim(claim_id: str, bq: bigquery.Client = Depends(get_db)):
                p.specialty as p_specialty, p.address as p_address, p.risk_score as p_risk_score,
                p.accreditation_status as p_accreditation_status, p.claim_history as p_claim_history
         FROM `{ds}.claims` c
-        LEFT JOIN `{ds}.veterans` v ON c.veteran_id = v.id
+        LEFT JOIN `{ds}.members` v ON c.beneficiary_id = v.id
         LEFT JOIN `{ds}.providers` p ON c.provider_id = p.id
         WHERE c.id = @claim_id""",  # nosec B608 - dataset identifier validated in get_dataset(); user input parameterized
         [bigquery.ScalarQueryParameter("claim_id", "STRING", claim_id)],
@@ -195,8 +194,8 @@ async def get_claim(claim_id: str, bq: bigquery.Client = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Claim not found")
 
     claim = Claim.from_bq_row(row)
-    claim.veteran = Veteran(
-        id=row.veteran_id, name_display=row.v_name_display or "", ssn_last4=row.v_ssn_last4 or "",
+    claim.beneficiary = Beneficiary(
+        id=row.beneficiary_id, name_display=row.v_name_display or "", ssn_last4=row.v_ssn_last4 or "",
         date_of_birth=row.v_dob, date_of_death=row.v_dod, vital_status=row.v_vital_status or "alive",
         service_branch=row.v_service_branch, disability_rating=row.v_disability_rating,
         benefits_enrolled=json.loads(row.v_benefits_enrolled) if isinstance(row.v_benefits_enrolled, str) else row.v_benefits_enrolled,
@@ -262,8 +261,13 @@ async def decide_claim(claim_id: str, body: DecisionRequest, bq: bigquery.Client
     if not claim_row:
         raise HTTPException(status_code=404, detail="Claim not found")
 
-    # Allow overwriting previous decisions — just insert a new row.
-    # Read queries use ORDER BY created_at DESC LIMIT 1 to pick the latest.
+    # Check if decision already exists
+    existing_decision = await run_query_single(
+        f"SELECT * FROM `{ds}.decisions` WHERE claim_id = @claim_id LIMIT 1",  # nosec B608 - dataset identifier validated in get_dataset(); user input parameterized
+        [bigquery.ScalarQueryParameter("claim_id", "STRING", claim_id)],
+    )
+    if existing_decision:
+        raise HTTPException(status_code=400, detail="Decision already recorded for this claim")
 
     claim = Claim.from_bq_row(claim_row)
     savings = float(claim.billing_amount) if body.decisionType == "denied" else None
@@ -337,7 +341,7 @@ async def decide_claim(claim_id: str, body: DecisionRequest, bq: bigquery.Client
             await insert_rows("agent_flags", flag_rows)
 
     msg = {
-        "approved": "Payment authorized. Metadata transmitted to VA Downstream Systems.",
+        "approved": "Payment authorized. Metadata transmitted to HIGLAS Downstream Systems.",
         "denied": "Claim Denied. Feedback loop updated.",
         "false_positive": "Marked as False Positive. Feedback ticket created.",
     }

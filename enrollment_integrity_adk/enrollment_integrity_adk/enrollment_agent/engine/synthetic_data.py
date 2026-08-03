@@ -196,6 +196,8 @@ def build_network() -> Network:
         cmra_suites[214],"AGT-SENTINEL","2026-07-08",None)
     own_id("OWN-0030","ENT-COASTAL","IND-MALEN-COASTAL",75.0,"managing owner","2026-05-28","2026-05-28")
     own_id("OWN-0031","ENT-COASTAL","IND-KLINE",75.0,"managing owner","2026-05-28")
+    ind("IND-VIKTOR","Yury Viktor",uniq_ssn4(),"1975-10-12")
+    own_id("OWN-0032","ENT-COASTAL","IND-VIKTOR",25.0,"Authorized Official","2026-05-28")
     ent("ENT-TIDEWATER","Tidewater DME LLC","DME supplier","2025-11-05","enrolled",
         cmra_suites[231],"AGT-SENTINEL","2025-11-20",None)
     own("ENT-TIDEWATER",ind("IND-DRAKE","Leon Drake").id,100.0,"beneficial owner","2025-11-05")

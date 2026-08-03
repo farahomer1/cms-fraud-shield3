@@ -54,9 +54,9 @@ async def search_patterns(query: str, bq: bigquery.Client) -> dict:
                 FROM `{ds}.agent_findings` af
                 WHERE af.claim_id = c.id AND af.recommendation = 'flag') as flagging_agents
         FROM `{ds}.claims` c
-        LEFT JOIN `{ds}.veterans` v ON c.veteran_id = v.id
+        LEFT JOIN `{ds}.members` v ON c.beneficiary_id = v.id
         LEFT JOIN `{ds}.providers` p ON c.provider_id = p.id
-        WHERE c.status = 'flagged'
+        WHERE c.status IN ('flagged', 'held')
         LIMIT 50"""  # nosec B608 - dataset identifier validated in get_dataset(); user input parameterized
     )
 
@@ -66,7 +66,8 @@ async def search_patterns(query: str, bq: bigquery.Client) -> dict:
         claims_context.append({
             "claim_number": claim.claim_number,
             "provider": r.p_name or "Unknown",
-            "veteran": r.v_name or "Unknown",
+            "beneficiary": r.v_name or "Unknown",
+            "veteran": r.v_name or "Unknown", # transition safety alias
             "billing_amount": float(claim.billing_amount),
             "risk_level": claim.risk_level,
             "agents": list(r.flagging_agents) if r.flagging_agents else [],

@@ -25,8 +25,8 @@ def mock_db():
 
 @pytest.fixture
 def sample_veteran():
-    from models.veteran import Veteran
-    return Veteran(
+    from models.beneficiary import Beneficiary
+    return Beneficiary(
         id=str(uuid.uuid4()),
         name_display="John Doe",
         ssn_last4="1234",
@@ -40,8 +40,8 @@ def sample_veteran():
 
 @pytest.fixture
 def sample_deceased_veteran():
-    from models.veteran import Veteran
-    return Veteran(
+    from models.beneficiary import Beneficiary
+    return Beneficiary(
         id=str(uuid.uuid4()),
         name_display="James Smith",
         ssn_last4="5678",
@@ -103,7 +103,7 @@ def sample_claim(sample_batch, sample_veteran, sample_provider):
         id=str(uuid.uuid4()),
         claim_number="CLM-0001234567",
         batch_id=sample_batch.id,
-        veteran_id=sample_veteran.id,
+        beneficiary_id=sample_veteran.id,
         provider_id=sample_provider.id,
         claim_type="medical",
         status="pending",
@@ -121,7 +121,7 @@ def sample_flagged_claim(sample_batch, sample_deceased_veteran, sample_high_risk
         id=str(uuid.uuid4()),
         claim_number="CLM-9988776655",
         batch_id=sample_batch.id,
-        veteran_id=sample_deceased_veteran.id,
+        beneficiary_id=sample_deceased_veteran.id,
         provider_id=sample_high_risk_provider.id,
         claim_type="disability",
         status="flagged",

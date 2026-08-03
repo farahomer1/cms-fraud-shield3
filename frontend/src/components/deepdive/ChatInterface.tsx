@@ -27,7 +27,7 @@ const SUGGESTED_PROMPTS = [
   'Show me the evidence',
   'Has this provider submitted similar claims?',
   'Draft a rejection note',
-  'What VA policy applies?',
+  'What CMS policy applies?',
   'Explain this finding in detail',
 ];
 

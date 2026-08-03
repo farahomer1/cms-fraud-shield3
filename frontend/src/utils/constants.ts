@@ -22,13 +22,14 @@ export const ROUTES = {
  * Maps each role to the routes they can access.
  */
 export const ROLE_ROUTES: Record<string, string[]> = {
-  'Enrollment Analyst': [ROUTES.DASHBOARD, ROUTES.ENROLLMENT, ROUTES.VALIDATION],
-  'Senior Investigator': [ROUTES.REFERRALS, ROUTES.FRAUD_RESEARCH, ROUTES.ANALYTICS, ROUTES.VALIDATION],
+  'Enrollment Analyst': [ROUTES.DASHBOARD, ROUTES.ENROLLMENT, ROUTES.VALIDATION, ROUTES.INGESTION],
+  'Senior Investigator': [ROUTES.REFERRALS, ROUTES.FRAUD_RESEARCH, ROUTES.ANALYTICS, ROUTES.VALIDATION, ROUTES.INGESTION],
   'Platform Administrator': [
     ROUTES.DASHBOARD,
     ROUTES.FRAUD_RESEARCH,
     ROUTES.AGENT_MANAGEMENT,
     ROUTES.USER_MANAGEMENT,
+    ROUTES.INGESTION,
   ],
   'Claims Auditor': [
     ROUTES.DASHBOARD,
@@ -36,6 +37,7 @@ export const ROLE_ROUTES: Record<string, string[]> = {
     ROUTES.AUDITOR_WORKFLOWS,
     ROUTES.AGENT_MANAGEMENT,
     ROUTES.AUDIT_LOG,
+    ROUTES.INGESTION,
   ],
 };
 
