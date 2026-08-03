@@ -229,6 +229,5 @@ GEMINI_API_KEY=your_gemini_api_key_here
 ## 📄 References & Demo Handbooks
 
 To assist you during presentations or audits, the following documentation is checked into your git repository under the `docs/` folder:
-- 🗺️ **[Technical Architecture Alignment Plan](file:///Users/farahomer/antigravity_projects/cms-fraud-shield/docs/architecture_alignment_plan.md):** Slides mapping of PECOS, USPS CASS, and HIGLAS.
-- 🎬 **[Executive Video Demo Guide](file:///Users/farahomer/antigravity_projects/cms-fraud-shield/docs/demo_guide.md):** Scripted click-path and objection handling guide.
-- 🛝 **[CMS Fraud Shield Slide Deck](file:///Users/farahomer/antigravity_projects/cms-fraud-shield/docs/cms_fraud_shield_slide_deck.md):** 18-slide complete presentation script.
+- 🔬 **[Technical Design Document (TDD)](file:///Users/farahomer/antigravity_projects/cms-fraud-shield2/docs/technical_design_document.md):** Detailed platform architecture, sequence flows, and full 29 PRD requirements compliance mapping.
+- 🎬 **[Executive Video Demo Guide](file:///Users/farahomer/antigravity_projects/cms-fraud-shield2/docs/demo_guide.md):** Scripted click-path, recording playbook, and objection handling guide.
