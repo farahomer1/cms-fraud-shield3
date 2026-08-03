@@ -126,32 +126,34 @@ graph TD
 3. Select **`DME`** from the dropdown options.
 4. Point to the results table on your screen:
    * **Highlight the Count:** *"Notice that exactly **6 claims** are returned under the DME filter."*
-5. Click **Deep Dive** on claim **`CLM-1001000023`** (Billed to *William R. Jackson* by *Apex Durable Supplies*).
+5. Click **Deep Dive** on claim **`CLM-LEG-010`** (Billed to *Eric Evans* by *Apex Medical Supplies*).
 6. Walk through the Deep Dive analysis modal:
-   * Point out the **Critical Finding: Post-Mortem Billing** (William R. Jackson passed away on June 15, 2025, but Apex billed for catheters on July 15, 2025).
+   * Point out the **Deceased Beneficiary Flag**: Our `Trust Defender` agent cross-referenced the Social Security Death Master File and flagged that Eric Evans is deceased, while `Crush Fraud` flagged the service date as occurring post-mortem.
 7. Scroll down the right-hand panel inside the modal to reveal the **CMS Fraud Shield AI** chatbot interface.
 8. **Interactive AI Query #1:** Type:
    > *"What is the physical address of Apex supplies, and why is it flagged?"*
    * Watch **CMS Fraud Shield AI** dynamically review the BigQuery records and answer:
-     > *"Apex Durable Supplies is registered at **1428 Elm Street, Miami, FL 33101**. This address is flagged because it resolves to a commercial UPS mailbox rental storefront instead of a physical medical warehouse."*
+     > *"Apex Medical Supplies is registered at **1428 Elm Street, Miami, FL 33101**. This address is flagged because it resolves to a commercial UPS mailbox rental storefront instead of a physical medical warehouse."*
 9. **Interactive AI Query #2:** Type:
    > *"Summarize the critical risk findings for this claim."*
    * Watch the AI list the severe findings (Post-mortem billing, commercial mailbox storefront, and high provider risk index).
 10. Click **Close** on the modal.
-11. Click **Deep Dive** on another DME-related claim, such as **`CLM-1001000991`** (Billed to *Robert J. Mitchell* by *Horizon Oxygen & Orthotics*). Point out the **Rule #714 Policy Violation** (oxygen billed without a specialty pulmonologist consultation in the preceding 90 days).
+11. Click **Deep Dive** on another DME-related claim, **`CLM-LEG-120`** (Billed to *Stephanie Ortiz* by *Apex Medical Supplies*). Point out the **System Resilience Excluded Owner Flag** (resolving Apex's shell companies back to excluded beneficial owner *Victor A. Malen*).
 
 #### 🎙️ Voiceover Script
 > *"Next, let's navigate to the **Pre-Payment Claims Review** dashboard to inspect active transactions.
 > 
-> As an analyst, I want to isolate medical equipment fraud. I will select the **Claim Type: DME** filter. Instantly, our list updates to show exactly **6 high-risk claims** flagged by our background monitoring agents.
+> As an analyst, I want to isolate medical equipment fraud. I will select the **Claim Type: DME** filter. Instantly, our list updates to show our high-risk claims flagged by our background monitoring agents.
 > 
-> Let's perform a deep dive into the first claim: **CLM-1001000023**, submitted by Apex Durable Supplies.
+> Let's perform a deep dive into the first claim: **CLM-LEG-010**, submitted by Apex Medical Supplies for beneficiary Eric Evans.
 > 
-> The modal displays a severe compliance violation: **Post-Mortem Billing**. The beneficiary, William R. Jackson, passed away on June 15, 2025, yet Apex billed for services a month later.
+> The modal displays a severe coordination flag: our Trust Defender agent detected that the beneficiary Eric Evans is deceased according to the death registry, and Crush Fraud flagged this as post-mortem billing.
 > 
 > Let's test the intelligence of our platform by engaging our grounded AI chatbot at the bottom of the screen. I will ask: 'What is the physical address of Apex supplies, and why is it flagged?'
 > 
-> In real-time, the AI queries our Google BigQuery database and reveals that **1428 Elm Street** is actually a commercial mailbox store. The AI-human partnership allows us to instantly verify identity and location fraud."*
+> In real-time, the AI queries our Google BigQuery database and reveals that **1428 Elm Street** is actually a commercial mailbox store, proving location fraud.
+> 
+> Let's close this and open our second high-risk claim, **CLM-LEG-120** for Stephanie Ortiz. When we deep dive, we see our System Resilience agent has run beneficial ownership resolution, unmasking the shell companies behind Apex to reveal the ultimate owner is Victor A. Malen, a banned operator on the OIG exclusion list."*
 
 ---
 
