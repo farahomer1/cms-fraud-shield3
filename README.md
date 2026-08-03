@@ -54,7 +54,7 @@
 The platform ingests structured **CMS-1500 Fee-for-Service (FFS) Part B claims**, integrates **PECOS provider registries**, unmasks shell-company beneficial ownership hierarchies, checks the **HHS OIG Exclusions List (LEIE)**, and screens physical addresses against the **USPS Coding Accuracy Support System (CASS) CMRA directory**—all utilizing a fleet of federated AI agents.
 
 ### 🌟 Key Core Capabilities:
-- 🤖 **Federated AI Agent Army** — A 4-Agent lifecycle macro-orchestration layer (Trust Defender, Crush Fraud, System Resilience, Program Integrity Ops) managing **8 specialized Micro-Service detection sensors** executing on Google Cloud Vertex AI.
+- 🤖 **7 Active AI & Rule Agents** — A balanced mixture of 4 Advanced AI Orchestrators (Trust Defender, Crush Fraud, System Resilience, Program Integrity Ops) and 3 Deterministic Rule-Based Checkers executing concurrently over BigQuery and Vertex AI.
 - 📡 **Real-Time Stream Processing** — Claims are streamed through batch ingestion engines with progress displayed instantly to the browser using **Server-Sent Events (SSE)**, powering responsive pipeline animations.
 - 🧑‍⚖️ **Auditor Workflows & Copilot Chat** — Flagged claims land in an intuitive auditor workspace where human analysts review explainable AI findings, chat with a grounded **Gemini Copilot** about specific claim policies, and document formal audit decisions.
 - 📦 **Two-Tier Pre-Payment Appeals Sandbox** — Enforces clinical limits (such as urological catheter quantities under LCD L33803) while offering an instant automated appeal-release mechanism:
@@ -112,29 +112,30 @@ flowchart LR
 
 ---
 
-## 🤝 The Two-Layer Agent Hierarchy
+## 🤝 The 7 Active Agents Architecture
 
-CMS Fraud Shield reconciles system-wide operations by separating orchestrator roles from detection rules:
+CMS Fraud Shield operates a fleet of **7 active agents** representing a balanced mixture of predictive AI orchestrators and deterministic clinical rules. These agents run asynchronously and concurrently to screen and protect Medicare Part B trust funds:
 
-### 1. Macro-Orchestrator Level (The System Lifecycle Directors)
-- **Agent 1 (Trust Defender):** Runs active threat modeling and scenario planning.
-- **Agent 2 (Crush Fraud):** The payment-integrity orchestrator that receives raw claim streams and parallel-executes the 8 micro-service sensors.
-- **Agent 3 (System Resilience):** Audits PECOS registries and unmasks spell-mutations to suspend fraudulent NPI records.
-- **Agent 4 (Program Integrity Ops):** Compiles court-ready investigation dossiers (NFED referrals) for DOJ and FBI hand-off.
+### 🤖 1. Advanced AI-Based Agents (Cognitive Layers)
+*   **Threat Simulation "Trust Defender":** Monitors early-stage risk signals, practice address changes, and PECOS ownership transfers to unmask fraudulent provider enrollments.
+*   **Pre-Payment Claims Hold "Crush Fraud":** The transactional gatekeeper that intercepts suspect claims and applies immediate prepayment holds (Score ≥ 0.95 with ≥2 corroborating hits).
+*   **Enrollment Audit & Unmasking "System Resilience":** Audits the network graph of held claims, revoking fraudulent provider networks or LLC chains linked to excluded operators.
+*   **Policy & Referral "Program Integrity Ops":** Compiles standardized investigation packages (dossiers) for DOJ/FBI referral and recommends systemic policy adaptations.
 
-### 2. Micro-Service Level (The 8 Detection Sensors)
-These operate inside **Agent 2's pre-payment loop** to analyze specific billing attributes:
+### 📜 2. Deterministic Rule-Based Agents (Clinical & Administrative Checks)
+*   **Rules Engine:** Enforces statutory limits (such as quantity caps under LCD L33803) and identifies supplier billing anomalies.
+*   **Overlapping Claims Check:** Screens for duplicate procedures, services filed with overlapping dates of service, or multi-provider velocity anomalies.
+*   **Data Validation Integrity:** Verifies structured NPI formatting, diagnostic code logic, and fee schedule compliance.
 
 ```mermaid
 graph TD
-    A2["Agent 2 (Crush Fraud) Orchestrator"] --> S1["1. Rules Engine"]
-    A2 --> S2["2. Beneficiary Exploitation Check"]
-    A2 --> S3["3. Claim Sharking Check"]
-    A2 --> S4["4. CMN Fraud (Certificate of Medical Necessity)"]
-    A2 --> S5["5. Overlapping Claims"]
-    A2 --> S6["6. Medical Record NLP Check"]
-    A2 --> S7["7. Data Validation Check"]
-    A2 --> S8["8. Claim Discrepancy Check"]
+    Inbound[Inbound Claims Stream] --> CF["🤖 Crush Fraud Orchestrator"]
+    CF --> RE["📜 Rules Engine"]
+    CF --> OC["📜 Overlapping Claims Check"]
+    CF --> DV["📜 Data Validation Integrity Check"]
+    CF --> TD["🤖 Trust Defender Sensor"]
+    CF --> SR["🤖 System Resilience Linker"]
+    CF --> PI["🤖 Program Integrity Ops Compiler"]
 ```
 
 ---
