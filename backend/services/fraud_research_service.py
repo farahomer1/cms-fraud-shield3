@@ -35,8 +35,8 @@ async def get_anomaly_clusters(bq: bigquery.Client) -> list[dict]:
 
 async def analyze_anomaly_landscape(bq: bigquery.Client) -> dict:
     clusters = await get_anomaly_clusters(bq)
-    prompt = f"Analyze these provider anomaly clusters for VA fraud research:\n{json.dumps(clusters, indent=2)}"
-    system = "You are PIVOT's Fraud Research AI. Identify high-risk providers, emerging patterns, and investigation priorities. Reference provider names and risk scores. Use VA terminology."
+    prompt = f"Analyze these provider anomaly clusters for CMS fraud research:\n{json.dumps(clusters, indent=2)}"
+    system = "You are the Fraud Research AI. Identify high-risk providers, emerging patterns, and investigation priorities. Reference provider names and risk scores. Use Medicare and CMS terminology."
 
     try:
         text, _ = await gemini_client.generate_text(prompt=prompt, system_prompt=system, temperature=0.5)
@@ -67,14 +67,13 @@ async def search_patterns(query: str, bq: bigquery.Client) -> dict:
             "claim_number": claim.claim_number,
             "provider": r.p_name or "Unknown",
             "beneficiary": r.v_name or "Unknown",
-            "veteran": r.v_name or "Unknown", # transition safety alias
             "billing_amount": float(claim.billing_amount),
             "risk_level": claim.risk_level,
             "agents": list(r.flagging_agents) if r.flagging_agents else [],
         })
 
-    prompt = f"Search for this pattern in PIVOT claim data: '{query}'\n\nClaim data:\n{json.dumps(claims_context, indent=2)}"
-    system = "You are PIVOT's Fraud Pattern Search AI. Find matching cases and explain the pattern. Return specific claim numbers and evidence."
+    prompt = f"Search for this pattern in claim data: '{query}'\n\nClaim data:\n{json.dumps(claims_context, indent=2)}"
+    system = "You are the Fraud Pattern Search AI. Find matching cases and explain the pattern. Return specific claim numbers and evidence."
 
     try:
         text, _ = await gemini_client.generate_text(prompt=prompt, system_prompt=system, temperature=0.3)

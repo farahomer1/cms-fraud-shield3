@@ -52,9 +52,9 @@ export const ROLE_DEFAULT_ROUTE: Record<string, string> = {
 /** Roles available for login selection. */
 export const LOGIN_ROLES = [
   'Enrollment Analyst',
+  'Claims Auditor',
   'Senior Investigator',
   'Platform Administrator',
-  'Claims Auditor',
 ] as const;
 
 export const AGENT_NAMES: Record<string, string> = {

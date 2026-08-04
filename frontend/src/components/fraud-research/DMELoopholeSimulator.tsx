@@ -111,11 +111,21 @@ export const DMELoopholeSimulator: React.FC = () => {
   const [selectedScenario, setSelectedScenario] = useState<string>('catheter');
   const [activeStep, setActiveTabStep] = useState<number>(0);
   const [simulationRunning, setSimulationRunning] = useState<boolean>(false);
+  const [simulationComplete, setSimulationComplete] = useState<boolean>(false);
   const [policyEnforced, setPolicyEnforced] = useState<boolean>(false);
   const [claimsProcessed, setClaimsProcessed] = useState<number>(0);
   const [claimsBlocked, setClaimsBlocked] = useState<number>(0);
   const [savingsGenerated, setSavingsGenerated] = useState<number>(0);
-  const [animatedClaims, setAnimatedClaims] = useState<Array<{ id: string; status: 'leak' | 'blocked'; amount: number; time: string }>>([]);
+  const [animatedClaims, setAnimatedClaims] = useState<Array<{ id: string; status: 'leak' | 'blocked' | 'review'; amount: number; time: string }>>([]);
+  
+  // Interactive Rules Matrix State
+  const [activeRules, setActiveRules] = useState<string[]>(['R-01', 'R-02', 'R-03', 'R-04']);
+
+  const handleToggleRule = (ruleId: string) => {
+    setActiveRules((prev) =>
+      prev.includes(ruleId) ? prev.filter((id) => id !== ruleId) : [...prev, ruleId]
+    );
+  };
 
   // Appeals Sandbox State Hooks
   const [appealClaim, setAppealClaim] = useState<string>('vance');
@@ -175,10 +185,33 @@ export const DMELoopholeSimulator: React.FC = () => {
       interval = setInterval(() => {
         setClaimsProcessed((prev) => {
           const next = prev + 1;
-          const currentClaimId = `CLM-SIM-${1000 + next}`;
-          const claimStatus = policyEnforced ? 'blocked' : 'leak';
+          
+          if (next >= 10) {
+            setSimulationRunning(false);
+            setSimulationComplete(true);
+            clearInterval(interval);
+          }
 
+          const currentClaimId = `CLM-SIM-${1000 + next}`;
+          
+          // Compute claim status dynamically based on policyEnforced and activeRules
+          let claimStatus: 'leak' | 'blocked' | 'review' = 'leak';
           if (policyEnforced) {
+            if (scenario.id === 'catheter') {
+              const triggeredRules = ['R-01', 'R-02', 'R-03'].filter((r) => activeRules.includes(r));
+              if (triggeredRules.length >= 2) {
+                claimStatus = 'blocked';
+              } else if (triggeredRules.length === 1) {
+                claimStatus = 'review';
+              } else {
+                claimStatus = 'leak';
+              }
+            } else {
+              claimStatus = 'blocked';
+            }
+          }
+
+          if (claimStatus === 'blocked') {
             setClaimsBlocked((b) => b + 1);
             setSavingsGenerated((s) => s + scenario.billingAmount);
           }
@@ -198,10 +231,11 @@ export const DMELoopholeSimulator: React.FC = () => {
       }, 1200);
     }
     return () => clearInterval(interval);
-  }, [simulationRunning, policyEnforced, scenario]);
+  }, [simulationRunning, policyEnforced, scenario, activeRules]);
 
   const handleStartSimulation = () => {
     setSimulationRunning(true);
+    setSimulationComplete(false);
     setClaimsProcessed(0);
     setClaimsBlocked(0);
     setSavingsGenerated(0);
@@ -218,6 +252,7 @@ export const DMELoopholeSimulator: React.FC = () => {
 
   const handleReset = () => {
     setSimulationRunning(false);
+    setSimulationComplete(false);
     setPolicyEnforced(false);
     setClaimsProcessed(0);
     setClaimsBlocked(0);
@@ -523,9 +558,21 @@ export const DMELoopholeSimulator: React.FC = () => {
 
               <Box sx={{ minHeight: 180, display: 'flex', flexDirection: 'column', gap: 1 }}>
                 {!simulationRunning ? (
-                  <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: 160, color: 'rgba(74, 246, 38, 0.4)' }}>
-                    [ Awaiting Scenario Modeling Initiation ]
-                  </Box>
+                  simulationComplete ? (
+                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: 180, gap: 1, color: '#4AF626', textAlign: 'center' }}>
+                      <CheckCircleIcon sx={{ fontSize: 32, color: '#4AF626' }} />
+                      <Typography variant="body2" sx={{ fontWeight: 'bold', fontFamily: 'inherit' }}>
+                        [ SIMULATION CONCLUDED ]
+                      </Typography>
+                      <Typography variant="caption" sx={{ color: 'rgba(74, 246, 38, 0.7)', fontFamily: 'inherit', maxWidth: '80%' }}>
+                        10 claims modeled and processed successfully. All protected savings have been tabulated.
+                      </Typography>
+                    </Box>
+                  ) : (
+                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: 160, color: 'rgba(74, 246, 38, 0.4)' }}>
+                      [ Awaiting Scenario Modeling Initiation ]
+                    </Box>
+                  )
                 ) : animatedClaims.length === 0 ? (
                   <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: 160, color: 'rgba(74, 246, 38, 0.4)' }}>
                     <CircularProgress size={20} sx={{ color: '#4AF626', mr: 1.5 }} />
@@ -538,10 +585,10 @@ export const DMELoopholeSimulator: React.FC = () => {
                       sx={{
                         p: 1,
                         borderRadius: 1,
-                        bgcolor: c.status === 'blocked' ? 'rgba(227, 28, 61, 0.15)' : 'rgba(74, 246, 38, 0.08)',
-                        borderLeft: c.status === 'blocked' ? '3px solid #E31C3D' : '3px solid #4AF626',
+                        bgcolor: c.status === 'blocked' ? 'rgba(227, 28, 61, 0.15)' : (c.status === 'review' ? 'rgba(253, 184, 30, 0.15)' : 'rgba(74, 246, 38, 0.08)'),
+                        borderLeft: c.status === 'blocked' ? '3px solid #E31C3D' : (c.status === 'review' ? '3px solid #FDB81E' : '3px solid #4AF626'),
                         animation: `${slideInClaim} 0.3s ease`,
-                        color: c.status === 'blocked' ? '#E31C3D' : '#4AF626',
+                        color: c.status === 'blocked' ? '#E31C3D' : (c.status === 'review' ? '#D97706' : '#4AF626'),
                         display: 'flex',
                         justifyContent: 'space-between',
                         alignItems: 'center',
@@ -561,6 +608,13 @@ export const DMELoopholeSimulator: React.FC = () => {
                             <ErrorOutlineIcon sx={{ fontSize: 14 }} />
                             <Typography variant="caption" sx={{ fontWeight: 'bold', fontFamily: 'inherit' }}>
                               {scenario.id === 'catheter' ? 'HELD (R-01/02/03)' : 'REJECTED (RULE-714)'}
+                            </Typography>
+                          </>
+                        ) : c.status === 'review' ? (
+                          <>
+                            <ErrorOutlineIcon sx={{ fontSize: 14, color: '#D97706' }} />
+                            <Typography variant="caption" sx={{ fontWeight: 'bold', fontFamily: 'inherit' }}>
+                              HELD (AUDITOR REVIEW)
                             </Typography>
                           </>
                         ) : (
@@ -624,54 +678,82 @@ export const DMELoopholeSimulator: React.FC = () => {
               </Grid>
             </Paper>
 
-            <Grid container spacing={2}>
+             <Grid container spacing={2}>
               {[
                 { id: 'R-01', name: 'Quantity Cap Exceeded', src: 'CMS LCD L33803', desc: 'Billed units > 30 per 30-day period (or billed amount > $1,500/mo) across NPIs.', wt: '+1 Rule Hit', action: 'Queue for Review' },
                 { id: 'R-02', name: 'Dormant Supplier Burst', src: '2023–24 Shell Co anomalies', desc: 'Historical claims < $5,000 in prior 180 days, followed by rolling 14-day claims > $100,000.', wt: '+1 Rule Hit', action: 'Flag & Suspend NPI' },
                 { id: 'R-03', name: 'MBI Velocity Anomaly', src: 'Multi-state identity theft logs', desc: 'Single MBI billed by >=3 distinct NPIs across >=2 state lines within rolling 48-hour window.', wt: '+1 Rule Hit', action: 'Lock MBI & Prepay Hold' },
                 { id: 'R-04', name: 'High-Risk PECOS Enrollment', src: 'CMS PIM Audits', desc: 'NPI registered address matches CMRA commercial mailbox and ownership change within 90 days.', wt: '+1 Rule Hit', action: 'Add +1 Rule Hit' }
-              ].map((r) => (
-                <Grid item xs={12} sm={6} md={3} key={r.id}>
-                  <Paper
-                    variant="outlined"
-                    sx={{
-                      p: 2,
-                      borderRadius: 2,
-                      bgcolor: '#F0F4F8',
-                      borderColor: 'rgba(0, 63, 114, 0.15)',
-                      height: '100%',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'space-between',
-                      transition: 'transform 0.2s',
-                      '&:hover': { transform: 'translateY(-2px)', boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }
-                    }}
-                  >
-                    <Box>
-                      <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 1 }}>
-                        <Chip label={r.id} size="small" sx={{ bgcolor: '#003F72', color: 'white', fontWeight: 'bold', borderRadius: 1 }} />
-                        <Typography variant="caption" fontWeight="bold" sx={{ color: '#003F72' }}>
-                          {r.wt}
+              ].map((r) => {
+                const isActive = activeRules.includes(r.id);
+                return (
+                  <Grid item xs={12} sm={6} md={3} key={r.id}>
+                    <Paper
+                      variant="outlined"
+                      onClick={() => handleToggleRule(r.id)}
+                      sx={{
+                        p: 2,
+                        borderRadius: 2,
+                        bgcolor: isActive ? '#F0F6FC' : '#FAFBFB',
+                        borderColor: isActive ? '#003F72' : 'rgba(0, 0, 0, 0.12)',
+                        borderWidth: isActive ? 2 : 1,
+                        height: '100%',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'space-between',
+                        cursor: 'pointer',
+                        transition: 'all 0.2s ease',
+                        opacity: isActive ? 1 : 0.65,
+                        '&:hover': { 
+                          transform: 'translateY(-2px)', 
+                          boxShadow: isActive ? '0 6px 16px rgba(0, 63, 114, 0.1)' : '0 4px 12px rgba(0,0,0,0.05)',
+                          borderColor: '#003F72'
+                        }
+                      }}
+                    >
+                      <Box>
+                        <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 1 }}>
+                          <Chip 
+                            label={r.id} 
+                            size="small" 
+                            sx={{ 
+                              bgcolor: isActive ? '#003F72' : '#9E9E9E', 
+                              color: 'white', 
+                              fontWeight: 'bold', 
+                              borderRadius: 1 
+                            }} 
+                          />
+                          <Chip 
+                            label={isActive ? 'ENABLED' : 'DISABLED'} 
+                            size="small" 
+                            variant="outlined"
+                            color={isActive ? 'primary' : 'default'}
+                            sx={{ 
+                              height: 18, 
+                              fontSize: '0.65rem', 
+                              fontWeight: 'bold' 
+                            }} 
+                          />
+                        </Stack>
+                        <Typography variant="subtitle2" fontWeight={800} sx={{ color: isActive ? '#112E51' : 'text.secondary', mb: 0.5 }}>
+                          {r.name}
                         </Typography>
-                      </Stack>
-                      <Typography variant="subtitle2" fontWeight="bold" sx={{ color: '#112E51', mb: 0.5 }}>
-                        {r.name}
-                      </Typography>
-                      <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 1, fontStyle: 'italic' }}>
-                        Source: {r.src}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary" sx={{ fontSize: '0.8rem', lineHeight: 1.4 }}>
-                        {r.desc}
-                      </Typography>
-                    </Box>
-                    <Box sx={{ mt: 1.5, borderTop: '1px solid rgba(0, 63, 114, 0.1)', pt: 1 }}>
-                      <Typography variant="caption" sx={{ fontWeight: 'bold', color: '#2E8540' }}>
-                        Action: {r.action}
-                      </Typography>
-                    </Box>
-                  </Paper>
-                </Grid>
-              ))}
+                        <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 1, fontStyle: 'italic' }}>
+                          Source: {r.src}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary" sx={{ fontSize: '0.8rem', lineHeight: 1.4 }}>
+                          {r.desc}
+                        </Typography>
+                      </Box>
+                      <Box sx={{ mt: 1.5, borderTop: '1px solid rgba(0, 63, 114, 0.1)', pt: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <Typography variant="caption" sx={{ fontWeight: 'bold', color: isActive ? '#2E8540' : 'text.disabled' }}>
+                          Action: {r.action}
+                        </Typography>
+                      </Box>
+                    </Paper>
+                  </Grid>
+                );
+              })}
             </Grid>
 
             {/* Two-Tier Pre-Payment Appeals Panel */}
