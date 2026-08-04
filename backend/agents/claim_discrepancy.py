@@ -9,7 +9,7 @@ class ClaimDiscrepancyAgent(BaseAgent):
     prompt_file = "claim_discrepancy.txt"
 
     def _default_prompt(self) -> str:
-        return """You are the Claim Data Discrepancy Agent for PIVOT VA Payment Integrity Platform.
+        return """You are the Claim Data Discrepancy Agent for PIVOT CMS Payment Integrity Platform.
 
 Validate internal consistency of claim data fields:
 1. ICD-10/CPT COMPATIBILITY: Verify diagnosis codes (ICD-10) are clinically appropriate for the procedure codes (CPT/HCPCS) billed

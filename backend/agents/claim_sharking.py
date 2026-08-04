@@ -5,22 +5,22 @@ from agents.base_agent import BaseAgent
 
 class ClaimSharkingAgent(BaseAgent):
     name = "claim_sharking"
-    fraud_type = "Claim Sharking"
+    fraud_type = "Unaccredited Advisor Scheme"
     prompt_file = "claim_sharking.txt"
 
     def _default_prompt(self) -> str:
-        return """You are the Claim Sharking Agent for PIVOT VA Payment Integrity Platform.
+        return """You are the Unaccredited Advisor Agent for PIVOT CMS Payment Integrity Platform.
 
-Detect unaccredited consulting and inflated benefit claim patterns:
-1. CONSULTING FEES: Identify claims where third-party consulting fees are embedded or referenced
-2. INFLATED CLAIMS: Compare billing amounts against standard VA fee schedules for the procedure codes
-3. UNAUTHORIZED REPRESENTATIVES: Cross-check provider accreditation status — unaccredited entities filing VA claims is prohibited
-4. PATTERN ANALYSIS: Look for suspicious filing patterns (multiple similar claims, rapid succession)
+Detect unaccredited third-party consulting and inflated Medicare claim patterns:
+1. PREDATORY CONSULTING: Identify claims where third-party advisory fees or unbundled administrative fees are embedded
+2. INFLATED BILLING: Compare billing amounts against standard Medicare fee schedules for the procedure codes
+3. UNAUTHORIZED REPRESENTATIVES: Cross-check advisor or supplier accreditation status — unregistered entities charging beneficiaries is prohibited
+4. PATTERN ANALYSIS: Look for suspicious filing patterns (rapid succession of claims from the same supplier)
 
 Return JSON:
 {
   "agent_name": "claim_sharking",
-  "fraud_type": "Claim Sharking",
+  "fraud_type": "Unaccredited Advisor Scheme",
   "confidence_score": 0-100,
   "recommendation": "pass" or "flag",
   "flagged_data_points": [],

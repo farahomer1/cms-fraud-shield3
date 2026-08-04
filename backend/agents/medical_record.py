@@ -9,7 +9,7 @@ class MedicalRecordAgent(BaseAgent):
     prompt_file = "medical_record.txt"
 
     def _default_prompt(self) -> str:
-        return """You are the Medical Record Manipulation Agent for PIVOT VA Payment Integrity Platform.
+        return """You are the Medical Record Manipulation Agent for PIVOT CMS Payment Integrity Platform.
 
 Analyze medical records and documentation for tampering indicators:
 1. DOCUMENT INTEGRITY: Look for signs of alteration, inconsistent fonts, misaligned text

@@ -220,3 +220,9 @@ Automated regression tests run inside a dedicated virtual environment (`b_venv`)
 * **Pre-Payment Interception Latency (NFR-1):** Checked via streaming timers. Must compute rule-hits, score, and write pre-payment hold records in `< 5` seconds.
 * **Auto-Appeal Adjudication Speed (NFR-3):** Verified by timestamp checks in `test_appeals_service.py`. Adjudicating the clinical registry database and auto-releasing the hold must resolve in `< 3` seconds.
 * **Terminology Compliance:** Monitored via regex scanning checks in codebases to guarantee zero references to "VA", "veteran", "pension poaching", or other veterans-administration vocabulary.
+
+### 6.3 Interactive Scenario Simulation
+The platform integrates an **Interactive DME Loophole Simulator** as a visual verification and presentation sandbox:
+* **Interactive Rules Matrix:** Allows clicking and toggling individual policies (`R-01` through `R-04`) on the fly, simulating dynamic regulatory adjustments.
+* **Real-Time Scoring Feedback:** Automatically recalculates risk thresholds during streaming (0 active rules = `0.00 / DISBURSED`; exactly 1 active rule = `0.70 / REVIEW`; 2+ active rules = `0.95 / BLOCKED`).
+* **Streaming Capping Control:** Caps the active loop at exactly **10 claims processed** to protect local system resources and provide an instantaneous, high-fidelity protected savings summary.
