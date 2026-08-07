@@ -229,5 +229,5 @@ GEMINI_API_KEY=your_gemini_api_key_here
 ## 📄 References & Demo Handbooks
 
 To assist you during presentations or audits, the following documentation is checked into your git repository under the `docs/` folder:
-- 🔬 **[Technical Design Document (TDD)](file:///Users/farahomer/antigravity_projects/cms-fraud-shield2/docs/technical_design_document.md):** Detailed platform architecture, sequence flows, and full 29 PRD requirements compliance mapping.
-- 🎬 **[Executive Video Demo Guide](file:///Users/farahomer/antigravity_projects/cms-fraud-shield2/docs/demo_guide.md):** Scripted click-path, recording playbook, and objection handling guide.
+- 🔬 **[Technical Design Document (TDD)](docs/technical_design_document.md):** Detailed platform architecture, sequence flows, full 29 PRD requirements compliance mapping, and **Section 7: High-Performance Caching & In-Memory Query Engine (1000x Speedup)**.
+- 🎬 **[Executive Video Demo Guide](docs/demo_guide.md):** Scripted click-path, recording playbook, and objection handling guide.
