@@ -40,15 +40,22 @@ async def list_claims(
             conditions.append(f"""NOT EXISTS (
                 SELECT 1 FROM `{ds}.decisions` d WHERE d.claim_id = c.id
             )""")  # nosec B608 - dataset identifier validated in get_dataset(); user input parameterized
-        elif status in ("approved", "denied"):
+        elif status == "approved":
             conditions.append(f"""(
-                c.status = @status
+                c.status IN ('approved', 'disbursed')
                 OR EXISTS (
                     SELECT 1 FROM `{ds}.decisions` d
-                    WHERE d.claim_id = c.id AND d.decision_type = @status
+                    WHERE d.claim_id = c.id AND d.decision_type = 'approved'
                 )
-            )""")  # nosec B608 - dataset identifier validated in get_dataset(); user input parameterized
-            params.append(bigquery.ScalarQueryParameter("status", "STRING", status))
+            )""")
+        elif status == "denied":
+            conditions.append(f"""(
+                c.status = 'denied'
+                OR EXISTS (
+                    SELECT 1 FROM `{ds}.decisions` d
+                    WHERE d.claim_id = c.id AND d.decision_type = 'denied'
+                )
+            )""")
         else:
             conditions.append("c.status = @status")
             params.append(bigquery.ScalarQueryParameter("status", "STRING", status))
@@ -65,6 +72,10 @@ async def list_claims(
     params.append(bigquery.ScalarQueryParameter("lim", "INT64", limit))
     params.append(bigquery.ScalarQueryParameter("off", "INT64", offset))
 
+    order_by = "c.created_at DESC"
+    if status in ("flagged", "queued"):
+        order_by = "c.billing_amount DESC, c.updated_at DESC"
+
     where = f"WHERE {' AND '.join(conditions)}" if conditions else ""
     query = f"""
         SELECT c.*, v.name_display as v_name_display, v.ssn_last4 as v_ssn_last4,
@@ -73,12 +84,12 @@ async def list_claims(
                p.name as p_name, p.npi as p_npi, p.provider_type as p_provider_type,
                p.specialty as p_specialty, p.address as p_address, p.risk_score as p_risk_score,
                p.accreditation_status as p_accreditation_status
-        FROM `{ds}.claims` c
-        LEFT JOIN `{ds}.members` v ON c.beneficiary_id = v.id
-        LEFT JOIN `{ds}.providers` p ON c.provider_id = p.id
-        {where}
-        ORDER BY c.created_at DESC
-        LIMIT @lim OFFSET @off
+         FROM `{ds}.claims` c
+         LEFT JOIN `{ds}.members` v ON c.beneficiary_id = v.id
+         LEFT JOIN `{ds}.providers` p ON c.provider_id = p.id
+         {where}
+         ORDER BY {order_by}
+         LIMIT @lim OFFSET @off
     """  # nosec B608 - dataset identifier validated in get_dataset(); user input parameterized
     rows = await run_query(query, params or None)
     claims_list = []
@@ -270,7 +281,8 @@ async def decide_claim(claim_id: str, body: DecisionRequest, bq: bigquery.Client
         raise HTTPException(status_code=400, detail="Decision already recorded for this claim")
 
     claim = Claim.from_bq_row(claim_row)
-    savings = float(claim.billing_amount) if body.decisionType == "denied" else None
+    normalized_decision = body.decisionType.lower()
+    savings = float(claim.billing_amount) if normalized_decision in ("denied", "escalate", "held") else None
 
     decision_id = str(uuid.uuid4())
     audit_id = str(uuid.uuid4())
@@ -290,10 +302,10 @@ async def decide_claim(claim_id: str, body: DecisionRequest, bq: bigquery.Client
 
     # Update claim status (may fail if rows are in BigQuery streaming buffer)
     new_status = claim.status
-    if body.decisionType == "approved":
-        new_status = "approved"
-    elif body.decisionType == "denied":
-        new_status = "denied"
+    if normalized_decision in ("approved", "release"):
+        new_status = "disbursed"
+    elif normalized_decision in ("denied", "escalate", "held"):
+        new_status = "held" if normalized_decision in ("escalate", "held") else "denied"
     try:
         await run_dml(
             f"UPDATE `{ds}.claims` SET status = @status WHERE id = @claim_id",  # nosec B608 - dataset identifier validated in get_dataset(); user input parameterized

@@ -24,6 +24,7 @@ const AuditorWorkflowPage = React.lazy(() => import('./pages/AuditorWorkflowPage
 const UserManagementPage = React.lazy(() => import('./pages/UserManagementPage'));
 const EnrollmentPage = React.lazy(() => import('./pages/EnrollmentPage'));
 const NFEDReferralsPage = React.lazy(() => import('./pages/NFEDReferralsPage'));
+const ALJQueuePage = React.lazy(() => import('./pages/ALJQueuePage'));
 
 const PageLoader: React.FC = () => (
   <Box role="status" aria-label="Loading page" sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh' }}>
@@ -106,6 +107,7 @@ const App: React.FC = () => {
           <Route path={ROUTES.MONITORING} element={<RoleGuard><Suspense fallback={<PageLoader />}><MonitoringPage /></Suspense></RoleGuard>} />
           <Route path={ROUTES.ENROLLMENT} element={<RoleGuard><Suspense fallback={<PageLoader />}><EnrollmentPage /></Suspense></RoleGuard>} />
           <Route path={ROUTES.REFERRALS} element={<RoleGuard><Suspense fallback={<PageLoader />}><NFEDReferralsPage /></Suspense></RoleGuard>} />
+          <Route path={ROUTES.ALJ_QUEUE} element={<RoleGuard><Suspense fallback={<PageLoader />}><ALJQueuePage /></Suspense></RoleGuard>} />
         </Route>
 
         {/* Catch-all: on localhost go to /login, on deployed go to /google-auth */}

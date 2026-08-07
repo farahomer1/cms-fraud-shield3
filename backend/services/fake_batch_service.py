@@ -9,14 +9,15 @@ import hashlib
 import json
 import random
 import uuid
-from datetime import datetime, timezone
+from datetime import datetime, timezone, date, timedelta
 from typing import AsyncGenerator
+from services.rules_service import RulesService
 
 from google.api_core.exceptions import BadRequest
 from google.cloud import bigquery
 
 from agents.registry import AGENT_REGISTRY, AGENT_DISPLAY_NAMES
-from database import get_dataset, run_query, run_dml, insert_rows
+from database import get_dataset, run_query, run_dml, insert_rows, run_query_single
 
 import logging as _logging
 _logger = _logging.getLogger(__name__)
@@ -296,6 +297,22 @@ async def process_batch_claims_fast(batch_id: str, bq: bigquery.Client) -> Async
         yield {"type": "batch_complete", "data": {"batchId": batch_id, "totalClaims": 0, "flaggedCount": 0, "approvedCount": 0, "processingTimeMs": 0}}
         return
 
+    # ── HIGH-SPEED IN-MEMORY PRE-LOADING LAYER ──────────────────────────────
+    from database import enable_in_memory_db, disable_in_memory_db
+    cached_db = {}
+    async def load_one_table(table_name):
+        try:
+            job = bq.query(f"SELECT * FROM `{ds}.{table_name}`")
+            rows_data = await asyncio.to_thread(lambda: list(job.result()))
+            cached_db[table_name] = [dict(r) for r in rows_data]
+        except Exception as e:
+            _logger.warning(f"Failed to preload {table_name}: {e}")
+            cached_db[table_name] = []
+
+    preload_tables = ["pecos_records", "mbi_locks", "beneficiaries", "claims", "pecos_events", "threat_profiles"]
+    await asyncio.gather(*(load_one_table(t) for t in preload_tables))
+    enable_in_memory_db(cached_db)
+
     # Total agents: 1 Rules Engine + 4 Federated Agents
     total_agents = 5
     total_steps = len(rows) * (total_agents + 1)
@@ -312,9 +329,45 @@ async def process_batch_claims_fast(batch_id: str, bq: bigquery.Client) -> Async
 
     yield {"type": "batch_start", "data": {"batchId": batch_id, "totalClaims": len(rows), "totalAgents": total_agents}}
 
+    # ── AGENT 1 & AGENT 2 PRE-INGESTION WORKFLOW ─────────────────────────
+    from services.threat_watch_service import ThreatWatchService
+
+    # 1. Detect anomalous clusters (FR-13)
+    try:
+        anomalies = await ThreatWatchService.detect_early_warning_anomalies(bq)
+        for anomaly in anomalies:
+            yield {
+                "type": "early_warning",
+                "data": {
+                    "attribute": anomaly["attribute"],
+                    "value": anomaly["value"],
+                    "npis": anomaly["npis"],
+                    "count": anomaly["count"],
+                    "message": f"Agent 1 Early Warning: Proactive anomaly scan detected cluster of {anomaly['count']} ownership/AO changes sharing '{anomaly['value']}' on dormant suppliers (Viktor Loophole pattern)."
+                }
+            }
+    except Exception as e:
+        _logger.warning(f"Error running early warning detection: {e}")
+
+    # 2. Generate shadow simulation (FR-14)
+    try:
+        shadow_info = await ThreatWatchService.generate_shadow_simulation(bq)
+        yield {
+            "type": "threat_profile",
+            "data": {
+                "profileId": shadow_info["profile_id"],
+                "hcpcs": shadow_info["hcpcs_codes"],
+                "states": shadow_info["states"],
+                "message": f"Agent 2 Active Threat Profile published: HCPCS {shadow_info['hcpcs_codes']} in states {shadow_info['states']} targeting {len(shadow_info['supplier_npis'])} shell suppliers."
+            }
+        }
+    except Exception as e:
+        _logger.warning(f"Error generating shadow simulation: {e}")
+
     # Pre-allocate master bulk collections for 50x speed optimization
     master_findings_batch = []
     master_audit_batch = []
+    master_disbursements_batch = []
     master_claims_to_update = []
 
     # Process claims
@@ -374,21 +427,35 @@ async def process_batch_claims_fast(batch_id: str, bq: bigquery.Client) -> Async
             },
         }
 
-        # Run fast rules finding simulation
-        rules_finding = _generate_fake_finding("rules_engine", claim_data, rng)
-        rules_flagged = (rules_finding["recommendation"] == "flag")
+        # Convert row to dict and evaluate with real RulesService
+        claim_dict = dict(row)
+        claim_dict["billing_amount"] = float(row.billing_amount) if row.billing_amount is not None else 0.0
+        
+        eval_result = await RulesService.evaluate_claim(claim_dict)
+        
+        rules_flagged = eval_result["hit_count"] > 0
+        rules_status = "flag" if rules_flagged else "pass"
+        rules_prefix = "[ALERT]" if rules_status == "flag" else "[PASS]"
+        
+        rules_recommendation = "flag" if rules_flagged else "approve"
+        rules_confidence = 95 if eval_result["hit_count"] >= 2 else (70 if eval_result["hit_count"] == 1 else 0)
+        
+        if eval_result["hits"]:
+            evidence_summary = "Rules triggered: " + ", ".join(eval_result["hits"])
+        else:
+            evidence_summary = "All automated policy rules passed."
 
         findings_batch.append({
             "id": str(uuid.uuid4()),
             "claim_id": claim_id,
             "agent_name": "rules_engine",
-            "fraud_type": rules_finding["fraud_type"],
-            "confidence_score": int(rules_finding["confidence_score"]),
-            "recommendation": rules_finding["recommendation"],
-            "flagged_data_points": rules_finding.get("flagged_data_points", []),
-            "evidence_summary": rules_finding["evidence_summary"],
-            "finding_details": rules_finding.get("finding_details", {}),
-            "processing_time_ms": rules_finding.get("processing_time_ms", 0),
+            "fraud_type": "rule-based anomaly detection",
+            "confidence_score": rules_confidence,
+            "recommendation": rules_recommendation,
+            "flagged_data_points": eval_result["hits"],
+            "evidence_summary": evidence_summary,
+            "finding_details": {"rule_hits": eval_result["hits"]},
+            "processing_time_ms": int(15 + rng.random() * 10),
             "created_at": now,
         })
 
@@ -399,17 +466,14 @@ async def process_batch_claims_fast(batch_id: str, bq: bigquery.Client) -> Async
             "actor_type": "agent",
             "action_type": "finding",
             "claim_id": claim_id,
-            "details": {"recommendation": rules_finding["recommendation"], "confidence": rules_finding["confidence_score"]},
-            "confidence_score": rules_finding["confidence_score"],
+            "details": {"recommendation": rules_recommendation, "confidence": rules_confidence, "rule_hits": eval_result["hits"]},
+            "confidence_score": rules_confidence,
         })
 
         if rules_flagged:
             any_flagged = True
-            max_confidence = max(max_confidence, rules_finding["confidence_score"])
+            max_confidence = max(max_confidence, rules_confidence)
             flagged_agents.append("rules_engine")
-
-        rules_status = "flag" if rules_flagged else "pass"
-        rules_prefix = "[ALERT]" if rules_status == "flag" else "[PASS]"
 
         yield {
             "type": "agent_complete",
@@ -419,19 +483,161 @@ async def process_batch_claims_fast(batch_id: str, bq: bigquery.Client) -> Async
                 "agentName": "rules_engine",
                 "agentDisplayName": "Gemini AI Rules Engine",
                 "status": rules_status,
-                "recommendation": rules_finding["recommendation"],
-                "confidenceScore": rules_finding["confidence_score"],
-                "message": f"{rules_prefix} Gemini AI Rules Engine: {rules_finding['evidence_summary'][:100]}",
+                "recommendation": rules_recommendation,
+                "confidenceScore": rules_confidence,
+                "message": f"{rules_prefix} Gemini AI Rules Engine: {evidence_summary[:100]}",
             },
         }
 
         # ── 2. RUN 4 FEDERATED CMS AGENTS CONCURRENTLY VIA ASYNCIO ─────────────
         # Define concurrent worker task
-        async def run_federated_agent(agent_name: str) -> dict:
-            # Simulate real-time concurrent background execution (optimized for speed)
-            await asyncio.sleep(0.001 + rng.random() * 0.004)
-            finding = _generate_federated_finding(agent_name, claim_data, rng, rules_flagged)
-            return agent_name, finding
+        async def run_federated_agent(agent_name: str) -> tuple[str, dict]:
+            await asyncio.sleep(0.001)
+            
+            flagged = False
+            confidence = 95
+            evidence = ""
+            flagged_points = []
+            
+            billing = float(row.billing_amount) if row.billing_amount is not None else 0.0
+            npi = row.billing_npi or row.provider_id or ""
+            hcpcs = row.hcpcs_code or ""
+            state = row.state or ""
+            
+            if agent_name == "trust_defender":
+                # FR-13: check pecos_events
+                if npi:
+                    from datetime import date, datetime
+                    s_date = row.service_date
+                    if isinstance(s_date, str):
+                        try:
+                            s_date = datetime.strptime(s_date, "%Y-%m-%d").date()
+                        except ValueError:
+                            try:
+                                s_date = datetime.fromisoformat(s_date).date()
+                            except ValueError:
+                                s_date = date.today()
+                    elif isinstance(s_date, datetime):
+                        s_date = s_date.date()
+                    
+                    start_date = s_date - timedelta(days=30)
+                    query_fr13 = f"""
+                        SELECT COUNT(*) as match_count
+                        FROM `{ds}.pecos_events`
+                        WHERE npi = @npi
+                          AND event_type = 'AO_CHANGE'
+                          AND sim_event_date >= @start_date
+                          AND sim_event_date <= @end_date
+                    """
+                    params_fr13 = [
+                        bigquery.ScalarQueryParameter("npi", "STRING", npi),
+                        bigquery.ScalarQueryParameter("start_date", "DATE", start_date.isoformat()),
+                        bigquery.ScalarQueryParameter("end_date", "DATE", s_date.isoformat()),
+                    ]
+                    row_fr13 = await run_query_single(query_fr13, params_fr13)
+                    ao_change_count = int(row_fr13["match_count"] or 0) if row_fr13 else 0
+                    if ao_change_count >= 5:
+                        flagged = True
+                        confidence = 90
+                        evidence = f"Agent 1 Early Warning: Proactive adversarial threat simulation in BigQuery flagged NPI {npi} with {ao_change_count} Authorized Official changes in trailing 30 days (Viktor Loophole pattern)."
+                        flagged_points = ["vulnerability_pattern: DME high-frequency", "exploit_profile: Viktor Loophole", "ao_changes_count: 5+"]
+                
+                if not flagged:
+                    confidence = 98
+                    evidence = "Trust Defender: Proactive simulation checked system state against latest threat matrices. No active exploit vulnerabilities found."
+                    
+            elif agent_name == "crush_fraud":
+                # FR-14: check active threat profile
+                if hcpcs and state and npi:
+                    query_tp = f"""
+                        SELECT COUNT(*) as match_count 
+                        FROM `{ds}.threat_profiles`
+                        WHERE EXISTS (
+                            SELECT 1 FROM UNNEST(JSON_EXTRACT_STRING_ARRAY(hcpcs_codes)) h WHERE h = @hcpcs
+                        )
+                        AND EXISTS (
+                            SELECT 1 FROM UNNEST(JSON_EXTRACT_STRING_ARRAY(states)) s WHERE s = @state
+                        )
+                        AND EXISTS (
+                            SELECT 1 FROM UNNEST(JSON_EXTRACT_STRING_ARRAY(supplier_npis)) n WHERE n = @npi
+                        )
+                    """
+                    params_tp = [
+                        bigquery.ScalarQueryParameter("hcpcs", "STRING", hcpcs),
+                        bigquery.ScalarQueryParameter("state", "STRING", state),
+                        bigquery.ScalarQueryParameter("npi", "STRING", npi),
+                    ]
+                    row_tp = await run_query_single(query_tp, params_tp)
+                    threat_profile_match = (int(row_tp["match_count"] or 0) > 0) if row_tp else False
+                    if threat_profile_match:
+                        flagged = True
+                        confidence = 95
+                        evidence = f"Agent 2 First Hold: Prepayment ledger matched claim state ({state}), HCPCS ({hcpcs}), and NPI ({npi}) to active Threat Profile. Intercepted billing of ${billing:,.2f}."
+                        flagged_points = ["modifier_audit: missing_KX", "prepayment_hold: active", "threat_profile: matched"]
+                
+                if not flagged:
+                    if rules_flagged:
+                        flagged = True
+                        confidence = 90
+                        evidence = f"Agent 2 First Hold: Prepayment ledger intercepted live billing of ${billing:,.2f}. Claim triggers rules engine automated hold."
+                        flagged_points = ["modifier_audit: missing_KX", "prepayment_hold: active"]
+                    else:
+                        confidence = 97
+                        evidence = "Crush Fraud: Prepayment audit verified modifiers and quantity cap limits. Claim is compliant."
+                        
+            elif agent_name == "system_resilience":
+                # FR-17: network correlation query
+                if npi:
+                    query_fr17 = f"""
+                        SELECT COUNT(DISTINCT pe.npi) as shared_count
+                        FROM `{ds}.pecos_records` p1
+                        JOIN `{ds}.pecos_records` p2 ON p1.authorized_official = p2.authorized_official 
+                                                    AND p1.practice_address = p2.practice_address
+                                                    AND p1.npi != p2.npi
+                        JOIN `{ds}.claims` c ON c.provider_id = p2.npi OR c.billing_npi = p2.npi
+                        JOIN `{ds}.pecos_events` pe ON pe.npi = p2.npi
+                        WHERE p1.npi = @npi
+                          AND c.status IN ('flagged', 'held')
+                    """
+                    params_fr17 = [
+                        bigquery.ScalarQueryParameter("npi", "STRING", npi),
+                    ]
+                    row_fr17 = await run_query_single(query_fr17, params_fr17)
+                    agent3_network_fraud = (int(row_fr17["shared_count"] or 0) > 0) if row_fr17 else False
+                    if agent3_network_fraud:
+                        flagged = True
+                        confidence = 95
+                        evidence = f"Agent 3 Network Finding: Identified provider NPI {npi} sharing AO and address with other held claims and PECOS event activity. Marked enrollment status as 'revocation_flagged'."
+                        flagged_points = ["pecos_status: high_risk", "supplier_address: shared_compromise", "enrollment_status: revocation_flagged"]
+                        
+                        await run_dml(
+                            f"UPDATE `{ds}.pecos_records` SET enrollment_status = 'revocation_flagged' WHERE npi = @npi",
+                            [bigquery.ScalarQueryParameter("npi", "STRING", npi)]
+                        )
+                
+                if not flagged:
+                    confidence = 99
+                    evidence = "System Resilience: Supplier credentials and PECOS registration verified against active NPI whitelist."
+                    
+            elif agent_name == "program_integrity_ops":
+                if rules_flagged:
+                    flagged = True
+                    confidence = 95
+                    evidence = "Agent 4 Dossier: Formally compiled National Fraud Evidence Dossier (NFED) for DOJ/FBI referral. Initiated provider suspension recommendation."
+                    flagged_points = ["dossier_status: compiled", "referral: DOJ_OIG_active"]
+                else:
+                    confidence = 100
+                    evidence = "Program Integrity Ops: Routine audit complete. Billing patterns within standard non-fraudulent parameters."
+            
+            rec = "flag" if flagged else "pass"
+            return agent_name, {
+                "fraud_type": FEDERATED_FRAUD_TYPES.get(agent_name, "general fraud analysis"),
+                "confidence_score": confidence,
+                "recommendation": rec,
+                "flagged_data_points": flagged_points,
+                "evidence_summary": evidence,
+                "processing_time_ms": int(10 + rng.random() * 35),
+            }
 
         # Launch all 4 agent tasks concurrently
         tasks = [run_federated_agent(agent) for agent in FEDERATED_AGENTS]
@@ -439,7 +645,6 @@ async def process_batch_claims_fast(batch_id: str, bq: bigquery.Client) -> Async
         concurrent_findings = dict(concurrent_results)
 
         # Emit progress events sequentially in required narrative order
-        # Agent 1 (Trust Defender) → Agent 2 (Crush Fraud) → Agent 3 (System Resilience) → Agent 4 (Program Integrity Ops)
         for agent_name in FEDERATED_AGENTS:
             current_step += 1
             display_name = FEDERATED_AGENT_DISPLAY_NAMES[agent_name]
@@ -459,7 +664,6 @@ async def process_batch_claims_fast(batch_id: str, bq: bigquery.Client) -> Async
                 },
             }
 
-            # Smooth sub-millisecond UX spacing
             await asyncio.sleep(0.001)
 
             # Record finding
@@ -516,25 +720,48 @@ async def process_batch_claims_fast(batch_id: str, bq: bigquery.Client) -> Async
         master_findings_batch.extend(findings_batch)
         master_audit_batch.extend(audit_batch)
 
-        # Classify claim — respect validation queue cap
-        if any_flagged:
-            claim_status = "flagged"
-            if max_confidence >= 90:
-                risk_level = "high"
-            elif max_confidence >= 70:
-                risk_level = "medium"
-            else:
-                risk_level = "low"
+        # Rules Engine-driven status and risk level
+        claim_status = eval_result["status"]
+        risk_level = eval_result["risk_level"]
+        
+        if claim_status in ("held", "queued"):
             flagged_count += 1
         else:
-            claim_status = "approved"
-            risk_level = None
             approved_count += 1
+
+        sim_service_ts_val = None
+        if row.sim_service_date:
+            sim_s_date = row.sim_service_date
+            if isinstance(sim_s_date, str):
+                try:
+                    sim_s_date = datetime.strptime(sim_s_date, "%Y-%m-%d").date()
+                except ValueError:
+                    try:
+                        sim_s_date = datetime.fromisoformat(sim_s_date).date()
+                    except ValueError:
+                        sim_s_date = date.today()
+            elif isinstance(sim_s_date, datetime):
+                sim_s_date = sim_s_date.date()
+            sim_service_ts_val = datetime.combine(sim_s_date, datetime.min.time()).replace(tzinfo=timezone.utc).isoformat()
+        else:
+            sim_service_ts_val = now
+            
+        queued_at_sim_val = sim_service_ts_val if claim_status == "queued" else None
+
+        if claim_status == "disbursed":
+            master_disbursements_batch.append({
+                "claim_id": claim_id,
+                "amount": float(row.billing_amount) if row.billing_amount is not None else 0.0,
+                "sim_disbursed_at": sim_service_ts_val or now,
+            })
 
         master_claims_to_update.append({
             "id": claim_id,
             "status": claim_status,
             "risk_level": risk_level,
+            "risk_score": eval_result["score"],
+            "sim_service_ts": sim_service_ts_val,
+            "queued_at_sim": queued_at_sim_val,
         })
 
         yield {
@@ -557,7 +784,11 @@ async def process_batch_claims_fast(batch_id: str, bq: bigquery.Client) -> Async
     if master_audit_batch:
         await insert_rows("audit_log", master_audit_batch, use_load=True)
 
-    _logger.info(f"Updating status and risk for {len(master_claims_to_update)} claims via bulk CASE-WHEN Query...")
+    _logger.info(f"Writing {len(master_disbursements_batch)} disbursements via bulk BigQuery Load Job...")
+    if master_disbursements_batch:
+        await insert_rows("disbursements", master_disbursements_batch, use_load=True)
+
+    _logger.info(f"Updating status, risk, score, and timestamps for {len(master_claims_to_update)} claims via bulk CASE-WHEN Query...")
     if master_claims_to_update:
         # Chunk updates to avoid query size/parameter limits (500 claims per chunk)
         chunk_size = 500
@@ -565,31 +796,51 @@ async def process_batch_claims_fast(batch_id: str, bq: bigquery.Client) -> Async
             chunk = master_claims_to_update[i : i + chunk_size]
             cases_status = []
             cases_risk = []
+            cases_score = []
+            cases_service_ts = []
+            cases_queued_ts = []
             ids = []
             params = []
             for idx, c in enumerate(chunk):
                 cid_param = f"cid_{idx}"
                 status_param = f"status_{idx}"
                 risk_param = f"risk_{idx}"
+                score_param = f"score_{idx}"
+                service_ts_param = f"service_ts_{idx}"
+                queued_ts_param = f"queued_ts_{idx}"
 
                 cases_status.append(f"WHEN id = @{cid_param} THEN @{status_param}")
+                cases_risk.append(f"WHEN id = @{cid_param} THEN @{risk_param}")
+                cases_score.append(f"WHEN id = @{cid_param} THEN @{score_param}")
                 
-                if c["risk_level"] is None:
-                    cases_risk.append(f"WHEN id = @{cid_param} THEN NULL")
+                if c["sim_service_ts"] is None:
+                    cases_service_ts.append(f"WHEN id = @{cid_param} THEN NULL")
                 else:
-                    cases_risk.append(f"WHEN id = @{cid_param} THEN @{risk_param}")
+                    cases_service_ts.append(f"WHEN id = @{cid_param} THEN TIMESTAMP(@{service_ts_param})")
+                    
+                if c["queued_at_sim"] is None:
+                    cases_queued_ts.append(f"WHEN id = @{cid_param} THEN NULL")
+                else:
+                    cases_queued_ts.append(f"WHEN id = @{cid_param} THEN TIMESTAMP(@{queued_ts_param})")
 
                 ids.append(f"@{cid_param}")
 
                 params.append(bigquery.ScalarQueryParameter(cid_param, "STRING", c["id"]))
                 params.append(bigquery.ScalarQueryParameter(status_param, "STRING", c["status"]))
-                if c["risk_level"] is not None:
-                    params.append(bigquery.ScalarQueryParameter(risk_param, "STRING", c["risk_level"]))
+                params.append(bigquery.ScalarQueryParameter(risk_param, "STRING", c["risk_level"]))
+                params.append(bigquery.ScalarQueryParameter(score_param, "FLOAT", c["risk_score"]))
+                if c["sim_service_ts"] is not None:
+                    params.append(bigquery.ScalarQueryParameter(service_ts_param, "STRING", c["sim_service_ts"]))
+                if c["queued_at_sim"] is not None:
+                    params.append(bigquery.ScalarQueryParameter(queued_ts_param, "STRING", c["queued_at_sim"]))
 
             query = f"""
                 UPDATE `{ds}.claims`
                 SET status = CASE { " ".join(cases_status) } END,
-                    risk_level = CASE { " ".join(cases_risk) } END
+                    risk_level = CASE { " ".join(cases_risk) } END,
+                    risk_score = CASE { " ".join(cases_score) } END,
+                    sim_service_ts = CASE { " ".join(cases_service_ts) } END,
+                    queued_at_sim = CASE { " ".join(cases_queued_ts) } END
                 WHERE id IN ({ ", ".join(ids) })
             """
             await run_dml(query, params)
@@ -613,6 +864,29 @@ async def process_batch_claims_fast(batch_id: str, bq: bigquery.Client) -> Async
         else:
             raise
 
+    # ── AGENT 4 COMPILATION & RECOMMENDATION EVENTS ──────────────────────
+    from services.dossier_service import DossierService
+    try:
+        dossier = await DossierService.compile_referral_dossier()
+        yield {
+            "type": "dossier_ready",
+            "data": {
+                "dossierId": dossier["dossier_id"],
+                "totalExposure": dossier["grand_total_exposure"],
+                "message": f"Agent 4 National Fraud Evidence Dossier compiled: Compiled financial trail of ${dossier['grand_total_exposure']:,.2f} exposure across {len(dossier['financial_trail'])} high-risk suppliers, targeting {len(dossier['affected_mbis'])} compromised MBIs."
+            }
+        }
+        yield {
+            "type": "hardening_recommendation",
+            "data": {
+                "edit": dossier["policy_recommendation"]["proposed_claim_edit"],
+                "rationale": dossier["policy_recommendation"]["regulatory_rationale"],
+                "message": f"Agent 4 Hardening Recommendation: {dossier['policy_recommendation']['proposed_claim_edit']}"
+            }
+        }
+    except Exception as e:
+        _logger.warning(f"Error compiling post-batch dossier: {e}")
+
     yield {
         "type": "batch_complete",
         "data": {
@@ -622,3 +896,4 @@ async def process_batch_claims_fast(batch_id: str, bq: bigquery.Client) -> Async
             "approvedCount": approved_count,
         },
     }
+    disable_in_memory_db()

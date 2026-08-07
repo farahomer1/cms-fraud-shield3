@@ -88,6 +88,10 @@ TABLES = {
         bigquery.SchemaField("prior_auth", "BOOLEAN", mode="NULLABLE"),
         bigquery.SchemaField("modifier", "STRING", mode="NULLABLE"),
         bigquery.SchemaField("sim_service_date", "DATE", mode="NULLABLE"),
+        bigquery.SchemaField("risk_score", "FLOAT", mode="NULLABLE"),
+        bigquery.SchemaField("sim_service_ts", "TIMESTAMP", mode="NULLABLE"),
+        bigquery.SchemaField("queued_at_sim", "TIMESTAMP", mode="NULLABLE"),
+        bigquery.SchemaField("sla_breached", "BOOLEAN", mode="NULLABLE"),
         bigquery.SchemaField("created_at", "TIMESTAMP", mode="NULLABLE"),
         bigquery.SchemaField("updated_at", "TIMESTAMP", mode="NULLABLE"),
     ],
@@ -170,6 +174,7 @@ TABLES = {
         bigquery.SchemaField("authorized_official", "STRING", mode="REQUIRED"),
         bigquery.SchemaField("practice_address", "STRING", mode="REQUIRED"),
         bigquery.SchemaField("status", "STRING", mode="NULLABLE"),
+        bigquery.SchemaField("enrollment_status", "STRING", mode="NULLABLE"),
         bigquery.SchemaField("created_at", "TIMESTAMP", mode="NULLABLE"),
     ],
     "pecos_events": [
@@ -223,6 +228,24 @@ TABLES = {
         bigquery.SchemaField("claim_id", "STRING", mode="REQUIRED"),
         bigquery.SchemaField("is_fraud", "BOOLEAN", mode="REQUIRED"),
     ],
+    "shadow_claims": [
+        bigquery.SchemaField("id", "STRING", mode="REQUIRED"),
+        bigquery.SchemaField("claim_number", "STRING", mode="REQUIRED"),
+        bigquery.SchemaField("billing_amount", "NUMERIC", mode="NULLABLE"),
+        bigquery.SchemaField("service_date", "DATE", mode="REQUIRED"),
+        bigquery.SchemaField("hcpcs_code", "STRING", mode="NULLABLE"),
+        bigquery.SchemaField("state", "STRING", mode="NULLABLE"),
+        bigquery.SchemaField("mbi", "STRING", mode="NULLABLE"),
+        bigquery.SchemaField("billing_npi", "STRING", mode="NULLABLE"),
+        bigquery.SchemaField("sim_service_date", "DATE", mode="NULLABLE"),
+    ],
+    "threat_profiles": [
+        bigquery.SchemaField("id", "STRING", mode="REQUIRED"),
+        bigquery.SchemaField("hcpcs_codes", "JSON", mode="REQUIRED"),
+        bigquery.SchemaField("states", "JSON", mode="REQUIRED"),
+        bigquery.SchemaField("supplier_npis", "JSON", mode="REQUIRED"),
+        bigquery.SchemaField("created_at_sim", "TIMESTAMP", mode="REQUIRED"),
+    ],
 }
 
 
@@ -241,7 +264,7 @@ def create_dataset(client: bigquery.Client) -> None:
 
 
 def create_tables(client: bigquery.Client) -> None:
-    """Create all tables in the dataset."""
+    """Create all tables in the dataset. Migrates existing tables by adding any missing fields."""
     dataset = get_dataset()
     for table_name, schema in TABLES.items():
         table_ref = f"{dataset}.{table_name}"
@@ -251,6 +274,19 @@ def create_tables(client: bigquery.Client) -> None:
             print(f"  Created table: {table_name}")
         except Conflict:
             print(f"  Table already exists: {table_name}")
+            try:
+                existing_table = client.get_table(table_ref)
+                existing_fields = {f.name for f in existing_table.schema}
+                new_fields = []
+                for field in schema:
+                    if field.name not in existing_fields:
+                        new_fields.append(field)
+                if new_fields:
+                    print(f"  Migrating {table_name}: adding columns {[f.name for f in new_fields]}")
+                    existing_table.schema = list(existing_table.schema) + new_fields
+                    client.update_table(existing_table, ["schema"])
+            except Exception as e:
+                print(f"  Failed to migrate schema for {table_name}: {e}")
 
 
 def drop_tables(client: bigquery.Client) -> None:

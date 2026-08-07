@@ -120,39 +120,50 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
         })
 
     # 3. Beneficiaries
-    # Eleanor Vance (Neurogenic Bladder, LCD cap 100, compromised, genuine)
+    CONDITION_TO_CAP = {
+        "Neurogenic Bladder": 150,
+        "Urinary Retention": 30,
+        "Spinal Cord Injury": 200,
+        "Obstructive Uropathy": 100,
+        "Urological Stricture": 30
+    }
+
+    # Eleanor Vance (Neurogenic Bladder, LCD cap 150, compromised, genuine)
     vance_mbi = "VANCE732MBI"
+    vance_cond = "Neurogenic Bladder"
     beneficiaries.append({
         "mbi": vance_mbi,
         "name": "Eleanor Vance",
-        "condition": "Neurogenic Bladder",
-        "lcd_cap": 100,
+        "condition": vance_cond,
+        "lcd_cap": CONDITION_TO_CAP[vance_cond],
         "is_compromised": True,
         "is_fabricated": False,
         "created_at": now_ts,
     })
 
-    # William Jackson (CKD, LCD cap 30, not compromised, fabricated entity)
+    # William Jackson (Urinary Retention, LCD cap 30, not compromised, fabricated entity)
     jackson_mbi = "JACKSON999MBI"
+    jackson_cond = "Urinary Retention"
     beneficiaries.append({
         "mbi": jackson_mbi,
         "name": "William Jackson",
-        "condition": "Obstructive Uropathy",
-        "lcd_cap": 30,
+        "condition": jackson_cond,
+        "lcd_cap": CONDITION_TO_CAP[jackson_cond],
         "is_compromised": False,
         "is_fabricated": True,
         "created_at": now_ts,
     })
 
     # 100 normal/legitimate beneficiaries
+    conditions_pool = list(CONDITION_TO_CAP.keys())
     for i in range(1, 101):
         mbi = f"MBI{i:03d}GEN"
-        cap = 30 if i % 2 == 0 else 100
+        cond = conditions_pool[i % len(conditions_pool)]
         beneficiaries.append({
             "mbi": mbi,
             "name": legit_names[i-1],
-            "condition": "Neurogenic Bladder" if i % 2 == 0 else "Urological Stricture",
-            "lcd_cap": cap,
+            "condition": cond,
+            "lcd_cap": CONDITION_TO_CAP[cond],
             "is_compromised": False,
             "is_fabricated": False,
             "created_at": now_ts,
@@ -225,7 +236,8 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
         "Golden Gate Medical Supply",
         "Horizon Medical Supplies",
         "Integrity Durable Medical",
-        "Jubilee Health Equipment"
+        "Jubilee Health Equipment",
+        "Keystone Health & Mobility"
     ]
     legit_provider_addresses = [
         "1528 Walnut St, Philadelphia, PA 19102",
@@ -237,9 +249,10 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
         "1900 Market St, Philadelphia, PA 19103",
         "2001 Market St, Philadelphia, PA 19103",
         "1500 Market St, Philadelphia, PA 19102",
-        "1600 Market St, Philadelphia, PA 19103"
+        "1600 Market St, Philadelphia, PA 19103",
+        "1209 North Orange St, Wilmington, DE"
     ]
-    for i in range(1, 11):
+    for i in range(1, 12):
         npi = f"NPI_LEG_{i:02d}"
         name = legit_provider_names[i-1]
         pecos_records.append({
@@ -428,7 +441,7 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
             "id": claim_id,
             "claim_number": f"CLM-VIK-SPIKE-{i:02d}",
             "batch_id": batch_id,
-            "beneficiary_id": "BEN-VIK-MOCK",
+            "beneficiary_id": f"BEN-VIK-{i:02d}",
             "provider_id": vik_npi,
             "claim_type": "DME",
             "status": "held",
@@ -507,7 +520,7 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
             "id": f"claim_vik_prior_{i:02d}",
             "claim_number": f"CLM-VIK-PRIOR-{i:02d}",
             "batch_id": "batch_prior",
-            "beneficiary_id": "BEN-VIK-MOCK",
+            "beneficiary_id": f"BEN-VIK-{i:02d}",
             "provider_id": vik_npi,
             "claim_type": "DME",
             "status": "disbursed",
@@ -527,6 +540,35 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
         })
         claim_labels.append({
             "claim_id": f"claim_vik_prior_{i:02d}",
+            "is_fraud": False,
+        })
+
+    # Seed stable prior billing history for NPI_LEG_11 (Keystone Health & Mobility) to show stable billing doesn't trigger CMRA
+    for j in range(1, 4):
+        claims.append({
+            "id": f"claim_leg11_prior_{j}",
+            "claim_number": f"CLM-LEG11-PRIOR-{j}",
+            "batch_id": "batch_prior",
+            "beneficiary_id": f"BEN-LEG-00{j}",
+            "provider_id": "NPI_LEG_11",
+            "claim_type": "DME",
+            "status": "disbursed",
+            "risk_level": "LOW",
+            "billing_amount": 2500.00,  # $2.5k * 3 = $7.5k stable history
+            "service_date": "2026-03-10",
+            "mbi": f"MBI00{j}GEN",
+            "billing_npi": "NPI_LEG_11",
+            "hcpcs_code": "A4351",
+            "quantity": 10,
+            "state": "DE",
+            "prior_auth": False,
+            "modifier": None,
+            "sim_service_date": "2026-03-10",
+            "created_at": now_ts,
+            "updated_at": now_ts,
+        })
+        claim_labels.append({
+            "claim_id": f"claim_leg11_prior_{j}",
             "is_fraud": False,
         })
 
@@ -846,19 +888,26 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
         "created_at": now_ts,
     })
 
-    # 3. Viktor Dummy Member
-    members.append({
-        "id": "BEN-VIK-MOCK",
-        "name_display": "Raymond Henderson",
-        "ssn_last4": "5555",
-        "date_of_birth": "1945-05-15",
-        "date_of_death": None,
-        "vital_status": "alive",
-        "service_branch": "Medicare Part B",
-        "disability_rating": 0,
-        "benefits_enrolled": "{}",
-        "created_at": now_ts,
-    })
+    # 3. Viktor Spiking Members with rich variety (Arthur Pendelton, Elena Rostova, Marcus Vance, Siddharth Patel, etc.)
+    vik_names = [
+        "Arthur Pendelton", "Elena Rostova", "Marcus Vance", "Siddharth Patel",
+        "Mei-Ling Zhou", "Gabriela Gomez", "Aisha Diop", "Dmitri Volkov",
+        "Sarah Jenkins", "Chloe Laurent", "Oliver Hansen", "Kenji Tanaka",
+        "Amira Haddad", "Carlos Santana", "Zoe Rosenberg"
+    ]
+    for idx, name in enumerate(vik_names):
+        members.append({
+            "id": f"BEN-VIK-{idx+1:02d}",
+            "name_display": name,
+            "ssn_last4": f"55{idx+1:02d}"[-4:],
+            "date_of_birth": f"19{40 + (idx % 15)}-05-15",
+            "date_of_death": None,
+            "vital_status": "alive",
+            "service_branch": "Medicare Part B",
+            "disability_rating": 0,
+            "benefits_enrolled": "{}",
+            "created_at": now_ts,
+        })
 
     # 4. Legitimate members (1 to 150)
     for i in range(1, 151):

@@ -24,6 +24,7 @@ from routes.normalization import router as normalization_router
 from routes.audit_workflows import router as audit_workflows_router
 from routes.enrollment_integrity import router as enrollment_integrity_router
 from routes.appeals import router as appeals_router
+from routes.referrals import router as referrals_router
 
 # Load environment variables from .env before any os.environ reads below.
 load_dotenv()
@@ -36,14 +37,32 @@ async def lifespan(app: FastAPI):
     # Auto-seed database on startup so demo data is always fresh
     try:
         from database import get_sync_client
+        from schema import create_tables
         from datagen.generator import generate_all_data
         bq = get_sync_client()
+        logger.info("Ensuring all database tables exist...")
+        create_tables(bq)
         logger.info("Auto-seeding database on startup...")
         await generate_all_data(bq)
         logger.info("Database seeded successfully.")
     except Exception as e:
         logger.warning(f"Auto-seed skipped or failed: {e}")
+
+    # Start automated scenario background driver
+    try:
+        from services.scenario_driver import ScenarioDriver
+        ScenarioDriver.start()
+    except Exception as e:
+        logger.warning(f"Failed to start Scenario Driver: {e}")
+
     yield
+
+    # Stop automated scenario background driver on shutdown
+    try:
+        from services.scenario_driver import ScenarioDriver
+        ScenarioDriver.stop()
+    except Exception as e:
+        logger.warning(f"Failed to stop Scenario Driver on shutdown: {e}")
 
 
 app = FastAPI(title="PIVOT API", version="0.1.0", lifespan=lifespan)
@@ -76,4 +95,10 @@ app.include_router(normalization_router)
 app.include_router(audit_workflows_router)
 app.include_router(enrollment_integrity_router)
 app.include_router(appeals_router)
+app.include_router(referrals_router)
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=8001, reload=True)
 

@@ -50,14 +50,15 @@ class AppealsService:
         else:
             svc_date = svc_date_val
 
-        # 2. Check if a qualifying clinical consult exists in consult_registry (±10 days of claim service date)
-        start_window = svc_date - timedelta(days=10)
-        end_window = svc_date + timedelta(days=10)
+        # 2. Check if a qualifying clinical consult exists in consult_registry (14-day window BEFORE the claim service date, inclusive)
+        start_window = svc_date - timedelta(days=14)
+        end_window = svc_date
 
         query_consult = f"""
             SELECT consult_id, cpt_code, sim_consult_date 
             FROM `{ds}.consult_registry` 
             WHERE mbi = @mbi 
+              AND cpt_code = '99214'
               AND sim_consult_date >= @start_window 
               AND sim_consult_date <= @end_window
         """

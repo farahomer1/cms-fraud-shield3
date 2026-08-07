@@ -22,7 +22,7 @@ async def get_recent_alerts(limit: int = Query(10, le=50), bq: bigquery.Client =
         LEFT JOIN `{ds}.members` v ON c.beneficiary_id = v.id
         LEFT JOIN `{ds}.providers` p ON c.provider_id = p.id
         WHERE c.status IN ('flagged', 'held')
-        ORDER BY c.updated_at DESC
+        ORDER BY c.billing_amount DESC, c.updated_at DESC
         LIMIT @lim""",  # nosec B608 - dataset identifier validated in get_dataset(); user input parameterized
         [bigquery.ScalarQueryParameter("lim", "INT64", limit)],
     )

@@ -1,6 +1,6 @@
 // Copyright 2026 Google. Google provides these Materials as “Free Evaluation Services” subject to the terms, restrictions and limitations at https://cloud.google.com/terms/service-terms.
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PageContainer } from '../components/layout/PageContainer';
 import {
   Box,
@@ -111,9 +111,52 @@ const REFERRAL_CASES: ReferralCase[] = [
 ];
 
 const NFEDReferralsPage: React.FC = () => {
+  const [referralCases, setReferralCases] = useState<ReferralCase[]>(REFERRAL_CASES);
   const [selectedCase, setSelectedCase] = useState<ReferralCase>(REFERRAL_CASES[0]);
   const [compileState, setCompileState] = useState<'idle' | 'gathering' | 'compiling' | 'exporting' | 'complete'>('idle');
   const [compileProgress, setCompileStateMessage] = useState('');
+
+  useEffect(() => {
+    const fetchLiveDossier = async () => {
+      try {
+        const response = await fetch('/api/referrals/dossier');
+        if (response.ok) {
+          const data = await response.json();
+          const liveCase: ReferralCase = {
+            id: 'NFED-2026-LIVE',
+            title: 'Live Red-Team Catheter Fraud Ring Referral',
+            target: data.network_unmasked && data.network_unmasked.length > 0 
+              ? data.network_unmasked.map((p: any) => `${p.name} (NPI: ${p.npi}, ${p.address})`).join(', ')
+              : 'Viktor Catheter Syndicate (15 Shell Providers)',
+            location: 'Delaware & Mid-Atlantic Region',
+            loss: `$${(data.grand_total_exposure || 0).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
+            risk: 'critical',
+            status: 'draft',
+            dateCreated: data.date_compiled || '2026-08-05',
+            type: 'Durable Medical Equipment (DME) Phantom Billing',
+            summary: data.policy_recommendation?.observation || 'A coordinated shadow billing ring registered to a commercial mail drops (CMRA) and manipulating ownership transfers of dormant suppliers.',
+            evidence: [
+              `Financial Trail: Identified ${data.financial_trail?.length || 0} active high-risk suppliers with held prepayment claims totaling $${(data.grand_total_exposure || 0).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}.`,
+              `Beneficiary Impact: Bypassed standard limits by billing ${data.affected_mbis?.length || 0} compromised beneficiary MBIs concurrently.`,
+              `Administrative Appeals: ${data.alj_queue_cases?.length || 0} appeals filed and escalated to Level 2 ALJ manual review queue for failing clinical consult checks.`,
+              `Proposed Policy Edit: ${data.policy_recommendation?.proposed_claim_edit || ''}`
+            ],
+            entities: data.network_unmasked && data.network_unmasked.length > 0
+              ? data.network_unmasked.map((p: any) => `${p.name} - Status: ${p.status}`)
+              : ['15 shell providers linked to Yury Viktor (including Keystone Medical Equipment, Penn Durable Medical, Broad Street Medical Equip)'],
+            recommendation: `Recommend direct immediate referral of live dossier NFED-2026-LIVE to the Department of Justice Healthcare Fraud Unit. Execute permanent prepayment suspension on all ${data.network_unmasked?.length || 0} unmasked providers, enforce protective MBI locks on all affected beneficiaries, and implement the recommended claim-edit: "${data.policy_recommendation?.proposed_claim_edit}".`
+          };
+
+          const updatedCases = [liveCase, ...REFERRAL_CASES];
+          setReferralCases(updatedCases);
+          setSelectedCase(liveCase);
+        }
+      } catch (err) {
+        console.error('Failed to fetch live dossier, falling back to static cases:', err);
+      }
+    };
+    fetchLiveDossier();
+  }, []);
 
   const getRiskChipColor = (risk: string) => {
     switch (risk) {
@@ -206,11 +249,11 @@ END OF BRIEF - SYSTEM SHIELD TRACE ID: AGY-SHIELD-2026-X9
         {/* Left Column - Referral Cases Queue */}
         <Grid item xs={12} md={4}>
           <Typography variant="subtitle2" fontWeight={700} sx={{ mb: 1.5, color: '#112E51', display: 'flex', alignItems: 'center', gap: 1 }}>
-            <AssignmentIcon sx={{ fontSize: 20 }} /> ACTIVE REFERRAL QUEUE ({REFERRAL_CASES.length})
+            <AssignmentIcon sx={{ fontSize: 20 }} /> ACTIVE REFERRAL QUEUE ({referralCases.length})
           </Typography>
           <Paper variant="outlined" sx={{ borderRadius: 2, overflow: 'hidden' }}>
             <List sx={{ p: 0 }}>
-              {REFERRAL_CASES.map((item, index) => {
+              {referralCases.map((item, index) => {
                 const isSelected = selectedCase.id === item.id;
                 return (
                   <React.Fragment key={item.id}>
@@ -255,7 +298,7 @@ END OF BRIEF - SYSTEM SHIELD TRACE ID: AGY-SHIELD-2026-X9
                         }
                       />
                     </ListItemButton>
-                    {index < REFERRAL_CASES.length - 1 && <Divider />}
+                    {index < referralCases.length - 1 && <Divider />}
                   </React.Fragment>
                 );
               })}

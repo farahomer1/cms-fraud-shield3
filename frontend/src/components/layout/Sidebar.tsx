@@ -12,6 +12,7 @@ import FactCheckIcon from '@mui/icons-material/FactCheck';
 import HistoryIcon from '@mui/icons-material/History';
 import SmartToyIcon from '@mui/icons-material/SmartToy';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+import GavelIcon from '@mui/icons-material/Gavel';
 import { ROUTES, ROLE_ROUTES } from '../../utils/constants';
 import { useAuth } from '../../contexts/AuthContext';
 
@@ -23,6 +24,7 @@ const NAV_ITEMS = [
   { label: 'Front-Door Enrollment', icon: <ShieldIcon />, path: ROUTES.ENROLLMENT },
   { label: 'Pre-Payment Claims Review', icon: <FactCheckIcon />, path: ROUTES.VALIDATION },
   { label: 'Adversarial Hunt Workspaces', icon: <SearchIcon />, path: ROUTES.FRAUD_RESEARCH },
+  { label: 'Level 2 ALJ Review Queue', icon: <GavelIcon />, path: ROUTES.ALJ_QUEUE },
   { label: 'Federal Law Enforcement Referrals', icon: <AssignmentIcon />, path: ROUTES.REFERRALS },
   { label: 'Policy Updates & Prevention ROI', icon: <BarChartIcon />, path: ROUTES.ANALYTICS },
   { label: 'Audit Log', icon: <HistoryIcon />, path: ROUTES.AUDIT_LOG },

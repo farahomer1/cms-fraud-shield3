@@ -15,6 +15,7 @@ export const ROUTES = {
   USER_MANAGEMENT: '/user-management',
   ENROLLMENT: '/enrollment-integrity',
   REFERRALS: '/nfed-referrals',
+  ALJ_QUEUE: '/alj-queue',
 } as const;
 
 /**
@@ -23,13 +24,14 @@ export const ROUTES = {
  */
 export const ROLE_ROUTES: Record<string, string[]> = {
   'Enrollment Analyst': [ROUTES.DASHBOARD, ROUTES.ENROLLMENT, ROUTES.VALIDATION, ROUTES.INGESTION],
-  'Senior Investigator': [ROUTES.REFERRALS, ROUTES.FRAUD_RESEARCH, ROUTES.ANALYTICS, ROUTES.VALIDATION, ROUTES.INGESTION],
+  'Senior Investigator': [ROUTES.REFERRALS, ROUTES.FRAUD_RESEARCH, ROUTES.ANALYTICS, ROUTES.VALIDATION, ROUTES.INGESTION, ROUTES.ALJ_QUEUE],
   'Platform Administrator': [
     ROUTES.DASHBOARD,
     ROUTES.FRAUD_RESEARCH,
     ROUTES.AGENT_MANAGEMENT,
     ROUTES.USER_MANAGEMENT,
     ROUTES.INGESTION,
+    ROUTES.ALJ_QUEUE,
   ],
   'Claims Auditor': [
     ROUTES.DASHBOARD,
@@ -38,6 +40,7 @@ export const ROLE_ROUTES: Record<string, string[]> = {
     ROUTES.AGENT_MANAGEMENT,
     ROUTES.AUDIT_LOG,
     ROUTES.INGESTION,
+    ROUTES.ALJ_QUEUE,
   ],
 };
 

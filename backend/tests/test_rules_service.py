@@ -41,6 +41,7 @@ async def test_r01_quantity_cap_violation():
             "mbi": "VANCE732MBI",
             "quantity": 120,
             "sim_service_date": "2026-07-03",
+            "hcpcs_code": "A4351",
         }
         r01_hit = await RulesService.check_r01_quantity_cap(claim_violation)
         assert r01_hit is True
@@ -51,6 +52,7 @@ async def test_r01_quantity_cap_violation():
             "mbi": "VANCE732MBI",
             "quantity": 50,
             "sim_service_date": "2026-07-03",
+            "hcpcs_code": "A4351",
         }
         r01_ok = await RulesService.check_r01_quantity_cap(claim_ok)
         assert r01_ok is False
