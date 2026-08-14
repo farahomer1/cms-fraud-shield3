@@ -43,12 +43,12 @@ graph TB
     end
 
     subgraph Storage [Persistent Storage Layer]
-        BQ_Claims[("`claims` Table <br/> (Id, MBI, NPI, HCPCS, Qty, Status)")]
-        BQ_Findings[("`agent_findings` Table <br/> (Claim_Id, Agent, Recommendation, Notes)")]
-        BQ_PECOS[("`pecos_records` Table <br/> (NPI, Owner, AO, Address, Event History)")]
-        BQ_Consults[("`consult_registry` Table <br/> (MBI, CPT, ICD-10, Date)")]
-        BQ_Flags[("`agent_flags` Table <br/> (Id, Agent, Claim, Flagged_By, Notes)")]
-        BQ_CMRA[("`cmra_list` Table <br/> (Commercial Mail-Drop Addresses)")]
+        BQ_Claims[("claims Table <br/> (Id, MBI, NPI, HCPCS, Qty, Status)")]
+        BQ_Findings[("agent_findings Table <br/> (Claim_Id, Agent, Recommendation, Notes)")]
+        BQ_PECOS[("pecos_records Table <br/> (NPI, Owner, AO, Address, Event History)")]
+        BQ_Consults[("consult_registry Table <br/> (MBI, CPT, ICD-10, Date)")]
+        BQ_Flags[("agent_flags Table <br/> (Id, Agent, Claim, Flagged_By, Notes)")]
+        BQ_CMRA[("cmra_list Table <br/> (Commercial Mail-Drop Addresses)")]
     end
 
     subgraph Agents [The Four-Agent AI Pipeline]
