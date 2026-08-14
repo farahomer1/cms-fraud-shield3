@@ -160,43 +160,40 @@ To clarify how the concurrent pipeline handles an individual claim's lifecycle, 
 ```mermaid
 sequenceDiagram
     autonumber
-    actor Supplier as synthetic Supplier
-    participant Gateway as claims.py API
-    participant Rules as rules_service.py
-    participant DB as Google BigQuery
-    participant Appeals as appeals_service.py
-    participant Auditor as Claims Auditor UI
+    actor Driver as Background Scenario Driver
+    participant FE as Frontend App (ALJ Page / Dashboard)
+    participant BE as FastAPI Backend
+    participant RS as RulesService
+    participant BQ as BigQuery Tables
 
-    Supplier->>Gateway: POST /claims
-    Gateway->>Rules: evaluate_rules(claim_id)
-    Rules->>DB: Query Quantity Caps (R-01)
-    Rules->>DB: Check Dormant Spike (R-02)
-    Rules->>DB: Verify Provider Velocity (R-03)
-    Rules->>DB: Cross-ref CMRA Change (R-04)
-    DB-->>Rules: Returns rule evaluations
-    Rules-->>Gateway: Return rule results (e.g., 2 hits)
-    
-    Note over Gateway: Compute Discrete Score:<br/>Score = 0.95
-    Gateway->>DB: Write Pre-Payment Hold ($0 paid)
-    Gateway-->>Supplier: Response: Claim Held (Prepayment)
+    Note over Driver, BQ: FAST BATCH CLAIM INGESTION GATEWAY
+    BE->>BE: Dynamic Parameterized Seeding (via ScenarioConfig)
+    Driver->>BE: Start background daemon loop
+    FE->>BE: Trigger Batch Process (Stream SSE events)
+    BE->>RS: Evaluate Claim in real-time
+    RS->>BQ: Query MBI compromise locks (FR-18)
+    RS-->>BE: Return risk score (0.00 / 0.70 / 0.95) & true status
+    BE->>BQ: Bulk load updates, record Disbursements & Holds
 
-    Note over Supplier: Eleanor Vance Case:<br/>Electronic Appeal Filed
-    Supplier->>Gateway: POST /claims/{id}/appeal
-    Gateway->>Appeals: adjudicate_appeal(claim_id)
-    Appeals->>DB: Query Consult Registry (CPT-99214)
-    DB-->>Appeals: Match found (Telehealth urology consult)
-    Appeals->>DB: UPDATE claim status = "approved" (HIGLAS ledger)
-    Appeals-->>Gateway: Auto-release Approved (Latency < 3s)
-    Gateway-->>Supplier: Response: Release Confirmed, paid!
+    Note over Driver, BQ: TIMELINE AUTOMATION & ADJUDICATION APPEALS
+    Driver->>BE: Check Simulation Clock
+    Driver->>BQ: Detect held claims for CLM-VANCE-01 (Day 2) and CLM-JACKSON-01 (Day 5)
+    Driver->>BE: File Level 1 Appeal for claim_id
+    BE->>RS: Verify clinical consult (CPT-99214) within 10 days on either side of Service
+    alt Has matching CPT-99214 (Eleanor Vance)
+        BE->>BQ: Auto-release hold (status: 'disbursed'), insert Disbursement row
+        BE-->>Driver: Appeal Approved (SLA completed)
+    else No matching CPT-99214 (William Jackson)
+        BE->>BQ: Lock down MBI (mbi_locks), escalate to Level 2 ALJ manual review (alj_queue)
+        BE-->>Driver: Appeal Rejected
+    end
 
-    Note over Supplier: William Jackson Case:<br/>Electronic Appeal Filed
-    Supplier->>Gateway: POST /claims/{id}/appeal
-    Gateway->>Appeals: adjudicate_appeal(claim_id)
-    Appeals->>DB: Query Consult Registry (CPT-99214)
-    DB-->>Appeals: No match found
-    Appeals->>DB: UPDATE claim status = "denied" (ALJ Queue)
-    Appeals-->>Gateway: Release Rejected (Escalated to Level 2)
-    Gateway-->>Supplier: Response: Appeal Denied (ALJ review pending)
+    Note over Driver, BQ: DISSENTING JUDICIAL REVIEW
+    FE->>BE: GET /api/appeals/alj-queue (Sort by billing amount DESC)
+    BE-->>FE: Return ALJ appeals list
+    FE->>FE: Display legal briefing & clinical telehealth consult audit logs
+    FE->>BE: POST /api/claims/{id}/decision (Adjudication: 'release' or 'escalate')
+    BE->>BQ: Record decision, update status, write Disbursement Row (HIGLAS Consistency)
 ```
 
 ---
