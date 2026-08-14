@@ -77,7 +77,7 @@ graph TB
     Router_Appeals --> Service_Appeals
     Service_Appeals -->|Query consultations| BQ_Consults
     Service_Appeals -->|If Match Found: Auto-release in <3s| HIGLAS
-    Service_Appeals -->|If No Match: Block & Escalate| Level2 ALJ Queue[["🏛️ Level 2 ALJ Escalation Queue"]]
+    Service_Appeals -->|If No Match: Block & Escalate| Level2_ALJ_Queue[["🏛️ Level 2 ALJ Escalation Queue"]]
     
     %% Deep Investigations
     PrePayHold -->|Flagged accounts| A3_SR
@@ -89,7 +89,7 @@ graph TB
     A1_TD -->|Publish early threat warning| A2_CF
     
     %% Output Generation
-    Level2 ALJ Queue --> A4_PI
+    Level2_ALJ_Queue --> A4_PI
     A3_SR --> A4_PI
     A4_PI -->|Produce standard referral packets| ReferralDossier["📄 FBI / DOJ NFED Referral Dossiers"]
 ```
