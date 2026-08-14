@@ -89,7 +89,7 @@ flowchart LR
 
     subgraph CloudRun["Cloud Run — Docker, uvicorn :8080"]
         MAIN["main.py<br/>CORS + GZip + auto-seed lifespan"]
-        ROUTES["routes/ — 13 routers, 51 endpoints"]
+        ROUTES["routes/ — 16 routers, 51 endpoints"]
         SERVICES["services/<br/>batch, chat, analytics, documents,<br/>fraud research, monitoring, overpayments"]
         AGENTS["agents/ — 7 active agents<br/>BaseAgent + AGENT_REGISTRY"]
         DB["database.py<br/>BigQuery client + async helpers"]
@@ -163,7 +163,7 @@ cms-fraud-shield/
 ├── backend/                        # FastAPI Python 3.13 Backend
 │   ├── agents/                     # Multi-Agent registry & base definitions
 │   ├── models/                     # BigQuery schema model models
-│   ├── routes/                     # 13 routers representing CMS endpoints
+│   ├── routes/                     # 16 routers representing CMS endpoints
 │   ├── services/                   # Business logic (appeals, chat, fraud research)
 │   ├── main.py                     # App entrypoint & lifespan managers
 │   └── requirements.txt            # Python dependencies
