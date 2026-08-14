@@ -15,19 +15,30 @@ class ThreatWatchService:
 
     @staticmethod
     async def detect_early_warning_anomalies(bq: bigquery.Client) -> list[dict]:
-        """FR-13: Scan PECOS events for anomalous groups of AO changes on dormant suppliers."""
-        ds = get_dataset()
+        """FR-13: Scan PECOS events for anomalous groups of AO changes on dormant suppliers within 30 days."""
+        from services.simulation_clock import simulation_clock
+        from datetime import timedelta
         
-        # Query for cluster of AO changes sharing the same new authorized official
-        # where the provider has dormant status or is within the simulation event window
+        ds = get_dataset()
+        sim_now = simulation_clock.now()
+        lookback_30d = sim_now - timedelta(days=30)
+        
         query = f"""
-            SELECT new_value as shared_ao, ARRAY_AGG(DISTINCT npi) as npis, COUNT(DISTINCT npi) as change_count
-            FROM `{ds}.pecos_events`
-            WHERE event_type = 'AO_CHANGE'
-            GROUP BY new_value
-            HAVING COUNT(DISTINCT npi) >= 5
+            SELECT pe.new_value as shared_ao, ARRAY_AGG(DISTINCT pe.npi) as npis, COUNT(DISTINCT pe.npi) as change_count
+            FROM `{ds}.pecos_events` pe
+            JOIN `{ds}.pecos_records` pr ON pe.npi = pr.npi
+            WHERE pe.event_type = 'AO_CHANGE'
+              AND pr.enrollment_status = 'dormant'
+              AND TIMESTAMP(pe.sim_event_date) <= @sim_now
+              AND TIMESTAMP(pe.sim_event_date) >= @lookback_30d
+            GROUP BY pe.new_value
+            HAVING COUNT(DISTINCT pe.npi) >= 5
         """
-        rows = await run_query(query)
+        params = [
+            bigquery.ScalarQueryParameter("sim_now", "TIMESTAMP", sim_now.isoformat()),
+            bigquery.ScalarQueryParameter("lookback_30d", "TIMESTAMP", lookback_30d.isoformat()),
+        ]
+        rows = await run_query(query, params)
         anomalies = []
         for row in rows:
             anomalies.append({

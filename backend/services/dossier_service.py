@@ -104,10 +104,10 @@ class DossierService:
         # FR-20: Policy Edit Recommendation
         policy_recommendation = {
             "hcpcs_targeted": "A4351, A4352, A4353 (Intermittent Urinary Catheters)",
-            "observation": f"Unmasked coordinated ring exploiting the lack of National prior-authorization gates on newly enrolled/reactive suppliers at CMRA mail drops, targeting compromised beneficiary MBIs. Total intercepted exposure is ${grand_total_exposure:,.2f}.",
-            "proposed_claim_edit": "Implement a nationwide prepayment quantity limit edit on HCPCS A4351-3, capping billing at 30 units per month for non-neurogenic conditions and requiring CPT-99214 qualifying clinical consult verification matching within 14 days preceding any higher-quantity claim.",
+            "observation": f"Unmasked coordinated ring of {len(network_unmasked)} shell suppliers exploiting the lack of National prior-authorization gates on newly enrolled/reactive suppliers at CMRA mail drops, targeting {len(affected_mbis)} compromised beneficiary MBIs. Total intercepted exposure is ${grand_total_exposure:,.2f}.",
+            "proposed_claim_edit": "Implement a nationwide prepayment quantity limit edit on HCPCS A4351-3, capping billing at 30 units per month for non-neurogenic conditions and requiring CPT-99214 qualifying clinical consult verification matching within 10 days on either side of any higher-quantity claim.",
             "enforcement_jurisdiction": "National MAC Prepayment Coordination",
-            "regulatory_rationale": "Prevent phantom billing from shell corporations registered at commercial mail receiving agency addresses using newly authorized official transfers."
+            "regulatory_rationale": f"Prevent phantom billing from shell corporations registered at commercial mail receiving agency addresses using newly authorized official transfers. This protects up to {len(affected_mbis)} beneficiaries and has saved ${grand_total_exposure:,.2f} in Medicare Trust Fund resources."
         }
 
         return {

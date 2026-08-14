@@ -22,7 +22,10 @@ async def test_appeals_level1_approved():
                 "billing_amount": 1800.0,
                 "modifier": None,
                 "prior_auth": False,
+                "status": "held",
             }
+        elif "appeals" in query:
+            return {"count": 0}
         elif "consult_registry" in query:
             return {
                 "consult_id": "consult_vance_01",
@@ -72,7 +75,10 @@ async def test_appeals_level2_escalated():
                 "billing_amount": 1200.0,
                 "modifier": None,
                 "prior_auth": False,
+                "status": "held",
             }
+        elif "appeals" in query:
+            return {"count": 0}
         elif "consult_registry" in query:
             return None  # No matching consult!
         elif "mbi_locks" in query:

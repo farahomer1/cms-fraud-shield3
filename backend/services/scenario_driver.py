@@ -66,7 +66,7 @@ class ScenarioDriver:
                     # Query for held claims matching Vance
                     query_vance = f"""
                         SELECT id FROM `{ds}.claims` 
-                        WHERE mbi = 'MC_VANCE_01' AND status = 'held'
+                        WHERE mbi = 'VANCE732MBI' AND status = 'held'
                         LIMIT 1
                     """
                     vance_claim = await run_query_single(query_vance)
@@ -84,7 +84,7 @@ class ScenarioDriver:
                         cls._vance_processed = True
                     else:
                         # If no held claim found, maybe the batch hasn't run or she was already processed
-                        logger.debug("Scenario Driver: Day 2 Vance held claim not found. Skipping or waiting.")
+                        logger.warning("Scenario Driver: Day 2 Vance held claim not found (VANCE732MBI). Skipping or waiting.")
 
                 # ─────────────────────────────────────────────────────────────
                 # 2. Day 5 Milestone: William Jackson Appeal Filing
@@ -110,7 +110,7 @@ class ScenarioDriver:
                             logger.info(f"Scenario Driver Jackson appeal result (escalation expected): {res.get('msg')}")
                         cls._jackson_processed = True
                     else:
-                        logger.debug("Scenario Driver: Day 5 Jackson held claim not found. Skipping or waiting.")
+                        logger.warning("Scenario Driver: Day 5 Jackson held claim not found (JACKSON999MBI). Skipping or waiting.")
 
                 # ─────────────────────────────────────────────────────────────
                 # 3. SLA Queue Fallback: Release claims queued for > 3 simulation days
@@ -127,42 +127,34 @@ class ScenarioDriver:
 
     @classmethod
     async def _process_sla_queue_fallbacks(cls, ds: str, sim_now: datetime):
-        """Finds any claims in the review queue that have exceeded the 3 simulation days SLA,
-
-        automatically releasing them to 'disbursed' to enforce clinical/administrative limits.
+        """Finds any claims in the review queue that have exceeded the 24 simulated hours SLA,
+        marking them as SLA breached while keeping them queued to await human adjudication.
         """
-        # 3 simulated days = 72 hours
-        sla_threshold_time = sim_now - timedelta(days=3)
+        # 24 simulated hours SLA limit
+        sla_threshold_time = sim_now - timedelta(hours=24)
         query_sla = f"""
             SELECT id, billing_amount FROM `{ds}.claims`
             WHERE status = 'queued'
               AND queued_at_sim IS NOT NULL
               AND queued_at_sim <= @threshold
+              AND (sla_breached IS NULL OR sla_breached = FALSE)
         """
         params_sla = [bigquery.ScalarQueryParameter("threshold", "TIMESTAMP", sla_threshold_time.isoformat())]
         overdue_claims = await run_query(query_sla, params_sla)
 
         if overdue_claims:
-            logger.info(f"Scenario Driver: Identified {len(overdue_claims)} claims breaching the 3-day review SLA. Executing auto-release.")
+            logger.warning(f"Scenario Driver: Identified {len(overdue_claims)} claims breaching the 24-hour review SLA. Setting sla_breached = TRUE.")
             for claim in overdue_claims:
                 claim_id = claim["id"]
-                billing_amount = float(claim["billing_amount"] or 0.0)
 
-                # 1. Update claim status
+                # 1. Update claim status to flag the SLA breach but keep the claim queued
                 await run_dml(
                     f"""
                     UPDATE `{ds}.claims` 
-                    SET status = 'disbursed', risk_level = 'LOW', sla_breached = TRUE 
+                    SET sla_breached = TRUE 
                     WHERE id = @claim_id
                     """,
                     [bigquery.ScalarQueryParameter("claim_id", "STRING", claim_id)]
                 )
 
-                # 2. Record disbursement row
-                await insert_rows("disbursements", [{
-                    "claim_id": claim_id,
-                    "amount": billing_amount,
-                    "sim_disbursed_at": sim_now.isoformat(),
-                }])
-
-                logger.info(f"Scenario Driver SLA Fallback: Claim ID {claim_id} automatically disbursed due to SLA breach.")
+                logger.info(f"Scenario Driver SLA Fallback: Claim ID {claim_id} flagged as SLA breached. Deferring payment until manual review.")

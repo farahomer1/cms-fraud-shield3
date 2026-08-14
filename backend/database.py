@@ -178,6 +178,35 @@ def _run_query_in_memory(query: str, params: list | None, mem_db: dict) -> list:
                 results.append(MockRow(row))
         return results
 
+    # 3.4. R-04 PECOS & CMRA query routing check
+    if "cmra_addresses" in q and "match_count" in q:
+        npi = param_dict.get("npi")
+        start_date_str = param_dict.get("start_date")
+        end_date_str = param_dict.get("end_date")
+        
+        start = date.fromisoformat(start_date_str) if isinstance(start_date_str, str) else start_date_str
+        end = date.fromisoformat(end_date_str) if isinstance(end_date_str, str) else end_date_str
+        
+        cmra = {r.get("address") for r in mem_db.get("cmra_addresses", []) if r.get("address")}
+        n = 0
+        for e in mem_db.get("pecos_events", []):
+            if str(e.get("npi")) != str(npi):
+                continue
+            ev_date_val = e.get("sim_event_date")
+            if isinstance(ev_date_val, str):
+                ev_date = date.fromisoformat(ev_date_val[:10])
+            elif isinstance(ev_date_val, datetime):
+                ev_date = ev_date_val.date()
+            elif isinstance(ev_date_val, date):
+                ev_date = ev_date_val
+            else:
+                ev_date = ev_date_val
+                
+            if ev_date and start <= ev_date <= end:
+                if e.get("event_type") == "AO_CHANGE" or e.get("new_value") in cmra:
+                    n += 1
+        return [MockRow({"match_count": n})]
+
     # 3.5. PECOS_EVENTS early warning check
     if "pecos_events" in q and "event_type = 'ao_change'" in q:
         groups = {}

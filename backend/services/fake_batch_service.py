@@ -309,7 +309,7 @@ async def process_batch_claims_fast(batch_id: str, bq: bigquery.Client) -> Async
             _logger.warning(f"Failed to preload {table_name}: {e}")
             cached_db[table_name] = []
 
-    preload_tables = ["pecos_records", "mbi_locks", "beneficiaries", "claims", "pecos_events", "threat_profiles"]
+    preload_tables = ["pecos_records", "mbi_locks", "beneficiaries", "claims", "pecos_events", "threat_profiles", "cmra_addresses"]
     await asyncio.gather(*(load_one_table(t) for t in preload_tables))
     enable_in_memory_db(cached_db)
 
@@ -431,7 +431,18 @@ async def process_batch_claims_fast(batch_id: str, bq: bigquery.Client) -> Async
         claim_dict = dict(row)
         claim_dict["billing_amount"] = float(row.billing_amount) if row.billing_amount is not None else 0.0
         
-        eval_result = await RulesService.evaluate_claim(claim_dict)
+        try:
+            eval_result = await RulesService.evaluate_claim(claim_dict)
+        except Exception as e:
+            _logger.exception(f"Rules engine crash on claim {claim_number}: {e}")
+            eval_result = {
+                "score": 0.00,
+                "status": "disbursed",
+                "risk_level": "LOW",
+                "hits": [],
+                "hit_count": 0,
+                "is_mbi_locked": False,
+            }
         
         rules_flagged = eval_result["hit_count"] > 0
         rules_status = "flag" if rules_flagged else "pass"
@@ -586,32 +597,30 @@ async def process_batch_claims_fast(batch_id: str, bq: bigquery.Client) -> Async
                         evidence = "Crush Fraud: Prepayment audit verified modifiers and quantity cap limits. Claim is compliant."
                         
             elif agent_name == "system_resilience":
-                # FR-17: network correlation query
+                # FR-17: network correlation query based on shared PECOS change events
                 if npi:
-                    query_fr17 = f"""
-                        SELECT COUNT(DISTINCT pe.npi) as shared_count
-                        FROM `{ds}.pecos_records` p1
-                        JOIN `{ds}.pecos_records` p2 ON p1.authorized_official = p2.authorized_official 
-                                                    AND p1.practice_address = p2.practice_address
-                                                    AND p1.npi != p2.npi
-                        JOIN `{ds}.claims` c ON c.provider_id = p2.npi OR c.billing_npi = p2.npi
-                        JOIN `{ds}.pecos_events` pe ON pe.npi = p2.npi
-                        WHERE p1.npi = @npi
-                          AND c.status IN ('flagged', 'held')
+                    query_fr17_list = f"""
+                        SELECT DISTINCT pe2.npi as shared_npi
+                        FROM `{ds}.pecos_events` pe1
+                        JOIN `{ds}.pecos_events` pe2 ON pe1.new_value = pe2.new_value AND pe1.npi != pe2.npi
+                        WHERE pe1.npi = @npi
                     """
                     params_fr17 = [
                         bigquery.ScalarQueryParameter("npi", "STRING", npi),
                     ]
-                    row_fr17 = await run_query_single(query_fr17, params_fr17)
-                    agent3_network_fraud = (int(row_fr17["shared_count"] or 0) > 0) if row_fr17 else False
-                    if agent3_network_fraud:
+                    shared_rows = await run_query(query_fr17_list, params_fr17)
+                    shared_npis = [r["shared_npi"] for r in shared_rows] if shared_rows else []
+                    
+                    if shared_npis:
                         flagged = True
                         confidence = 95
-                        evidence = f"Agent 3 Network Finding: Identified provider NPI {npi} sharing AO and address with other held claims and PECOS event activity. Marked enrollment status as 'revocation_flagged'."
+                        evidence = f"Agent 3 Network Finding: Identified provider NPI {npi} sharing credentials/addresses with a network of {len(shared_npis)} other suppliers ({', '.join(shared_npis)}). All compromised suppliers have been flagged as 'revocation_flagged' in the PECOS registry."
                         flagged_points = ["pecos_status: high_risk", "supplier_address: shared_compromise", "enrollment_status: revocation_flagged"]
                         
+                        # Update all related NPIs in the network to revocation_flagged
+                        placeholders = ", ".join(f"'{n}'" for n in shared_npis)
                         await run_dml(
-                            f"UPDATE `{ds}.pecos_records` SET enrollment_status = 'revocation_flagged' WHERE npi = @npi",
+                            f"UPDATE `{ds}.pecos_records` SET enrollment_status = 'revocation_flagged' WHERE npi IN ({placeholders}) OR npi = @npi",
                             [bigquery.ScalarQueryParameter("npi", "STRING", npi)]
                         )
                 
@@ -712,7 +721,7 @@ async def process_batch_claims_fast(batch_id: str, bq: bigquery.Client) -> Async
                     "status": status,
                     "recommendation": finding["recommendation"],
                     "confidenceScore": finding["confidence_score"],
-                    "message": f"{message_prefix} {display_name}: {finding['evidence_summary'][:100]}",
+                    "message": f"{message_prefix} {display_name}: {finding['evidence_summary']}",
                 },
             }
 

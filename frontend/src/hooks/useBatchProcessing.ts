@@ -151,6 +151,12 @@ export function useBatchProcessing(): UseBatchProcessingReturn {
             eventSourceRef.current.close();
             eventSourceRef.current = null;
           }
+        } else if (eventType === 'early_warning') {
+          const msg = data.data?.message || data.message || 'Early warning anomaly detected.';
+          addEvent(`[ALERT] ${msg}`, 'alert');
+        } else if (eventType === 'threat_profile') {
+          const msg = data.data?.message || data.message || 'Active Threat Profile published.';
+          addEvent(`[SYSTEM] ${msg}`, 'system');
         } else if (eventType === 'error' || eventType === 'batch_error' || eventType === 'error_event') {
           const stage = data.data?.stage || data.stage;
           if (stage) {
@@ -219,6 +225,8 @@ export function useBatchProcessing(): UseBatchProcessingReturn {
 
       // Listen for specific named events matching backend SSE event types
       eventSource.addEventListener('batch_start', handleSSEMessage);
+      eventSource.addEventListener('early_warning', handleSSEMessage);
+      eventSource.addEventListener('threat_profile', handleSSEMessage);
       eventSource.addEventListener('claim_start', handleSSEMessage);
       eventSource.addEventListener('agent_start', handleSSEMessage);
       eventSource.addEventListener('agent_complete', handleSSEMessage);

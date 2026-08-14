@@ -27,7 +27,7 @@ class AppealsService:
 
         # 1. Fetch claim details
         query_claim = f"""
-            SELECT id, mbi, sim_service_date, billing_amount, modifier, prior_auth 
+            SELECT id, mbi, sim_service_date, billing_amount, modifier, prior_auth, status 
             FROM `{ds}.claims` 
             WHERE id = @claim_id
         """
@@ -40,6 +40,27 @@ class AppealsService:
                 "msg": f"Claim ID {claim_id} not found in database."
             }
 
+        # Validate that the claim is currently held to be eligible for appeal
+        status = claim.get("status")
+        if status != "held":
+            return {
+                "success": False,
+                "msg": f"Appeal rejected: Claim {claim_id} is currently '{status}', not 'held'. Appeals are strictly constrained to claims under an active prepayment hold."
+            }
+
+        # Check for existing approved appeal to prevent duplicate disbursement
+        query_exist = f"""
+            SELECT count(*) as count 
+            FROM `{ds}.appeals` 
+            WHERE claim_id = @claim_id AND status = 'approved'
+        """
+        exist_chk = await run_query_single(query_exist, [bigquery.ScalarQueryParameter("claim_id", "STRING", claim_id)])
+        if exist_chk and int(exist_chk["count"]) > 0:
+            return {
+                "success": False,
+                "msg": f"Appeal rejected: Claim {claim_id} has already had an approved appeal and disbursement."
+            }
+
         mbi = claim.get("mbi")
         billing_amount = float(claim.get("billing_amount") or 0.0)
         svc_date_val = claim.get("sim_service_date")
@@ -50,9 +71,9 @@ class AppealsService:
         else:
             svc_date = svc_date_val
 
-        # 2. Check if a qualifying clinical consult exists in consult_registry (14-day window BEFORE the claim service date, inclusive)
-        start_window = svc_date - timedelta(days=14)
-        end_window = svc_date
+        # 2. Check if a qualifying clinical consult exists in consult_registry (10-day window on either side of the claim service date, inclusive)
+        start_window = svc_date - timedelta(days=10)
+        end_window = svc_date + timedelta(days=10)
 
         query_consult = f"""
             SELECT consult_id, cpt_code, sim_consult_date 
@@ -69,8 +90,8 @@ class AppealsService:
         ]
         consult = await run_query_single(query_consult, params_consult)
 
-        # Level 1 Match condition: has matching telehealth consult, OR prior-auth/modifiers are present
-        level1_approved = (consult is not None) or (claim.get("prior_auth") is True) or (claim.get("modifier") == "KX")
+        # Level 1 Match condition: strictly requires corresponding telehealth consult CPT-99214 regardless of prior-auth presence
+        level1_approved = (consult is not None)
 
         # Measure wall clock latency in milliseconds
         latency_ms = int((time.perf_counter() - start_wall_time) * 1000)

@@ -304,6 +304,15 @@ async def decide_claim(claim_id: str, body: DecisionRequest, bq: bigquery.Client
     new_status = claim.status
     if normalized_decision in ("approved", "release"):
         new_status = "disbursed"
+        # Write disbursement row for HIGLAS financial ledger consistency
+        try:
+            await insert_rows("disbursements", [{
+                "claim_id": claim_id,
+                "amount": float(claim.billing_amount or 0.0),
+                "sim_disbursed_at": now,
+            }])
+        except Exception as e:
+            logger.warning(f"Failed to write disbursement row: {e}")
     elif normalized_decision in ("denied", "escalate", "held"):
         new_status = "held" if normalized_decision in ("escalate", "held") else "denied"
     try:

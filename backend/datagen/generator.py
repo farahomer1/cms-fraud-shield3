@@ -52,13 +52,34 @@ async def clear_all_tables(bq: bigquery.Client) -> None:
     await asyncio.gather(*(truncate_one(table) for table in TABLES_DELETE_ORDER))
 
 
-async def generate_all_data(bq: bigquery.Client) -> dict:
+class ScenarioConfig:
+    def __init__(
+        self,
+        total_claims: int = 150,
+        fraud_ratio: float = 0.15,
+        shell_count: int = 15,
+        sim_start_date: str = "2026-07-01",
+        compression_ratio: float = 1.0,
+    ):
+        self.total_claims = total_claims
+        self.fraud_ratio = fraud_ratio
+        self.shell_count = shell_count
+        self.sim_start_date = sim_start_date
+        self.compression_ratio = compression_ratio
+
+
+async def generate_all_data(bq: bigquery.Client, config: ScenarioConfig = None) -> dict:
     """Generates CMS Fraud Shield synthetic data (including the Viktor Scenario)."""
+    if config is None:
+        config = ScenarioConfig()
+
     # 1. Clear database
     await clear_all_tables(bq)
 
     now_ts = datetime.now(timezone.utc).isoformat()
-    sim_start = datetime(2026, 7, 1, 0, 0, 0, tzinfo=timezone.utc)
+    # Parse date from config
+    sim_start_dt = date.fromisoformat(config.sim_start_date)
+    sim_start = datetime(sim_start_dt.year, sim_start_dt.month, sim_start_dt.day, 0, 0, 0, tzinfo=timezone.utc)
 
     # Generate 150 unique-ish deterministic fictitious names for members
     first_names = [
@@ -83,7 +104,7 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
     import random
     rng = random.Random(12345)
     legit_names = []
-    while len(legit_names) < 150:
+    while len(legit_names) < max(150, config.total_claims):
         first = rng.choice(first_names)
         last = rng.choice(last_names)
         name = f"{first} {last}"
@@ -188,9 +209,9 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
         "Fairmount Mobility Equip",
         "Tri-State Medical Durable"
     ]
-    for i in range(1, 16):
+    for i in range(1, config.shell_count + 1):
         npi = f"NPI_VIK_{i:02d}"
-        name = shell_names[i-1]
+        name = shell_names[(i-1) % len(shell_names)]
         ao = "Yury Viktor" if i <= 10 else "Unknown AO"
         addr = f"{100 + i} Maryland Ave, Wilmington, DE"
         
@@ -203,7 +224,7 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
             "created_at": now_ts,
         })
 
-        # Pre-simulation PECOS Change (90 days prior: e.g. May 15, 2026)
+        # Pre-simulation PECOS Change (within 30-day lookback: e.g. June 15, 2026)
         # Move practice address to a CMRA address
         pecos_events.append({
             "event_id": str(uuid.uuid4()),
@@ -211,7 +232,7 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
             "event_type": "ADDRESS_CHANGE",
             "old_value": addr,
             "new_value": "1209 North Orange St, Wilmington, DE",
-            "sim_event_date": "2026-05-15",
+            "sim_event_date": "2026-06-15",
             "created_at": now_ts,
         })
         # Authorized Official change to Viktor
@@ -221,7 +242,7 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
             "event_type": "AO_CHANGE",
             "old_value": "Original Owner LLC",
             "new_value": "Yury Viktor",
-            "sim_event_date": "2026-05-15",
+            "sim_event_date": "2026-06-15",
             "created_at": now_ts,
         })
 
@@ -328,16 +349,17 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
         "claim_type": "DME",
         "status": "held", # Initially held due to scoring >= 0.95
         "risk_level": "CRITICAL",
-        "billing_amount": 1800.00,
+        "billing_amount": 2700.00,
         "service_date": "2026-07-03",
         "mbi": vance_mbi,
         "billing_npi": "NPI_VIK_01",
         "hcpcs_code": "A4351",
-        "quantity": 120,  # exceeds LCD cap of 100 -> R-01 hit
+        "quantity": 180,  # exceeds LCD cap of 150 -> R-01 hit
         "state": "DE",
         "prior_auth": False,
         "modifier": None,
         "sim_service_date": "2026-07-03",
+        "sim_service_ts": "2026-07-03T10:00:00Z",
         "created_at": now_ts,
         "updated_at": now_ts,
     })
@@ -358,7 +380,7 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
         "status": "held",
         "risk_level": "CRITICAL",
         "billing_amount": 100.00,
-        "service_date": "2026-07-03",
+        "service_date": "2026-07-02",
         "mbi": vance_mbi,
         "billing_npi": "NPI_VIK_02",
         "hcpcs_code": "A4351",
@@ -366,7 +388,8 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
         "state": "DE",
         "prior_auth": False,
         "modifier": None,
-        "sim_service_date": "2026-07-03",
+        "sim_service_date": "2026-07-02",
+        "sim_service_ts": "2026-07-02T10:00:00Z",
         "created_at": now_ts,
         "updated_at": now_ts,
     })
@@ -386,7 +409,7 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
         "status": "held",
         "risk_level": "CRITICAL",
         "billing_amount": 100.00,
-        "service_date": "2026-07-04",
+        "service_date": "2026-07-02",
         "mbi": vance_mbi,
         "billing_npi": "NPI_VIK_03",
         "hcpcs_code": "A4351",
@@ -394,7 +417,8 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
         "state": "DE",
         "prior_auth": False,
         "modifier": None,
-        "sim_service_date": "2026-07-04",
+        "sim_service_date": "2026-07-02",
+        "sim_service_ts": "2026-07-02T14:00:00Z",
         "created_at": now_ts,
         "updated_at": now_ts,
     })
@@ -424,6 +448,7 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
         "prior_auth": False,
         "modifier": None,
         "sim_service_date": "2026-07-05",
+        "sim_service_ts": "2026-07-05T10:00:00Z",
         "created_at": now_ts,
         "updated_at": now_ts,
     })
@@ -434,7 +459,7 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
 
     # C. Other Viktor Spiking Claims (to hit R-02 (dormant supplier spike: billing > $100k in 14 days, previous history < $5k))
     # We generate a spike claim for each of Viktor's NPIs to aggregate > $100k
-    for i in range(1, 16):
+    for i in range(1, config.shell_count + 1):
         vik_npi = f"NPI_VIK_{i:02d}"
         claim_id = f"claim_vik_spike_{i:02d}"
         claims.append({
@@ -456,6 +481,7 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
             "prior_auth": False,
             "modifier": None,
             "sim_service_date": "2026-07-05",
+            "sim_service_ts": f"2026-07-05T10:15:{i:02d}Z",
             "created_at": now_ts,
             "updated_at": now_ts,
         })
@@ -465,7 +491,7 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
         })
 
     # D. 150 Normal/Legitimate billing claims (some with over LCD cap but having modifier/prior-auth to test negative control)
-    for i in range(1, 151):
+    for i in range(1, config.total_claims + 1):
         leg_npi = f"NPI_LEG_{(i % 10) + 1:02d}"
         leg_mbi = f"MBI{(i % 100) + 1:03d}GEN"
         claim_id = f"claim_leg_{i:03d}"
@@ -505,6 +531,7 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
             "prior_auth": prior_auth,
             "modifier": modifier,
             "sim_service_date": "2026-07-05",
+            "sim_service_ts": f"2026-07-05T11:00:{i % 60:02d}Z",
             "created_at": now_ts,
             "updated_at": now_ts,
         })
@@ -514,7 +541,7 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
         })
 
     # E. Let's pre-load legacy/prior claim histories into 'claims' table (dated e.g. March 2026, so Viktor NPIs have history < $5000)
-    for i in range(1, 16):
+    for i in range(1, config.shell_count + 1):
         vik_npi = f"NPI_VIK_{i:02d}"
         claims.append({
             "id": f"claim_vik_prior_{i:02d}",
@@ -535,6 +562,7 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
             "prior_auth": False,
             "modifier": None,
             "sim_service_date": "2026-03-10",
+            "sim_service_ts": f"2026-03-10T10:00:{i:02d}Z",
             "created_at": now_ts,
             "updated_at": now_ts,
         })
@@ -564,6 +592,7 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
             "prior_auth": False,
             "modifier": None,
             "sim_service_date": "2026-03-10",
+            "sim_service_ts": f"2026-03-10T11:00:00Z",
             "created_at": now_ts,
             "updated_at": now_ts,
         })
@@ -697,7 +726,7 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
     })
 
     # 3. 15 Spiking Claims Findings
-    for i in range(1, 16):
+    for i in range(1, config.shell_count + 1):
         claim_id = f"claim_vik_spike_{i:02d}"
         agent_findings.append({
             "id": str(uuid.uuid4()),
@@ -736,7 +765,7 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
         })
 
     # 4. Legitimate Claims Findings
-    for i in range(1, 151):
+    for i in range(1, config.total_claims + 1):
         if i == 10 or i == 120:
             continue
         claim_id = f"claim_leg_{i:03d}"
@@ -841,7 +870,7 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
     })
 
     # 5. Prior Claims Findings (Legacy)
-    for i in range(1, 16):
+    for i in range(1, config.shell_count + 1):
         claim_id = f"claim_vik_prior_{i:02d}"
         agent_findings.append({
             "id": str(uuid.uuid4()),
@@ -910,7 +939,7 @@ async def generate_all_data(bq: bigquery.Client) -> dict:
         })
 
     # 4. Legitimate members (1 to 150)
-    for i in range(1, 151):
+    for i in range(1, config.total_claims + 1):
         death_date = None
         vital_status = "alive"
         if i == 10:

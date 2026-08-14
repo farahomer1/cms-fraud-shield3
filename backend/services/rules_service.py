@@ -373,7 +373,13 @@ class RulesService:
             hits.append("MBI_LOCK: Compromised Beneficiary Lockdown")
 
         # 4. Discrete scoring & prepay lifecycle
-        if hit_count >= 2:
+        if is_mbi_locked:
+            score = 1.00
+            status = "held"
+            risk_level = "CRITICAL"
+            if "MBI Lock-as-Hit Triggered" not in "".join(hits):
+                hits.append("MBI Lock-as-Hit Triggered: Beneficiary MBI under active compromise lock")
+        elif hit_count >= 2:
             score = 0.95
             status = "held"
             risk_level = "CRITICAL"
