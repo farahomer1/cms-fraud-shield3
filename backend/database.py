@@ -208,7 +208,7 @@ def _run_query_in_memory(query: str, params: list | None, mem_db: dict) -> list:
         return [MockRow({"match_count": n})]
 
     # 3.5. PECOS_EVENTS early warning check
-    if "pecos_events" in q and "event_type = 'ao_change'" in q:
+    if "pecos_events" in q and "shared_ao" in q:
         groups = {}
         for row in mem_db.get("pecos_events", []):
             if row.get("event_type") == "AO_CHANGE":
@@ -228,6 +228,23 @@ def _run_query_in_memory(query: str, params: list | None, mem_db: dict) -> list:
                     "change_count": len(npis_set)
                 }))
         return results
+
+    # 3.6. PECOS_EVENTS network correlation (shared_npi) check
+    if "pecos_events" in q and ("shared_npi" in q or "pe2.npi" in q):
+        npi_val = param_dict.get("npi")
+        my_values = set()
+        for row in mem_db.get("pecos_events", []):
+            if str(row.get("npi")) == str(npi_val):
+                nv = row.get("new_value")
+                if nv:
+                    my_values.add(nv)
+        shared = set()
+        for row in mem_db.get("pecos_events", []):
+            if str(row.get("npi")) != str(npi_val):
+                nv = row.get("new_value")
+                if nv in my_values:
+                    shared.add(str(row.get("npi")))
+        return [MockRow({"shared_npi": s}) for s in shared]
 
     # 4. PECOS_EVENTS count check (trust_defender) - only loop queries specify 'npi' filter
     if "pecos_events" in q and "npi" in q:
