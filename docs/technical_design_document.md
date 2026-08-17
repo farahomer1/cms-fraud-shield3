@@ -177,8 +177,11 @@ sequenceDiagram
 
     Note over Driver, BQ: TIMELINE AUTOMATION & ADJUDICATION APPEALS
     Driver->>BE: Check Simulation Clock
-    Driver->>BQ: Detect held claims for CLM-VANCE-01 (Day 2) and CLM-JACKSON-01 (Day 5)
+    Driver->>BQ: Detect held claims for VANCE732MBI (Day 2) and JACKSON999MBI (Day 5)
     Driver->>BE: File Level 1 Appeal for claim_id
+    Driver->>BE: Process SLA checks for queued claims (FR-11)
+    BE->>BQ: Find queued claims exceeding 24 simulated hours
+    BE->>BQ: Flag claims as 'sla_breached' (Status remains strictly 'queued')
     BE->>RS: Verify clinical consult (CPT-99214) within 10 days on either side of Service
     alt Has matching CPT-99214 (Eleanor Vance)
         BE->>BQ: Auto-release hold (status: 'disbursed'), insert Disbursement row
