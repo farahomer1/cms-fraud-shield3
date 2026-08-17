@@ -823,12 +823,12 @@ async def process_batch_claims_fast(batch_id: str, bq: bigquery.Client) -> Async
                 cases_score.append(f"WHEN id = @{cid_param} THEN @{score_param}")
                 
                 if c["sim_service_ts"] is None:
-                    cases_service_ts.append(f"WHEN id = @{cid_param} THEN NULL")
+                    cases_service_ts.append(f"WHEN id = @{cid_param} THEN CAST(NULL AS TIMESTAMP)")
                 else:
                     cases_service_ts.append(f"WHEN id = @{cid_param} THEN TIMESTAMP(@{service_ts_param})")
                     
                 if c["queued_at_sim"] is None:
-                    cases_queued_ts.append(f"WHEN id = @{cid_param} THEN NULL")
+                    cases_queued_ts.append(f"WHEN id = @{cid_param} THEN CAST(NULL AS TIMESTAMP)")
                 else:
                     cases_queued_ts.append(f"WHEN id = @{cid_param} THEN TIMESTAMP(@{queued_ts_param})")
 
@@ -848,8 +848,8 @@ async def process_batch_claims_fast(batch_id: str, bq: bigquery.Client) -> Async
                 SET status = CASE { " ".join(cases_status) } END,
                     risk_level = CASE { " ".join(cases_risk) } END,
                     risk_score = CASE { " ".join(cases_score) } END,
-                    sim_service_ts = CAST(CASE { " ".join(cases_service_ts) } END AS TIMESTAMP),
-                    queued_at_sim = CAST(CASE { " ".join(cases_queued_ts) } END AS TIMESTAMP)
+                    sim_service_ts = CASE { " ".join(cases_service_ts) } END,
+                    queued_at_sim = CASE { " ".join(cases_queued_ts) } END
                 WHERE id IN ({ ", ".join(ids) })
             """
             await run_dml(query, params)
